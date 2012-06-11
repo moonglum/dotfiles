@@ -46,5 +46,8 @@ set expandtab
 " Makefiles require tabs
 autocmd FileType make setlocal noexpandtab
 
-
-
+" === Spell Checking ===
+" No further configuration necessary:
+" Checks Comments, Latex, Markdown...
+set spell
+set spelllang=en_gb
