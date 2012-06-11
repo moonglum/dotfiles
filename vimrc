@@ -1,9 +1,16 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-" from skwp/dotfiles
 set nocompatible
 " Activate Syntax Highlight
 syntax enable
+" Add line numbers
+set number
+" Set default encoding to UTF-8
+set encoding=utf-8
+" Highlight search results
+set hlsearch
+" Deactive Wrapping
+set nowrap
 
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
