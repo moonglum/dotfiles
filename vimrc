@@ -51,3 +51,23 @@ autocmd FileType make setlocal noexpandtab
 " Checks Comments, Latex, Markdown...
 set spell
 set spelllang=en_gb
+
+" === Language Specific Setting ===
+" From janus
+
+" Some file types should wrap their text
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
+endfunction
+
+" Make sure all mardown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+
+" Set the Ruby filetype for a number of common Ruby files without .rb
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
+
+" Treat JSON files like JavaScript
+au BufNewFile,BufRead *.json set ft=javascript
