@@ -13,10 +13,13 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Necessary
+alias please='sudo'
+
 # Shortcuts
 alias o='open'
 alias m='make'
-alias g='guard'
+alias g='bundle exec guard'
 alias b='bundle'
 
 # Github-flavored Git
@@ -25,8 +28,8 @@ alias git=hub
 # Server Connection with a tunnel, so rmating is possible
 alias tunnel='ssh -R 52698:localhost:52698 '
 
-# JavaScript Console (Webkit)
-alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
+# Run all Graph Unit Tests for ArangoDB
+alias gunit='./bin/arangod --javascript.unit-tests js/common/tests/shell-graph.js --javascript.unit-tests js/common/tests/shell-graph-algorithms.js --javascript.unit-tests js/common/tests/shell-graph-measurement.js --javascript.unit-tests js/common/tests/shell-slow-tests.js --javascript.unit-tests js/common/tests/shell-slow-tests-cached.js --database.directory /var/lib/arango'
 
 # Use vim as default editor – git for example
 export EDITOR='vim -f'
