@@ -1,6 +1,8 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+" This is required for Vundle
+filetype off
 " Activate Syntax Highlight
 syntax enable
 " Add line numbers
@@ -14,19 +16,28 @@ set nowrap
 " Treat all numbers as decimal
 set nrformats=
 
-" =============== Pathogen Initialization ===============
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
-" setup inspired by skwp/dotfiles
-
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+" === Vundle Setup ===
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
 " =========== Solarized Dark ===========
 " Currently using the dark version
-" from skwp/dotfiles
+Bundle 'altercation/vim-colors-solarized'
 set background=dark
 colorscheme solarized
+
+" === Additional Language Support ===
+Bundle "tpope/vim-haml"
+Bundle "pangloss/vim-javascript"
+Bundle "tpope/vim-markdown"
+Bundle "kchmck/vim-coffee-script"
+
+" === Added Functionality ===
+" Syntastic: Really great Syntax checker
+Bundle "scrooloose/syntastic"
+" Tabular: Amazing Aligning Utility
+Bundle "godlygeek/tabular"
 
 " ========= Whitespace and Invisible Characters =========
 " based upon vimcasts
@@ -97,3 +108,7 @@ imap <M-Right> <Esc><Right>wi
 " Make cursor move by visual lines instead of file lines (when wrapping)
 map k gk
 map j gj
+
+" --- End ---
+" This is required for Vundle
+filetype plugin indent on
