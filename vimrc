@@ -15,6 +15,10 @@ set hlsearch
 set nowrap
 " Treat all numbers as decimal
 set nrformats=
+" Highlight the Current Line
+set cursorline
+" I don't like Swapfiles
+set noswapfile
 
 " === Vundle Setup ===
 set rtp+=~/.vim/bundle/vundle/
@@ -39,7 +43,7 @@ Bundle "scrooloose/syntastic"
 " Tabular: Amazing Aligning Utility
 Bundle "godlygeek/tabular"
 
-" ========= Whitespace and Invisible Characters =========
+" ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
 
 " Show invisible characters:
@@ -61,6 +65,10 @@ autocmd FileType make setlocal noexpandtab
 
 " Highlight Characters that overstep the 80 character limit
 match ErrorMsg '\%>80v.\+'
+
+" Automatically set the indent of a new line (local to buffer)
+" from railsbros-dirk
+set ai
 
 " === Spell Checking ===
 " No further configuration necessary:
