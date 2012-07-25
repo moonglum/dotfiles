@@ -6,7 +6,7 @@ filetype off
 " Activate Syntax Highlight
 syntax enable
 " Add line numbers
-set number
+" set number
 " Set default encoding to UTF-8
 set encoding=utf-8
 " Highlight search results
@@ -19,6 +19,19 @@ set nrformats=
 set cursorline
 " I don't like Swapfiles
 set noswapfile
+" Use the clipboard of Mac OS
+set clipboard=unnamed
+
+" === MacVim Setup ===
+
+if has("gui_running")
+  " Right Font and Font-Size
+  set guifont=Monaco:h14
+  " No Toolbar
+  set guioptions=egmrt
+  " No Scrollbar
+  set guioptions-=r
+endif
 
 " === Vundle Setup ===
 set rtp+=~/.vim/bundle/vundle/
@@ -42,6 +55,16 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/syntastic"
 " Tabular: Amazing Aligning Utility
 Bundle "godlygeek/tabular"
+" Snipmate: TextMate Style Snippets
+" This includes some dependencies
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+" Full path fuzzy finder
+Bundle "kien/ctrlp.vim"
+" ... that ignores certain files
+set wildignore+=*aux,Gemfile.lock,*.gitkeep
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
@@ -97,7 +120,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:
 au BufRead,BufNewFile *.tex call s:setupWrapping()
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,config.ru,*.rake} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
