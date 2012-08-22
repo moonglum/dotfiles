@@ -1,0 +1,2 @@
+export rvm_path="/Users/moonglum/.rvm"
+export rvm_ignore_gemsets_flag=1
