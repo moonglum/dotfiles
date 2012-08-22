@@ -34,6 +34,9 @@ export EDITOR='vim -f'
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# The same for tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 # Add RVM to PATH
 PATH=$PATH:$HOME/.rvm/bin 
 

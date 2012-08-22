@@ -1,6 +1,6 @@
 # dotfiles
 
-These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim and ZSH (and also: ack, ruby gems, rvm and TextMate).
+These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux and ZSH (and also: ack, ruby gems, rvm and TextMate).
 
 ## ZSH
 
@@ -14,11 +14,16 @@ I also created a [pull-request](https://github.com/robbyrussell/oh-my-zsh/pull/1
 
 The only plugin I currently use is the git plugin, but I may look at other plugins in the future.
 
+## tmux
+
+Use tmux, it rocks!
+My setup is based upon the setup suggested in "tmux: Productive Mouse-Free Development". I adjusted some things though. I also use tmuxinator to setup my development sessions.
+
 ## Vim
 
 When I started with Vim, I used Janus. But it was way too much stuff in there that I possibly will never use. Also I like to know my configuration ;) So I re-started my Vimrc from Scratch.
 
-I use a Terminal in Split View with my implementation on the left and the according test on the right. Occasionally I use MacVim. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim.
+Most of the time I use Vim in the terminal, because of tmux. Occasionally I use MacVim. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim.
 I'm using gmarik's vundle for plugin management. It's great. I use the following plugins:
 
 ### Additional Language Support
@@ -50,7 +55,8 @@ I'm using gmarik's vundle for plugin management. It's great. I use the following
 
 * To Robby Russel for Oh-My-Zsh
 * To Carl and Yehuda for Janus, which I used when I started with Vim
-* Thanks to Drew Neil for his screencasts and his book
+* To Drew Neil for his screencasts and his book about Vim
+* To Brian P. Hogan for his book about tmux
 * Thanks to the following people for letting me steal from their dotfiles:
   * skwp
   * railsbros-dirk
