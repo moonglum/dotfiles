@@ -25,6 +25,9 @@ alias b='bundle'
 # Github-flavored Git
 alias git=hub
 
+# Manuals for Ruby People
+alias man="gem man -s"
+
 # Server Connection with a tunnel, so rmating is possible
 alias tunnel='ssh -R 52698:localhost:52698 '
 
