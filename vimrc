@@ -20,13 +20,13 @@ set cursorline
 " I don't like Swapfiles
 set noswapfile
 " Use the clipboard of Mac OS
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " === MacVim Setup ===
 
 if has("gui_running")
   " Right Font and Font-Size
-  set guifont=Monaco:h14
+  set guifont=Source\ Code\ Pro:h14
   " No Toolbar
   set guioptions=egmrt
   " No Scrollbar
