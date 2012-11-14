@@ -1,8 +1,8 @@
 # ~/.tmuxinator/ashikawa.yml
-# Development of ashikawa-core
+# Development of ashikawa-ar
 
-project_name: Ashikawa-Core
-project_root: ~/code/ashikawa-core
+project_name: ashikawa-ar
+project_root: ~/code/ashikawa-ar
 # rvm: 1.9.2@rails_project
 pre: rm -r /tmp/arango; mkdir /tmp/arango
 tabs:
@@ -12,4 +12,4 @@ tabs:
         - vim
         - g
         -
-  - arango: arangod /tmp/arango
+  - arango: arangod -c none /tmp/arango
