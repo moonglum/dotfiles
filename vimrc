@@ -5,8 +5,6 @@ set nocompatible
 filetype off
 " Activate Syntax Highlight
 syntax enable
-" Add line numbers
-" set number
 " Set default encoding to UTF-8
 set encoding=utf-8
 " Highlight search results
@@ -64,7 +62,7 @@ Bundle "garbas/vim-snipmate"
 " Full path fuzzy finder
 Bundle "kien/ctrlp.vim"
 " ... that ignores certain files
-set wildignore+=*aux,Gemfile.lock,*.gitkeep
+set wildignore+=*aux,Gemfile.lock,*.gitkeep,doc
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
@@ -113,8 +111,8 @@ function! s:setupWrapping()
   match ErrorMsg ''
 endfunction
 
-" Make sure all mardown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+" Make sure all markdown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping()
 
 " LaTeX files should also have Wrapping
 au BufRead,BufNewFile *.tex call s:setupWrapping()
@@ -124,6 +122,9 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
+
+" Recognize CoffeeScript
+au BufNewFile,BufRead *.coffee set ft=coffee
 
 " === Movements ===
 " Stolen from railsbros-dirk
