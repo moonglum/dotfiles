@@ -53,12 +53,6 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/syntastic"
 " Tabular: Amazing Aligning Utility
 Bundle "godlygeek/tabular"
-" Snipmate: TextMate Style Snippets
-" This includes some dependencies
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
 " Full path fuzzy finder
 Bundle "kien/ctrlp.vim"
 " ... that ignores certain files
