@@ -28,9 +28,6 @@ alias git=hub
 # Manuals for Ruby People
 alias man="gem man -s"
 
-# Server Connection with a tunnel, so rmating is possible
-alias tunnel='ssh -R 52698:localhost:52698 '
-
 # Use vim as default editor – git for example
 export EDITOR='vim -f'
 
@@ -41,7 +38,7 @@ export EDITOR='vim -f'
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Add RVM to PATH
-PATH=$PATH:$HOME/.rvm/bin 
+PATH=$PATH:$HOME/.rvm/bin
 
 # For homebrew
 PATH=/usr/local/bin:$PATH
@@ -55,6 +52,3 @@ alias c='nocorrect c'
 c() { cd ~/Code/$1; }
 _c() { _files -W ~/Code -/; }
 compdef _c c
-
-# Info about RVM environment
-alias rvm-info='rvm-prompt i v g'
