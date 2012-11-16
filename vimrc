@@ -78,8 +78,8 @@ set expandtab
 " Makefiles require tabs
 autocmd FileType make setlocal noexpandtab
 
-" Highlight Characters that overstep the 80 character limit
-match ErrorMsg '\%>80v.\+'
+" Highlight Characters that overstep the 100 character limit
+match ErrorMsg '\%>100v.\+'
 
 " Automatically set the indent of a new line (local to buffer)
 " from railsbros-dirk
