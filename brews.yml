@@ -1,0 +1,19 @@
+brews:
+- ack
+- arangodb
+- chicken
+- dnsmasq
+- git
+- haskell-platform
+- htop-osx
+- hub
+- imagemagick
+- macvim
+- mysql
+- node
+- postgresql
+- redis
+- tig
+- tmux
+- tree
+- wget

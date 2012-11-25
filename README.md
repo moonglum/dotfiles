@@ -2,6 +2,8 @@
 
 These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux and ZSH (and also: ack, ruby gems and rvm).
 
+It can be installed via `rake install` and removed via `rake uninstall`. Use the latter with caution ;)
+
 ## ZSH
 
 I use [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). It has nice plugins that are a great inspiration. I will probably set-up my own zsh config from ground-up, but for now Vim is my priority.
