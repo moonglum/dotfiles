@@ -37,10 +37,8 @@ I'm using gmarik's vundle for plugin management. It's great. I use the following
 
 ### Additional Functionality
 
-* **Solarized** Theme via [`altercation/vim-colors-solarized`](http://github.com/altercation/vim-colors-solarized)
 * Really great **Syntax checker** via [`scrooloose/syntastic`](http://github.com/scrooloose/syntastic)
 * Amazing **Aligning Utility** via [`godlygeek/tabular`](http://github.com/godlygeek/tabular)
-* TextMate-like **Snippets** via [`garbas/vim-snipmate`](http://github.com/garbas/vim-snipmate) (plus dependencies)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](http://github.com/kien/ctrlp.vim)
 
 ## Miscellaneous
