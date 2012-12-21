@@ -2,7 +2,6 @@ brews:
 - ack
 - arangodb
 - chicken
-- dnsmasq
 - git
 - haskell-platform
 - htop-osx
