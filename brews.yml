@@ -8,7 +8,8 @@ brews:
 - htop-osx
 - hub
 - imagemagick
-- macvim
+- macvim:
+  - --override-system-vim
 - mysql
 - node
 - postgresql

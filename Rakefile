@@ -7,9 +7,9 @@ module Homebrew
     `brew update`
   end
 
-  def Homebrew.install(name)
+  def Homebrew.install(name, options = [])
     print "Installing #{name}... "
-    status = `brew install #{name}`
+    status = `brew install #{name} #{options.join}`
 
     raise "No formula for #{name}" if status.include? "No available formula"
 
@@ -22,8 +22,16 @@ module Homebrew
 
   def Homebrew.install_all_from_yaml(yaml_filename)
     Homebrew.update
-    brew_file = YAML.load File.read(yaml_filename)
-    brew_file["brews"].each { |name| Homebrew.install name }
+    brew_file = YAML.load_file yaml_filename
+    brew_file["brews"].each do |brew|
+      if brew.class == String
+        Homebrew.install brew
+      else
+        name = brew.keys.first
+        options = brew[name]
+        Homebrew.install name, options
+      end
+    end
   end
 end
 
