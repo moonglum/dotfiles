@@ -2,6 +2,7 @@ brews:
 - ack
 - arangodb
 - chicken
+- clisp
 - git
 - haskell-platform
 - htop-osx
