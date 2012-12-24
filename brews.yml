@@ -12,6 +12,7 @@ brews:
   - --override-system-vim
 - mysql
 - node
+- optiPNG
 - postgresql
 - redis
 - tig
