@@ -47,6 +47,9 @@ PATH=/usr/local/sbin:$PATH
 # For LaTeX
 PATH=/usr/texbin:$PATH
 
+# For Cabal
+PATH=/Users/moonglum/.cabal/bin:$PATH
+
 # For my code directory
 alias c='nocorrect c'
 c() { cd ~/Code/$1; }
