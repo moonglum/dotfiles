@@ -15,6 +15,7 @@ brews:
 - optiPNG
 - postgresql
 - redis
+- rlwrap
 - tig
 - tmux
 - tree

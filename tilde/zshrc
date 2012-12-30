@@ -22,6 +22,9 @@ alias m='make'
 alias g='bundle exec guard'
 alias b='bundle'
 
+# Fix for REPLs and Editors without Readline
+alias csi='rlwrap csi '
+
 # Github-flavored Git
 alias git=hub
 
