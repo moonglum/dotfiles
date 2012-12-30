@@ -1,2 +1,6 @@
 -i
 --type-set=haml=.haml
+--ignore-dir=doc/
+--ignore-dir=tmp/
+--ignore-dir=log/
+--ignore-dir=coverage/
