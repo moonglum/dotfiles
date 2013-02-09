@@ -57,6 +57,8 @@ Bundle "godlygeek/tabular"
 Bundle "kien/ctrlp.vim"
 " ... that ignores certain files
 set wildignore+=*aux,Gemfile.lock,*.gitkeep,doc
+" YouCompleteMe: A code-completion engine
+Bundle "Valloric/YouCompleteMe"
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
