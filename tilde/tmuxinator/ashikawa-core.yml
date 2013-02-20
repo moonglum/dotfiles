@@ -12,4 +12,4 @@ tabs:
         - vim
         - g
         -
-  - arango: arangod -c none /tmp/arango
+  - arango: arangod-devel

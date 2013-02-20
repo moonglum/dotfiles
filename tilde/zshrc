@@ -32,7 +32,7 @@ alias git=hub
 alias man="gem man -s"
 
 # Use vim as default editor – git for example
-export EDITOR='vim -f'
+export EDITOR='vim'
 
 # This loads RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -52,6 +52,25 @@ PATH=/usr/texbin:$PATH
 
 # For Cabal
 PATH=/Users/moonglum/.cabal/bin:$PATH
+
+# ArangoDB Development
+alias 'arangod-1.1.2'='arangod -c /usr/local/Cellar/arangodb/1.1.2/etc/arangodb/arangod.conf'
+
+function arangod-devel {
+  mkdir /tmp/arangodb-1.2
+  cd ~/Code/arangodb
+  ./bin/arangod /tmp/arangodb-1.2
+}
+
+function arango-rebuild {
+  cd ~/Code/arangodb
+  git pull
+  make clean
+  make setup
+  make setup
+  ./configure --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu --enable-relative
+  make -j4
+}
 
 # For my code directory
 alias c='nocorrect c'
