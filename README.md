@@ -40,6 +40,7 @@ I'm using gmarik's vundle for plugin management. It's great. I use the following
 * Really great **Syntax checker** via [`scrooloose/syntastic`](http://github.com/scrooloose/syntastic)
 * Amazing **Aligning Utility** via [`godlygeek/tabular`](http://github.com/godlygeek/tabular)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](http://github.com/kien/ctrlp.vim)
+* Nice **ack integration** via [`mileszs/ack.vim`](http://github.com/mileszs/ack.vim)
 
 ## Miscellaneous
 

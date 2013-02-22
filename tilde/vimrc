@@ -57,6 +57,8 @@ Bundle "godlygeek/tabular"
 Bundle "kien/ctrlp.vim"
 " ... that ignores certain files
 set wildignore+=*aux,Gemfile.lock,*.gitkeep,doc
+" ack.vim: ack integration
+Bundle "mileszs/ack.vim"
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
