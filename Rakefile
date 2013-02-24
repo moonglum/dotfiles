@@ -4,6 +4,7 @@ require "./script/homebrew"
 require "./script/dotfile"
 require "./script/oh-my-zsh"
 require "./script/vundle"
+require "./script/rvm"
 
 packages = YAML.load_file "packages.yml"
 
@@ -11,7 +12,8 @@ package_managers = [
   Dotfile.new,
   OhMyZSH.new,
   Homebrew.new(packages["brews"]),
-  Vundle.new
+  Vundle.new,
+  Rvm.new(packages["rubies"])
 ]
 
 desc "Install the dotfiles"
