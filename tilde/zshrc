@@ -72,6 +72,11 @@ function arango-rebuild {
   make -j4
 }
 
+# Ruby Development
+function current-version {
+  gem list -r $1$
+}
+
 # For my code directory
 alias c='nocorrect c'
 c() { cd ~/Code/$1; }
