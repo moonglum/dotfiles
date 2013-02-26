@@ -77,6 +77,10 @@ function current-version {
   gem list -r $1$
 }
 
+# iTunes Control
+alias play='osascript -e "tell application \"iTunes\" to play"'
+alias pause='osascript -e "tell application \"iTunes\" to pause"'
+
 # For my code directory
 alias c='nocorrect c'
 c() { cd ~/Code/$1; }
