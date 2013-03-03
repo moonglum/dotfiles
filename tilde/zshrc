@@ -54,7 +54,7 @@ PATH=/usr/texbin:$PATH
 PATH=/Users/moonglum/.cabal/bin:$PATH
 
 # ArangoDB Development
-alias 'arangod-1.1.2'='arangod -c /usr/local/Cellar/arangodb/1.1.2/etc/arangodb/arangod.conf'
+alias 'arangod-1.2.0'='arangod -c /usr/local/Cellar/arangodb/1.2.0/etc/arangodb/arangod.conf'
 
 function arangod-devel {
   mkdir /tmp/arangodb-1.2
