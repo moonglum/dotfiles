@@ -53,6 +53,9 @@ PATH=/usr/texbin:$PATH
 # For Cabal
 PATH=/Users/moonglum/.cabal/bin:$PATH
 
+# For NPM
+PATH=/usr/local/share/npm/bin:$PATH
+
 # ArangoDB Development
 alias 'arangod-1.2.0'='arangod -c /usr/local/Cellar/arangodb/1.2.0/etc/arangodb/arangod.conf'
 
