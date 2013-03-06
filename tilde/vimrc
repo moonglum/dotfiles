@@ -61,6 +61,10 @@ set wildignore+=*aux,Gemfile.lock,*.gitkeep,doc
 Bundle "mileszs/ack.vim"
 " Fugitive: The best Git integration that exists
 Bundle "tpope/vim-fugitive"
+" Git Gutter: shows a git diff in the gutter
+Bundle "airblade/vim-gitgutter"
+" without any weird color
+highlight clear SignColumn
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
