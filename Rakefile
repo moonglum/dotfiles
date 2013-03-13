@@ -1,10 +1,7 @@
 #!/usr/bin/env rake
 require "yaml"
-require "./script/homebrew"
-require "./script/dotfile"
-require "./script/oh-my-zsh"
-require "./script/vundle"
-require "./script/rvm"
+require "rubygems"
+require "exogenesis"
 
 packages = YAML.load_file "packages.yml"
 
@@ -18,7 +15,7 @@ package_managers = [
 
 desc "Install the dotfiles"
 task :install do
-  package_managers.each(&:install_all)
+  package_managers.each(&:install)
 end
 
 desc "Update everything"

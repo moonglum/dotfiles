@@ -2,7 +2,7 @@
 
 These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux and ZSH (and also: ack, ruby gems and rvm).
 
-It can be installed via `rake install` and removed via `rake uninstall`. Use the latter with caution ;)
+First you need to install `rake` and `exogenesis` via Ruby Gems. Then it can be installed via `rake install`, updated with `rake update` and removed via `rake uninstall`. Use the latter with caution ;)
 
 ## ZSH
 
