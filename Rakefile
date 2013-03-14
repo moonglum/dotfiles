@@ -7,7 +7,7 @@ packages = YAML.load_file "packages.yml"
 
 package_managers = [
   Dotfile.new,
-  OhMyZSH.new,
+  OhMyZSH.new("moonglum"),
   Homebrew.new(packages["brews"]),
   Vundle.new,
   Rvm.new(packages["rubies"])
