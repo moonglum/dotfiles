@@ -1,0 +1,13 @@
+# ~/.tmuxinator/foxx.yml
+# Development of ArangoDB Foxx
+
+project_name: foxx
+project_root: ~/code/arangodb
+pre: rm -r /tmp/test; mkdir /tmp/test
+tabs:
+  - vim: vim
+  - workspace:
+      layout: main-vertical
+      panes:
+        - ./bin/arangod --console /tmp/test
+        - ./bin/arangosh --jslint js/common/modules/org/arangodb/foxx.js
