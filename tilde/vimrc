@@ -57,10 +57,12 @@ Bundle "godlygeek/tabular"
 Bundle "kien/ctrlp.vim"
 " ... that ignores certain files
 set wildignore+=*aux,Gemfile.lock,*.gitkeep,doc
-" ack.vim: ack integration
+" Ack: ack integration
 Bundle "mileszs/ack.vim"
 " Fugitive: The best Git integration that exists
 Bundle "tpope/vim-fugitive"
+" Commentary: Minimalistic commenting plugin
+Bundle "tpope/vim-commentary"
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts

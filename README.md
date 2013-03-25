@@ -41,6 +41,8 @@ I'm using gmarik's vundle for plugin management. It's great. I use the following
 * Amazing **Aligning Utility** via [`godlygeek/tabular`](http://github.com/godlygeek/tabular)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](http://github.com/kien/ctrlp.vim)
 * Nice **ack integration** via [`mileszs/ack.vim`](http://github.com/mileszs/ack.vim)
+* Mind blowing **git integration** via [`tpope/vim-fugitive`](http://github.com/tpope/vim-fugitive)
+* Minimalistic **commenting** via [`tpope/vim-commentary`](http://github.com/tpope/vim-commentary)
 
 ## Miscellaneous
 
