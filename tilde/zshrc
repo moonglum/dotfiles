@@ -40,6 +40,9 @@ export EDITOR='vim'
 # The same for tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+# Home
+PATH=$PATH:$HOME/.bin
+
 # Add RVM to PATH
 PATH=$PATH:$HOME/.rvm/bin
 
