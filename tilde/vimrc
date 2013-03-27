@@ -63,6 +63,8 @@ Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 " Commentary: Minimalistic commenting plugin
 Bundle "tpope/vim-commentary"
+" Tbone: tmux integration
+Bundle "tpope/vim-tbone"
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
