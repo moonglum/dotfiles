@@ -10,4 +10,4 @@ tabs:
       layout: main-vertical
       panes:
         - ./bin/arangod --console /tmp/test
-        - ./bin/arangosh --jslint js/common/modules/org/arangodb/foxx.js
+        - ./bin/arangosh --jslint js/server/modules/org/arangodb/foxx.js

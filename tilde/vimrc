@@ -143,6 +143,17 @@ imap <M-Right> <Esc><Right>wi
 map k gk
 map j gj
 
+" === Custom Functions ===
+" Stuff I wrote to enhance my workflow
+
+" Open the current file in Marked
+function Marked()
+  silent !open -a Marked %
+  redraw!
+endfunction
+command! Marked
+      \ execute Marked()
+
 " --- End ---
 " This is required for Vundle
 filetype plugin indent on
