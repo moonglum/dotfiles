@@ -21,6 +21,7 @@ brews:
 - node
 - optiPNG
 - postgresql
+- reattach-to-user-namespace
 - redis
 - rlwrap
 - tig
