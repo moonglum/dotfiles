@@ -19,6 +19,10 @@ set cursorline
 set noswapfile
 " Use the clipboard of Mac OS
 " set clipboard=unnamed
+" This makes RVM work inside Vim. I have no idea why – gary bernhardt
+set shell=bash
+" Clear the search buffer when hitting return
+:nnoremap <CR> :nohlsearch<cr>
 
 " === MacVim Setup ===
 
