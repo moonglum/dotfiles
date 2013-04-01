@@ -1,0 +1,22 @@
+{
+  "common": {
+    "term_truecolor": false,
+    "dividers": {
+      "left": {
+        "hard": " ",
+        "soft": " "
+      },
+      "right": {
+        "hard": " ",
+        "soft": " "
+      }
+    },
+    "spaces": 1
+  },
+  "ext": {
+    "tmux": {
+      "colorscheme": "default",
+      "theme": "default"
+    }
+  }
+}
