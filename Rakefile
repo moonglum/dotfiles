@@ -12,7 +12,8 @@ package_managers = [
   OhMyZSH.new("moonglum"),
   Homebrew.new(packages["brews"]),
   Vundle.new,
-  Rvm.new(packages["rubies"])
+  Rvm.new(packages["rubies"]),
+  Python.new(packages["pips"])
 ]
 
 desc "Setup the dotfiles"
