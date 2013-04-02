@@ -69,6 +69,8 @@ Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-commentary"
 " Tbone: tmux integration
 Bundle "tpope/vim-tbone"
+" Dispatch: asynchronous build and test dispatcher
+Bundle "tpope/vim-dispatch:"
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
