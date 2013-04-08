@@ -89,7 +89,7 @@ function arango-rebuild {
   make clean
   make setup
   make setup
-  ./configure --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu --enable-relative
+  ./configure --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu --enable-relative --enable-maintainer-mode
   make -j4
 }
 
