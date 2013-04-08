@@ -50,12 +50,12 @@ I'm using gmarik's vundle for plugin management. It's great. I use the following
 
 ## Miscellaneous
 
-* I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. Using [this version](https://github.com/sorin-ionescu/solarized/blob/692b152ed669cd0435d5233515fe6d17d67fe7a7/osx-terminal.app-colors-solarized/xterm-256color/Solarized%20Dark%20xterm-256color.terminal) of the Solarized Theme for Terminal.app.
+* I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful.
 * [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) is the font I'm using. In 14px. I know that's huge, but sometimes I lean back in my chair to reason about my code (like a sir). And then I still want to be able to read my code ;)
 * My terminal emulator of choice is iTerm2.
 * All my projects are stored in `~/Code`. I can switch to any of the projects via `c PROJECT_NAME` including auto completion. See my zshrc for that.
-* I use US-Extended  as my keyboard layout. The German layout is useless.
-* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating
+* I use US-Extended as my keyboard layout. The German layout is useless.
+* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating.
 
 ## Thanks
 
