@@ -24,6 +24,7 @@ brews:
 - reattach-to-user-namespace
 - redis
 - rlwrap
+- swi-prolog
 - tig
 - tmux
 - tree
