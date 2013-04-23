@@ -29,6 +29,7 @@ brews:
 - tmux
 - tree
 - wget
+- zsh
 pips:
 - pygments
 - "git+git://github.com/Lokaltog/powerline"
