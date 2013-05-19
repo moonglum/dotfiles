@@ -51,6 +51,7 @@ Bundle "tpope/vim-haml"
 Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-markdown"
 Bundle "kchmck/vim-coffee-script"
+Bundle "vim-scripts/VimClojure"
 
 " === Added Functionality ===
 " Syntastic: Really great Syntax checker
@@ -133,6 +134,9 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 " Recognize CoffeeScript
 au BufNewFile,BufRead *.coffee set ft=coffee
+
+" Recognize Clojure
+au BufNewFile,BufRead *.clj set ft=clojure
 
 " === Movements ===
 " Stolen from railsbros-dirk

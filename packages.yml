@@ -14,6 +14,7 @@ brews:
 - htop-osx
 - hub
 - imagemagick
+- leiningen
 - jq
 - macvim:
   - --override-system-vim
