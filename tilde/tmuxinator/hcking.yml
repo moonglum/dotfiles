@@ -9,4 +9,4 @@ tabs:
       panes:
         - vim
         - #empty, will just run plain bash
-  - console: bundle exec rails c
+  - console: bundle exec rails s
