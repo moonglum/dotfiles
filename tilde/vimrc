@@ -127,7 +127,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call 
 au BufRead,BufNewFile *.tex call s:setupWrapping()
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.rabl} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,Capfile,config.ru,*.rake,*.rabl} set ft=ruby
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
@@ -137,6 +137,9 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 
 " Recognize Clojure
 au BufNewFile,BufRead *.clj set ft=clojure
+
+" Recognize Prolog
+au BufNewFile,BufRead *.pl set ft=prolog
 
 " === Movements ===
 " Stolen from railsbros-dirk
@@ -163,6 +166,10 @@ function Marked()
 endfunction
 command! Marked
       \ execute Marked()
+
+" === Leader Key ===
+
+nnoremap <Leader>m :Make<CR>
 
 " --- End ---
 " This is required for Vundle
