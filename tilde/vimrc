@@ -167,6 +167,18 @@ endfunction
 command! Marked
       \ execute Marked()
 
+function JSLint()
+  !jslint %
+endfunction
+command! JSLint
+      \ execute JSLint()
+
+function JSHint()
+  !jshint %
+endfunction
+command! JSHint
+      \ execute JSHint()
+
 " === Leader Key ===
 
 nnoremap <Leader>m :Make<CR>
