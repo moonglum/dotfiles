@@ -52,6 +52,7 @@ Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-markdown"
 Bundle "kchmck/vim-coffee-script"
 Bundle "vim-scripts/VimClojure"
+Bundle "jnwhiteh/vim-golang"
 
 " === Added Functionality ===
 " Syntastic: Really great Syntax checker
@@ -140,6 +141,9 @@ au BufNewFile,BufRead *.clj set ft=clojure
 
 " Recognize Prolog
 au BufNewFile,BufRead *.pl set ft=prolog
+
+" Recognize Go
+au BufNewFile,BufRead *.go set ft=go
 
 " === Movements ===
 " Stolen from railsbros-dirk
