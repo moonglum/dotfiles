@@ -97,6 +97,24 @@ function current-version {
   gem list -r $1$
 }
 
+# Crazy Stuff
+# Based upon DAS
+function print-x-times {
+  jot -b $2 - 1 $1 | xargs | tr -d ' '
+}
+
+function run-rake-task-for-revision {
+  git checkout -q $2 &&
+    bundle update --quiet &&
+    bundle exec rake $1 |
+    grep Finished |
+    awk '{print $3}' |
+    read time &&
+    ((hashes = $time * 50)) &&
+    echo "$rev `print-x-times $hashes '#'` $time"
+}
+# git rev-list --reverse development~20..development | while read rev; do run-rake-task-for-revision spec:unit $rev; done
+
 # iTunes Control
 alias play='osascript -e "tell application \"iTunes\" to play"'
 alias pause='osascript -e "tell application \"iTunes\" to pause"'
