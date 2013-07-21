@@ -1,19 +1,30 @@
 {
   "default_module": "powerline.segments.common",
+  "segment_data": {
+    "date": {
+      "before": "⌚ "
+    }
+  },
   "segments": {
     "right": [
       {
+        "name": "branch"
+      },
+      {
+        "name": "environment",
+        "args": {
+          "variable": "RUBY_VERSION"
+        }
+      },
+      {
         "name": "date",
         "args": {
-          "format": "%e. %b. %H:%M",
+          "format": "%H:%M",
           "istime": true
         }
       },
       {
-        "name": "hostname",
-        "args": {
-          "only_if_ssh": true
-        }
+        "name": "hostname"
       }
     ]
   }
