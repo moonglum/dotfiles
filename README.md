@@ -6,22 +6,16 @@ First you need to install `rake` and `exogenesis` via Ruby Gems. Then it can be 
 
 ## ZSH
 
-I use [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). It has nice plugins that are a great inspiration. I will probably set-up my own zsh config from ground-up, but for now Vim is my priority.
-
-This is the prompt I created and use:
+My ZSH setup is quite minimal, nothing crazy going on here. Just standard stuff like activating auto complete, adjusting the PATH and lots of aliases and tiny functions. This is the prompt I created and use:
 
 ![Image of the prompt](http://images.moonglum.net/zsh.jpg)
-
-I also created a [pull-request](https://github.com/robbyrussell/oh-my-zsh/pull/1123), but themes won't get pulled into the project anymore. Therefore I use [my own fork](https://github.com/moonglum/oh-my-zsh).
-
-The only plugin I currently use is the git plugin, but I may look at other plugins in the future.
 
 ## tmux
 
 Use tmux, it rocks!  
 I configured it with some more Vim-like bindings and use [powerline](https://github.com/Lokaltog/powerline). I really like it, it looks like this:
 
-![Image of the powerline](http://images.moonglum.net/tmux.png)
+![Image of the powerline](http://images.moonglum.net/tmux-version-2.png)
 
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions. tmux is so ingrained in my workflow that I start it automatically whenever I open a new iTerm2 window via the `Send text at start` option with `tmux new-session -A -s standard`.
 
@@ -29,7 +23,7 @@ I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my developm
 
 When I started with Vim, I used Janus. But it was way too much stuff in there that I possibly will never use. Also I like to know my configuration ;) So I re-started my Vimrc from Scratch.
 
-Most of the time I use Vim in the terminal, because of tmux. Occasionally I use MacVim. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim.
+I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim.
 I'm using gmarik's vundle for plugin management. It's great. I use the following plugins:
 
 ### Additional Language Support
@@ -59,7 +53,7 @@ I'm using gmarik's vundle for plugin management. It's great. I use the following
 
 ## Thanks
 
-* To Robby Russel for Oh-My-Zsh
+* To Robby Russel for Oh-My-Zsh and Greg V. for zshuery, which inspired a lot of my zsh setup
 * To Carl and Yehuda for Janus, which I used when I started with Vim
 * To Drew Neil for his screencasts and his book about Vim
 * To Brian P. Hogan for his book about tmux

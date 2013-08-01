@@ -1,22 +1,74 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Colors are awesome
+autoload colors; colors;
 
-# Set name of the theme to load.
-ZSH_THEME="moonglum"
+# Load the completion system
+autoload -U compinit && compinit
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# Parameter Expansion, Command Substitution and arithemtic expansion are performed in prompts
+setopt prompt_subst
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git)
+# No beep or visual bell
+setopt no_beep
 
-source $ZSH/oh-my-zsh.sh
+# Remove any right prompt from display when accepting a commandline
+setopt transient_rprompt
+
+# Try to find a similar command when the command was not found
+setopt correct
+
+# Enable completion within a word
+setopt complete_in_word
+
+# Enable emacs mode
+setopt emacs
+
+# History Configuration (from zshuery)
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt share_history
+setopt append_history
+setopt hist_verify
+setopt inc_append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_space
+
+# quote pasted URLs
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+# My Prompt
+local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})  "
+
+function git-status() {
+  if [[ `git rev-parse --git-dir 2>/dev/null` != '' ]]; then
+    # We are in a git repo
+
+    local gitdirty=""
+    if [[ `git ls-files -m` != "" ]]; then
+      # There are changes to files
+
+      gitdirty="%{$fg[red]%} ✗%{$reset_color%}"
+    fi
+
+    echo ' @' `git symbolic-ref -q HEAD | sed 's/refs\/heads\///'` $gitdirty
+  fi
+}
+
+PROMPT='${smiley}'
+RPROMPT='%~$(git-status)'
 
 # Necessary
 alias please='sudo'
 
+# Fast one directory up
+alias ..='cd ..'
+
 # One-letter shortcuts
+alias l='ls -al'
 alias o='open'
 alias m='make'
 alias g='bundle exec guard'
@@ -29,7 +81,7 @@ alias marked="open -a Marked"
 alias pm="open -a Pixelmator"
 
 # Reload zshrc
-alias src="source ~/.zshrc"
+alias reload="source ~/.zshrc"
 
 # Copy output of last command to clipboard
 alias copy_to_pastebord="fc -e - | pbcopy"
@@ -41,7 +93,7 @@ alias ip="curl icanhazip.com"
 alias csi='rlwrap csi '
 
 # Github-flavored Git
-alias git=hub
+function git(){hub $@}
 
 # Manuals for Ruby People
 alias man="gem man -s"
@@ -80,13 +132,7 @@ PATH=/Users/moonglum/Library/Python/2.7/bin:$PATH
 # For Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
-# ArangoDB Development
-function arangod-devel {
-  mkdir /tmp/arangodb-1.2
-  cd ~/Code/arangodb
-  ./bin/arangod /tmp/arangodb-1.2
-}
-
+# Update ArangoDB devel and rebuild it
 function arango-rebuild {
   cd ~/Code/arangodb
   git pull
@@ -98,13 +144,18 @@ function arango-rebuild {
   make -j4
 }
 
+# Sharing
+function share_image {
+  scp $1 moonglum@moonglum.net:~/images/
+  echo http://images.moonglum.net/$1
+}
+
 # Ruby Development
 function current-version {
   gem list -r $1$
 }
 
-# Crazy Stuff
-# Based upon DAS
+# Crazy Stuff from DAS
 function print-x-times {
   jot -b $2 - 1 $1 | xargs | tr -d ' '
 }
@@ -121,11 +172,41 @@ function run-rake-task-for-revision {
 }
 # git rev-list --reverse development~20..development | while read rev; do run-rake-task-for-revision spec:unit $rev; done
 
+# mkdir and cd to it (from oh-my-zsh)
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+# TODO: Check functionality
+# extract archive (from zshuery)
+# ex() {
+#   if [[ -f $1 ]]; then
+#     case $1 in
+#       *.tar.bz2) tar xvjf $1;;
+#       *.tar.gz) tar xvzf $1;;
+#       *.tar.xz) tar xvJf $1;;
+#       *.tar.lzma) tar --lzma xvf $1;;
+#       *.bz2) bunzip $1;;
+#       *.rar) unrar $1;;
+#       *.gz) gunzip $1;;
+#       *.tar) tar xvf $1;;
+#       *.tbz2) tar xvjf $1;;
+#       *.tgz) tar xvzf $1;;
+#       *.zip) unzip $1;;
+#       *.Z) uncompress $1;;
+#       *.7z) 7z x $1;;
+#       *.dmg) hdiutul mount $1;; # mount OS X disk images
+#       *) echo "'$1' cannot be extracted via >ex<";;
+#     esac
+#   else
+#     echo "'$1' is not a valid file"
+#   fi
+# }
+
 # iTunes Control
 alias play='osascript -e "tell application \"iTunes\" to play"'
 alias pause='osascript -e "tell application \"iTunes\" to pause"'
 
-# For my code directory
 alias c='nocorrect c'
 c() { cd ~/Code/$1; }
 _c() { _files -W ~/Code -/; }
