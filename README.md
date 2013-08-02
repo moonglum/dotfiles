@@ -6,7 +6,7 @@ First you need to install `rake` and `exogenesis` via Ruby Gems. Then it can be 
 
 ## ZSH
 
-My ZSH setup is quite minimal, nothing crazy going on here. Just standard stuff like activating auto complete, adjusting the PATH and lots of aliases and tiny functions. This is the prompt I created and use:
+My ZSH setup is quite minimal, nothing crazy going on here. Just standard stuff like activating auto complete, syntax highlighting, adjusting the PATH and lots of aliases and tiny functions. This is the prompt I created and use:
 
 ![Image of the prompt](http://images.moonglum.net/zsh.jpg)
 

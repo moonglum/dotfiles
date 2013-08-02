@@ -12,6 +12,7 @@ package_managers = [
   Homebrew.new(packages["brews"]),
   Vundle.new,
   Rvm.new(packages["rubies"]),
+  GitRepo.new(packages["repos"]),
   Python.new(packages["pips"])
 ]
 
