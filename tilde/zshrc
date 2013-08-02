@@ -61,6 +61,17 @@ function git-status() {
 PROMPT='${smiley}'
 RPROMPT='%~$(git-status)'
 
+# Configure auto correct
+setopt correct_all
+alias man='nocorrect man'
+alias mv='nocorrect mv'
+alias mysql='nocorrect mysql'
+alias mkdir='nocorrect mkdir'
+alias curl='nocorrect curl'
+alias rake='nocorrect rake'
+alias make='nocorrect make'
+alias cake='nocorrect cake'
+
 # Necessary
 alias please='sudo'
 
