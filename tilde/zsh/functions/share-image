@@ -1,0 +1,6 @@
+#!/bin/zsh
+## share-image
+# Share an image via images.moonglum.net
+
+scp $1 moonglum@moonglum.net:~/images/
+echo http://images.moonglum.net/$1

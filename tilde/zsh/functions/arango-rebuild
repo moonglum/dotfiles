@@ -1,0 +1,12 @@
+#!/bin/zsh
+## arango-rebuild
+# Update ArangoDB devel and rebuild it
+
+cd ~/Code/arangodb
+git pull
+make clean
+make setup
+make setup
+./configure --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu --enable-relative
+# --enable-maintainer-mode
+make -j4
