@@ -46,15 +46,9 @@ Bundle 'altercation/vim-colors-solarized'
 set background=dark
 colorscheme solarized
 
-" === Additional Language Support ===
-Bundle "tpope/vim-haml"
-Bundle "pangloss/vim-javascript"
-Bundle "tpope/vim-markdown"
-Bundle "kchmck/vim-coffee-script"
-Bundle "vim-scripts/VimClojure"
-Bundle "jnwhiteh/vim-golang"
-
 " === Added Functionality ===
+" Polyglot: A collection of language packs, loaded on demand
+Bundle "sheerun/vim-polyglot"
 " Syntastic: Really great Syntax checker
 Bundle "scrooloose/syntastic"
 " Tabular: Amazing Aligning Utility
