@@ -47,6 +47,9 @@ function mcd() { mkdir -p "$1" && cd "$1"; }
 # Ruby Development
 function current-version() { gem list -r $1$ }
 
+# Speed Test
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+
 # Code Directory
 alias c='nocorrect c'
 c() { cd ~/Code/$1; }
