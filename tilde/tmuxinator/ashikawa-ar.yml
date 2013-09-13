@@ -3,9 +3,8 @@
 
 project_name: ashikawa-ar
 project_root: ~/code/ashikawa-ar
-# rvm: 1.9.2@rails_project
 pre: rm -r /tmp/arango; mkdir /tmp/arango
-tabs:
+windows:
   - workspace:
       layout: main-vertical
       panes:

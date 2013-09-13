@@ -3,7 +3,7 @@
 project_name: hcking
 project_root: ~/code/hcking
 pre: mysql.server start
-tabs:
+windows:
   - editor:
       layout: main-vertical
       panes:
