@@ -3,7 +3,6 @@
 # Update ArangoDB devel and rebuild it
 
 cd ~/Code/arangodb
-git pull
 make clean
 make setup
 make setup
