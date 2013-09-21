@@ -69,8 +69,6 @@ Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
 " Commentary: Minimalistic commenting plugin
 Bundle "tpope/vim-commentary"
-" Tbone: tmux integration
-Bundle "tpope/vim-tbone"
 " Dispatch: asynchronous build and test dispatcher
 Bundle "tpope/vim-dispatch:"
 
