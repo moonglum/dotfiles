@@ -55,8 +55,14 @@ Bundle "scrooloose/syntastic"
 Bundle "godlygeek/tabular"
 " CtrlP: Full path fuzzy finder
 Bundle "kien/ctrlp.vim"
-" ... that ignores certain files
-set wildignore+=*aux,Gemfile.lock,*.gitkeep,doc
+" ... that ignores files that are git ignored (thanks @railsbros-dirk)
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard -co'],
+    \ 2: ['.ctrlp_root_dir', 'find %s -type f'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+\ }
 " Ack: ack integration
 Bundle "mileszs/ack.vim"
 " Fugitive: The best Git integration that exists
