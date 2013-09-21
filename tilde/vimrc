@@ -134,15 +134,6 @@ au BufNewFile,BufRead *.json set ft=javascript
 " Recognize CoffeeScript
 au BufNewFile,BufRead *.coffee set ft=coffee
 
-" Recognize Clojure
-au BufNewFile,BufRead *.clj set ft=clojure
-
-" Recognize Prolog
-au BufNewFile,BufRead *.pl set ft=prolog
-
-" Recognize Go
-au BufNewFile,BufRead *.go set ft=go
-
 " === Movements ===
 " Stolen from railsbros-dirk
 
