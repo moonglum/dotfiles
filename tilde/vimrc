@@ -71,6 +71,8 @@ Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-commentary"
 " Dispatch: asynchronous build and test dispatcher
 Bundle "tpope/vim-dispatch:"
+" Surround: Quoting/Parenthesizing made simple
+Bundle "tpope/vim-surround"
 
 " ========= Whitespace, Indentation and Invisible Characters =========
 " based upon vimcasts
