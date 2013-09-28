@@ -204,8 +204,8 @@ function Marked()
 endfunction
 command! Marked :call Marked()
 
-command! JSLint :Dispatch jslint %
-command! JSHint :Dispatch jshint %
+command! JSLint :Dispatch jslint "%:p"
+command! JSHint :Dispatch jshint "%:p"
 
 " === Leader Key ===
 
