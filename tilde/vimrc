@@ -121,12 +121,6 @@ let g:ctrlp_use_caching = 0
 set list
 set listchars=tab:›\ ,trail:‹
 
-" Tabs should be 2 spaces
-set tabstop=2
-" Soft-Tabs should be 2 spaces
-set softtabstop=2
-" When shifting, use 2 spaces
-set shiftwidth=2
 " Use Soft-Tabs
 set expandtab
 
@@ -149,31 +143,38 @@ set spell
 set spelllang=en_us
 
 " === Language Specific Setting ===
-" From janus
 
 " File types that do not contain source code should wrap their text
 " and should not have a character limit per line.
-function! s:setupWrapping()
+function! s:setupForProse()
   set wrap
   set linebreak
   set nolist
   match ErrorMsg ''
 endfunction
 
+" Use two spaces for tabs, soft-tabs and when shifting
+function! s:setupTwoSpacesIndent()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endfunction
+
+" Use four spaces for tabs, soft-tabs and when shifting
 function! s:setupFourSpacesIndent()
-  " Tabs should be 4 spaces
   set tabstop=4
-  " Soft-Tabs should be 4 spaces
   set softtabstop=4
-  " When shifting, use 4 spaces
   set shiftwidth=4
 endfunction
 
+" Use two spaces indent per default
+call s:setupTwoSpacesIndent()
+
 " Make sure all markdown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping() | call s:setupFourSpacesIndent()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupForProse() | call s:setupFourSpacesIndent()
 
 " LaTeX files should also have Wrapping
-au BufRead,BufNewFile *.tex call s:setupWrapping()
+au BufRead,BufNewFile *.tex call s:setupForProse()
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,Capfile,config.ru,*.rake,*.rabl} set ft=ruby
