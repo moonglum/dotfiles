@@ -25,6 +25,8 @@ set shell=bash
 :nnoremap <CR> :nohlsearch<cr>
 " Fix slow O inserts from Gary Bernhardt
 :set timeout timeoutlen=1000 ttimeoutlen=100
+" Directory of current file (`:e %%` for example) – Gary Bernhardt
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " === MacVim Setup ===
 
