@@ -203,13 +203,13 @@ command! Marked
       \ execute Marked()
 
 function JSLint()
-  !jslint %
+  :Dispatch jslint %
 endfunction
 command! JSLint
       \ execute JSLint()
 
 function JSHint()
-  !jshint %
+  :Dispatch jshint %
 endfunction
 command! JSHint
       \ execute JSHint()
