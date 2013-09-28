@@ -138,6 +138,11 @@ set ai
 " No further configuration necessary:
 " Checks Comments, Latex, Markdown...
 set spell
+
+command! British :set spelllang=en_gb
+command! American :set spelllang=en_us
+command! German :set spelllang=de
+
 " I prefer British English, but American English is used in almost all projects
 " I'm involved in. Naff.
 set spelllang=en_us
