@@ -199,7 +199,7 @@ map j gj
 
 " Open the current file in Marked
 function Marked()
-  silent !open -a Marked %
+  silent exe "!open -a Marked %"
   redraw!
 endfunction
 command! Marked :call Marked()
