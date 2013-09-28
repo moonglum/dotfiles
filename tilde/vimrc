@@ -22,9 +22,9 @@ set noswapfile
 " This makes RVM work inside Vim. I have no idea why – gary bernhardt
 set shell=bash
 " Clear the search buffer when hitting return
-:nnoremap <CR> :nohlsearch<cr>
+nnoremap <CR> :nohlsearch<cr>
 " Fix slow O inserts from Gary Bernhardt
-:set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=1000 ttimeoutlen=100
 " Directory of current file (`:e %%` for example) – Gary Bernhardt
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -202,20 +202,10 @@ function Marked()
   silent !open -a Marked %
   redraw!
 endfunction
-command! Marked
-      \ execute Marked()
+command! Marked :call Marked()
 
-function JSLint()
-  :Dispatch jslint %
-endfunction
-command! JSLint
-      \ execute JSLint()
-
-function JSHint()
-  :Dispatch jshint %
-endfunction
-command! JSHint
-      \ execute JSHint()
+command! JSLint :Dispatch jslint %
+command! JSHint :Dispatch jshint %
 
 " === Leader Key ===
 
