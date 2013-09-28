@@ -187,14 +187,6 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 " === Movements ===
 " Stolen from railsbros-dirk
 
-" OSX like movement
-" Currently only works in MacVim
-" Jump words with alt-arrow (osx style)
-map <M-Left> b
-map <M-Right> w
-imap <M-Left> <Esc>bi
-imap <M-Right> <Esc><Right>wi
-
 " Make cursor move by visual lines instead of file lines (when wrapping)
 map k gk
 map j gj
