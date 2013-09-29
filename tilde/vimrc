@@ -1,42 +1,25 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-" This is required for Vundle
-filetype off
-" Activate Syntax Highlight
-syntax enable
-" Set default encoding to UTF-8
-set encoding=utf-8
-" Highlight search results
-set hlsearch
-" Deactivate Wrapping
-set nowrap
-" Treat all numbers as decimal
-set nrformats=
-" Highlight the Current Line
-set cursorline
-" I don't like Swapfiles
-set noswapfile
-" Use the clipboard of Mac OS
-" set clipboard=unnamed
-" This makes RVM work inside Vim. I have no idea why – gary bernhardt
-set shell=bash
-" Clear the search buffer when hitting return
-nnoremap <CR> :nohlsearch<cr>
-" Fix slow O inserts from Gary Bernhardt
-set timeout timeoutlen=1000 ttimeoutlen=100
-" Directory of current file (`:e %%` for example) – Gary Bernhardt
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
+set nocompatible                            " Use Vim settings, rather then Vi settings
+filetype off                                " This is required for Vundle
+syntax enable                               " Activate Syntax Highlight
+set encoding=utf-8                          " Set default encoding to UTF-8
+set hlsearch                                " Highlight search results
+set nowrap                                  " Deactivate Wrapping
+set nrformats=                              " Treat all numbers as decimal
+set cursorline                              " Highlight the Current Line
+set noswapfile                              " I don't like Swapfiles
+set shell=bash                              " This makes RVM work inside Vim. I have no idea why – Gary Bernhardt
+set timeout timeoutlen=1000 ttimeoutlen=100 " Fix slow O inserts from Gary Bernhardt
+set ai                                      " Automatically set the indent of a new line
+set spell spelllang=en_us                   " Activate spell checking and set American as default
+set list listchars=tab:›\ ,trail:‹          " Show invisible characters: Tabs & trailing whitespace
+set expandtab                               " Use Soft-Tabs
+match ErrorMsg '\%>100v.\+'                 " Highlight Characters that overstep 100 characters
 
 " === MacVim Setup ===
-
 if has("gui_running")
-  " Right Font and Font-Size
-  set guifont=Source\ Code\ Pro:h14
-  " No Toolbar
-  set guioptions=egmrt
-  " No Scrollbar
-  set guioptions-=r
+  set guifont=Source\ Code\ Pro:h14 " Right Font and Font-Size
+  set guioptions=egmrt              " No Toolbar
+  set guioptions-=r                 " No Scrollbar
 endif
 
 " === Vundle Setup ===
@@ -113,67 +96,30 @@ let g:ctrlp_switch_buffer = 'e'
 " Disable caching
 let g:ctrlp_use_caching = 0
 
-" ========= Whitespace, Indentation and Invisible Characters =========
-" based upon vimcasts
-
-" Show invisible characters:
-" Tabs and trailing whitespace
-set list
-set listchars=tab:›\ ,trail:‹
-
-" Use Soft-Tabs
-set expandtab
-
-" Makefiles require tabs
-autocmd FileType make setlocal noexpandtab
-
-" Highlight Characters that overstep the 100 character limit
-match ErrorMsg '\%>100v.\+'
-
-" Automatically set the indent of a new line (local to buffer)
-" from railsbros-dirk
-set ai
-
-" === Spell Checking ===
-" No further configuration necessary:
-" Checks Comments, Latex, Markdown...
-set spell
-
-command! British :set spelllang=en_gb
-command! American :set spelllang=en_us
-command! German :set spelllang=de
-
-" I prefer British English, but American English is used in almost all projects
-" I'm involved in. Naff.
-set spelllang=en_us
-
 " === Language Specific Setting ===
 
 " File types that do not contain source code should wrap their text
 " and should not have a character limit per line.
 function! s:setupForProse()
-  set wrap
-  set linebreak
-  set nolist
+  set wrap linebreak nolist
   match ErrorMsg ''
 endfunction
 
 " Use two spaces for tabs, soft-tabs and when shifting
 function! s:setupTwoSpacesIndent()
-  set tabstop=2
-  set softtabstop=2
-  set shiftwidth=2
+  set tabstop=2 softtabstop=2 shiftwidth=2
 endfunction
 
 " Use four spaces for tabs, soft-tabs and when shifting
 function! s:setupFourSpacesIndent()
-  set tabstop=4
-  set softtabstop=4
-  set shiftwidth=4
+  set tabstop=4 softtabstop=4 shiftwidth=4
 endfunction
 
 " Use two spaces indent per default
 call s:setupTwoSpacesIndent()
+
+" Makefiles require tabs
+autocmd FileType make setlocal noexpandtab
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupForProse() | call s:setupFourSpacesIndent()
@@ -189,13 +135,11 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 
 " === Movements ===
 " Stolen from railsbros-dirk
-
 " Make cursor move by visual lines instead of file lines (when wrapping)
 map k gk
 map j gj
 
-" === Custom Functions ===
-" Stuff I wrote to enhance my workflow
+" === Custom Functions and Commands ===
 
 " Open the current file in Marked
 function Marked()
@@ -204,8 +148,23 @@ function Marked()
 endfunction
 command! Marked :call Marked()
 
+" Check current file with JSLint
 command! JSLint :Dispatch jslint "%:p"
+
+" Check current file with JSHint
 command! JSHint :Dispatch jshint "%:p"
+
+" Switch spell checking language
+command! British :set spelllang=en_gb
+command! American :set spelllang=en_us
+command! German :set spelllang=de
+
+" === Mappings ===
+
+" Clear the search buffer when hitting return
+nnoremap <CR> :nohlsearch<cr>
+" Directory of current file (`:e %%` for example) – Gary Bernhardt
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " === Leader Key ===
 
