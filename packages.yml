@@ -3,7 +3,6 @@ rubies:
 - ruby-1.9.2
 - ruby-1.9.3
 - ruby-2.0.0
-- jruby-head
 brews:
 - ack
 - arangodb
@@ -34,6 +33,7 @@ brews:
 - zsh
 pips:
 - pygments
-- "git+git://github.com/Lokaltog/powerline"
+# TODO: Fix pip installer for Git dependencies
+# - "git+git://github.com/Lokaltog/powerline"
 repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh/plugins/zsh-syntax-highlighting"
