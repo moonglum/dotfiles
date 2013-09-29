@@ -13,6 +13,7 @@ set ai                                      " Automatically set the indent of a 
 set spell spelllang=en_us                   " Activate spell checking and set American as default
 set list listchars=tab:›\ ,trail:‹          " Show invisible characters: Tabs & trailing whitespace
 set expandtab                               " Use Soft-Tabs
+set tabstop=2 softtabstop=2 shiftwidth=2    " Use two spaces for tabs, soft-tabs and when shifting
 match ErrorMsg '\%>100v.\+'                 " Highlight Characters that overstep 100 characters
 
 " === MacVim Setup ===
@@ -105,18 +106,10 @@ function! s:setupForProse()
   match ErrorMsg ''
 endfunction
 
-" Use two spaces for tabs, soft-tabs and when shifting
-function! s:setupTwoSpacesIndent()
-  set tabstop=2 softtabstop=2 shiftwidth=2
-endfunction
-
 " Use four spaces for tabs, soft-tabs and when shifting
 function! s:setupFourSpacesIndent()
   set tabstop=4 softtabstop=4 shiftwidth=4
 endfunction
-
-" Use two spaces indent per default
-call s:setupTwoSpacesIndent()
 
 " Makefiles require tabs
 autocmd FileType make setlocal noexpandtab
