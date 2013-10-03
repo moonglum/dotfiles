@@ -73,6 +73,7 @@ alias rake='nocorrect rake'
 alias make='nocorrect make'
 alias cake='nocorrect cake'
 alias brew='nocorrect brew'
+alias bundle='nocorrect bundle'
 
 # Force myself to use [Readline shortcuts](http://www.bigsmoke.us/readline/shortcuts)
 left-arrow() { echo '\nCtrl-b or a word via Ctrl-w' }
