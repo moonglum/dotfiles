@@ -55,3 +55,9 @@ alias c='nocorrect c'
 c() { cd ~/Code/$1; }
 _c() { _files -W ~/Code -/; }
 compdef _c c
+
+# Notes Directory
+alias n='nocorrect n'
+n() { vim ~/Dropbox/Notes/$1; }
+_n() { _files -W ~/Dropbox/Notes -/; }
+compdef _n n
