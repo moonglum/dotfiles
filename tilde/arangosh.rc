@@ -1,0 +1,4 @@
+console = require("console");
+internal = require("internal");
+start_pretty_print();
+start_color_print();
