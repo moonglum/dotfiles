@@ -28,9 +28,6 @@ alias copy_to_pastebord="fc -e - | pbcopy"
 # Get current public IP
 alias ip="curl icanhazip.com"
 
-# Fix for REPLs and Editors without Readline
-alias csi='rlwrap csi '
-
 # Github-flavored Git
 function git(){hub $@}
 

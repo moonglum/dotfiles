@@ -1,0 +1,3 @@
+; Readline-replacement in csi
+(use linenoise)
+(current-input-port (make-linenoise-port))
