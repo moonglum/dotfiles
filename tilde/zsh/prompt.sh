@@ -1,21 +1,18 @@
 ## My Prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:*'           enable             git
+zstyle ':vcs_info:git:*'       check-for-changes  true
+zstyle ':vcs_info:git:*:-all-' command            /usr/local/bin/git
 
 local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})  "
 
-function git-status() {
-  if [[ `git rev-parse --git-dir 2>/dev/null` != '' ]]; then
-    # We are in a git repo
+precmd () {
+  zstyle ':vcs_info:git:*' actionformats      " @ %b|%a%u"
+  zstyle ':vcs_info:git:*' formats            " @ %b%u"
+  zstyle ':vcs_info:git:*' unstagedstr        " ✖"
 
-    local gitdirty=""
-    if [[ `git ls-files -m` != "" ]]; then
-      # There are changes to files
+  vcs_info
 
-      gitdirty="%{$fg[red]%} ✗%{$reset_color%}"
-    fi
-
-    echo ' @' `git symbolic-ref -q HEAD | sed 's/refs\/heads\///'` $gitdirty
-  fi
+  PROMPT='${smiley}'
+  RPROMPT='%~$vcs_info_msg_0_'
 }
-
-PROMPT='${smiley}'
-RPROMPT='%~$(git-status)'
