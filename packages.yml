@@ -1,3 +1,10 @@
+passengers:
+- dotfile
+- homebrew
+- vundle
+- rvm
+- git_repo
+directory_name: "tilde"
 rubies:
 - ruby-1.9.3
 - ruby-2.0.0
@@ -6,6 +13,7 @@ brews:
 - arangodb
 - chicken
 - clisp
+- gcc48
 - git
 - go
 - haskell-platform
@@ -13,6 +21,8 @@ brews:
 - hub
 - imagemagick
 - leiningen
+- libxml2
+- ruby-1.9.2
 - jq
 - macvim:
   - --override-system-vim
@@ -29,9 +39,5 @@ brews:
 - tree
 - wget
 - zsh
-pips:
-- pygments
-# TODO: Fix pip installer for Git dependencies
-# - "git+git://github.com/Lokaltog/powerline"
 repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh/plugins/zsh-syntax-highlighting"
