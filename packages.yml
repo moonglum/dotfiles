@@ -9,7 +9,7 @@ rubies:
 - ruby-1.9.3
 - ruby-2.0.0
 brews:
-- ack
+- ag
 - arangodb
 - chicken
 - clisp

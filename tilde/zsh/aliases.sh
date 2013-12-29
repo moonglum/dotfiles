@@ -47,6 +47,9 @@ function current-version() { gem list -r $1$ }
 # Speed Test
 alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
+# Trolling myself
+alias ack='echo "Use ag "'
+
 # Code Directory
 alias c='nocorrect c'
 c() { cd ~/Code/$1; }

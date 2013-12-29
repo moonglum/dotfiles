@@ -39,8 +39,6 @@ colorscheme solarized
 Bundle "sheerun/vim-polyglot"
 " Tabular: Amazing Aligning Utility
 Bundle "godlygeek/tabular"
-" Ack: ack integration
-Bundle "mileszs/ack.vim"
 " Fugitive: The best Git integration that exists
 Bundle "tpope/vim-fugitive"
 " Commentary: Minimalistic commenting plugin

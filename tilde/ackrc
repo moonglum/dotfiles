@@ -1,8 +1,0 @@
--i
---type-add=ruby=.haml,.rake,Gemfile
---type-add=js=.coffee
---type-set=sass=.scss
---ignore-dir=doc/
---ignore-dir=tmp/
---ignore-dir=log/
---ignore-dir=coverage/
