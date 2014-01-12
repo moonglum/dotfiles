@@ -16,6 +16,9 @@ set expandtab                               " Use Soft-Tabs
 set tabstop=2 softtabstop=2 shiftwidth=2    " Use two spaces for tabs, soft-tabs and when shifting
 match ErrorMsg '\%>100v.\+'                 " Highlight Characters that overstep 100 characters
 
+" Jump between pairs of keywords via %
+runtime macros/matchit.vim
+
 " === MacVim Setup ===
 if has("gui_running")
   set guifont=Source\ Code\ Pro:h14 " Right Font and Font-Size
