@@ -18,6 +18,7 @@ alias chrome="open -a \"Google Chrome\""
 alias safari="open -a Safari"
 alias marked="open -a Marked"
 alias pm="open -a Pixelmator"
+alias preview="open -a Preview"
 
 # Reload zshrc
 alias reload="source ~/.zshrc"
