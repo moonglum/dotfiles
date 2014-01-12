@@ -54,6 +54,9 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-repeat"
 " Emoji: Emojis. For Vim. Awesome.
 Bundle "junegunn/vim-emoji"
+" Textobj Rubyblock: Custom text object for selecting ruby blocks
+Bundle "kana/vim-textobj-user"
+Bundle "nelstrom/vim-textobj-rubyblock"
 
 " ======= Syntastic =======
 " Really great Syntax checker
