@@ -14,11 +14,11 @@ alias g='bundle exec guard'
 alias b='bundle'
 
 # Open files with Mac OS X applications
-alias chrome="open -a \"Google Chrome\""
-alias safari="open -a Safari"
-alias marked="open -a Marked"
-alias pm="open -a Pixelmator"
-alias preview="open -a Preview"
+function chrome() { open -a \"Google Chrome\" $@ }
+function safari(){ open -a Safari $@ }
+function marked(){ open -a Marked $@ }
+function pm(){ open -a Pixelmator $@ }
+function preview(){ open -a Preview $@ }
 
 # Reload zshrc
 alias reload="source ~/.zshrc"
