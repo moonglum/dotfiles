@@ -12,6 +12,7 @@ alias o='open'
 alias m='make'
 alias g='bundle exec guard'
 alias b='bundle'
+alias j='jump'
 
 # Open files with Mac OS X applications
 function chrome() { open -a \"Google Chrome\" $@ }
@@ -50,19 +51,7 @@ alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 
 # Trolling myself
 alias ack='echo "Use ag "'
-
-# Code Directory
-alias c='nocorrect c'
-c() { cd ~/Code/$1; }
-_c() { _files -W ~/Code -/; }
-compdef _c c
-
-# Notes Directory
-alias n='nocorrect n'
-n() { vim ~/Dropbox/Notes/$1; }
-_n() { _files -W ~/Dropbox/Notes -/; }
-compdef _n n
-
-# Desktop
-alias desktop='cd ~/Desktop'
-alias dropbox='cd ~/Dropbox'
+alias c='echo "Use j c"'
+alias n='echo "Use j n"'
+alias dropbox='echo "Use j dropbox"'
+alias desktop='echo "Use j desktop"'
