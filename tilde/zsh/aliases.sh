@@ -34,7 +34,7 @@ alias ip="curl icanhazip.com"
 function git(){hub $@}
 
 # Ruby-flavored Man
-alias man="gem man -s"
+function man() { gem man -s $@ }
 
 # iTunes Control
 alias play='osascript -e "tell application \"iTunes\" to play"'
