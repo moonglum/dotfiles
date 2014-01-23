@@ -67,7 +67,7 @@ I'm using @gmarik's vundle for plugin management. It's great. I use the followin
 * I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful.
 * [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) is the font I'm using. In 14px. I know that's huge, but sometimes I lean back in my chair to reason about my code (like a sir). And then I still want to be able to read my code :wink:
 * My terminal emulator of choice is [iTerm2](http://www.iterm2.com).
-* All my projects are stored in `~/Code`. I can switch to any of the projects via `c PROJECT_NAME` including auto completion. See my `zshrc` for that.
+* I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to directories I visit often. This includes their subdirectories, with autocomplete.
 * I use US-Extended as my keyboard layout. The German layout is useless.
 * When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating, Au4, Daft Punk, LukHash.
 
