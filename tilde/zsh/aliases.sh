@@ -62,3 +62,7 @@ alias n='nocorrect n'
 n() { vim ~/Dropbox/Notes/$1; }
 _n() { _files -W ~/Dropbox/Notes -/; }
 compdef _n n
+
+# Desktop
+alias desktop='cd ~/Desktop'
+alias dropbox='cd ~/Dropbox'
