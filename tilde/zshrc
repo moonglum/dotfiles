@@ -3,7 +3,6 @@ source ~/.zsh/configuration.sh
 source ~/.zsh/prompt.sh
 source ~/.zsh/aliases.sh
 source ~/.zsh/path.sh
-source ~/.zsh/jump.sh
 
 # Plugins
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,10 @@
+#!/bin/zsh
+## marks
+# Print all jump marks
+# from oh-my-zsh/plugins/jump
+
+for link in $MARKPATH/*(@); do
+  local markname="$fg[cyan]${link:t}$reset_color"
+  local markpath="$fg[blue]$(readlink $link)$reset_color"
+  printf "%s\t -> %s\t\n" $markname $markpath
+done
