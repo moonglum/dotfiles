@@ -21,6 +21,8 @@ I configured it with some more Vim-like bindings and a powerline-inspired status
 
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions. tmux is so ingrained in my workflow that I start it automatically whenever I open a new iTerm2 window via the `Send text at start` option with `tmux new-session -A -s standard`.
 
+I also use [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) for Vim. That's very important.
+
 ## Vim
 
 When I started with Vim, I used Janus. But it was way too much stuff in there that I possibly will never use. Also I like to know my configuration :wink: So I re-started my Vimrc from Scratch.
@@ -40,21 +42,42 @@ I'm using @gmarik's vundle for plugin management. It's great. I use the followin
 * Really great **Syntax checker** via [`scrooloose/syntastic`](https://github.com/scrooloose/syntastic)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](https://github.com/kien/ctrlp.vim)
 
+## Other commandline tools
+
+* `git` is the only version control system I use. It has two amazing companions: [`hub`](http://hub.github.com) and [`tig`](http://jonas.nitro.dk/tig)
+* `ag` aka. [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) is a replacement for grep that is so fast, that I can't really believe it.
+* [`htop`](https://github.com/max-horvath/htop-osx) is a replacement for `top`
+* [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data
+* [`optiPNG`](http://optipng.sourceforge.net) is an PNG optimizer
+* [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree
+* [`wget`](http://www.gnu.org/software/wget), when I don't want to mess around with `curl`
+
+## Languages I work or play with
+
+* Ruby (Daily)
+* JavaScript (Daily)
+* Chicken Scheme & Common Lisp (Experiments)
+* Clojure & ClojureScript (Just got started)
+* Haskell (Wow. So Monads.)
+* Prolog (Haven't used it in a while)
+* Rust (Just got started)
+
 ## Miscellaneous
 
 * I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful.
 * [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) is the font I'm using. In 14px. I know that's huge, but sometimes I lean back in my chair to reason about my code (like a sir). And then I still want to be able to read my code :wink:
-* My terminal emulator of choice is iTerm2.
+* My terminal emulator of choice is [iTerm2](http://www.iterm2.com).
 * All my projects are stored in `~/Code`. I can switch to any of the projects via `c PROJECT_NAME` including auto completion. See my `zshrc` for that.
 * I use US-Extended as my keyboard layout. The German layout is useless.
-* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating.
+* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating, Au4, Daft Punk, LukHash.
 
 ## Thanks
 
-* To Robby Russel for Oh-My-Zsh and Greg V. for zshuery, which inspired a lot of my zsh setup
-* To Carl and Yehuda for Janus, which I used when I started with Vim
-* To Drew Neil for his screencasts and his book about Vim
-* To Brian P. Hogan for his book about tmux
+* To Robby Russel for [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) and Greg V. for [zshuery](https://github.com/myfreeweb/zshuery), which inspired a lot of my zsh setup
+* To Carl and Yehuda for [Janus](https://github.com/carlhuda/janus), which I used when I started with Vim
+* To Drew Neil for his [screencasts](http://vimcasts.org) and his [book about Vim](http://pragprog.com/book/dnvim/practical-vim)
+* To Brian P. Hogan for his [book about tmux](http://pragprog.com/book/bhtmux/tmux)
+* To Gary Bernhardt for his [screencasts](https://www.destroyallsoftware.com/screencasts)
 * To the following people for letting me steal from their dotfiles:
   * skwp
   * railsbros-dirk

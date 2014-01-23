@@ -16,14 +16,13 @@ brews:
 - clisp
 - gcc48
 - git
-- go
+- graphviz
 - haskell-platform
 - htop-osx
 - hub
 - imagemagick
 - leiningen
 - libxml2
-- ruby-1.9.2
 - jq
 - macvim:
   - --override-system-vim
@@ -34,6 +33,7 @@ brews:
 - reattach-to-user-namespace
 - redis
 - rlwrap
+- rust
 - swi-prolog
 - tig
 - tmux
