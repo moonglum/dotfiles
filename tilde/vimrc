@@ -60,6 +60,9 @@ Bundle "nelstrom/vim-textobj-rubyblock"
 " Rainbow: Keep your sanity in a jungle of parentheses
 Bundle "oblitum/rainbow"
 let g:rainbow_active = 1
+" Paredit: Port of emacs' paredit to Vim
+Bundle "paredit.vim"
+let g:paredit_eletric_return = 1
 
 " ======= Syntastic =======
 " Really great Syntax checker
