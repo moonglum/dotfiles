@@ -135,8 +135,8 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 " === Movements ===
 " Stolen from railsbros-dirk
 " Make cursor move by visual lines instead of file lines (when wrapping)
-map k gk
-map j gj
+nnoremap k gk
+nnoremap j gj
 
 " === Custom Functions and Commands ===
 
