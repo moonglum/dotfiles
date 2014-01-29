@@ -141,11 +141,11 @@ nnoremap j gj
 " === Custom Functions and Commands ===
 
 " Open the current file in Marked
-function Marked()
+function! s:marked()
   silent exe "!open -a Marked %"
   redraw!
 endfunction
-command! Marked :call Marked()
+command! Marked :call s:marked()
 
 " Check current file with JSLint
 command! JSLint :Dispatch jslint "%:p"
