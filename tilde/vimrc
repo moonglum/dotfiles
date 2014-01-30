@@ -59,7 +59,7 @@ Bundle "kana/vim-textobj-user"
 Bundle "nelstrom/vim-textobj-rubyblock"
 " Rainbow: Keep your sanity in a jungle of parentheses (Only active on Lisps)
 Bundle "oblitum/rainbow"
-au FileType lisp,scheme,clojure call rainbow#load()
+autocmd! FileType lisp,scheme,clojure call rainbow#load()
 " Paredit: Port of emacs' paredit to Vim (Only active on Lisps)
 Bundle "paredit.vim"
 
@@ -121,16 +121,16 @@ function! s:setupFourSpacesIndent()
 endfunction
 
 " Makefiles require tabs
-autocmd FileType make setlocal noexpandtab
+autocmd! FileType make setlocal noexpandtab
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupForProse() | call s:setupFourSpacesIndent()
+autocmd! BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupForProse() | call s:setupFourSpacesIndent()
 
 " LaTeX files should also have Wrapping
-au BufRead,BufNewFile *.tex call s:setupForProse()
+autocmd! BufRead,BufNewFile *.tex call s:setupForProse()
 
 " Recognize CoffeeScript
-au BufNewFile,BufRead *.coffee set ft=coffee
+autocmd! BufNewFile,BufRead *.coffee set ft=coffee
 
 " === Movements ===
 " Stolen from railsbros-dirk
