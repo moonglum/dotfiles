@@ -14,6 +14,7 @@ set spell spelllang=en_us                   " Activate spell checking and set Am
 set list listchars=tab:›\ ,trail:‹          " Show invisible characters: Tabs & trailing whitespace
 set expandtab                               " Use Soft-Tabs
 set tabstop=2 softtabstop=2 shiftwidth=2    " Use two spaces for tabs, soft-tabs and when shifting
+set nojoinspaces                            " Insert only one space when joining lines
 match ErrorMsg '\%>100v.\+'                 " Highlight Characters that overstep 100 characters
 
 " Jump between pairs of keywords via %
