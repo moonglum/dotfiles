@@ -129,12 +129,6 @@ augroup prose
   autocmd FileType tex,markdown match ErrorMsg ''
 augroup END
 
-" === Movements ===
-" Stolen from railsbros-dirk
-" Make cursor move by visual lines instead of file lines (when wrapping)
-nnoremap k gk
-nnoremap j gj
-
 " === Custom Functions and Commands ===
 
 " Open the current file in Marked
