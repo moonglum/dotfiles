@@ -129,9 +129,6 @@ augroup prose
   autocmd FileType tex,markdown match ErrorMsg ''
 augroup END
 
-" Recognize CoffeeScript
-autocmd! BufNewFile,BufRead *.coffee set ft=coffee
-
 " === Movements ===
 " Stolen from railsbros-dirk
 " Make cursor move by visual lines instead of file lines (when wrapping)
