@@ -4,6 +4,7 @@ passengers:
 - vundle
 - rvm
 - git_repo
+- npm
 directory_name: "tilde"
 rubies:
 - ruby-1.9.3
@@ -40,5 +41,12 @@ brews:
 - tree
 - wget
 - zsh
+npms:
+- bower
+- docco
+- grunt-cli
+- jshint
+- jslint
+- yo
 repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh/plugins/zsh-syntax-highlighting"
