@@ -11,7 +11,7 @@ rubies:
 - ruby-2.0.0
 - ruby-2.1.0
 brews:
-- ag
+- the_silver_searcher
 - arangodb
 - chicken
 - clisp
@@ -29,7 +29,7 @@ brews:
   - --override-system-vim
 - mysql
 - node
-- optiPNG
+- optipng
 - postgresql
 - reattach-to-user-namespace
 - redis
