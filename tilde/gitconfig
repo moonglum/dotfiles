@@ -1,0 +1,13 @@
+[user]
+  name = moonglum
+  email = moonglum@moonbeamlabs.com
+[credential]
+  helper = osxkeychain
+[alias]
+  pushnotes = !sh -c 'git push $1 refs/notes/*' -
+[color]
+  ui = true
+[push]
+  default = simple
+[tig]
+  line-graphics = "utf-8"
