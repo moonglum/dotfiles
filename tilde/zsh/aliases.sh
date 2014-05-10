@@ -29,6 +29,9 @@ function git(){hub $@}
 # Ruby-flavored Man
 function man() { gem man -s $@ }
 
+# Run Rubocop with the configuration used by Hound
+alias hound='rubocop -c .hound.yml'
+
 # mkdir and cd to it (from oh-my-zsh)
 function mcd() { mkdir -p "$1" && cd "$1"; }
 
