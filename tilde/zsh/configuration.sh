@@ -80,23 +80,6 @@ alias cake='nocorrect cake'
 alias brew='nocorrect brew'
 alias bundle='nocorrect bundle'
 
-# Force myself to use [Readline shortcuts](http://www.bigsmoke.us/readline/shortcuts)
-left-arrow() { echo '\nCtrl-b or a word via Ctrl-w' }
-zle -N left-arrow
-bindkey '^[[D' left-arrow
-
-right-arrow() { echo '\nCtrl-f' }
-zle -N right-arrow
-bindkey '[C' right-arrow
-
-up-arrow() { echo '\nCtrl-p or search via Ctrl-r' }
-zle -N up-arrow
-bindkey '[A' up-arrow
-
-down-arrow() { echo '\nCtrl-n or search via Ctrl-s' }
-zle -N down-arrow
-bindkey '[B' down-arrow
-
 # Load functions from ~/.zsh/functions
 fpath=(~/.zsh/functions $fpath)
 # ...and load all functions therein at first incarnation
