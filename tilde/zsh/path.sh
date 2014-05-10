@@ -30,3 +30,6 @@ PATH=/Users/moonglum/Library/Python/2.7/bin:$PATH
 
 # For Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
+
+# For Chicken
+PATH=/usr/local/Cellar/chicken/4.8.0.5/bin:$PATH
