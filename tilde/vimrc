@@ -115,6 +115,11 @@ autocmd! FileType make setlocal noexpandtab
 " Make sure all markdown files have the correct filetype
 autocmd! BufRead,BufNewFile *.{md,txt} set ft=markdown
 
+" .rs is Rust, nothing else!
+autocmd! BufRead,BufNewFile *.rs set ft=rust
+" Community Standard for Rust is indentation of 4
+autocmd FileType rust set tabstop=4 softtabstop=4 shiftwidth=4
+
 " Autogroup for prose file types
 augroup prose
   autocmd!
