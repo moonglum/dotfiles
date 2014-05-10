@@ -24,6 +24,7 @@ brews:
 - imagemagick
 - leiningen
 - libxml2
+- libxslt
 - jq
 - macvim:
   - --override-system-vim
