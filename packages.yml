@@ -15,7 +15,7 @@ brews:
 - arangodb
 - chicken
 - clisp
-- doxygen
+- doxygen1831
 - git
 - graphviz
 - haskell-platform
