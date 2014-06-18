@@ -5,6 +5,7 @@
   helper = osxkeychain
 [alias]
   pushnotes = !sh -c 'git push $1 refs/notes/*' -
+  prune-all = !git remote | xargs -n 1 git remote prune
 [color]
   ui = true
 [push]
