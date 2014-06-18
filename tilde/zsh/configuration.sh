@@ -79,6 +79,7 @@ alias make='nocorrect make'
 alias cake='nocorrect cake'
 alias brew='nocorrect brew'
 alias bundle='nocorrect bundle'
+alias knife='nocorrect knife'
 
 # Load functions from ~/.zsh/functions
 fpath=(~/.zsh/functions $fpath)
