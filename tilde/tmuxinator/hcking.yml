@@ -2,11 +2,10 @@
 
 project_name: hcking
 project_root: ~/code/hcking
-pre: mysql.server start
+pre: vagrant up
 windows:
   - editor:
       layout: main-vertical
       panes:
         - vim
         - #empty, will just run plain bash
-  - console: bundle exec rails s
