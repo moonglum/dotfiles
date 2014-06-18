@@ -45,6 +45,7 @@ brews:
 npms:
 - bower
 - docco
+- gitbook
 - grunt-cli
 - jshint
 - jslint
