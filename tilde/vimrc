@@ -113,7 +113,7 @@ let g:ctrlp_use_caching = 0
 autocmd! FileType make setlocal noexpandtab
 
 " Make sure all markdown files have the correct filetype
-autocmd! BufRead,BufNewFile *.{md,txt} set ft=markdown
+autocmd! BufRead,BufNewFile *.{md,mdpp,txt} set ft=markdown
 
 " .rs is Rust, nothing else!
 autocmd! BufRead,BufNewFile *.rs set ft=rust
