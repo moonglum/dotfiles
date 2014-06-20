@@ -13,6 +13,7 @@ rubies:
 brews:
 - the_silver_searcher
 - arangodb
+- bison
 - chicken
 - clisp
 - doxygen1831
