@@ -2,7 +2,6 @@
 require "yaml"
 require "exogenesis"
 
-Output.fancy
 packages_file = YAML.load_file("packages.yml")
 ship = Ship.new(packages_file)
 
