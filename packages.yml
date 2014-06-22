@@ -1,6 +1,7 @@
 passengers:
 - dotfile
 - homebrew
+- homebrew_cask
 - vundle
 - rvm
 - git_repo
@@ -44,6 +45,37 @@ brews:
 - tree
 - wget
 - zsh
+casks:
+- adium
+- alfred
+- appdelete
+- arduino
+- bartender
+- carbon-copy-cloner
+- fantastical
+- firefox-aurora
+- fluid
+- google-chrome-canary
+- gpgtools
+- iterm2
+- keyboard-cleaner
+- little-snitch
+- mactex
+- marked
+- minecraft
+- nvalt
+- onyx
+- pgadmin3
+- sequel-pro
+- skim
+- skype
+- slack
+- soulver
+- transmission
+- truecrypt
+- vagrant
+- virtualbox
+- vlc
 npms:
 - bower
 - docco
