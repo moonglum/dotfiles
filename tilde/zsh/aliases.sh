@@ -38,6 +38,11 @@ function mcd() { mkdir -p "$1" && cd "$1"; }
 # Speed Test
 alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
+# Lossy local network
+alias lossy='sudo ipfw pipe 1 config bw 10bits && sudo ipfw add 10 pipe 1 tcp from any to me 80'
+alias halflossy='sudo ipfw pipe 2 config bw 2000bits && sudo ipfw add 10 pipe 2 tcp from any to me 80'
+alias delossy='sudo ipfw delete 10'
+
 # Trolling myself
 alias ack='echo "Use ag "'
 alias c='echo "Use j c"'
