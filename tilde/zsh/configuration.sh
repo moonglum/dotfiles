@@ -85,3 +85,6 @@ alias knife='nocorrect knife'
 fpath=(~/.zsh/functions $fpath)
 # ...and load all functions therein at first incarnation
 autoload -U ${fpath[1]}/*(.N:t)
+
+# Increase the ridiculous ulimit
+ulimit -n 2048
