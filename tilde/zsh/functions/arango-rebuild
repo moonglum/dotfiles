@@ -5,5 +5,5 @@
 cd ~/Code/arangodb
 make clean
 make setup
-./configure --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu --enable-relative --enable-maintainer-mode --with-bison=/usr/local/Cellar/bison/3.0.2/bin/bison
+./configure --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu --enable-relative --enable-maintainer-mode --with-bison=/usr/local/Cellar/bison/3.0.2/bin/bison --with-openssl-inc=/usr/local/include --with-openssl-lib=/usr/local/lib
 make -j4
