@@ -6,5 +6,5 @@ project_root: ~/code/foxx_apps/databases/_system/json_api
 pre: rm -rf /tmp/foxx && mkdir /tmp/foxx
 windows:
   - vim: j c/foxx_apps/databases/_system/json_api && vim
-  - tests: j Desktop/Thesis/json_api_spec
+  - tests: j /Users/moonglum/Code/json_api_spec
   - apps: j c/arangodb && ./bin/arangod --javascript.dev-app-path /Users/moonglum/Code/foxx_apps /tmp/foxx
