@@ -133,13 +133,15 @@ augroup prose
 
   " No character limit per line
   autocmd FileType tex,markdown match ErrorMsg ''
+
+  autocmd FileType tex,markdown set nocursorcolumn
 augroup END
 
 " === Custom Functions and Commands ===
 
 " Open the current file in Marked
 function! s:marked()
-  silent exe "!open -a Marked %"
+  silent exe "!open -a 'Marked 2' %"
   redraw!
 endfunction
 command! Marked :call s:marked()
