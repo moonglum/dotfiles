@@ -16,7 +16,6 @@ brews:
 - boost
 - chicken
 - clisp
-- doxygen1831
 - git
 - graphviz
 - haskell-platform
