@@ -6,6 +6,5 @@ project_root: ~/Code/foxx_generator
 pre: rm -rf /tmp/foxx && mkdir /tmp/foxx
 windows:
   - vim: j c/foxx_generator
-  - json-api: j c/foxx_apps/databases/_system/json_api
   - siren: j c/foxx_apps/databases/_system/siren
   - arangod: j c/arangodb && ./bin/arangod --javascript.dev-app-path /Users/moonglum/Code/foxx_apps /tmp/foxx
