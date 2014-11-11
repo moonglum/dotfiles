@@ -50,9 +50,11 @@ casks:
 - arduino
 - bartender
 - carbon-copy-cloner
+- evernote
 - fantastical
 - firefox-aurora
 - fluid
+- gitter
 - google-chrome-canary
 - gpgtools
 - iterm2
