@@ -76,12 +76,9 @@ casks:
 - virtualbox
 - vlc
 npms:
-- bower
-- docco
+- ampersand
 - gitbook
-- grunt-cli
 - jshint
 - jslint
-- yo
 repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh/plugins/zsh-syntax-highlighting"
