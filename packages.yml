@@ -11,7 +11,6 @@ rubies:
 - ruby-2.1.4
 brews:
 - the_silver_searcher
-- arangodb
 - bison
 - boost
 - chicken
@@ -51,7 +50,6 @@ casks:
 - carbon-copy-cloner
 - evernote
 - fantastical
-- firefox-aurora
 - fluid
 - gitter
 - google-chrome-canary
