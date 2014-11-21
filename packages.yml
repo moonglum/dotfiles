@@ -15,6 +15,7 @@ brews:
 - boost
 - chicken
 - clisp
+- emacs
 - git
 - graphviz
 - haskell-platform
