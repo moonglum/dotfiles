@@ -64,6 +64,8 @@ Bundle "oblitum/rainbow"
 autocmd! FileType lisp,scheme,clojure call rainbow#load()
 " Paredit: Port of emacs' paredit to Vim (Only active on Lisps)
 Bundle "paredit.vim"
+" Tern: Code-analysis engine for JavaScript
+Bundle "marijnh/tern_for_vim"
 
 " ======= Syntastic =======
 " Really great Syntax checker
