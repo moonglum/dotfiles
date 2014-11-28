@@ -154,3 +154,9 @@
   "\M-q" 'paredit-reindent-defun
   "gK" 'nrepl-src
   "K"  'ac-nrepl-popup-doc)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Lucas' Customizations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(menu-bar-mode -1)
