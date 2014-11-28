@@ -14,7 +14,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (defvar my-packages '(evil 
-		      evil-leader evil-tabs evil-paredit surround
+		      evil-leader evil-paredit surround
 		      elscreen ace-jump-mode
 		      helm helm-descbinds
 		      key-chord
@@ -83,7 +83,6 @@
 ;;; Basic Vim Emulation.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (evil-mode t)
-(global-evil-tabs-mode 1)
 
 (evil-ex-define-cmd "Exp[lore]" 'dired-jump)
 (evil-ex-define-cmd "color[scheme]" 'customize-themes)
