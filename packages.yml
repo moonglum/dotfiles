@@ -22,6 +22,7 @@ brews:
 - htop-osx
 - hub
 - imagemagick
+- ispell
 - leiningen
 - libxml2
 - libxslt
