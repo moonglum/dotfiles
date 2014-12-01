@@ -12,6 +12,7 @@ alias g='bundle exec guard'
 alias b='bundle'
 alias be='bundle exec'
 alias j='jump'
+alias e='emacsclient -t'
 
 # Open files with Mac OS X applications
 function chrome() { open -a \"Google Chrome\" $@ }
