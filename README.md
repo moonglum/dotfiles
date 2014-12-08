@@ -2,7 +2,7 @@
 
 These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux and ZSH (and also: ack, ruby gems and rvm).
 
-First you need to install `rake` and `exogenesis` via Ruby Gems. Then it can be installed via `rake install`, updated with `rake update` and removed via `rake uninstall`. Use the latter with caution :wink:
+First you need to install `rake` and `exogenesis` via Ruby Gems. Then it can be installed (and later updated) via `rake up` and removed via `rake down`. Use the latter with caution :wink:
 
 ## ZSH
 
@@ -21,7 +21,7 @@ I configured it with some more Vim-like bindings and a powerline-inspired status
 
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions. tmux is so ingrained in my workflow that I start it automatically whenever I open a new iTerm2 window via the `Send text at start` option with `tmux new-session -A -s standard`.
 
-I also use [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) for Vim. That's very important.
+I also use [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) for emacs to fix some issues with the pasteboard.
 
 ## Vim
 
@@ -32,15 +32,19 @@ I'm using @gmarik's vundle for plugin management. It's great. I use the followin
 
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Amazing **Aligning Utility** via [`godlygeek/tabular`](https://github.com/godlygeek/tabular)
-* Nice **ack integration** via [`mileszs/ack.vim`](https://github.com/mileszs/ack.vim)
 * Mind blowing **git integration** via [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
 * Asynchronous **build and test dispatcher** via [`tpope/vim-dispatch`](https://github.com/tpope/vim-dispatch)
 * **Quoting/Parenthesizing** made simple via [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
 * **Emojis** for Vim via [`junegunn/vim-emoji`](https://github.com/junegunn/vim-emoji)
+* Custom **text objects for Ruby** via [`kana/vim-textobj-user`](https://github.com/kana/vim-textobj-user) and [`nelstrom/vim-textobj-rubyblock`](https://github.com/nelstrom/vim-textobj-rubyblock)
+* For **LISP editing** I'm also using [`oblitum/rainbow`](https://github.com/oblitum/rainbow) and `paredit.vim`
+* For **JS editing** I have completion and documentation via [`marijnh/tern_for_vim`](https://github.com/marijnh/tern_for_vim)
 * Really great **Syntax checker** via [`scrooloose/syntastic`](https://github.com/scrooloose/syntastic)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](https://github.com/kien/ctrlp.vim)
+
+*I'm also experimenting with emacs and evil-mode, but don't tell anyone.*
 
 ## Other commandline tools
 
@@ -56,11 +60,9 @@ I'm using @gmarik's vundle for plugin management. It's great. I use the followin
 
 * Ruby (Daily)
 * JavaScript (Daily)
-* Chicken Scheme & Common Lisp (Experiments)
 * Clojure & ClojureScript (Just got started)
-* Haskell (Wow. So Monads.)
-* Prolog (Haven't used it in a while)
-* Rust (Just got started)
+* I used Haskell and Prolog quite a lot in University
+* I'm also playing around with Go, Idris, Rust, Chicken Scheme and Common Lisp
 
 ## Miscellaneous
 
