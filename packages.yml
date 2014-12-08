@@ -25,6 +25,7 @@ brews:
 - haskell-platform
 - htop-osx
 - hub
+- icdiff
 - idris
 - imagemagick
 - ispell
