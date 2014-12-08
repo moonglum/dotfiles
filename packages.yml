@@ -11,12 +11,16 @@ rubies:
 - ruby-2.1.4
 brews:
 - the_silver_searcher
+- antlr
 - bison
 - boost
 - chicken
 - clisp
+- elixir
 - emacs
+- flow
 - git
+- go
 - graphviz
 - haskell-platform
 - htop-osx
