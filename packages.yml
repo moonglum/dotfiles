@@ -50,7 +50,6 @@ brews:
 - wget
 - zsh
 casks:
-- adium
 - alfred
 - appdelete
 - arduino
@@ -59,7 +58,6 @@ casks:
 - evernote
 - fantastical
 - fluid
-- gitter
 - google-chrome-canary
 - gpgtools
 - iterm2
@@ -75,7 +73,6 @@ casks:
 - sequel-pro
 - skim
 - skype
-- slack
 - soulver
 - transmission
 - truecrypt
