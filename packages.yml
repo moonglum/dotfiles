@@ -38,6 +38,7 @@ brews:
 - mysql
 - node
 - optipng
+- pgcli
 - postgresql
 - reattach-to-user-namespace
 - redis
