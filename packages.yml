@@ -84,6 +84,5 @@ npms:
 - ampersand
 - gitbook
 - jshint
-- jslint
 repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh/plugins/zsh-syntax-highlighting"
