@@ -115,6 +115,8 @@ let g:ctrlp_use_caching = 0
 
 " === Language Specific Setting ===
 
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
 " Makefiles require tabs
 autocmd! FileType make setlocal noexpandtab
 
