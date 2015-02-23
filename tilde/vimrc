@@ -9,8 +9,6 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Polyglot: A collection of language packs, loaded on demand
 Plugin 'sheerun/vim-polyglot'
-" Tabular: Amazing Aligning Utility
-Plugin 'godlygeek/tabular'
 " Fugitive: The best Git integration that exists
 Plugin 'tpope/vim-fugitive'
 " Commentary: Minimalistic commenting plugin

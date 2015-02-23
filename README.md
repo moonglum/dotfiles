@@ -31,7 +31,6 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 I'm using @gmarik's vundle for plugin management. It's great. I use the following plugins:
 
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
-* Amazing **Aligning Utility** via [`godlygeek/tabular`](https://github.com/godlygeek/tabular)
 * Mind blowing **git integration** via [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
 * Asynchronous **build and test dispatcher** via [`tpope/vim-dispatch`](https://github.com/tpope/vim-dispatch)
