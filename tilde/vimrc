@@ -1,5 +1,48 @@
 set nocompatible                            " Use Vim settings, rather then Vi settings
 filetype off                                " This is required for Vundle
+
+" === Vundle Setup ===
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+
+" Polyglot: A collection of language packs, loaded on demand
+Plugin 'sheerun/vim-polyglot'
+" Tabular: Amazing Aligning Utility
+Plugin 'godlygeek/tabular'
+" Fugitive: The best Git integration that exists
+Plugin 'tpope/vim-fugitive'
+" Commentary: Minimalistic commenting plugin
+Plugin 'tpope/vim-commentary'
+" Dispatch: asynchronous build and test dispatcher
+Plugin 'tpope/vim-dispatch'
+" Surround: Quoting/Parenthesizing made simple
+Plugin 'tpope/vim-surround'
+" Repeat: Enable repeat for Surround and Commentary
+Plugin 'tpope/vim-repeat'
+" Emoji: Emojis. For Vim. Awesome.
+Plugin 'junegunn/vim-emoji'
+" Textobj Rubyblock: Custom text object for selecting ruby blocks
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+" Rainbow: Keep your sanity in a jungle of parentheses (Only active on Lisps)
+Plugin 'oblitum/rainbow'
+autocmd! FileType lisp,scheme,clojure call rainbow#load()
+" Paredit: Port of emacs' paredit to Vim (Only active on Lisps)
+Plugin 'paredit.vim'
+" Tern: Code-analysis engine for JavaScript
+Plugin 'marijnh/tern_for_vim'
+" Syntastic: Really great Syntax checker
+Plugin 'scrooloose/syntastic'
+" Ctrlp: Full path fuzzy finder
+Plugin 'kien/ctrlp.vim'
+
+" === Vundle Done ===
+call vundle#end()
+filetype plugin indent on
+
+" === General Setup ===
 syntax enable                               " Activate Syntax Highlight
 set encoding=utf-8                          " Set default encoding to UTF-8
 set hlsearch                                " Highlight search results
@@ -28,49 +71,12 @@ if has("gui_running")
   set guioptions-=r                 " No Scrollbar
 endif
 
-" === Vundle Setup ===
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
 " =========== Solarized Dark ===========
 " Currently using the dark version
-Bundle 'altercation/vim-colors-solarized'
 set background=dark
 colorscheme solarized
 
-" ======== Added Functionality ========
-" Polyglot: A collection of language packs, loaded on demand
-Bundle "sheerun/vim-polyglot"
-" Tabular: Amazing Aligning Utility
-Bundle "godlygeek/tabular"
-" Fugitive: The best Git integration that exists
-Bundle "tpope/vim-fugitive"
-" Commentary: Minimalistic commenting plugin
-Bundle "tpope/vim-commentary"
-" Dispatch: asynchronous build and test dispatcher
-Bundle "tpope/vim-dispatch"
-" Surround: Quoting/Parenthesizing made simple
-Bundle "tpope/vim-surround"
-" Repeat: Enable repeat for Surround and Commentary
-Bundle "tpope/vim-repeat"
-" Emoji: Emojis. For Vim. Awesome.
-Bundle "junegunn/vim-emoji"
-" Textobj Rubyblock: Custom text object for selecting ruby blocks
-Bundle "kana/vim-textobj-user"
-Bundle "nelstrom/vim-textobj-rubyblock"
-" Rainbow: Keep your sanity in a jungle of parentheses (Only active on Lisps)
-Bundle "oblitum/rainbow"
-autocmd! FileType lisp,scheme,clojure call rainbow#load()
-" Paredit: Port of emacs' paredit to Vim (Only active on Lisps)
-Bundle "paredit.vim"
-" Tern: Code-analysis engine for JavaScript
-Bundle "marijnh/tern_for_vim"
-
 " ======= Syntastic =======
-" Really great Syntax checker
-Bundle "scrooloose/syntastic"
-
 " Use JSHint, not JSLint
 let g:syntastic_javascript_checkers = ['jshint']
 
@@ -95,9 +101,6 @@ else
 end
 
 " ======= CtrlP =======
-" Full path fuzzy finder
-Bundle "kien/ctrlp.vim"
-
 " Ignore files that are git ignored (thanks @railsbros-dirk)
 let g:ctrlp_user_command = {
   \ 'types': {
@@ -181,7 +184,3 @@ nnoremap <leader>ev :vne $MYVIMRC<cr>
 
 " Source my vimrc (from: Learn Vim Script the hard way)
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" --- End ---
-" This is required for Vundle
-filetype plugin indent on
