@@ -26,9 +26,9 @@ Plugin 'junegunn/vim-emoji'
 " Textobj Rubyblock: Custom text object for selecting ruby blocks
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-" Rainbow: Keep your sanity in a jungle of parentheses (Only active on Lisps)
-Plugin 'oblitum/rainbow'
-autocmd! FileType lisp,scheme,clojure call rainbow#load()
+" Rainbow: Keep your sanity in a jungle of parentheses
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1
 " Paredit: Port of emacs' paredit to Vim (Only active on Lisps)
 Plugin 'paredit.vim'
 " Tern: Code-analysis engine for JavaScript

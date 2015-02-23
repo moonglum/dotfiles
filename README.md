@@ -39,7 +39,7 @@ I'm using @gmarik's vundle for plugin management. It's great. I use the followin
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
 * **Emojis** for Vim via [`junegunn/vim-emoji`](https://github.com/junegunn/vim-emoji)
 * Custom **text objects for Ruby** via [`kana/vim-textobj-user`](https://github.com/kana/vim-textobj-user) and [`nelstrom/vim-textobj-rubyblock`](https://github.com/nelstrom/vim-textobj-rubyblock)
-* For **LISP editing** I'm also using [`oblitum/rainbow`](https://github.com/oblitum/rainbow) and `paredit.vim`
+* For **LISP editing** I'm also using [`luochen1990/rainbow`](https://github.com/luochen1990/rainbow) and `paredit.vim`
 * For **JS editing** I have completion and documentation via [`marijnh/tern_for_vim`](https://github.com/marijnh/tern_for_vim)
 * Really great **Syntax checker** via [`scrooloose/syntastic`](https://github.com/scrooloose/syntastic)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](https://github.com/kien/ctrlp.vim)
