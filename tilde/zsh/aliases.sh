@@ -27,6 +27,10 @@ alias ip="curl icanhazip.com"
 # Github-flavored Git
 function git(){hub $@}
 
+# ccached gcc builds
+export CC="ccache gcc"
+export CXX="ccache g++"
+
 # Ruby-flavored Man
 # function man() { gem man -s $@ }
 
