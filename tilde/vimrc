@@ -35,6 +35,8 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 " Ctrlp: Full path fuzzy finder
 Plugin 'kien/ctrlp.vim'
+" RSpec: Lightweight RSpec runner
+Plugin 'thoughtbot/vim-rspec'
 
 " === Vundle Done ===
 call vundle#end()
@@ -114,6 +116,10 @@ let g:ctrlp_switch_buffer = 'e'
 " Disable caching
 let g:ctrlp_use_caching = 0
 
+" ====== rspec.vim ======
+let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_runner = "os_x_iterm"
+
 " === Language Specific Setting ===
 
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
@@ -182,3 +188,9 @@ nnoremap <leader>ev :vne $MYVIMRC<cr>
 
 " Source my vimrc (from: Learn Vim Script the hard way)
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Mappings for vim-rspec
+nnoremap <leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <leader>s :call RunNearestSpec()<CR>
+nnoremap <leader>l :call RunLastSpec()<CR>
+nnoremap <leader>a :call RunAllSpecs()<CR>
