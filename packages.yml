@@ -83,7 +83,7 @@ casks:
 - vlc
 npms:
 - ampersand
-- gitbook
+- gitbook-cli
 - jshint
 repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh/plugins/zsh-syntax-highlighting"
