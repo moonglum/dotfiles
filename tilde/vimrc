@@ -192,5 +192,4 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Mappings for vim-rspec
 nnoremap <leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <leader>s :call RunNearestSpec()<CR>
-nnoremap <leader>l :call RunLastSpec()<CR>
 nnoremap <leader>a :call RunAllSpecs()<CR>
