@@ -77,8 +77,8 @@ set background=dark
 colorscheme solarized
 
 " ======= Syntastic =======
-" Use JSHint, not JSLint
-let g:syntastic_javascript_checkers = ['jshint']
+" First check JSHint, then JSCS
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 
 " Also run a Syntax Check when the file is opened
 let g:syntastic_check_on_open=1
