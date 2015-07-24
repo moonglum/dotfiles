@@ -1,0 +1,87 @@
+---
+- name: Install the required packages
+  hosts: all
+  sudo: True
+  roles:
+    - role: ANXS.nodejs
+    - role: rvm_io.rvm1-ruby
+  vars:
+    nodejs_version: '0.12.7'
+    rvm1_rubies:
+      - 'ruby-2.1.5'
+      - 'ruby-2.2.2'
+    rvm1_install_flags: '--user-install'
+    rvm1_install_path: '/home/vagrant/.rvm'
+    rvm1_user: 'vagrant'
+    dotfiles:
+      - arangosh.rc
+      - bundle
+      - config
+      - csirc
+      - gemrc
+      - gitconfig
+      - irbrc
+      - tmux.conf
+      - tmuxinator
+      - vimrc
+      - zsh
+      - zshrc
+    apt_packages:
+      - chicken-bin
+      - clisp
+      - cloc
+      - emacs
+      - git
+      - golang
+      - graphviz
+      - haskell-platform
+      - htop
+      - imagemagick
+      - ispell
+      - jq
+      - libcurl3
+      - libcurl3-gnutls
+      - libcurl4-openssl-dev
+      - libpq-dev
+      - libxml2
+      - maven
+      - openjdk-8-jdk
+      - optipng
+      - postgresql
+      - redis-server
+      - silversearcher-ag
+      - subversion
+      - swi-prolog
+      - tig
+      - tmux
+      - tree
+      - wget
+      - zsh
+    vim_packages:
+      vim-pathogen: tpope/vim-pathogen
+      vim-colors-solarized: altercation/vim-colors-solarized
+      vim-polyglot: sheerun/vim-polyglot
+      vim-fugitive: tpope/vim-fugitive
+      vim-commentary: tpope/vim-commentary
+      vim-dispatch: tpope/vim-dispatch
+      vim-surround: tpope/vim-surround
+      vim-repeat: tpope/vim-repeat
+      vim-emoji: junegunn/vim-emoji
+      vim-textobj-user: kana/vim-textobj-user
+      vim-textobj-rubyblock: nelstrom/vim-textobj-rubyblock
+      rainbow: luochen1990/rainbow
+      paredit.vim: vim-scripts/paredit.vim
+      syntastic: scrooloose/syntastic
+      ctrlp.vim: kien/ctrlp.vim
+      vim-rspec: thoughtbot/vim-rspec
+      vim-proto: garyharan/vim-proto
+  tasks:
+    - name: Install packages with apt
+      apt: name={{ item }} update_cache=yes
+      with_items: apt_packages
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.{{ item }} state=link src=/home/vagrant/Code/dotfiles/tilde/{{ item }}
+      with_items: dotfiles
+    - name: Install or update Vim plugins
+      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
+      with_dict: vim_packages

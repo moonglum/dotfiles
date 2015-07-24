@@ -1,8 +1,8 @@
-# dotfiles [![badge](http://img.shields.io/badge/%F0%9F%9A%80-Created_with_Exogenesis-be1d77.svg)](https://github.com/moonglum/exogenesis)
+# dotfiles
 
 These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux and ZSH (and also: ack, ruby gems and rvm).
 
-First you need to install `rake` and `exogenesis` via Ruby Gems. Then it can be installed (and later updated) via `rake up` and removed via `rake down`. Use the latter with caution :wink:
+On my Mac, there are no developer tools installed except Vagrant, Ansible, iTerm and Xcode. My dotfiles contain a Vagrantfile and Ansible scripts to provision the Vagrant box. So when I want to start developing on my machine, I do a `vagrant --provision up` and then a `vagrant ssh`. And then I work inside the Vagrant box.
 
 ## ZSH
 
@@ -27,8 +27,7 @@ I also use [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-Mac
 
 When I started with Vim, I used Janus. But it was way too much stuff in there that I possibly will never use. Also I like to know my configuration :wink: So I re-started my Vimrc from Scratch.
 
-I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim.
-I'm using @gmarik's vundle for plugin management. It's great. I use the following plugins:
+I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
 
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Mind blowing **git integration** via [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
