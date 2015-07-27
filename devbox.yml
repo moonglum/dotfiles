@@ -75,6 +75,11 @@
       ctrlp.vim: kien/ctrlp.vim
       vim-rspec: thoughtbot/vim-rspec
       vim-proto: garyharan/vim-proto
+    npm_packages:
+      - npm
+      - jslint
+      - jshint
+      - jscs
   tasks:
     - name: Update cache and upgrade 
       apt: update_cache=yes upgrade=safe
@@ -89,3 +94,6 @@
       with_dict: vim_packages
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh
+    - name: Install global NPM packages
+      npm: name={{ item }} global=yes state=latest
+      with_items: npm_packages
