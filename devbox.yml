@@ -85,3 +85,5 @@
     - name: Install or update Vim plugins
       git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
       with_dict: vim_packages
+    - name: Set default shell for Vagrant user
+      user: name=vagrant shell=/bin/zsh
