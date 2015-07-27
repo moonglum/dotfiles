@@ -14,13 +14,6 @@ alias be='bundle exec'
 alias j='jump'
 alias e='emacsclient -t'
 
-# Open files with Mac OS X applications
-function chrome() { open -a \"Google Chrome\" $@ }
-function safari(){ open -a Safari $@ }
-function marked(){ open -a "Marked 2" $@ }
-function pm(){ open -a Pixelmator $@ }
-function preview(){ open -a Preview $@ }
-
 # Get current public IP
 alias ip="curl icanhazip.com"
 
