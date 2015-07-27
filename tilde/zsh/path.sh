@@ -25,9 +25,6 @@ PATH=/Users/moonglum/.cabal/bin:$PATH
 # For NPM
 PATH=/usr/local/nodejs/default/bin:$PATH
 
-# For Python (Only user installed packages)
-PATH=/Users/moonglum/Library/Python/2.7/bin:$PATH
-
 # For Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH
 
