@@ -1,48 +1,9 @@
-set nocompatible                            " Use Vim settings, rather then Vi settings
-filetype off                                " This is required for Vundle
-
-" === Vundle Setup ===
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-
-" Polyglot: A collection of language packs, loaded on demand
-Plugin 'sheerun/vim-polyglot'
-" Fugitive: The best Git integration that exists
-Plugin 'tpope/vim-fugitive'
-" Commentary: Minimalistic commenting plugin
-Plugin 'tpope/vim-commentary'
-" Dispatch: asynchronous build and test dispatcher
-Plugin 'tpope/vim-dispatch'
-" Surround: Quoting/Parenthesizing made simple
-Plugin 'tpope/vim-surround'
-" Repeat: Enable repeat for Surround and Commentary
-Plugin 'tpope/vim-repeat'
-" Emoji: Emojis. For Vim. Awesome.
-Plugin 'junegunn/vim-emoji'
-" Textobj Rubyblock: Custom text object for selecting ruby blocks
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-" Rainbow: Keep your sanity in a jungle of parentheses
-Plugin 'luochen1990/rainbow'
-let g:rainbow_active = 1
-" Paredit: Port of emacs' paredit to Vim (Only active on Lisps)
-Plugin 'paredit.vim'
-" Tern: Code-analysis engine for JavaScript
-Plugin 'marijnh/tern_for_vim'
-" Syntastic: Really great Syntax checker
-Plugin 'scrooloose/syntastic'
-" Ctrlp: Full path fuzzy finder
-Plugin 'kien/ctrlp.vim'
-" RSpec: Lightweight RSpec runner
-Plugin 'thoughtbot/vim-rspec'
-
-" === Vundle Done ===
-call vundle#end()
-filetype plugin indent on
+" === Pathogen ===
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 " === General Setup ===
+set nocompatible                            " Use Vim settings, rather then Vi settings
 syntax enable                               " Activate Syntax Highlight
 set encoding=utf-8                          " Set default encoding to UTF-8
 set hlsearch                                " Highlight search results
@@ -75,6 +36,9 @@ endif
 " Currently using the dark version
 set background=dark
 colorscheme solarized
+
+" === Rainbow ===
+let g:rainbow_active = 1
 
 " ======= Syntastic =======
 " First check JSHint, then JSCS

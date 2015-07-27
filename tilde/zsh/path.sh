@@ -23,7 +23,7 @@ PATH=/usr/texbin:$PATH
 PATH=/Users/moonglum/.cabal/bin:$PATH
 
 # For NPM
-PATH=/usr/local/share/npm/bin:$PATH
+PATH=/usr/local/nodejs/default/bin:$PATH
 
 # For Python (Only user installed packages)
 PATH=/Users/moonglum/Library/Python/2.7/bin:$PATH
