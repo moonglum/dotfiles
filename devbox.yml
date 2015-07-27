@@ -76,8 +76,10 @@
       vim-rspec: thoughtbot/vim-rspec
       vim-proto: garyharan/vim-proto
   tasks:
-    - name: Install packages with apt
-      apt: name={{ item }} update_cache=yes
+    - name: Update cache and upgrade 
+      apt: update_cache=yes upgrade=safe
+    - name: Install missing packages
+      apt: name={{ item }}
       with_items: apt_packages
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} state=link src=/home/vagrant/Code/dotfiles/tilde/{{ item }}
