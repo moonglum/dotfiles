@@ -52,18 +52,9 @@ alias dropbox='echo "Use j dropbox"'
 alias desktop='echo "Use j desktop"'
 
 # Jump
-# Inspired by the Oh-My-ZSH Jump Plugin
-export MARKPATH=$HOME/.marks
-
 # jump FOO: jump to a mark named FOO
-jump() { cd -P "$MARKPATH/$1" }
-_jump() { _files -W "$MARKPATH/$1" }
+# Inspired by the Oh-My-ZSH Jump Plugin
+
+jump() { cd -P "$HOME/.marks/$1" }
+_jump() { _files -W "$HOME/.marks/$1" }
 compdef _jump jump
-
-# mark FOO: create a mark named FOO
-mark() { mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1" }
-
-# unmark FOO: delete a mark
-unmark() { rm -i "$MARKPATH/$1" }
-
-# marks: lists all marks (see: functions)
