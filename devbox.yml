@@ -31,6 +31,7 @@
       - chicken-bin
       - clisp
       - cloc
+      - elixir
       - emacs
       - git
       - golang
@@ -84,7 +85,11 @@
     marks:
       c: /home/vagrant/Code
   tasks:
-    - name: Update cache and upgrade 
+    - name: Add Erlang Solutions key
+      apt_key: url='http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+    - name: Add Erlang Solutions APT Repository
+      apt_repository: repo='deb http://packages.erlang-solutions.com/ubuntu vivid contrib' state=present
+    - name: Update cache and upgrade
       apt: update_cache=yes upgrade=safe
     - name: Install missing packages
       apt: name={{ item }}
