@@ -34,6 +34,7 @@
       - elixir
       - emacs
       - git
+      - git-svn
       - golang
       - graphviz
       - haskell-platform
