@@ -7,6 +7,7 @@
     - role: rvm_io.rvm1-ruby
   vars:
     nodejs_version: '0.12.7'
+    nodejs_install_method: 'binary'
     rvm1_rubies:
       - 'ruby-2.1.5'
       - 'ruby-2.2.2'
