@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "devbox"
-  config.vm.box = "ubuntu/vivid64"
+  config.vm.box = "chef/ubuntu-15.04"
   config.vm.box_check_update = false
 
   config.vm.network "forwarded_port", guest: 80, host: 8080
