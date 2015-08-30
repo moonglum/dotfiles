@@ -5,5 +5,8 @@ source ~/.zsh/aliases.sh
 source ~/.zsh/path.sh
 source ~/.zsh/trolling.sh
 
+# chruby
+source /usr/local/share/chruby/chruby.sh
+
 # Plugins
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

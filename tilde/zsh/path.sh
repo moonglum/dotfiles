@@ -1,16 +1,10 @@
 ## Manipulation of the path and loading stuff
 
-# This loads RVM into a shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# The same for tmuxinator
+# tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Home
 PATH=$PATH:$HOME/.bin
-
-# Add RVM to PATH
-PATH=$PATH:$HOME/.rvm/bin
 
 # For homebrew
 PATH=/usr/local/bin:$PATH
