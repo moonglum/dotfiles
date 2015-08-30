@@ -17,36 +17,23 @@
       - zsh
       - zshrc
     apt_packages:
-      - chicken-bin
-      - clisp
       - cloc
-      - elixir
-      - emacs
       - git
       - git-svn
-      - golang
       - graphviz
-      - haskell-platform
       - htop
       - imagemagick
       - ispell
       - jq
-      - libcurl3
-      - libcurl3-gnutls
-      - libcurl4-openssl-dev
       - libpq-dev
-      - libxml2
-      - maven
-      - openjdk-8-jdk
       - optipng
       - postgresql
       - redis-server
       - silversearcher-ag
-      - subversion
-      - swi-prolog
       - tig
       - tmux
       - tree
+      - vim
       - wget
       - zsh
     vim_packages:
