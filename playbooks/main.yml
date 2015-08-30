@@ -92,3 +92,5 @@
     - include: ruby-install.yml
     - include: chruby.yml
     - include: nodejs.yml
+    - name: Install the stable version of Ruby
+      command: ruby-install ruby
