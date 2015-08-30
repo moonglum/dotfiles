@@ -37,6 +37,7 @@
       - wget
       - zsh
     vim_packages:
+      elm.vim: lambdatoast/elm.vim
       vim-pathogen: tpope/vim-pathogen
       vim-colors-solarized: altercation/vim-colors-solarized
       vim-polyglot: sheerun/vim-polyglot
@@ -59,6 +60,7 @@
       - jslint
       - jshint
       - jscs
+      - elm
     marks:
       c: /home/vagrant/Code
   tasks:
