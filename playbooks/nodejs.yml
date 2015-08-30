@@ -1,0 +1,10 @@
+- name: Download Node.js
+  get_url: url=https://nodejs.org/dist/v{{nodejs_version}}/node-v{{nodejs_version}}-linux-x64.tar.gz dest=/tmp/node-{{ nodejs_version }}.tar.gz
+- name: Unarchive Node.js
+  unarchive: src=/tmp/node-{{ nodejs_version }}.tar.gz dest=/tmp copy=no
+- name: Move to /opt/nodejs
+  command: creates="/opt/nodejs" mv /tmp/node-v{{ nodejs_version }}-linux-x64 /opt/nodejs
+- name: Link node
+  file: path=/usr/local/bin/node state=link src=/opt/nodejs/bin/node
+- name: Link npm
+  file: path=/usr/local/bin/npm state=link src=/opt/nodejs/bin/npm

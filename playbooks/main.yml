@@ -3,6 +3,9 @@
   hosts: all
   sudo: True
   vars:
+    ruby_install_version: 0.5.0
+    chruby_version: 0.3.9
+    nodejs_version: 0.12.7
     dotfiles:
       - arangosh.rc
       - bundle
@@ -86,3 +89,6 @@
     - name: Configure the marks
       file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }}
       with_dict: marks
+    - include: ruby-install.yml
+    - include: chruby.yml
+    - include: nodejs.yml

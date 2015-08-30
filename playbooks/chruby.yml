@@ -1,0 +1,12 @@
+- name: Download chruby
+  get_url: url=https://github.com/postmodern/chruby/archive/v{{ chruby_version }}.tar.gz dest=/tmp/chruby-{{ chruby_version }}.tar.gz
+- name: Download chruby signature
+  get_url: url=https://raw.github.com/postmodern/chruby/master/pkg/chruby-{{ chruby_version }}.tar.gz.asc dest=/tmp/chruby-{{ chruby_version }}.tar.gz.asc
+# - name: Verify chruby download
+#   command: gpg --verify /tmp/chruby-{{ chruby_version }}.tar.gz.asc /tmp/chruby-{{ chruby_version }}.tar.gz
+- name: Unarchive chruby
+  unarchive: src=/tmp/chruby-{{ chruby_version }}.tar.gz dest=/tmp copy=no
+- name: Install chruby
+  command: make install
+  args:
+    chdir: /tmp/chruby-{{ chruby_version }}
