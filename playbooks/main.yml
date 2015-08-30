@@ -94,3 +94,6 @@
     - include: nodejs.yml
     - name: Install the stable version of Ruby
       command: ruby-install ruby
+    - name: Install global NPM packages
+      npm: name={{ item }} global=yes state=latest
+      with_items: npm_packages
