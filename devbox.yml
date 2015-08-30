@@ -2,18 +2,7 @@
 - name: Install the required packages
   hosts: all
   sudo: True
-  roles:
-    - role: ANXS.nodejs
-    - role: rvm_io.rvm1-ruby
   vars:
-    nodejs_version: '0.12.7'
-    nodejs_install_method: 'binary'
-    rvm1_rubies:
-      - 'ruby-2.1.5'
-      - 'ruby-2.2.2'
-    rvm1_install_flags: '--user-install'
-    rvm1_install_path: '/home/vagrant/.rvm'
-    rvm1_user: 'vagrant'
     dotfiles:
       - arangosh.rc
       - bundle
