@@ -1,0 +1,30 @@
+# ~/.tmuxinator/pumpe.yml
+# Development of DER pu-mpe
+
+name: pumpe
+root: ~/Code/der
+windows:
+  - client:
+      layout: main-horizontal
+      root: ~/Code/der/git/pu-mpe-client-mock
+      panes:
+        - vim
+        -
+  - core:
+      layout: main-horizontal
+      root: ~/Code/der/git/pu-mpe-core
+      panes:
+        - vim
+        - node .
+  - dispatch:
+      layout: main-horizontal
+      root: ~/Code/der/git/pu-mpe-dispatch
+      panes:
+        - vim
+        - node .
+  - java:
+      layout: even-horizontal
+      root: ~/Code/der/jars
+      panes:
+        - java -jar pu-mpe-worker.jar
+        - java -jar pu-mpe-rule-mock.jar
