@@ -7,6 +7,8 @@ source ~/.zsh/trolling.sh
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby ruby
 
 # Plugins
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
