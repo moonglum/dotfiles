@@ -23,7 +23,8 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "/Users/moonglum/Code", "/home/vagrant/Code"
   config.vm.synced_folder "/Users/moonglum/.gnupg", "/home/vagrant/.gnupg"
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "8056"
+  config.vm.provider "vmware_fusion" do |v|
+    v.vmx["memsize"] = "8056"
+    v.vmx["numvcpus"] = "2"
   end
 end
