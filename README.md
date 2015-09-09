@@ -1,12 +1,10 @@
 # dotfiles
 
-These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux and ZSH (and also: ack, ruby gems and rvm).
-
-On my Mac, there are no developer tools installed except Vagrant, Ansible, iTerm and Xcode. My dotfiles contain a Vagrantfile and Ansible scripts to provision the Vagrant box. So when I want to start developing on my machine, I do a `vagrant --provision up` and then a `vagrant ssh`. And then I work inside the Vagrant box.
+These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Ansible, iTerm and Xcode. My dotfiles contain a Vagrantfile and Ansible scripts to provision the Vagrant box. So when I want to start developing on my machine, I do a `vagrant --provision up` and then a `vagrant ssh`. And then I work inside the Vagrant box.
 
 ## ZSH
 
-My ZSH setup is quite minimal, nothing crazy going on here. Just standard stuff like activating auto complete, syntax highlighting, adjusting the PATH and lots of aliases and tiny functions. This is the prompt I created and use:
+My ZSH setup is quite minimal, nothing special going on here. Just standard stuff like activating auto complete, syntax highlighting, adjusting the PATH and lots of aliases and tiny functions. This is the prompt I created and use:
 
 ![Image of the prompt](http://images.moonglum.net/zsh-version-2.png)
 
@@ -19,9 +17,7 @@ I configured it with some more Vim-like bindings and a powerline-inspired status
 
 ![Image of the powerline](http://images.moonglum.net/tmux-version-3.png)
 
-I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions. tmux is so ingrained in my workflow that I start it automatically whenever I open a new iTerm2 window via the `Send text at start` option with `tmux new-session -A -s standard`.
-
-I also use [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) for emacs to fix some issues with the pasteboard.
+I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions.
 
 ## Vim
 
@@ -42,8 +38,6 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 * Really great **Syntax checker** via [`scrooloose/syntastic`](https://github.com/scrooloose/syntastic)
 * **Fuzzy finder** via [`kien/ctrlp.vim`](https://github.com/kien/ctrlp.vim)
 
-*I'm also experimenting with emacs and evil-mode, but don't tell anyone.*
-
 ## Other commandline tools
 
 * `git` is the only version control system I use. It has two amazing companions: [`hub`](http://hub.github.com) and [`tig`](http://jonas.nitro.dk/tig)
@@ -53,14 +47,14 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 * [`optiPNG`](http://optipng.sourceforge.net) is an PNG optimizer
 * [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree
 * [`wget`](http://www.gnu.org/software/wget), when I don't want to mess around with `curl`
+* [`ruby-install`](https://github.com/postmodern/ruby-install) to install Rubies, [`chruby`](https://github.com/postmodern/chruby) to switch between them
 
 ## Languages I work or play with
 
 * Ruby (Daily)
 * JavaScript (Daily)
-* Clojure & ClojureScript (Just got started)
 * I used Haskell and Prolog quite a lot in University
-* I'm also playing around with Go, Idris, Rust, Chicken Scheme and Common Lisp
+* I'm also playing around with Clojure, Idris, Rust and Elm
 
 ## Miscellaneous
 
@@ -69,7 +63,7 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 * My terminal emulator of choice is [iTerm2](http://www.iterm2.com).
 * I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to directories I visit often. This includes their subdirectories, with autocomplete.
 * I use US-Extended as my keyboard layout. The German layout is useless.
-* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating, Au4, Daft Punk, LukHash.
+* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating, Au4, Daft Punk, LukHash, Monument Valley OST, Les Revenants OST, Apocalyptica...
 
 ## Thanks
 
