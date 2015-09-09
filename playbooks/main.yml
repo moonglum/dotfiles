@@ -84,6 +84,8 @@
       with_dict: vim_packages
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh
+    - name: Set the timezone
+      command: timedatectl set-timezone Europe/Berlin
     - name: Create the marks directory
       file: path=/home/vagrant/.marks state=directory
     - name: Configure the marks

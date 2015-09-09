@@ -26,5 +26,9 @@ Vagrant.configure(2) do |config|
   config.vm.provider "vmware_fusion" do |v|
     v.vmx["memsize"] = "8056"
     v.vmx["numvcpus"] = "2"
+    # https://github.com/mitchellh/vagrant/issues/2248
+    v.vmx["tools.syncTime"] = "TRUE"
+    v.vmx["tools.synchronize.restore"] = "TRUE"
   end
+
 end
