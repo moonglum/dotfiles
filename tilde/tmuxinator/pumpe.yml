@@ -6,9 +6,8 @@ root: ~/Code/der
 windows:
   - client:
       layout: main-horizontal
-      root: ~/Code/der/git/pu-mpe-client-mock
+      root: ~/Code/der
       panes:
-        - vim
         -
   - core:
       layout: main-horizontal
@@ -16,15 +15,8 @@ windows:
       panes:
         - vim
         - node .
-  - dispatch:
-      layout: main-horizontal
-      root: ~/Code/der/git/pu-mpe-dispatch
-      panes:
-        - vim
-        - node .
-  - java:
+  - worker:
       layout: even-horizontal
       root: ~/Code/der/jars
       panes:
-        - java -jar pu-mpe-worker.jar
-        - java -jar pu-mpe-rule-mock.jar
+        - OVERRIDE_SERVICE_DISCOVERY=true java -jar pu-mpe-worker.jar
