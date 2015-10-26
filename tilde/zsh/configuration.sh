@@ -43,9 +43,6 @@ setopt transient_rprompt
 # Try to find a similar command when the command was not found
 setopt correct
 
-# Java Stuff
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 # Use vim as default editor – git for example
 export EDITOR='vim'
 

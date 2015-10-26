@@ -1,16 +1,10 @@
 ## Manipulation of the path and loading stuff
 
-# This loads RVM into a shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# The same for tmuxinator
+# tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Home
 PATH=$PATH:$HOME/.bin
-
-# Add RVM to PATH
-PATH=$PATH:$HOME/.rvm/bin
 
 # For homebrew
 PATH=/usr/local/bin:$PATH
@@ -23,10 +17,7 @@ PATH=/usr/texbin:$PATH
 PATH=/Users/moonglum/.cabal/bin:$PATH
 
 # For NPM
-PATH=/usr/local/share/npm/bin:$PATH
-
-# For Python (Only user installed packages)
-PATH=/Users/moonglum/Library/Python/2.7/bin:$PATH
+PATH=/usr/local/nodejs/default/bin:$PATH
 
 # For Heroku Toolbelt
 PATH=/usr/local/heroku/bin:$PATH

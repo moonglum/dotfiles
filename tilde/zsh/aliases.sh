@@ -14,22 +14,11 @@ alias be='bundle exec'
 alias j='jump'
 alias e='emacsclient -t'
 
-# Open files with Mac OS X applications
-function chrome() { open -a \"Google Chrome\" $@ }
-function safari(){ open -a Safari $@ }
-function marked(){ open -a "Marked 2" $@ }
-function pm(){ open -a Pixelmator $@ }
-function preview(){ open -a Preview $@ }
-
 # Get current public IP
 alias ip="curl icanhazip.com"
 
 # Github-flavored Git
-function git(){hub $@}
-
-# ccached gcc builds
-export CC="ccache gcc"
-export CXX="ccache g++"
+# function git(){hub $@}
 
 # Ruby-flavored Man
 # function man() { gem man -s $@ }
@@ -56,18 +45,9 @@ alias dropbox='echo "Use j dropbox"'
 alias desktop='echo "Use j desktop"'
 
 # Jump
-# Inspired by the Oh-My-ZSH Jump Plugin
-export MARKPATH=$HOME/.marks
-
 # jump FOO: jump to a mark named FOO
-jump() { cd -P "$MARKPATH/$1" }
-_jump() { _files -W "$MARKPATH/$1" }
+# Inspired by the Oh-My-ZSH Jump Plugin
+
+jump() { cd -P "$HOME/.marks/$1" }
+_jump() { _files -W "$HOME/.marks/$1" }
 compdef _jump jump
-
-# mark FOO: create a mark named FOO
-mark() { mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1" }
-
-# unmark FOO: delete a mark
-unmark() { rm -i "$MARKPATH/$1" }
-
-# marks: lists all marks (see: functions)

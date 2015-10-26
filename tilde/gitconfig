@@ -1,8 +1,6 @@
 [user]
   name = Lucas Dohmen
   email = lucas@dohmen.io
-[credential]
-  helper = osxkeychain
 [alias]
   pushnotes = !sh -c 'git push $1 refs/notes/*' -
   prune-all = !git remote | xargs -n 1 git remote prune

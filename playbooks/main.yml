@@ -1,0 +1,99 @@
+---
+- name: Install the required packages
+  hosts: all
+  sudo: True
+  vars:
+    ruby_install_version: 0.5.0
+    chruby_version: 0.3.9
+    nodejs_version: 0.12.7
+    dotfiles:
+      - arangosh.rc
+      - bundle
+      - config
+      - csirc
+      - gemrc
+      - gitconfig
+      - irbrc
+      - tmux.conf
+      - tmuxinator
+      - vimrc
+      - zsh
+      - zshrc
+    apt_packages:
+      - cloc
+      - git
+      - git-svn
+      - graphviz
+      - htop
+      - imagemagick
+      - ispell
+      - jq
+      - libpq-dev
+      - optipng
+      - postgresql
+      - redis-server
+      - silversearcher-ag
+      - tig
+      - tmux
+      - tree
+      - vim
+      - wget
+      - zsh
+    vim_packages:
+      elm.vim: lambdatoast/elm.vim
+      vim-pathogen: tpope/vim-pathogen
+      vim-colors-solarized: altercation/vim-colors-solarized
+      vim-polyglot: sheerun/vim-polyglot
+      vim-fugitive: tpope/vim-fugitive
+      vim-commentary: tpope/vim-commentary
+      vim-dispatch: tpope/vim-dispatch
+      vim-surround: tpope/vim-surround
+      vim-repeat: tpope/vim-repeat
+      vim-emoji: junegunn/vim-emoji
+      vim-textobj-user: kana/vim-textobj-user
+      vim-textobj-rubyblock: nelstrom/vim-textobj-rubyblock
+      rainbow: luochen1990/rainbow
+      paredit.vim: vim-scripts/paredit.vim
+      syntastic: scrooloose/syntastic
+      ctrlp.vim: kien/ctrlp.vim
+      vim-rspec: thoughtbot/vim-rspec
+      vim-proto: garyharan/vim-proto
+    npm_packages:
+      - npm
+      - jslint
+      - jshint
+      - jscs
+      - elm
+    marks:
+      c: /home/vagrant/Code
+  tasks:
+    - name: Add Erlang Solutions key
+      apt_key: url='http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+    - name: Add Erlang Solutions APT Repository
+      apt_repository: repo='deb http://packages.erlang-solutions.com/ubuntu vivid contrib' state=present
+    - name: Update cache and upgrade
+      apt: update_cache=yes upgrade=safe
+    - name: Install missing packages
+      apt: name={{ item }}
+      with_items: apt_packages
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.{{ item }} state=link src=/home/vagrant/Code/dotfiles/tilde/{{ item }}
+      with_items: dotfiles
+    - name: Install or update Vim plugins
+      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
+      with_dict: vim_packages
+    - name: Set default shell for Vagrant user
+      user: name=vagrant shell=/bin/zsh
+    - name: Create the marks directory
+      file: path=/home/vagrant/.marks state=directory
+    - name: Configure the marks
+      file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }}
+      with_dict: marks
+    - include: ruby-install.yml
+    - include: chruby.yml
+    - include: nodejs.yml
+    - name: Install the stable version of Ruby
+      command: ruby-install ruby
+    - name: Install global NPM packages
+      npm: name={{ item }} global=yes state=latest
+      with_items: npm_packages
