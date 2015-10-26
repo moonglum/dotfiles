@@ -49,7 +49,6 @@
       vim-dispatch: tpope/vim-dispatch
       vim-surround: tpope/vim-surround
       vim-repeat: tpope/vim-repeat
-      vim-emoji: junegunn/vim-emoji
       vim-textobj-user: kana/vim-textobj-user
       vim-textobj-rubyblock: nelstrom/vim-textobj-rubyblock
       rainbow: luochen1990/rainbow

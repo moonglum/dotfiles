@@ -50,19 +50,8 @@ let g:syntastic_check_on_open=1
 " GUI MacVim only: Popover for each line with errors
 let g:syntastic_enable_balloons=1
 
-if emoji#available()
-  " Terminal Vim for example
-  " Bombs and Marks
-  " let g:syntastic_error_symbol=emoji#for('boom')
-  " let g:syntastic_warning_symbol=emoji#for('exclamation')
-  " Cats
-  let g:syntastic_error_symbol=emoji#for('scream_cat')
-  let g:syntastic_warning_symbol=emoji#for('crying_cat_face')
-else
-  " GUI MacVim for example
-  let g:syntastic_error_symbol='✗'
-  let g:syntastic_warning_symbol='⚠'
-end
+let g:syntastic_error_symbol='🙀'
+let g:syntastic_warning_symbol='😿'
 
 " ======= CtrlP =======
 " Ignore files that are git ignored (thanks @railsbros-dirk)
