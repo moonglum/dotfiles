@@ -52,11 +52,9 @@
       vim-textobj-user: kana/vim-textobj-user
       vim-textobj-rubyblock: nelstrom/vim-textobj-rubyblock
       rainbow: luochen1990/rainbow
-      paredit.vim: vim-scripts/paredit.vim
       syntastic: scrooloose/syntastic
-      ctrlp.vim: kien/ctrlp.vim
+      ctrlp.vim: ctrlpvim/ctrlp.vim
       vim-rspec: thoughtbot/vim-rspec
-      vim-proto: garyharan/vim-proto
     npm_packages:
       - npm
       - jslint

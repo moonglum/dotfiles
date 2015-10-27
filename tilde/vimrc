@@ -21,16 +21,7 @@ set expandtab                               " Use Soft-Tabs
 set tabstop=2 softtabstop=2 shiftwidth=2    " Use two spaces for tabs, soft-tabs and when shifting
 set nojoinspaces                            " Insert only one space when joining lines
 match ErrorMsg '\%>100v.\+'                 " Highlight Characters that overstep 100 characters
-
-" Jump between pairs of keywords via %
-runtime macros/matchit.vim
-
-" === MacVim Setup ===
-if has("gui_running")
-  set guifont=Source\ Code\ Pro:h14 " Right Font and Font-Size
-  set guioptions=egmrt              " No Toolbar
-  set guioptions-=r                 " No Scrollbar
-endif
+runtime macros/matchit.vim                  " Jump between pairs of keywords via %
 
 " =========== Solarized Dark ===========
 " Currently using the dark version
@@ -47,21 +38,13 @@ let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 " Also run a Syntax Check when the file is opened
 let g:syntastic_check_on_open=1
 
-" GUI MacVim only: Popover for each line with errors
-let g:syntastic_enable_balloons=1
-
+" More cats
 let g:syntastic_error_symbol='🙀'
 let g:syntastic_warning_symbol='😿'
 
 " ======= CtrlP =======
-" Ignore files that are git ignored (thanks @railsbros-dirk)
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard -co'],
-    \ 2: ['.ctrlp_root_dir', 'find %s -type f'],
-  \ },
-  \ 'fallback': 'find %s -type f'
-\ }
+" Ignore files that are git ignored
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Jump to the window when it is already open (only when in this tab)
 let g:ctrlp_switch_buffer = 'e'
@@ -69,12 +52,12 @@ let g:ctrlp_switch_buffer = 'e'
 " Disable caching
 let g:ctrlp_use_caching = 0
 
-" ====== rspec.vim ======
+" ====== vim-rspec ======
 let g:rspec_command = "Dispatch rspec {spec}"
-let g:rspec_runner = "os_x_iterm"
 
 " === Language Specific Setting ===
 
+" ES6 is JavaScript
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 
 " Makefiles require tabs
@@ -85,8 +68,12 @@ autocmd! BufRead,BufNewFile *.{md,mdpp,txt} set ft=markdown
 
 " .rs is Rust, nothing else!
 autocmd! BufRead,BufNewFile *.rs set ft=rust
+
 " Community Standard for Rust is indentation of 4
 autocmd FileType rust set tabstop=4 softtabstop=4 shiftwidth=4
+
+" Enable Syntax highlighting for fenced code blocks in Markdown
+let g:markdown_fenced_languages = ['js=javascript', 'ruby']
 
 " Autogroup for prose file types
 augroup prose
@@ -105,19 +92,6 @@ augroup prose
 augroup END
 
 " === Custom Functions and Commands ===
-
-" Open the current file in Marked
-function! s:marked()
-  silent exe "!open -a 'Marked 2' %"
-  redraw!
-endfunction
-command! Marked :call s:marked()
-
-" Check current file with JSLint
-command! JSLint :Dispatch jslint "%:p"
-
-" Check current file with JSHint
-command! JSHint :Dispatch jshint "%:p"
 
 " Switch spell checking language
 command! British :set spelllang=en_gb

@@ -25,18 +25,17 @@ When I started with Vim, I used Janus. But it was way too much stuff in there th
 
 I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
 
-* Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
+* Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot) and [`lambdatoast/elm.vim`](https://github.com/lambdatoast/elm.vim)
 * Mind blowing **git integration** via [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
 * Asynchronous **build and test dispatcher** via [`tpope/vim-dispatch`](https://github.com/tpope/vim-dispatch)
 * **Quoting/Parenthesizing** made simple via [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
-* **Emojis** for Vim via [`junegunn/vim-emoji`](https://github.com/junegunn/vim-emoji)
 * Custom **text objects for Ruby** via [`kana/vim-textobj-user`](https://github.com/kana/vim-textobj-user) and [`nelstrom/vim-textobj-rubyblock`](https://github.com/nelstrom/vim-textobj-rubyblock)
-* For **LISP editing** I'm also using [`luochen1990/rainbow`](https://github.com/luochen1990/rainbow) and `paredit.vim`
-* For **JS editing** I have completion and documentation via [`marijnh/tern_for_vim`](https://github.com/marijnh/tern_for_vim)
+* For **rainbow parenthesis** I'm also using [`luochen1990/rainbow`](https://github.com/luochen1990/rainbow)
 * Really great **Syntax checker** via [`scrooloose/syntastic`](https://github.com/scrooloose/syntastic)
-* **Fuzzy finder** via [`kien/ctrlp.vim`](https://github.com/kien/ctrlp.vim)
+* **Fuzzy finder** via [`ctrlpvim/ctrlp.vim`](https://github.com/ctrlpvim/ctrlp.vim)
+* Great **rspec integration** via [`thoughtbot/vim-rspec`](https://github.com/thoughtbot/vim-rspec)
 
 ## Other commandline tools
 
