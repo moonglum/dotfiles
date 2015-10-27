@@ -39,14 +39,15 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 
 ## Other commandline tools
 
-* `git` is the only version control system I use. It has two amazing companions: [`hub`](http://hub.github.com) and [`tig`](http://jonas.nitro.dk/tig)
+* `git` is the only version control system I use. It has three amazing companions: [`hub`](http://hub.github.com), [`tig`](http://jonas.nitro.dk/tig) and [`git-svn`](http://git-scm.com/book/en/v1/Git-and-Other-Systems-Git-and-Subversion).
 * `ag` aka. [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) is a replacement for grep that is so fast, that I can't really believe it.
-* [`htop`](https://github.com/max-horvath/htop-osx) is a replacement for `top`
-* [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data
-* [`optiPNG`](http://optipng.sourceforge.net) is an PNG optimizer
-* [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree
-* [`wget`](http://www.gnu.org/software/wget), when I don't want to mess around with `curl`
-* [`ruby-install`](https://github.com/postmodern/ruby-install) to install Rubies, [`chruby`](https://github.com/postmodern/chruby) to switch between them
+* [`htop`](https://github.com/max-horvath/htop-osx) is a replacement for `top`.
+* [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data.
+* [`optiPNG`](http://optipng.sourceforge.net) is an PNG optimizer.
+* [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree.
+* [`wget`](http://www.gnu.org/software/wget), when I don't want to mess around with `curl`.
+* [`ruby-install`](https://github.com/postmodern/ruby-install) to install Rubies, [`chruby`](https://github.com/postmodern/chruby) to switch between them.
+* [`cloc`](https://github.com/AlDanial/cloc) counts lines of code.
 
 ## Languages I work or play with
 
