@@ -1,6 +1,8 @@
 # dotfiles
 
-These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Ansible, iTerm and Xcode. My dotfiles contain a Vagrantfile and Ansible scripts to provision the Vagrant box. So when I want to start developing on my machine, I do a `vagrant --provision up` and then a `vagrant ssh`. And then I work inside the Vagrant box.
+These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Ansible, iTerm 2 and Xcode. My dotfiles contain a Vagrantfile and Ansible scripts to provision the Vagrant box. So when I want to start developing on my machine, I do a `vagrant --provision up` and then a `vagrant ssh`. And then I work inside the Vagrant box.
+
+I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) in 12px.
 
 ## ZSH
 
@@ -9,6 +11,8 @@ My ZSH setup is quite minimal, nothing special going on here. Just standard stuf
 ![Image of the prompt](http://images.moonglum.net/zsh-version-2.png)
 
 The smiley represents the exit status of the last executed command. On the right side it displays information about the current directory and the Git status.
+
+I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to directories I visit often. This includes their subdirectories, with autocomplete.
 
 ## tmux
 
@@ -20,8 +24,6 @@ I configured it with some more Vim-like bindings and a powerline-inspired status
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions.
 
 ## Vim
-
-When I started with Vim, I used Janus. But it was way too much stuff in there that I possibly will never use. Also I like to know my configuration :wink: So I re-started my Vimrc from Scratch.
 
 I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
 
@@ -58,11 +60,8 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 
 ## Miscellaneous
 
-* I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful.
-* [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) is the font I'm using. In 14px. I know that's huge, but sometimes I lean back in my chair to reason about my code (like a sir). And then I still want to be able to read my code :wink:
 * My terminal emulator of choice is [iTerm2](http://www.iterm2.com).
-* I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to directories I visit often. This includes their subdirectories, with autocomplete.
-* I use US-Extended as my keyboard layout. The German layout is useless.
+* I use US-Extended as my keyboard layout. The German keyboard layout is useless.
 * When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating, Au4, Daft Punk, LukHash, Monument Valley OST, Les Revenants OST, Apocalyptica...
 
 ## Thanks
@@ -72,7 +71,9 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 * To Drew Neil for his [screencasts](http://vimcasts.org) and his [book about Vim](http://pragprog.com/book/dnvim/practical-vim)
 * To Brian P. Hogan for his [book about tmux](http://pragprog.com/book/bhtmux/tmux)
 * To Gary Bernhardt for his [screencasts](https://www.destroyallsoftware.com/screencasts)
-* To the following people for letting me steal from their dotfiles:
+* To the following people for letting me steal from their dotfiles or provided feedback:
   * skwp
   * railsbros-dirk
+  * bascht
+  * bitboxer
 * and to the [Vim Wikia](http://vim.wikia.com/wiki/Vim_Tips_Wiki) 
