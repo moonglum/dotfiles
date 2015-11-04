@@ -2,9 +2,8 @@
 autoload -Uz vcs_info
 zstyle ':vcs_info:*'           enable             git
 zstyle ':vcs_info:git:*'       check-for-changes  true
-zstyle ':vcs_info:git:*:-all-' command            /usr/local/bin/git
 
-local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})  "
+local smiley="%(?,😃,😡)  "
 
 precmd () {
   zstyle ':vcs_info:git:*' actionformats      " @ %b|%a%u"
