@@ -20,3 +20,9 @@ windows:
       root: ~/Code/der/jars
       panes:
         - OVERRIDE_SERVICE_DISCOVERY=true java -jar pu-mpe-worker.jar
+  - cache: redis-server --port 6380
+  - mock:
+      layout: even-horizontal
+      root: ~/Code/der/git/mock
+      panes:
+        - node .
