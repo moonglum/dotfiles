@@ -5,7 +5,8 @@
   vars:
     ruby_install_version: 0.5.0
     chruby_version: 0.3.9
-    nodejs_version: 0.12.7
+    ruby_version: 2.2.4
+    nodejs_version: 5.x
     dotfiles:
       - arangosh.rc
       - bundle
@@ -20,6 +21,7 @@
       - zsh
       - zshrc
     apt_packages:
+      - cargo-stable
       - cloc
       - git
       - git-svn
@@ -27,9 +29,11 @@
       - imagemagick
       - jq
       - libpq-dev
+      - nodejs
       - optipng
       - postgresql
       - redis-server
+      - rust-stable
       - silversearcher-ag
       - tig
       - tmux
@@ -60,11 +64,20 @@
       - elm
     marks:
       c: /home/vagrant/Code
+    apt_keys:
+      - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+      - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+    apt_repositories:
+      - 'deb http://packages.erlang-solutions.com/ubuntu vivid contrib'
+      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} vivid main'
+      - 'ppa:hansjorg/rust'
   tasks:
-    - name: Add Erlang Solutions key
-      apt_key: url='http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
-    - name: Add Erlang Solutions APT Repository
-      apt_repository: repo='deb http://packages.erlang-solutions.com/ubuntu vivid contrib' state=present
+    - name: Add APT Keys
+      apt_key: url="{{ item }}"
+      with_items: apt_keys
+    - name: Add APT Repositories
+      apt_repository: repo="{{ item }}" state=present
+      with_items: apt_repositories
     - name: Update cache and upgrade
       apt: update_cache=yes upgrade=safe
     - name: Install missing packages
@@ -87,9 +100,5 @@
       with_dict: marks
     - include: ruby-install.yml
     - include: chruby.yml
-    - include: nodejs.yml
     - name: Install the stable version of Ruby
-      command: ruby-install ruby
-    - name: Install global NPM packages
-      npm: name={{ item }} global=yes state=latest
-      with_items: npm_packages
+      command: ruby-install ruby {{ ruby_version }}
