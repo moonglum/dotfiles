@@ -18,7 +18,7 @@ alias e='emacsclient -t'
 alias ip="curl icanhazip.com"
 
 # Github-flavored Git
-# function git(){hub $@}
+function git(){hub $@}
 
 # Ruby-flavored Man
 # function man() { gem man -s $@ }

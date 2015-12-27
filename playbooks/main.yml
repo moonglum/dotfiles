@@ -98,6 +98,18 @@
     - name: Configure the marks
       file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }}
       with_dict: marks
+    - name: Create ~/.bin
+      file: path=/home/vagrant/.bin state=directory owner=vagrant group=vagrant
+    - name: Download icdiff
+      get_url: url=https://raw.githubusercontent.com/jeffkaufman/icdiff/release-1.7.3/icdiff dest=/home/vagrant/.bin/icdiff owner=vagrant group=vagrant mode="u=rwx"
+    - name: Download hub
+      get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
+    - name: Unarchive hub
+      unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
+    - name: Move hub
+      command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /home/vagrant/.bin/hub
+    - name: Set owner, group and mode for hub
+      file: path=/home/vagrant/.bin/hub owner=vagrant group=vagrant mode="u=rwx"
     - include: ruby-install.yml
     - include: chruby.yml
     - name: Install the stable version of Ruby
