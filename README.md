@@ -50,6 +50,7 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 * [`wget`](http://www.gnu.org/software/wget), when I don't want to mess around with `curl`.
 * [`ruby-install`](https://github.com/postmodern/ruby-install) to install Rubies, [`chruby`](https://github.com/postmodern/chruby) to switch between them.
 * [`cloc`](https://github.com/AlDanial/cloc) counts lines of code.
+* [`icdiff`](http://www.jefftk.com/icdiff) is a nicer diff tool.
 
 ## Languages I work or play with
 
