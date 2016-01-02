@@ -63,6 +63,9 @@
       - jshint
       - jscs
       - elm
+    ruby_gems:
+      - bundler
+      - tmuxinator
     marks:
       c: /home/vagrant/Code
     apt_keys:
@@ -114,3 +117,9 @@
       file: path=/home/vagrant/.bin/hub owner=vagrant group=vagrant mode="u=rwx"
     - name: Switch to the correct Ruby version
       command: ruby-switch --set ruby{{ ruby_version }}
+    - name: Install default Ruby gems
+      command: gem install {{ item }}
+      with_items: ruby_gems
+    - name: Install default Ruby gems
+      command: npm install -g {{ item }}
+      with_items: npm_packages
