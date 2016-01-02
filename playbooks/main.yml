@@ -27,6 +27,7 @@
       - imagemagick
       - jq
       - libpq-dev
+      - neovim
       - nodejs
       - optipng
       - postgresql
@@ -76,6 +77,7 @@
       - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} vivid main'
       - 'ppa:hansjorg/rust'
       - 'ppa:brightbox/ruby-ng'
+      - 'ppa:neovim-ppa/unstable'
   tasks:
     - name: Add APT Keys
       apt_key: url="{{ item }}"
