@@ -3,10 +3,8 @@
   hosts: all
   sudo: True
   vars:
-    ruby_install_version: 0.5.0
-    chruby_version: 0.3.9
-    ruby_version: 2.2.4
     nodejs_version: 5.x
+    ruby_version: 2.2
     dotfiles:
       - arangosh.rc
       - bundle
@@ -33,6 +31,9 @@
       - optipng
       - postgresql
       - redis-server
+      - ruby{{ ruby_version }}
+      - ruby{{ ruby_version }}-dev
+      - ruby-switch
       - rust-stable
       - silversearcher-ag
       - tig
@@ -71,6 +72,7 @@
       - 'deb http://packages.erlang-solutions.com/ubuntu vivid contrib'
       - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} vivid main'
       - 'ppa:hansjorg/rust'
+      - 'ppa:brightbox/ruby-ng'
   tasks:
     - name: Add APT Keys
       apt_key: url="{{ item }}"
@@ -110,7 +112,5 @@
       command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /home/vagrant/.bin/hub
     - name: Set owner, group and mode for hub
       file: path=/home/vagrant/.bin/hub owner=vagrant group=vagrant mode="u=rwx"
-    - include: ruby-install.yml
-    - include: chruby.yml
-    - name: Install the stable version of Ruby
-      command: ruby-install ruby {{ ruby_version }}
+    - name: Switch to the correct Ruby version
+      command: ruby-switch --set ruby{{ ruby_version }}
