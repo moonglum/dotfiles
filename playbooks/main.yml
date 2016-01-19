@@ -5,19 +5,6 @@
   vars:
     nodejs_version: 5.x
     ruby_version: 2.3
-    dotfiles:
-      - arangosh.rc
-      - bundle
-      - config
-      - csirc
-      - gemrc
-      - gitconfig
-      - irbrc
-      - tmux.conf
-      - tmuxinator
-      - vimrc
-      - zsh
-      - zshrc
     apt_packages:
       - cargo-stable
       - cloc
@@ -93,9 +80,11 @@
     - name: Install missing packages
       apt: name={{ item }}
       with_items: apt_packages
+    - shell: ls -1 /home/vagrant/Code/dotfiles/tilde
+      register: dotfiles
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} state=link src=/home/vagrant/Code/dotfiles/tilde/{{ item }}
-      with_items: dotfiles
+      with_items: dotfiles.stdout_lines
     - name: Install or update Vim plugins
       git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
       with_dict: vim_packages
