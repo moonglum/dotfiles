@@ -5,6 +5,9 @@ execute pathogen#infect()
 " === General Setup ===
 set nocompatible                            " Use Vim settings, rather then Vi settings
 syntax enable                               " Activate Syntax Highlight
+filetype on                                 " Enable filetype detection
+filetype indent on                          " Enable filetype-specific indenting
+filetype plugin on                          " Enable filetype-specific plugins
 set encoding=utf-8                          " Set default encoding to UTF-8
 set hlsearch                                " Highlight search results
 set nowrap                                  " Deactivate Wrapping

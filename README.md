@@ -2,7 +2,7 @@
 
 These are my dotfiles. Maybe they will inspire you, maybe they won't. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Ansible, iTerm 2 and Xcode. My dotfiles contain a Vagrantfile and Ansible scripts to provision the Vagrant box. So when I want to start developing on my machine, I do a `vagrant --provision up` and then a `vagrant ssh`. And then I work inside the Vagrant box.
 
-I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) in 12px.
+I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) with [patches for powerline](https://github.com/powerline/fonts) in 12px.
 
 ## ZSH
 
@@ -27,7 +27,7 @@ I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my developm
 
 I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
 
-* Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot) and [`lambdatoast/elm.vim`](https://github.com/lambdatoast/elm.vim)
+* Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Mind blowing **git integration** via [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
 * Asynchronous **build and test dispatcher** via [`tpope/vim-dispatch`](https://github.com/tpope/vim-dispatch)
@@ -41,16 +41,17 @@ I use Vim in the terminal, because of tmux. I'm doing all my programming (curren
 
 ## Other commandline tools
 
-* `git` is the only version control system I use. It has three amazing companions: [`hub`](http://hub.github.com), [`tig`](http://jonas.nitro.dk/tig) and [`git-svn`](http://git-scm.com/book/en/v1/Git-and-Other-Systems-Git-and-Subversion).
+* [`git`](https://www.git-scm.com) is the only version control system I use. It has two amazing companions: [`hub`](http://hub.github.com) and [`tig`](http://jonas.nitro.dk/tig)
 * `ag` aka. [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) is a replacement for grep that is so fast, that I can't really believe it.
 * [`htop`](https://github.com/max-horvath/htop-osx) is a replacement for `top`.
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data.
 * [`optiPNG`](http://optipng.sourceforge.net) is an PNG optimizer.
 * [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree.
-* [`wget`](http://www.gnu.org/software/wget), when I don't want to mess around with `curl`.
-* [`ruby-install`](https://github.com/postmodern/ruby-install) to install Rubies, [`chruby`](https://github.com/postmodern/chruby) to switch between them.
+* [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
 * [`cloc`](https://github.com/AlDanial/cloc) counts lines of code.
 * [`icdiff`](http://www.jefftk.com/icdiff) is a nicer diff tool.
+* [`alex`](http://alexjs.com) to catch insensitive, inconsiderate writing.
+* [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB
 
 ## Languages I work or play with
 

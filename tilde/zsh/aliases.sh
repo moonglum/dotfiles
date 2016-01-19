@@ -6,43 +6,16 @@ alias ..='cd ..'
 # One-letter shortcuts
 alias l='ls -al'
 alias o='open'
-alias o.='open .'
-alias m='make'
-alias g='bundle exec guard'
-alias b='bundle'
-alias be='bundle exec'
 alias j='jump'
-alias e='emacsclient -t'
-
-# Get current public IP
-alias ip="curl icanhazip.com"
 
 # Github-flavored Git
 function git(){hub $@}
-
-# Ruby-flavored Man
-# function man() { gem man -s $@ }
 
 # Run Rubocop with the configuration used by Hound
 alias hound='rubocop -c .hound.yml'
 
 # mkdir and cd to it (from oh-my-zsh)
 function mcd() { mkdir -p "$1" && cd "$1"; }
-
-# Speed Test
-alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
-
-# Lossy local network
-alias lossy='sudo ipfw pipe 1 config bw 10bits && sudo ipfw add 10 pipe 1 tcp from any to me 80'
-alias halflossy='sudo ipfw pipe 2 config bw 2000bits && sudo ipfw add 10 pipe 2 tcp from any to me 80'
-alias delossy='sudo ipfw delete 10'
-
-# Trolling myself
-alias ack='echo "Use ag "'
-alias c='echo "Use j c"'
-alias n='echo "Use j n"'
-alias dropbox='echo "Use j dropbox"'
-alias desktop='echo "Use j desktop"'
 
 # Jump
 # jump FOO: jump to a mark named FOO

@@ -4,7 +4,7 @@
   sudo: True
   vars:
     nodejs_version: 5.x
-    ruby_version: 2.2
+    ruby_version: 2.3
     dotfiles:
       - arangosh.rc
       - bundle
@@ -21,8 +21,8 @@
     apt_packages:
       - cargo-stable
       - cloc
+      - curl
       - git
-      - git-svn
       - htop
       - imagemagick
       - jq
@@ -44,6 +44,7 @@
       - wget
       - zsh
     vim_packages:
+      vim-ruby: vim-ruby/vim-ruby
       vim-pathogen: tpope/vim-pathogen
       vim-colors-solarized: altercation/vim-colors-solarized
       vim-polyglot: sheerun/vim-polyglot
@@ -59,6 +60,7 @@
       ctrlp.vim: ctrlpvim/ctrlp.vim
       vim-rspec: thoughtbot/vim-rspec
     npm_packages:
+      - alex
       - npm
       - jslint
       - jshint
@@ -66,6 +68,7 @@
       - elm
     ruby_gems:
       - bundler
+      - pry
       - tmuxinator
     marks:
       c: /home/vagrant/Code

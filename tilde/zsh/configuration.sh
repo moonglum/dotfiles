@@ -71,20 +71,14 @@ zle -N self-insert url-quote-magic
 setopt correct_all
 alias man='nocorrect man'
 alias mv='nocorrect mv'
-alias mysql='nocorrect mysql'
 alias mkdir='nocorrect mkdir'
 alias curl='nocorrect curl'
 alias rake='nocorrect rake'
 alias make='nocorrect make'
-alias cake='nocorrect cake'
-alias brew='nocorrect brew'
 alias bundle='nocorrect bundle'
-alias knife='nocorrect knife'
+alias sudo='nocorrect sudo'
 
 # Load functions from ~/.zsh/functions
 fpath=(~/.zsh/functions $fpath)
 # ...and load all functions therein at first incarnation
 autoload -U ${fpath[1]}/*(.N:t)
-
-# Increase the ridiculous ulimit
-ulimit -n 2048

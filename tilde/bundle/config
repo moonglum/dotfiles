@@ -1,5 +1,4 @@
 ---
-BUNDLE_BUILD__LIBV8: "--with-system-v8"
 BUNDLE_JOBS: '3'
 BUNDLE_CONSOLE: pry
 BUNDLE_GEM__COC: 'true'
