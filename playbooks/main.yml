@@ -86,7 +86,7 @@
     - shell: ls -1 /home/vagrant/Code/dotfiles/tilde
       register: dotfiles
     - name: Link Dotfiles
-      file: path=/home/vagrant/.{{ item }} state=link src=/home/vagrant/Code/dotfiles/tilde/{{ item }}
+      file: path=/home/vagrant/.{{ item }} src=/home/vagrant/Code/dotfiles/tilde/{{ item }} owner=vagrant group=vagrant state=link
       with_items: dotfiles.stdout_lines
     - name: Install or update Vim plugins
       git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
@@ -110,13 +110,13 @@
       unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
     - name: Move hub
       command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /home/vagrant/.bin/hub
-    - name: Set owner, group and mode for hub
-      file: path=/home/vagrant/.bin/hub owner=vagrant group=vagrant mode="u=rwx"
     - name: Switch to the correct Ruby version
       command: ruby-switch --set ruby{{ ruby_version }}
     - name: Install default Ruby gems
       command: gem install {{ item }}
       with_items: ruby_gems
-    - name: Install default Ruby gems
+    - name: Install default NPM packages
       command: npm install -g {{ item }}
       with_items: npm_packages
+    - file: path=/home/vagrant/.bin owner=vagrant group=vagrant mode="u=rwx" recurse=yes
+    - file: path=/home/vagrant/.vim owner=vagrant group=vagrant mode="u=rwx" recurse=yes
