@@ -1,9 +1,0 @@
----
-- name: Link the dotfiles
-  hosts: all
-  tasks:
-    - shell: ls -1 /home/vagrant/Code/dotfiles/tilde
-      register: dotfiles
-    - name: Link Dotfiles
-      file: path=/home/vagrant/.{{ item }} src=/home/vagrant/Code/dotfiles/tilde/{{ item }} owner=vagrant group=vagrant state=link
-      with_items: dotfiles.stdout_lines
