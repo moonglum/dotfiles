@@ -10,9 +10,10 @@ Vagrant.configure(2) do |config|
 
   config.ssh.forward_agent = true
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
-  end
+  config.vm.provision 'shell', inline: <<-'SCRIPT'
+    ls /vagrant/tilde |
+    ruby -run -ne 'FileUtils.ln_sf "/vagrant/tilde/#{$_.strip!}", "/home/vagrant/.#{$_}"'
+  SCRIPT
 
   config.vm.synced_folder "/Users/moonglum/Code", "/home/vagrant/Code"
   config.vm.synced_folder "/Users/moonglum/.gnupg", "/home/vagrant/.gnupg"

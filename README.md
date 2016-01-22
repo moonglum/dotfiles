@@ -1,6 +1,6 @@
 # dotfiles
 
-These are my dotfiles. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Ansible, Packer, iTerm 2 and Xcode. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VMWare Fusion. The box is build on Atlas by Packer (You can find the code for that [here](https://github.com/yakshed/base-vm)). So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
+These are my dotfiles. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Packer, iTerm 2 and Xcode. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VMWare Fusion. The box is build on Atlas by Packer (You can find the code for that [here](https://github.com/yakshed/base-vm)). So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
 
 I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) with [patches for powerline](https://github.com/powerline/fonts) in 12px.
 

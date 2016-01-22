@@ -1,8 +1,0 @@
----
-- hosts: all
-  tasks:
-    - shell: ls -1 /vagrant/tilde
-      register: dotfiles
-    - name: Link Dotfiles
-      file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} state=link
-      with_items: dotfiles.stdout_lines
