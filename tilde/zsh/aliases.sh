@@ -5,7 +5,6 @@ alias ..='cd ..'
 
 # One-letter shortcuts
 alias l='ls -al'
-alias o='open'
 alias j='jump'
 
 # Github-flavored Git
