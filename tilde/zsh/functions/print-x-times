@@ -1,6 +1,0 @@
-#!/bin/zsh
-## print-x-times x y
-# Prints y x times
-# From DAS
-
-jot -b $2 - 1 $1 | xargs | tr -d ' '
