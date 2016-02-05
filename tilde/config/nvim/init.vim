@@ -111,16 +111,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " === Leader Key ===
 
-" Execute dispatcher's Make
-nnoremap <Leader>m :Make<CR>
-
 " Edit my vimrc (from: Learn Vim Script the hard way)
 nnoremap <leader>ev :vne $MYVIMRC<cr>
 
 " Source my vimrc (from: Learn Vim Script the hard way)
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Mappings for vim-rspec
-nnoremap <leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <leader>s :call RunNearestSpec()<CR>
-nnoremap <leader>a :call RunAllSpecs()<CR>
