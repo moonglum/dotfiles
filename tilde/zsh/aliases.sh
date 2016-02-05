@@ -13,6 +13,9 @@ function git(){hub $@}
 # Run Rubocop with the configuration used by Hound
 alias hound='rubocop -c .hound.yml'
 
+# Use nvim instead of vim
+alias vim='nvim'
+
 # mkdir and cd to it (from oh-my-zsh)
 function mcd() { mkdir -p "$1" && cd "$1"; }
 

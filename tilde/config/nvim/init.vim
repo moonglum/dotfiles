@@ -47,16 +47,14 @@ let g:syntastic_warning_symbol='😿'
 
 " ======= CtrlP =======
 " Ignore files that are git ignored
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
 
 " Jump to the window when it is already open (only when in this tab)
 let g:ctrlp_switch_buffer = 'e'
 
 " Disable caching
 let g:ctrlp_use_caching = 0
-
-" ====== vim-rspec ======
-let g:rspec_command = "Dispatch rspec {spec}"
 
 " === Language Specific Setting ===
 
