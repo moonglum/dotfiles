@@ -3,28 +3,18 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " === General Setup ===
-set nocompatible                            " Use Vim settings, rather then Vi settings
 syntax enable                               " Activate Syntax Highlight
-filetype on                                 " Enable filetype detection
-filetype indent on                          " Enable filetype-specific indenting
-filetype plugin on                          " Enable filetype-specific plugins
-set encoding=utf-8                          " Set default encoding to UTF-8
-set hlsearch                                " Highlight search results
 set nowrap                                  " Deactivate Wrapping
 set nrformats=                              " Treat all numbers as decimal
 set cursorcolumn                            " Highlight the current column
 set cursorline                              " Highlight the current line
 set noswapfile                              " I don't like Swapfiles
-set shell=bash                              " This makes RVM work inside Vim. I have no idea why – Gary Bernhardt
-set timeout timeoutlen=1000 ttimeoutlen=100 " Fix slow O inserts from Gary Bernhardt
-set ai                                      " Automatically set the indent of a new line
 set spell spelllang=en_us                   " Activate spell checking and set American as default
 set list listchars=tab:›\ ,trail:‹          " Show invisible characters: Tabs & trailing whitespace
 set expandtab                               " Use Soft-Tabs
 set tabstop=2 softtabstop=2 shiftwidth=2    " Use two spaces for tabs, soft-tabs and when shifting
 set nojoinspaces                            " Insert only one space when joining lines
-match ErrorMsg '\%>100v.\+'                 " Highlight Characters that overstep 100 characters
-runtime macros/matchit.vim                  " Jump between pairs of keywords via %
+set noincsearch                             " Don't match while still typing during search
 
 " =========== Solarized Dark ===========
 " Currently using the dark version
