@@ -1,6 +1,6 @@
 # dotfiles
 
-These are my dotfiles. They contain my configurations of Vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Packer, iTerm 2 and Xcode. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VMWare Fusion. The box is build on Atlas by Packer (You can find the code for that [here](https://github.com/yakshed/base-vm)). So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
+These are my dotfiles. They contain my configurations of Neovim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Packer, iTerm 2 and Xcode. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VMWare Fusion. The box is build on Atlas by Packer (You can find the code for that [here](https://github.com/yakshed/base-vm)). So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
 
 I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Adobe Source Code Pro](https://github.com/adobe/Source-Code-Pro) with [patches for powerline](https://github.com/powerline/fonts) in 12px.
 
@@ -23,9 +23,9 @@ I configured it with some more Vim-like bindings and a powerline-inspired status
 
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions.
 
-## Vim
+## Neovim
 
-I use Vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Vim. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
+I use Neovim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in Neovim. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
 
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Mind blowing **git integration** via [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
