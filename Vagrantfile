@@ -5,8 +5,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "yakshed/moonglum"
   # config.vm.box_check_update = false
 
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
-  config.vm.network "forwarded_port", guest: 4000, host: 4000
+  # The box is reachable via dotfiles.vagrant.dev
+  config.landrush.enabled = true
 
   config.ssh.forward_agent = true
 
