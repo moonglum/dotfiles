@@ -5,9 +5,6 @@ Vagrant.configure(2) do |config|
   config.vm.box = "yakshed/moonglum"
   # config.vm.box_check_update = false
 
-  # The box is reachable via dotfiles.vagrant.dev
-  config.landrush.enabled = true
-
   config.ssh.forward_agent = true
 
   config.vm.provision 'shell', inline: <<-'SCRIPT'
