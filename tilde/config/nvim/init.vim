@@ -4,6 +4,7 @@ execute pathogen#infect()
 
 " === General Setup ===
 syntax enable                               " Activate Syntax Highlight
+filetype plugin on
 set nowrap                                  " Deactivate Wrapping
 set nrformats=                              " Treat all numbers as decimal
 set cursorcolumn                            " Highlight the current column
