@@ -52,6 +52,7 @@ I use Neovim in the terminal, because of tmux. I'm doing all my programming (cur
 * [`icdiff`](http://www.jefftk.com/icdiff) is a nicer diff tool.
 * [`alex`](http://alexjs.com) to catch insensitive, inconsiderate writing.
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB
+* [`entr`](http://entrproject.org/) is a brilliantly simple utility to do something when a file changes
 
 ## Languages I work or play with
 
