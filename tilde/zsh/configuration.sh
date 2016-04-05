@@ -77,6 +77,7 @@ alias rake='nocorrect rake'
 alias make='nocorrect make'
 alias bundle='nocorrect bundle'
 alias sudo='nocorrect sudo'
+alias mix='nocorrect mix'
 
 # Load functions from ~/.zsh/functions
 fpath=(~/.zsh/functions $fpath)
