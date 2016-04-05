@@ -2,3 +2,5 @@
 tilde/config/hub
 tilde/zsh/plugins
 .vagrant
+tilde/config/nvim/bundle
+tilde/config/nvim/spell
