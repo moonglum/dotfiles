@@ -16,6 +16,7 @@ set expandtab                               " Use Soft-Tabs
 set tabstop=2 softtabstop=2 shiftwidth=2    " Use two spaces for tabs, soft-tabs and when shifting
 set nojoinspaces                            " Insert only one space when joining lines
 set noincsearch                             " Don't match while still typing during search
+set mouse=                                  " Deactivate this super annoying mouse stuff
 
 " =========== Solarized Dark ===========
 " Currently using the dark version
