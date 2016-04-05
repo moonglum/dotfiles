@@ -1,6 +1,7 @@
 [user]
   name = Lucas Dohmen
   email = lucas@dohmen.io
+  signingkey = 52DA2D13
 [alias]
   pushnotes = !sh -c 'git push $1 refs/notes/*' -
   prune-all = !git remote | xargs -n 1 git remote prune
@@ -10,3 +11,5 @@
   default = simple
 [tig]
   line-graphics = "utf-8"
+[commit]
+  gpgsign = true
