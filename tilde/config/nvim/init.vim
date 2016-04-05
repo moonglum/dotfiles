@@ -28,7 +28,7 @@ let g:rainbow_active = 1
 
 " ======= Syntastic =======
 " First check JSHint, then JSCS
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Also run a Syntax Check when the file is opened
 let g:syntastic_check_on_open=1
