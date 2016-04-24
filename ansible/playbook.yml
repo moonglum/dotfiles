@@ -5,6 +5,7 @@
   vars:
     nodejs_version: 5.x
     ruby_version: 2.3
+    rust_version: 1.8.0
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -59,8 +60,16 @@
       - bundler
       - pry
       - tmuxinator
+    cargo_packages:
+      - racer
+      - rustfmt
     marks:
       c: /home/vagrant/Code
+    spell_files:
+      - en.utf-8.spl
+      - en.utf-8.sug
+      - de.utf-8.spl
+      - de.utf-8.sug
   tasks:
     - name: Add APT Keys
       apt_key: url="{{ item }}"
@@ -76,6 +85,11 @@
 
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh
+    - git: repo=https://github.com/zsh-users/zsh-syntax-highlighting dest=/home/vagrant/.zsh/plugins/zsh-syntax-highlighting
+      become: vagrant
+    - file: path=/home/vagrant/.config/nvim/spell state=directory owner=vagrant group=vagrant
+    - get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.config/nvim/spell/{{ item }}
+      with_items: spell_files
 
     - name: Set the timezone
       command: timedatectl set-timezone Europe/Berlin
@@ -106,10 +120,10 @@
       command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
 
     # TODO: This is a problem... we need to link first and install plugins afterwards
-    - shell: ls -1 /home/vagrant/Code/dotfiles/tilde
+    - shell: ls -1 /vagrant/tilde
       register: dotfiles
     - name: Link Dotfiles
-      file: path=/home/vagrant/.{{ item }} src=/home/vagrant/Code/dotfiles/tilde/{{ item }} owner=vagrant group=vagrant state=link
+      file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
       with_items: dotfiles.stdout_lines
 
     - command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
@@ -123,5 +137,19 @@
     - command: "vim +UpdateRemotePlugins +qall"
       become: vagrant
 
-    # - command: "curl https://sh.rustup.rs -sSf | sh"
-    #   become: vagrant
+    #- name: Download rustup-init
+    #  get_url: url=https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init dest=/usr/local/bin/rustup-init
+    #- file: path=/usr/local/bin/rustup-init mode=+x
+    - name: Install Rust
+      command: "rustup-init -y"
+      become: vagrant
+    - name: Install Cargo packages
+      command: /home/vagrant/.cargo/bin/cargo install {{ item }}
+      with_items: cargo_packages
+      become: vagrant
+    #- name: Download Rust source
+    #  get_url: url=https://static.rust-lang.org/dist/rustc-{{ rust_version }}-src.tar.gz dest=/tmp/rust.tar.gz
+    #- name: Unarchive Rust source
+    #  unarchive: src=/tmp/rust.tar.gz dest=/tmp copy=false
+    #- name: Move Rust source
+    #  command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub

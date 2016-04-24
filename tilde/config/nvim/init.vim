@@ -26,17 +26,6 @@ colorscheme solarized
 " === Rainbow ===
 let g:rainbow_active = 1
 
-" ======= Syntastic =======
-" First check JSHint, then JSCS
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Also run a Syntax Check when the file is opened
-let g:syntastic_check_on_open=1
-
-" More cats
-let g:syntastic_error_symbol='🙀'
-let g:syntastic_warning_symbol='😿'
-
 " ======= CtrlP =======
 " Ignore files that are git ignored
 " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -47,6 +36,14 @@ let g:ctrlp_switch_buffer = 'e'
 
 " Disable caching
 let g:ctrlp_use_caching = 0
+
+" === deoplete ===
+let g:deoplete#enable_at_startup = 1
+
+" === Neomake ===
+" Run on reading and writing buffers
+autocmd! BufWritePost * Neomake
+autocmd! BufReadPost * Neomake
 
 " === Language Specific Setting ===
 
@@ -108,3 +105,9 @@ nnoremap <leader>ev :vne $MYVIMRC<cr>
 
 " Source my vimrc (from: Learn Vim Script the hard way)
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Run tests via neoterm
+nnoremap <silent> <leader>rt :call neoterm#test#run('all')<cr>
+
+" Format code with RustFmt
+nnoremap <silent> <leader>f :RustFmt<cr>
