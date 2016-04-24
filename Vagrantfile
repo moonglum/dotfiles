@@ -2,9 +2,10 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "yakshed/moonglum"
-  # config.vm.box_check_update = false
-
+  # TODO: Update to 16.04 as soon as it is released on Bento
+  config.vm.box = "bento/ubuntu-14.04"
+  # TODO: Remove me, when a new version is released where HGFS is fixed
+  config.vm.box_version = "= 2.2.3"
   config.ssh.forward_agent = true
 
   config.vm.provision 'shell', inline: <<-'SCRIPT'
