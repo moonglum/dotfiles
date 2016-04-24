@@ -1,0 +1,16 @@
+# ~/.tmuxinator/fejo.yml
+# Development for fejo.dk
+
+name: fejo
+root: ~/Code/fejo-code/fejo-next
+windows:
+  - main:
+      layout: main-horizontal
+      panes:
+        - vim
+  - styleguide:
+      layout: main-horizontal
+      root: ~/Code/fejo-next-frontend-styleguide
+      panes:
+        - vim
+        - ruby -run -e httpd . -p 8080
