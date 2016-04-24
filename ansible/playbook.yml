@@ -1,0 +1,127 @@
+---
+- name: Install the required packages
+  hosts: all
+  sudo: True
+  vars:
+    nodejs_version: 5.x
+    ruby_version: 2.3
+    apt_keys:
+      - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+      - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+    apt_repositories:
+      - 'deb http://packages.erlang-solutions.com/ubuntu vivid contrib'
+      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} trusty main'
+      - 'ppa:brightbox/ruby-ng'
+      - 'ppa:neovim-ppa/unstable'
+    apt_packages:
+      - cloc
+      - curl
+      - elixir
+      - git
+      - htop
+      - jq
+      - neovim
+      - nodejs
+      - python3-dev
+      - python3-pip
+      - ruby-switch
+      - ruby{{ ruby_version }}
+      - ruby{{ ruby_version }}-dev
+      - silversearcher-ag
+      - tig
+      - tmux
+      - tree
+      - wget
+      - zsh
+    vim_packages:
+      ctrlp.vim: ctrlpvim/ctrlp.vim
+      deoplete-ternjs: carlitux/deoplete-ternjs
+      deoplete.nvim: Shougo/deoplete.nvim
+      editorconfig-vim: editorconfig/editorconfig-vim
+      elixir.nvim: archSeer/elixir.nvim
+      neomake: benekastah/neomake
+      neoterm: kassio/neoterm
+      rainbow: luochen1990/rainbow
+      vim-colors-solarized: altercation/vim-colors-solarized
+      vim-commentary: tpope/vim-commentary
+      vim-fugitive: tpope/vim-fugitive
+      vim-pathogen: tpope/vim-pathogen
+      vim-polyglot: sheerun/vim-polyglot
+      vim-surround: tpope/vim-surround
+      vim-racer: racer-rust/vim-racer
+      vim-repeat: tpope/vim-repeat
+    npm_packages:
+      - alex
+      - elm
+      - eslint
+      - tern
+    ruby_gems:
+      - bundler
+      - pry
+      - tmuxinator
+    marks:
+      c: /home/vagrant/Code
+  tasks:
+    - name: Add APT Keys
+      apt_key: url="{{ item }}"
+      with_items: apt_keys
+    - name: Add APT Repositories
+      apt_repository: repo="{{ item }}" state=present
+      with_items: apt_repositories
+    - name: Update cache and upgrade
+      apt: update_cache=yes upgrade=safe
+    - name: Install missing packages
+      apt: name={{ item }}
+      with_items: apt_packages
+
+    - name: Set default shell for Vagrant user
+      user: name=vagrant shell=/bin/zsh
+
+    - name: Set the timezone
+      command: timedatectl set-timezone Europe/Berlin
+
+    - name: Create the marks directory
+      file: path=/home/vagrant/.marks state=directory owner=vagrant group=vagrant
+    - name: Configure the marks
+      file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }} force=yes owner=vagrant group=vagrant
+      with_dict: marks
+
+    - name: Switch to the correct Ruby version
+      command: ruby-switch --set ruby{{ ruby_version }}
+    - name: Install default Ruby gems
+      command: gem install {{ item }}
+      with_items: ruby_gems
+
+    - name: Install default NPM packages
+      command: npm install -g {{ item }}
+      with_items: npm_packages
+
+    - name: Download icdiff
+      get_url: url=https://raw.githubusercontent.com/jeffkaufman/icdiff/release-1.7.3/icdiff dest=/usr/local/bin/icdiff
+    - name: Download hub
+      get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
+    - name: Unarchive hub
+      unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
+    - name: Move hub
+      command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
+
+    # TODO: This is a problem... we need to link first and install plugins afterwards
+    - shell: ls -1 /home/vagrant/Code/dotfiles/tilde
+      register: dotfiles
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.{{ item }} src=/home/vagrant/Code/dotfiles/tilde/{{ item }} owner=vagrant group=vagrant state=link
+      with_items: dotfiles.stdout_lines
+
+    - command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+    - command: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+    - command: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+    - name: Install or update NeoVim plugins
+      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.config/nvim/bundle/{{ item.key }}
+      with_dict: vim_packages
+      become: vagrant
+    - command: "pip3 install neovim"
+    - command: "vim +UpdateRemotePlugins +qall"
+      become: vagrant
+
+    # - command: "curl https://sh.rustup.rs -sSf | sh"
+    #   become: vagrant
