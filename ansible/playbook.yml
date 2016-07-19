@@ -4,15 +4,15 @@
   sudo: True
   vars:
     nodejs_version: 5.x
-    ruby_version: 2.3
+    # ruby_version: 2.3
     rust_version: 1.8.0
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
     apt_repositories:
-      - 'deb http://packages.erlang-solutions.com/ubuntu vivid contrib'
-      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} trusty main'
-      - 'ppa:brightbox/ruby-ng'
+      - 'deb http://packages.erlang-solutions.com/ubuntu xenial contrib'
+      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
+      # - 'ppa:brightbox/ruby-ng'
       - 'ppa:neovim-ppa/unstable'
     apt_packages:
       - cloc
@@ -25,10 +25,11 @@
       - nodejs
       - python3-dev
       - python3-pip
-      - ruby-switch
-      - ruby{{ ruby_version }}
-      - ruby{{ ruby_version }}-dev
+      # - ruby-switch
+      # - ruby{{ ruby_version }}
+      # - ruby{{ ruby_version }}-dev
       - silversearcher-ag
+      - software-properties-common
       - tig
       - tmux
       - tree
@@ -73,15 +74,16 @@
   tasks:
     - name: Add APT Keys
       apt_key: url="{{ item }}"
-      with_items: apt_keys
+      with_items: "{{ apt_keys }}"
     - name: Add APT Repositories
       apt_repository: repo="{{ item }}" state=present
-      with_items: apt_repositories
+      with_items: "{{ apt_repositories }}"
+    - apt: name=aptitude
     - name: Update cache and upgrade
       apt: update_cache=yes upgrade=safe
     - name: Install missing packages
       apt: name={{ item }}
-      with_items: apt_packages
+      with_items: "{{ apt_packages }}"
 
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh
@@ -89,7 +91,7 @@
       become: vagrant
     - file: path=/home/vagrant/.config/nvim/spell state=directory owner=vagrant group=vagrant
     - get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.config/nvim/spell/{{ item }}
-      with_items: spell_files
+      with_items: "{{ spell_files }}"
 
     - name: Set the timezone
       command: timedatectl set-timezone Europe/Berlin
@@ -98,17 +100,17 @@
       file: path=/home/vagrant/.marks state=directory owner=vagrant group=vagrant
     - name: Configure the marks
       file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }} force=yes owner=vagrant group=vagrant
-      with_dict: marks
+      with_dict: "{{ marks }}"
 
-    - name: Switch to the correct Ruby version
-      command: ruby-switch --set ruby{{ ruby_version }}
-    - name: Install default Ruby gems
-      command: gem install {{ item }}
-      with_items: ruby_gems
+    # - name: Switch to the correct Ruby version
+    #   command: ruby-switch --set ruby{{ ruby_version }}
+    # - name: Install default Ruby gems
+    #   command: gem install {{ item }}
+    #   with_items: "{{ ruby_gems }}"
 
     - name: Install default NPM packages
       command: npm install -g {{ item }}
-      with_items: npm_packages
+      with_items: "{{ npm_packages }}"
 
     - name: Download icdiff
       get_url: url=https://raw.githubusercontent.com/jeffkaufman/icdiff/release-1.7.3/icdiff dest=/usr/local/bin/icdiff
@@ -124,14 +126,14 @@
       register: dotfiles
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
-      with_items: dotfiles.stdout_lines
+      with_items: "{{ dotfiles.stdout_lines }}"
 
     - command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
     - command: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
     - command: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
     - name: Install or update NeoVim plugins
       git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.config/nvim/bundle/{{ item.key }}
-      with_dict: vim_packages
+      with_dict: "{{ vim_packages }}"
       become: vagrant
     - command: "pip3 install neovim"
     - command: "vim +UpdateRemotePlugins +qall"
@@ -140,13 +142,13 @@
     #- name: Download rustup-init
     #  get_url: url=https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init dest=/usr/local/bin/rustup-init
     #- file: path=/usr/local/bin/rustup-init mode=+x
-    - name: Install Rust
-      command: "rustup-init -y"
-      become: vagrant
-    - name: Install Cargo packages
-      command: /home/vagrant/.cargo/bin/cargo install {{ item }}
-      with_items: cargo_packages
-      become: vagrant
+    # - name: Install Rust
+    #   command: "rustup-init -y"
+    #   become: vagrant
+    # - name: Install Cargo packages
+    #   command: /home/vagrant/.cargo/bin/cargo install {{ item }}
+    #   with_items: cargo_packages
+    #   become: vagrant
     #- name: Download Rust source
     #  get_url: url=https://static.rust-lang.org/dist/rustc-{{ rust_version }}-src.tar.gz dest=/tmp/rust.tar.gz
     #- name: Unarchive Rust source
