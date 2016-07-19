@@ -40,9 +40,6 @@ setopt no_beep
 # Remove any right prompt from display when accepting a commandline
 setopt transient_rprompt
 
-# Try to find a similar command when the command was not found
-setopt correct
-
 # Use vim as default editor – git for example
 export EDITOR='vim'
 
@@ -66,18 +63,6 @@ setopt hist_ignore_space
 # quote pasted URLs
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
-
-# Auto Correct
-setopt correct_all
-alias man='nocorrect man'
-alias mv='nocorrect mv'
-alias mkdir='nocorrect mkdir'
-alias curl='nocorrect curl'
-alias rake='nocorrect rake'
-alias make='nocorrect make'
-alias bundle='nocorrect bundle'
-alias sudo='nocorrect sudo'
-alias mix='nocorrect mix'
 
 # Load functions from ~/.zsh/functions
 fpath=(~/.zsh/functions $fpath)
