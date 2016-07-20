@@ -3,6 +3,7 @@
 
 name: fejo
 root: ~/Code/fejo-code/fejo-next
+pre: sudo mount local.fejo.sexy:/var/fejo-code ~/Code/fejo-code
 windows:
   - main:
       layout: main-horizontal
