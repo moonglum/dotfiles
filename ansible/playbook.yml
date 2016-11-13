@@ -3,7 +3,7 @@
   hosts: all
   sudo: True
   vars:
-    nodejs_version: 5.x
+    nodejs_version: 6.x
     ruby_version: 2.3
     rust_version: 1.8.0
     apt_keys:
