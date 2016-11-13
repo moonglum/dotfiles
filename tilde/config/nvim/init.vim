@@ -45,6 +45,9 @@ let g:deoplete#enable_at_startup = 1
 autocmd! BufWritePost * Neomake
 autocmd! BufReadPost * Neomake
 
+" Use the eslint versoin installed for that project
+let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+
 " === Language Specific Setting ===
 
 " ES6 is JavaScript

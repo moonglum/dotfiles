@@ -4,3 +4,7 @@ tilde/zsh/plugins
 .vagrant
 tilde/config/nvim/bundle
 tilde/config/nvim/spell
+tilde/bundle/cache
+tilde/bundle/ruby
+tilde/config/configstore
+tilde/config/heroku

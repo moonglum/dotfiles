@@ -70,4 +70,4 @@ fpath=(~/.zsh/functions $fpath)
 autoload -U ${fpath[1]}/*(.N:t)
 
 # Export the path to the Rust source
-export RUST_SRC_PATH=/usr/local/src/rustc-1.7.0/src
+export RUST_SRC_PATH=/usr/local/src/rustc-1.12.0/src
