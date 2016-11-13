@@ -54,8 +54,10 @@
       vim-repeat: tpope/vim-repeat
     npm_packages:
       - alex
+      - commitizen
       - elm
       - eslint
+      - semantic-release-cli
       - tern
     ruby_gems:
       - bundler
@@ -72,6 +74,12 @@
       - de.utf-8.spl
       - de.utf-8.sug
   tasks:
+    - shell: ls -1 /vagrant/tilde
+      register: dotfiles
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
+      with_items: "{{ dotfiles.stdout_lines }}"
+
     - name: Add APT Keys
       apt_key: url="{{ item }}"
       with_items: "{{ apt_keys }}"
@@ -110,21 +118,12 @@
       command: npm install -g {{ item }}
       with_items: "{{ npm_packages }}"
 
-    - name: Download icdiff
-      get_url: url=https://raw.githubusercontent.com/jeffkaufman/icdiff/release-1.7.3/icdiff dest=/usr/local/bin/icdiff
     - name: Download hub
       get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
     - name: Unarchive hub
       unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
     - name: Move hub
       command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
-
-    # TODO: This is a problem... we need to link first and install plugins afterwards
-    - shell: ls -1 /vagrant/tilde
-      register: dotfiles
-    - name: Link Dotfiles
-      file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
-      with_items: "{{ dotfiles.stdout_lines }}"
 
     - command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
     - command: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60

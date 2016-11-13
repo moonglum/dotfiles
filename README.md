@@ -45,7 +45,6 @@ I use Neovim in the terminal, because of tmux. I'm doing all my programming (cur
 * [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree.
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
 * [`cloc`](https://github.com/AlDanial/cloc) counts lines of code.
-* [`icdiff`](http://www.jefftk.com/icdiff) is a nicer diff tool.
 * [`alex`](http://alexjs.com) to catch insensitive, inconsiderate writing.
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB
 
