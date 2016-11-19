@@ -63,8 +63,3 @@ setopt hist_ignore_space
 # quote pasted URLs
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
-
-# Load functions from ~/.zsh/functions
-fpath=(~/.zsh/functions $fpath)
-# ...and load all functions therein at first incarnation
-autoload -U ${fpath[1]}/*(.N:t)
