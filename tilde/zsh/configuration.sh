@@ -1,9 +1,9 @@
 ## Basic Configuration
 
 # Locales
-export lang="en_us.utf-8"
-export language="en_us.utf-8"
-export lc_all="en_us.utf-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # Colors are awesome
 autoload colors; colors;

@@ -5,7 +5,7 @@
   vars:
     nodejs_version: 6.x
     ruby_version: 2.3
-    rust_version: 1.8.0
+    rust_version: 1.13.0
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -13,52 +13,38 @@
       - 'deb http://packages.erlang-solutions.com/ubuntu xenial contrib'
       - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
       - 'ppa:brightbox/ruby-ng'
-      - 'ppa:neovim-ppa/unstable'
+      - 'ppa:jonathonf/vim'
     apt_packages:
-      - cloc
       - curl
       - elixir
       - git
       - htop
       - jq
-      - neovim
       - nodejs
-      - python3-dev
-      - python3-pip
       - ruby-switch
       - ruby{{ ruby_version }}
       - ruby{{ ruby_version }}-dev
       - silversearcher-ag
-      - software-properties-common
       - tig
       - tmux
       - tree
+      - vim
       - wget
       - zsh
     vim_packages:
-      ctrlp.vim: ctrlpvim/ctrlp.vim
-      deoplete-ternjs: carlitux/deoplete-ternjs
-      deoplete.nvim: Shougo/deoplete.nvim
       editorconfig-vim: editorconfig/editorconfig-vim
-      elixir.nvim: archSeer/elixir.nvim
       neomake: benekastah/neomake
-      neoterm: kassio/neoterm
-      rainbow: luochen1990/rainbow
       vim-colors-solarized: altercation/vim-colors-solarized
       vim-commentary: tpope/vim-commentary
-      vim-fugitive: tpope/vim-fugitive
       vim-pathogen: tpope/vim-pathogen
       vim-polyglot: sheerun/vim-polyglot
       vim-surround: tpope/vim-surround
-      vim-racer: racer-rust/vim-racer
       vim-repeat: tpope/vim-repeat
     npm_packages:
       - alex
       - commitizen
       - elm
-      - eslint
       - semantic-release-cli
-      - tern
     ruby_gems:
       - bundler
       - pry
@@ -95,11 +81,9 @@
 
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh
-    - git: repo=https://github.com/zsh-users/zsh-syntax-highlighting dest=/home/vagrant/.zsh/plugins/zsh-syntax-highlighting
+    - name: Install ZSH Syntax Highlighting
+      git: repo=https://github.com/zsh-users/zsh-syntax-highlighting dest=/home/vagrant/.zsh/plugins/zsh-syntax-highlighting
       become: vagrant
-    - file: path=/home/vagrant/.config/nvim/spell state=directory owner=vagrant group=vagrant
-    - get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.config/nvim/spell/{{ item }}
-      with_items: "{{ spell_files }}"
 
     - name: Set the timezone
       command: timedatectl set-timezone Europe/Berlin
@@ -125,30 +109,12 @@
     - name: Move hub
       command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
 
-    - command: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-    - command: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-    - command: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-    - name: Install or update NeoVim plugins
-      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.config/nvim/bundle/{{ item.key }}
+    - name: Install or update vim plugins
+      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
       with_dict: "{{ vim_packages }}"
       become: vagrant
-    - command: "pip3 install neovim"
-    - command: "vim +UpdateRemotePlugins +qall"
+    - file: path=/home/vagrant/.vim/spell state=directory owner=vagrant group=vagrant
+    - name: Install spell files for vim
+      get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
+      with_items: "{{ spell_files }}"
       become: vagrant
-
-    #- name: Download rustup-init
-    #  get_url: url=https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init dest=/usr/local/bin/rustup-init
-    #- file: path=/usr/local/bin/rustup-init mode=+x
-    # - name: Install Rust
-    #   command: "rustup-init -y"
-    #   become: vagrant
-    # - name: Install Cargo packages
-    #   command: /home/vagrant/.cargo/bin/cargo install {{ item }}
-    #   with_items: cargo_packages
-    #   become: vagrant
-    #- name: Download Rust source
-    #  get_url: url=https://static.rust-lang.org/dist/rustc-{{ rust_version }}-src.tar.gz dest=/tmp/rust.tar.gz
-    #- name: Unarchive Rust source
-    #  unarchive: src=/tmp/rust.tar.gz dest=/tmp copy=false
-    #- name: Move Rust source
-    #  command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
