@@ -64,17 +64,17 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*'           enable             git
 zstyle ':vcs_info:git:*'       check-for-changes  true
 
-local smiley="%(?,😃,😡)  "
+local status_symbol="%(?,%F{64},%F{1})"
 
 precmd () {
-  zstyle ':vcs_info:git:*' actionformats      " @ %b|%a%u"
-  zstyle ':vcs_info:git:*' formats            " @ %b%u"
-  zstyle ':vcs_info:git:*' unstagedstr        " ✖"
+  zstyle ':vcs_info:git:*' actionformats      "%K{64} %b|%a %u"
+  zstyle ':vcs_info:git:*' formats            "%K{64} %b %u"
+  zstyle ':vcs_info:git:*' unstagedstr        "%F{black}%K{33}   "
 
   vcs_info
 
-  PROMPT='${smiley}'
-  RPROMPT='%~$vcs_info_msg_0_'
+  PROMPT='${status_symbol}%{$reset_color%}  '
+  RPROMPT='%K{33}%F{black} %~ $vcs_info_msg_0_%{$reset_color%}'
 }
 
 # Remove any right prompt from display when accepting a commandline
