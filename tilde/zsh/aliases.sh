@@ -10,6 +10,9 @@ alias j='jump'
 # Github-flavored Git
 function git(){hub $@}
 
+# Use pry instead of IRB
+function irb(){echo 'Did you mean pry?'; pry $@}
+
 # mkdir and cd to it (from oh-my-zsh)
 function mcd() { mkdir -p "$1" && cd "$1"; }
 

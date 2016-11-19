@@ -46,6 +46,7 @@
       - elm
       - semantic-release-cli
     ruby_gems:
+      - awesome_print
       - bundler
       - manpages
       - pry
