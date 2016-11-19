@@ -67,8 +67,8 @@ zstyle ':vcs_info:git:*'       check-for-changes  true
 local status_symbol="%(?,%F{64},%F{1})"
 
 precmd () {
-  zstyle ':vcs_info:git:*' actionformats      "%K{64} %b|%a %u"
-  zstyle ':vcs_info:git:*' formats            "%K{64} %b %u"
+  zstyle ':vcs_info:git:*' actionformats      "%F{black}%K{64} %b|%a %u"
+  zstyle ':vcs_info:git:*' formats            "%F{black}%K{64} %b %u"
   zstyle ':vcs_info:git:*' unstagedstr        "%F{black}%K{33}   "
 
   vcs_info
