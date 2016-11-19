@@ -22,6 +22,10 @@ set laststatus=2            " Always show status line
 set ttimeout
 set ttimeoutlen=100
 
+" Fuzzy finder without plugins
+set path+=**
+set wildmenu
+
 " === Solarized Dark ===
 " Currently using the dark version
 set background=dark
@@ -34,6 +38,9 @@ highlight clear SignColumn
 " Run on reading and writing buffers
 autocmd! BufWritePost * Neomake
 autocmd! BufReadPost * Neomake
+
+" === netrw ===
+let g:netrw_banner=0    " disable banner
 
 " The cats are back in town
 let g:neomake_error_sign = { 'text': '🙀', 'texthl': 'SignColumn' }
