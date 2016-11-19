@@ -2,13 +2,13 @@
 
 These are my dotfiles. They contain my configurations of vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Packer, VirtualBox, Ansible, iTerm 2 and Xcode. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox, provisioned by Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
 
-I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Fira Mono](https://mozilla.github.io/Fira) ([Nerd Font patched](https://github.com/ryanoasis/nerd-fonts)) in 12px.
+I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Fira Mono](https://mozilla.github.io/Fira) ([Nerd Font patched](https://github.com/ryanoasis/nerd-fonts)) in 12px. I then work in full screen mode. This is how the entire looks like:
+
+![Screenshot](http://images.dohmen.io/dotfiles.png)
 
 ## ZSH
 
 My ZSH setup is quite minimal, nothing special going on here. Just standard stuff like activating auto complete, syntax highlighting, adjusting the PATH and a handful of aliases and tiny functions. This is the prompt I created and use:
-
-![Image of the prompt](http://images.moonglum.net/zsh-version-2.png)
 
 The smiley represents the exit status of the last executed command. On the right side it displays information about the current directory and the Git status.
 
@@ -18,8 +18,6 @@ I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to di
 
 Use tmux, it rocks!
 I configured it with some more Vim-like bindings and a powerline-inspired status bar. I really like it, it looks like this:
-
-![Image of the powerline](http://images.moonglum.net/tmux-version-3.png)
 
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions.
 
