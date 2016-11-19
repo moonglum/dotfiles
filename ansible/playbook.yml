@@ -47,10 +47,10 @@
       - semantic-release-cli
     ruby_gems:
       - bundler
+      - manpages
       - pry
       - tmuxinator
     cargo_packages:
-      - racer
       - rustfmt
     marks:
       c: /home/vagrant/Code
