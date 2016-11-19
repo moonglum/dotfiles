@@ -1,8 +1,131 @@
-# My files
-source ~/.zsh/configuration.sh
-source ~/.zsh/prompt.sh
-source ~/.zsh/aliases.sh
-source ~/.zsh/path.sh
+## Basic Configuration
+
+# Locales
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Colors are awesome
+autoload colors; colors;
+
+# Load the completion system
+# zstyle commands copied from zshuery
+autoload -U compinit && compinit
+zmodload -i zsh/complist # Load the Completion listing extensions
+setopt complete_in_word  # Enable completion within a word
+setopt auto_remove_slash # Remove trailing slashes
+zstyle ':completion:*' insert-tab pending
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle -e ':completion:*' list-colors 'if [[ $words[1] != kill && $words[1] != strace ]]; then reply=( "'$highlights'" ); else reply=( "'$highlights2'" ); fi'
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*:hosts' hosts $hosts
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path ./cache/
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:mpg321:*' file-patterns '*.(mp3|MP3):mp3\ files *(-/):directories'
+zstyle ':completion:*:ogg123:*' file-patterns '*.(ogg|OGG):ogg\ files *(-/):directories'
+zstyle ':completion:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+
+# Parameter Expansion, Command Substitution and arithmetic expansion are performed in prompts
+setopt prompt_subst
+
+# No beep or visual bell
+setopt no_beep
+
+# Remove any right prompt from display when accepting a commandline
+setopt transient_rprompt
+
+# Use vim as default editor – git for example
+export EDITOR='vim'
+
+# Enable emacs mode
+setopt emacs
+
+# History Configuration (from zshuery)
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt share_history
+setopt append_history
+setopt hist_verify
+setopt inc_append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_space
+
+# quote pasted URLs
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+## My Prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:*'           enable             git
+zstyle ':vcs_info:git:*'       check-for-changes  true
+
+local smiley="%(?,😃,😡)  "
+
+precmd () {
+  zstyle ':vcs_info:git:*' actionformats      " @ %b|%a%u"
+  zstyle ':vcs_info:git:*' formats            " @ %b%u"
+  zstyle ':vcs_info:git:*' unstagedstr        " ✖"
+
+  vcs_info
+
+  PROMPT='${smiley}'
+  RPROMPT='%~$vcs_info_msg_0_'
+}
+
+## Aliases and One-Line Functions
+
+# Fast one directory up
+alias ..='cd ..'
+
+# One-letter shortcuts
+alias l='ls -al'
+alias j='jump'
+
+# Github-flavored Git
+function git(){hub $@}
+
+# Use pry instead of IRB
+function irb(){echo 'Did you mean pry?'; pry $@}
+
+# mkdir and cd to it (from oh-my-zsh)
+function mcd() { mkdir -p "$1" && cd "$1"; }
+
+# Colorize man pages
+# from http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
+function man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+# Jump
+# jump FOO: jump to a mark named FOO
+# Inspired by the Oh-My-ZSH Jump Plugin
+
+jump() { cd -P "$HOME/.marks/$1" }
+_jump() { _files -W "$HOME/.marks/$1" }
+compdef _jump jump
+
+## Manipulation of the path and loading stuff
+
+# Rust
+PATH=$PATH:$HOME/.cargo/bin
 
 # Plugins
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
