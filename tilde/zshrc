@@ -1,8 +1,106 @@
-# My files
-source ~/.zsh/configuration.sh
-source ~/.zsh/prompt.sh
-source ~/.zsh/aliases.sh
-source ~/.zsh/path.sh
+## Basic Configuration
 
-# Plugins
+# Environment
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export EDITOR='vim'
+
+# Colors are awesome
+autoload -U colors && colors;
+
+# Colorize less (including man pages)
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[38;5;246m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;33;146m'
+
+# Load the completion system
+# zstyle commands copied from zshuery
+autoload -U compinit && zmodload -i zsh/complist
+setopt complete_in_word  # Enable completion within a word
+setopt auto_remove_slash # Remove trailing slashes
+zstyle ':completion:*' insert-tab pending
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle -e ':completion:*' list-colors 'if [[ $words[1] != kill && $words[1] != strace ]]; then reply=( "'$highlights'" ); else reply=( "'$highlights2'" ); fi'
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*:hosts' hosts $hosts
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path ./cache/
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:mpg321:*' file-patterns '*.(mp3|MP3):mp3\ files *(-/):directories'
+zstyle ':completion:*:ogg123:*' file-patterns '*.(ogg|OGG):ogg\ files *(-/):directories'
+zstyle ':completion:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+
+# Parameter Expansion, Command Substitution and arithmetic expansion are performed in prompts
+setopt prompt_subst
+
+# No beep or visual bell
+setopt no_beep
+
+# Enable emacs mode
+setopt emacs
+
+# History Configuration (from zshuery)
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups hist_ignore_space hist_reduce_blanks hist_verify \
+   hist_expire_dups_first hist_find_no_dups share_history extended_history \
+   append_history inc_append_history nobanghist
+
+# quote pasted URLs
+autoload -U url-quote-magic && zle -N self-insert url-quote-magic
+
+## My Prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:*'           enable             git
+zstyle ':vcs_info:git:*'       check-for-changes  true
+
+local status_symbol="%(?,%F{64},%F{1})"
+
+precmd () {
+  zstyle ':vcs_info:git:*' actionformats      "%F{black}%K{64} %b|%a %u"
+  zstyle ':vcs_info:git:*' formats            "%F{black}%K{64} %b %u"
+  zstyle ':vcs_info:git:*' unstagedstr        "%F{black}%K{33}   "
+
+  vcs_info
+
+  PROMPT='${status_symbol}%{$reset_color%}  '
+  RPROMPT='%K{33}%F{black} %~ $vcs_info_msg_0_%{$reset_color%}'
+}
+
+# Remove any right prompt from display when accepting a commandline
+setopt transient_rprompt
+
+## Aliases and One-Line Functions
+
+alias ..='cd ..' # Fast one directory up
+alias l='ls -al' # ls as it should be
+function git() { hub $@ } # Github-flavored Git
+function irb() { echo 'Did you mean pry?' && pry $@ } # Use pry instead of IRB
+function mcd() { mkdir -p "$1" && cd "$1"; } # mkdir and cd to it (from oh-my-zsh)
+
+## Jump
+# jump FOO: jump to a mark named FOO
+# Inspired by the Oh-My-ZSH Jump Plugin
+
+j() { cd -P "$HOME/.marks/$1" }
+_j() { _files -W "$HOME/.marks/$1" }
+compdef _j j
+
+## Manipulation of the path and loading stuff
+
+# Rust
+PATH=$PATH:$HOME/.cargo/bin
+
+## Plugins
+
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
