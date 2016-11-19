@@ -1,17 +1,25 @@
 ## Basic Configuration
 
-# Locales
+# Environment
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+export EDITOR='vim'
 
 # Colors are awesome
-autoload colors; colors;
+autoload -U colors && colors;
+
+# Colorize less (including man pages)
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[38;5;246m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;33;146m'
 
 # Load the completion system
 # zstyle commands copied from zshuery
-autoload -U compinit && compinit
-zmodload -i zsh/complist # Load the Completion listing extensions
+autoload -U compinit && zmodload -i zsh/complist
 setopt complete_in_word  # Enable completion within a word
 setopt auto_remove_slash # Remove trailing slashes
 zstyle ':completion:*' insert-tab pending
@@ -37,12 +45,6 @@ setopt prompt_subst
 # No beep or visual bell
 setopt no_beep
 
-# Remove any right prompt from display when accepting a commandline
-setopt transient_rprompt
-
-# Use vim as default editor – git for example
-export EDITOR='vim'
-
 # Enable emacs mode
 setopt emacs
 
@@ -50,19 +52,12 @@ setopt emacs
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_dups
-setopt hist_reduce_blanks
-setopt share_history
-setopt append_history
-setopt hist_verify
-setopt inc_append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_space
+setopt hist_ignore_dups hist_ignore_space hist_reduce_blanks hist_verify \
+   hist_expire_dups_first hist_find_no_dups share_history extended_history \
+   append_history inc_append_history nobanghist
 
 # quote pasted URLs
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
+autoload -U url-quote-magic && zle -N self-insert url-quote-magic
 
 ## My Prompt
 autoload -Uz vcs_info
@@ -82,50 +77,30 @@ precmd () {
   RPROMPT='%~$vcs_info_msg_0_'
 }
 
+# Remove any right prompt from display when accepting a commandline
+setopt transient_rprompt
+
 ## Aliases and One-Line Functions
 
-# Fast one directory up
-alias ..='cd ..'
+alias ..='cd ..' # Fast one directory up
+alias l='ls -al' # ls as it should be
+function git() { hub $@ } # Github-flavored Git
+function irb() { echo 'Did you mean pry?' && pry $@ } # Use pry instead of IRB
+function mcd() { mkdir -p "$1" && cd "$1"; } # mkdir and cd to it (from oh-my-zsh)
 
-# One-letter shortcuts
-alias l='ls -al'
-alias j='jump'
-
-# Github-flavored Git
-function git(){hub $@}
-
-# Use pry instead of IRB
-function irb(){echo 'Did you mean pry?'; pry $@}
-
-# mkdir and cd to it (from oh-my-zsh)
-function mcd() { mkdir -p "$1" && cd "$1"; }
-
-# Colorize man pages
-# from http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
-function man() {
-  env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
-    man "$@"
-}
-
-# Jump
+## Jump
 # jump FOO: jump to a mark named FOO
 # Inspired by the Oh-My-ZSH Jump Plugin
 
-jump() { cd -P "$HOME/.marks/$1" }
-_jump() { _files -W "$HOME/.marks/$1" }
-compdef _jump jump
+j() { cd -P "$HOME/.marks/$1" }
+_j() { _files -W "$HOME/.marks/$1" }
+compdef _j j
 
 ## Manipulation of the path and loading stuff
 
 # Rust
 PATH=$PATH:$HOME/.cargo/bin
 
-# Plugins
+## Plugins
+
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
