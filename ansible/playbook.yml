@@ -119,3 +119,21 @@
       get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
       with_items: "{{ spell_files }}"
       become: vagrant
+
+    - name: Download Rust
+      get_url: >
+        url=https://static.rust-lang.org/dist/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+        dest=/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+    - name: Uncompress Rust archive
+      unarchive: >
+        src=/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+        dest=/tmp
+        copy=no
+    - name: Install Rust
+      command: "/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu/install.sh"
+      args:
+        creates: /usr/local/lib/rustlib/uninstall.sh
+    - name: Install Cargo packages
+      command: cargo install {{ item }}
+      with_items: "{{ cargo_packages }}"
+      become: vagrant

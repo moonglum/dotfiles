@@ -68,6 +68,3 @@ zle -N self-insert url-quote-magic
 fpath=(~/.zsh/functions $fpath)
 # ...and load all functions therein at first incarnation
 autoload -U ${fpath[1]}/*(.N:t)
-
-# Export the path to the Rust source
-export RUST_SRC_PATH=/usr/local/src/rustc-1.12.0/src
