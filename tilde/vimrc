@@ -2,6 +2,11 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+" === Disable certain languages in polyglot ===
+" This has to happen before `filetype plugin indent on`
+" * jsx has to be disabled, because it marks all JS files as javascript.jsx
+let g:polyglot_disabled = ['jsx']
+
 " === General Setup ===
 set nocompatible            " Use Vim settings, rather then Vi settings
 syntax enable               " Activate Syntax Highlight
@@ -9,8 +14,6 @@ filetype plugin indent on
 set encoding=utf-8
 set nowrap                  " Deactivate Wrapping
 set nrformats=              " Treat all numbers as decimal
-set cursorcolumn            " Highlight the current column
-set cursorline              " Highlight the current line
 set noswapfile              " I don't like Swapfiles
 set spell spelllang=en_us   " Activate spell checking and set American as default
 set nojoinspaces            " Insert only one space when joining lines
@@ -39,22 +42,7 @@ let g:neomake_error_sign = { 'text': '😿', 'texthl': 'SignColumn' }
 " Use the eslint version installed for that project
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
-" === Custom Functions and Commands ===
-
-" Switch spell checking language
-command! British :set spelllang=en_gb
-command! American :set spelllang=en_us
-command! German :set spelllang=de
-
 " === Mappings ===
 
 " Clear the search buffer when hitting return
 nnoremap <CR> :nohlsearch<cr>
-
-" === Leader Key ===
-
-" Edit my vimrc (from: Learn Vim Script the hard way)
-nnoremap <leader>ev :vne $MYVIMRC<cr>
-
-" Source my vimrc (from: Learn Vim Script the hard way)
-nnoremap <leader>sv :source $MYVIMRC<cr>
