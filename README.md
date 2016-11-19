@@ -8,7 +8,7 @@ I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. 
 
 ## ZSH
 
-My ZSH setup is quite minimal, nothing special going on here. Just standard stuff like activating auto complete, syntax highlighting, adjusting the PATH and a handful of aliases and tiny functions. This is the prompt I created and use:
+My ZSH setup is quite minimal, nothing special going on here. Just standard stuff like activating auto complete, syntax highlighting, adjusting the PATH and a handful of aliases and tiny functions.
 
 The smiley represents the exit status of the last executed command. On the right side it displays information about the current directory and the Git status.
 
@@ -17,7 +17,7 @@ I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to di
 ## tmux
 
 Use tmux, it rocks!
-I configured it with some more Vim-like bindings and a powerline-inspired status bar. I really like it, it looks like this:
+I configured it with some more Vim-like bindings and a powerline-inspired status bar.
 
 I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions.
 
