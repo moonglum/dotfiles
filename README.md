@@ -56,7 +56,7 @@ I use vim in the terminal, because of tmux. I'm doing all my programming (curren
 
 * My terminal emulator of choice is [iTerm2](http://www.iterm2.com).
 * I use US-Extended as my keyboard layout. The German keyboard layout is useless.
-* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, ZoÃÂ« Keating, Au4, Daft Punk, LukHash, Monument Valley OST, Les Revenants OST, Apocalyptica, VNV Nation...
+* When coding, I listen to the following music: Tron Legacy OST, Starcraft II OST, Diablo III OST, Octabitron, Saor Patrol, Schelmish, Zoë Keating, Au4, Daft Punk, LukHash, Monument Valley OST, Les Revenants OST, Apocalyptica, VNV Nation...
 
 ## Thanks
 
