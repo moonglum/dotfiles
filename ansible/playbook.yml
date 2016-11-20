@@ -52,6 +52,7 @@
       - awesome_print
       - bundler
       - manpages
+      - mdless
       - pry
       - tmuxinator
     cargo_packages:
