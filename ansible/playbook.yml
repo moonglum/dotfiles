@@ -2,6 +2,9 @@
 - name: Install the required packages
   hosts: all
   vars:
+    name: "Lucas Dohmen"
+    email: "lucas@dohmen.io"
+    url: "https://lucas.dohmen.io"
     nodejs_version: 6.x
     ruby_version: 2.3
     rust_version: 1.13.0
@@ -110,6 +113,10 @@
       command: npm install -g {{ item }}
       with_items: "{{ npm_packages }}"
       become: true
+
+    - command: npm set init-author-name "{{ name }}"
+    - command: npm set init-author-email "{{ email }}"
+    - command: npm set init-author-url "{{ url }}"
 
     - name: Download hub
       get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
