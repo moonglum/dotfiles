@@ -151,5 +151,5 @@
         creates: /usr/local/lib/rustlib/uninstall.sh
       become: true
     - name: Install Cargo packages
-      command: cargo install {{ item }}
+      command: cargo install --force {{ item }}
       with_items: "{{ cargo_packages }}"
