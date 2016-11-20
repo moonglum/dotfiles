@@ -43,6 +43,7 @@ I use vim in the terminal, because of tmux. I'm doing all my programming (curren
 * [`alex`](http://alexjs.com) to catch insensitive, inconsiderate writing.
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB
 * [`semantic-release-cli`](https://github.com/semantic-release/semantic-release) helps to set up NPM packages that automatically get released.
+* [`mdless`](http://brettterpstra.com/projects/mdless) is a less for Markdown files
 
 ## Languages I work or play with
 
