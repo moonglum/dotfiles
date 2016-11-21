@@ -25,5 +25,8 @@ indent_size = 4
 [*.rs]
 indent_size = 4
 
+[*.elm]
+indent_size = 4
+
 [Makefile]
 indent_style = tab
