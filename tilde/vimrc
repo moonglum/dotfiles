@@ -2,11 +2,6 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-" === Disable certain languages in polyglot ===
-" This has to happen before `filetype plugin indent on`
-" * jsx has to be disabled, because it marks all JS files as javascript.jsx
-let g:polyglot_disabled = ['jsx']
-
 " === General Setup ===
 set nocompatible            " Use Vim settings, rather then Vi settings
 syntax enable               " Activate Syntax Highlight
@@ -38,6 +33,10 @@ highlight clear SignColumn
 " Run on reading and writing buffers
 autocmd! BufWritePost * Neomake
 autocmd! BufReadPost * Neomake
+
+" === Fixes ===
+" Do not apply JSX to all JavaScript files
+let g:jsx_ext_required = 1
 
 " === netrw ===
 let g:netrw_banner=0    " disable banner
