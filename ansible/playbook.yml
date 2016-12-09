@@ -57,6 +57,7 @@
       - pry
       - tmuxinator
     cargo_packages:
+      - cargo-outdated
       - rustfmt
     marks:
       c: /home/vagrant/Code
