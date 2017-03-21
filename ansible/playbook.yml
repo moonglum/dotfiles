@@ -6,7 +6,7 @@
     email: "lucas@dohmen.io"
     url: "https://lucas.dohmen.io"
     nodejs_version: 6.x
-    ruby_version: 2.3
+    ruby_version: 2.4
     rust_version: 1.13.0
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
