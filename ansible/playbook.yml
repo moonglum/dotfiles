@@ -49,6 +49,7 @@
       - elm
       - elm-live
       - semantic-release-cli
+      - yarn
     ruby_gems:
       - awesome_print
       - bundler
