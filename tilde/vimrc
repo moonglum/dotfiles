@@ -47,6 +47,7 @@ let g:neomake_error_sign = { 'text': '😿', 'texthl': 'SignColumn' }
 
 " Use the eslint version installed for that project
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
+let g:neomake_javascript_flow_exe = $PWD .'/node_modules/.bin/flow'
 
 " === Mappings ===
 
