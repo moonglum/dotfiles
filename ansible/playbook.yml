@@ -45,9 +45,12 @@
       vim-repeat: tpope/vim-repeat
     npm_packages:
       - alex
+      - bower
       - commitizen
       - elm
       - elm-live
+      - purescript
+      - pulp
       - semantic-release-cli
       - yarn
     ruby_gems:
