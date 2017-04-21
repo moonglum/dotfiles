@@ -104,6 +104,8 @@
     - name: Install ZSH Syntax Highlighting
       git: repo=https://github.com/zsh-users/zsh-syntax-highlighting dest=/home/vagrant/.zsh/plugins/zsh-syntax-highlighting
 
+    - name: Start docker on boot
+      systemd: name=docker enabled=yes
     - name: Make sure the docker group exists
       group:
         name: docker
