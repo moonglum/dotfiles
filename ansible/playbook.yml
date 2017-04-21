@@ -5,7 +5,7 @@
     name: "Lucas Dohmen"
     email: "lucas@dohmen.io"
     url: "https://lucas.dohmen.io"
-    nodejs_version: 6.x
+    nodejs_version: 7.x
     ruby_version: 2.4
     rust_version: 1.13.0
     apt_keys:
