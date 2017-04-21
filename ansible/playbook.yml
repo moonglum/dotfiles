@@ -104,6 +104,18 @@
     - name: Install ZSH Syntax Highlighting
       git: repo=https://github.com/zsh-users/zsh-syntax-highlighting dest=/home/vagrant/.zsh/plugins/zsh-syntax-highlighting
 
+    - name: Make sure the docker group exists
+      group:
+        name: docker
+        state: present
+      become: true
+    - name: Add the vagrant user to the docker group
+      user:
+        name: vagrant
+        groups: docker
+        append: yes
+      become: true
+
     - name: Set the timezone
       command: timedatectl set-timezone Europe/Berlin
       become: true
