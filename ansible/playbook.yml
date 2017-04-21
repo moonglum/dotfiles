@@ -24,6 +24,7 @@
       - docker-ce
       - elixir
       - git
+      - haskell-platform
       - htop
       - jq
       - nodejs
@@ -66,6 +67,8 @@
     cargo_packages:
       - cargo-outdated
       - rustfmt
+    cabal_packages:
+      - idris
     marks:
       c: /home/vagrant/Code
     spell_files:
@@ -159,6 +162,12 @@
     - name: Install spell files for vim
       get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
       with_items: "{{ spell_files }}"
+
+    - name: Update Cabal
+      command: cabal update
+    - name: Install Cabal packages
+      command: cabal install {{ item }}
+      with_items: "{{ cabal_packages }}"
 
     - name: Download Rust
       get_url: >

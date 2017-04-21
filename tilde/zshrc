@@ -105,6 +105,9 @@ PATH=$PATH:$HOME/.cargo/bin
 PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Code/go-workspace
 
+# Haskell/Idris
+PATH=$PATH:$HOME/.cabal/bin
+
 ## Plugins
 
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
