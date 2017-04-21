@@ -11,14 +11,17 @@
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+      - 'https://download.docker.com/linux/ubuntu/gpg'
     apt_repositories:
       - 'deb http://packages.erlang-solutions.com/ubuntu xenial contrib'
       - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
+      - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
       - 'ppa:brightbox/ruby-ng'
       - 'ppa:jonathonf/vim'
     apt_packages:
       - build-essential
       - curl
+      - docker-ce
       - elixir
       - git
       - htop
