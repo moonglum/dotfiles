@@ -27,7 +27,9 @@
       - haskell-platform
       - htop
       - jq
+      - libv8
       - nodejs
+      - ragel
       - ruby-switch
       - ruby{{ ruby_version }}
       - ruby{{ ruby_version }}-dev
@@ -37,6 +39,7 @@
       - tree
       - vim
       - wget
+      - youtube-dl
       - zsh
     vim_packages:
       editorconfig-vim: editorconfig/editorconfig-vim
