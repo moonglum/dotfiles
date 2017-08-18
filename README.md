@@ -42,17 +42,17 @@ I use vim in the terminal, because of tmux. I'm doing all my programming (curren
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
 * [`alex`](http://alexjs.com) to catch insensitive, inconsiderate writing.
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB
-* [`semantic-release-cli`](https://github.com/semantic-release/semantic-release) helps to set up NPM packages that automatically get released.
 * [`mdless`](http://brettterpstra.com/projects/mdless) is a less for Markdown files
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
 * [`youtube-dl`](https://rg3.github.io/youtube-dl) allows me to download videos for train trips
-* [docker](https://www.docker.com) because I really wish it would do what I want
+* [`docker`](https://www.docker.com) because I really wish it would do what I want
+* [`xsel`](http://xsel.sourceforge.net) to access the macOS clipboard
 
 ## Languages I work or play with
 
 * Ruby and JavaScript (Daily)
 * I used Haskell and Prolog quite a lot in University
-* I'm also playing around with Idris, Clojure, Elixir, Rust, PureScript and Elm
+* I'm also playing around with Idris, Clojure, Elixir, Rust, Go, and Elm
 
 ## Miscellaneous
 
