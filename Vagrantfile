@@ -5,6 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "bento/ubuntu-16.04"
 
   config.ssh.forward_agent = true
+  config.ssh.forward_x11 = true
 
   config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "dotfiles"

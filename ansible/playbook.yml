@@ -2,12 +2,15 @@
 - name: Install the required packages
   hosts: all
   vars:
-    name: "Lucas Dohmen"
+    full_name: "Lucas Dohmen"
     email: "lucas@dohmen.io"
     url: "https://lucas.dohmen.io"
-    nodejs_version: 7.x
+
+    go_version: 1.8.3
+    nodejs_version: 8.x
     ruby_version: 2.4
-    rust_version: 1.13.0
+    rust_version: 1.19.0
+
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -24,10 +27,9 @@
       - docker-ce
       - elixir
       - git
-      - haskell-platform
+      # - haskell-platform
       - htop
       - jq
-      - libv8
       - nodejs
       - ragel
       - ruby-switch
@@ -39,6 +41,8 @@
       - tree
       - vim
       - wget
+      - xsel
+      - xorg
       - youtube-dl
       - zsh
     vim_packages:
@@ -52,14 +56,6 @@
       vim-repeat: tpope/vim-repeat
     npm_packages:
       - alex
-      - bower
-      - commitizen
-      - elm
-      - elm-live
-      - purescript
-      - pulp
-      - semantic-release-cli
-      - yarn
     ruby_gems:
       - awesome_print
       - bundler
@@ -70,8 +66,11 @@
     cargo_packages:
       - cargo-outdated
       - rustfmt
-    cabal_packages:
-      - idris
+      - ripgrep
+    go_packages:
+      - github/hub
+    # cabal_packages:
+      # - idris
     marks:
       c: /home/vagrant/Code
     spell_files:
@@ -79,8 +78,10 @@
       - en.utf-8.sug
       - de.utf-8.spl
       - de.utf-8.sug
+
   tasks:
-    - shell: ls -1 /vagrant/tilde
+    - name: Find all Dotfiles
+      shell: ls -1 /vagrant/tilde
       register: dotfiles
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
@@ -110,13 +111,6 @@
     - name: Install ZSH Syntax Highlighting
       git: repo=https://github.com/zsh-users/zsh-syntax-highlighting dest=/home/vagrant/.zsh/plugins/zsh-syntax-highlighting
 
-    - name: Start docker on boot
-      systemd: name=docker enabled=yes
-    - name: Make sure the docker group exists
-      group:
-        name: docker
-        state: present
-      become: true
     - name: Add the vagrant user to the docker group
       user:
         name: vagrant
@@ -144,19 +138,9 @@
       with_items: "{{ npm_packages }}"
       become: true
 
-    - command: npm set init-author-name "{{ name }}"
+    - command: npm set init-author-name "{{ full_name }}"
     - command: npm set init-author-email "{{ email }}"
     - command: npm set init-author-url "{{ url }}"
-
-    - name: Download hub
-      get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
-      become: true
-    - name: Unarchive hub
-      unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
-      become: true
-    - name: Move hub
-      command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
-      become: true
 
     - name: Install or update vim plugins
       git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
@@ -166,11 +150,11 @@
       get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
       with_items: "{{ spell_files }}"
 
-    - name: Update Cabal
-      command: cabal update
-    - name: Install Cabal packages
-      command: cabal install {{ item }}
-      with_items: "{{ cabal_packages }}"
+    # - name: Update Cabal
+    #   command: cabal update
+    # - name: Install Cabal packages
+    #   command: cabal install {{ item }}
+    #   with_items: "{{ cabal_packages }}"
 
     - name: Download Rust
       get_url: >
@@ -189,3 +173,19 @@
     - name: Install Cargo packages
       command: cargo install --force {{ item }}
       with_items: "{{ cargo_packages }}"
+
+    - name: Download go
+      get_url: >
+        url=https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz
+        dest=/tmp/go{{ go_version }}.linux-amd64.tar.gz
+    - name: Uncompress go archive
+      unarchive: >
+        src=/tmp/go{{ go_version }}.linux-amd64.tar.gz
+        dest=/tmp
+        copy=no
+    - name: Install go
+      command: cp -r /tmp/go /usr/local/go
+      become: true
+    - name: Install go packages
+      command: /usr/local/go/bin/go get github.com/{{ item }}
+      with_items: "{{ go_packages }}"
