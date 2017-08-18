@@ -53,3 +53,9 @@ let g:neomake_javascript_flow_exe = $PWD .'/node_modules/.bin/flow'
 
 " Clear the search buffer when hitting return
 nnoremap <CR> :nohlsearch<cr>
+
+" Paste from the pasteboard
+map <Leader>p :read !xsel -b<cr>
+
+" Copy to the pasteboard
+vmap <Leader>c :write !xsel -b<cr><cr>

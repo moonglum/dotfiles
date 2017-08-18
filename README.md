@@ -1,6 +1,6 @@
 # dotfiles
 
-These are my dotfiles. They contain my configurations of vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, Packer, VirtualBox, Ansible, iTerm 2 and Xcode. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox, provisioned by Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
+These are my dotfiles. They contain my configurations of vim, tmux, ZSH and more. On my Mac, there are no developer tools installed except Vagrant, VirtualBox, iTerm 2, XQuartz, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox, provisioned by Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
 
 I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Fira Mono](https://mozilla.github.io/Fira) ([Nerd Font patched](https://github.com/ryanoasis/nerd-fonts)) in 12px. I then work in full screen mode. This is how the entire looks like:
 
@@ -53,6 +53,16 @@ I use vim in the terminal, because of tmux. I'm doing all my programming (curren
 * Ruby and JavaScript (Daily)
 * I used Haskell and Prolog quite a lot in University
 * I'm also playing around with Idris, Clojure, Elixir, Rust, Go, and Elm
+
+## Synchronizing the clipboard
+
+In order to access the macOS clipboard from the Vagrant box, I start XQuartz before I run `vagrant ssh`. Through x11 forwarding it will now be able to access the clipboard:
+
+* `xsel -b` will output the content of the clipboard. I can also pipe to it when I want to write to the clipboard.
+* In vim:
+    * When I select something in visual mode, I can copy it to the clipboard with `\c`
+    * In normal mode, I can paste from the clipboard with `\p`
+* In tmux: When I select something in select mode and hit `y` it will be copied to the clipboard
 
 ## Miscellaneous
 
