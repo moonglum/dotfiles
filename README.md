@@ -45,8 +45,8 @@ I use vim in the terminal, because of tmux. I'm doing all my programming (curren
 * [`mdless`](http://brettterpstra.com/projects/mdless) is a less for Markdown files
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
 * [`youtube-dl`](https://rg3.github.io/youtube-dl) allows me to download videos for train trips
-* [`docker`](https://www.docker.com) because I really wish it would do what I want
-* [`xsel`](http://xsel.sourceforge.net) to access the macOS clipboard
+* [`docker`](https://www.docker.com) and `docker-compose` because I really wish it would do what I want
+* [`xsel`](http://xsel.sourceforge.net) and `xorg` to access the macOS clipboard
 
 ## Languages I work or play with
 
