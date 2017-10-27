@@ -1,7 +1,3 @@
-" === Pathogen ===
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
 " === General Setup ===
 set nocompatible            " Use Vim settings, rather then Vi settings
 syntax enable               " Activate Syntax Highlight

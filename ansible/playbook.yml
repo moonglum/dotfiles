@@ -52,7 +52,6 @@
       neomake: benekastah/neomake
       vim-colors-solarized: altercation/vim-colors-solarized
       vim-commentary: tpope/vim-commentary
-      vim-pathogen: tpope/vim-pathogen
       vim-polyglot: sheerun/vim-polyglot
       vim-surround: tpope/vim-surround
       vim-repeat: tpope/vim-repeat
@@ -161,7 +160,7 @@
       command: npm set init-author-url "{{ url }}"
 
     - name: Install or update vim plugins
-      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/bundle/{{ item.key }}
+      git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/pack/bundle/start/{{ item.key }}
       with_dict: "{{ vim_packages }}"
     - name: Create spell directory
       file: path=/home/vagrant/.vim/spell state=directory

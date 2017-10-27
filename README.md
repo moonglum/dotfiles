@@ -23,7 +23,7 @@ I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my developm
 
 ## Vim
 
-I use vim in the terminal, because of tmux. I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) here. I'm using Pathogen for my plugin management (and Ansible to install them). It's great. I use the following plugins:
+I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in vim. I use the following plugins:
 
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
