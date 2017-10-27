@@ -32,6 +32,7 @@
       - htop
       - jq
       - nodejs
+      - openjdk-9-jdk-headless
       - ragel
       - ruby-switch
       - ruby{{ ruby_version }}
@@ -167,6 +168,13 @@
     - name: Install spell files for vim
       get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
       with_items: "{{ spell_files }}"
+
+    - name: Install leiningen
+      get_url:
+        url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+        dest: /usr/local/bin/lein
+        mode: +x
+      become: true
 
     - name: Register the current Go version (if any)
       shell: /usr/local/go/bin/go version | awk '{print $3}'
