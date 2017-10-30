@@ -145,7 +145,6 @@
     - name: Install default Ruby gems
       gem: name={{ item }}
       with_items: "{{ ruby_gems }}"
-      become: true
 
     - name: Install default NPM packages
       npm: name={{ item }} global=yes
