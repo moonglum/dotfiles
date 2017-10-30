@@ -89,12 +89,18 @@ function irb() { echo 'Did you mean pry?' && pry $@ } # Use pry instead of IRB
 function mcd() { mkdir -p "$1" && cd "$1"; } # mkdir and cd to it (from oh-my-zsh)
 
 ## Jump
-# jump FOO: jump to a mark named FOO
+# j FOO: jump to a mark named FOO
 # Inspired by the Oh-My-ZSH Jump Plugin
 
 j() { cd -P "$HOME/.marks/$1" }
 _j() { _files -W "$HOME/.marks/$1" }
 compdef _j j
+
+## Start
+# s FOO: start a tmux session for project FOO 
+s() { tmux new -c "$HOME/Code/$1" -s $1 }
+_s() { _files -W "$HOME/Code/$1" }
+compdef _s s
 
 ## Manipulation of the path and loading stuff
 
