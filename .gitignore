@@ -3,5 +3,3 @@ tilde/config/hub
 .vagrant
 tilde/bundle/cache
 tilde/bundle/ruby
-tilde/config/configstore
-tilde/config/heroku
