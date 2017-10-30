@@ -111,5 +111,8 @@ PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$HOME/go/bin
 
+# Node
+PATH=$PATH:$HOME/.npm/bin
+
 ## Plugins
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
