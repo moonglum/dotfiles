@@ -64,7 +64,6 @@
       - manpages
       - mdless
       - pry
-      - tmuxinator
     go_packages:
       - github/hub
     marks:
