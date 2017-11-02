@@ -24,6 +24,7 @@
       - 'ppa:brightbox/ruby-ng'
       - 'ppa:jonathonf/vim'
     apt_packages:
+      - asciinema
       - build-essential
       - curl
       - docker-ce
