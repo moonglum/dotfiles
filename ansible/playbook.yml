@@ -62,6 +62,7 @@
     ruby_gems:
       - awesome_print
       - bundler
+      - electric_monk
       - manpages
       - mdless
       - pry
