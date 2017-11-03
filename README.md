@@ -19,7 +19,7 @@ I adjusted the Jump plugin from Oh-my-ZSH to my needs. With `j` I can jump to di
 Use tmux, it rocks!
 I configured it with some more Vim-like bindings and a powerline-inspired status bar.
 
-I also use [tmuxinator](https://github.com/aziz/tmuxinator) to setup my development sessions.
+To start working on a project, I use my tiny `s` function which starts a tmux session for a project with the correct start directory.
 
 ## Vim
 
@@ -34,7 +34,7 @@ I'm doing all my programming (currently that's Ruby and JavaScript most of the t
 
 ## Other commandline tools
 
-* [`git`](https://www.git-scm.com) is the only version control system I use. It has three amazing companions: [`hub`](http://hub.github.com), [`tig`](http://jonas.nitro.dk/tig) and [`commitizen`](https://commitizen.github.io/cz-cli)
+* [`git`](https://www.git-scm.com) is the only version control system I use. It has two amazing companions: [`hub`](http://hub.github.com) and [`tig`](http://jonas.nitro.dk/tig)
 * `ag` aka. [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) is a replacement for grep that is so fast, that I can't really believe it.
 * [`htop`](https://github.com/max-horvath/htop-osx) is a replacement for `top`.
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data.
