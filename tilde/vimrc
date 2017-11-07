@@ -39,7 +39,9 @@ let g:netrw_banner=0    " disable banner
 
 " The cats are back in town
 let g:neomake_error_sign = { 'text': '🙀', 'texthl': 'SignColumn' }
-let g:neomake_error_sign = { 'text': '😿', 'texthl': 'SignColumn' }
+let g:neomake_warning_sign = { 'text': '😿', 'texthl': 'SignColumn' }
+let g:neomake_info_sign = { 'text': '😼', 'texthl': 'SignColumn' }
+let g:neomake_message_sign = { 'text': '🐱', 'texthl': 'SignColumn' }
 
 " Use the eslint version installed for that project
 let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
