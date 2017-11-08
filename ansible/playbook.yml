@@ -66,6 +66,7 @@
       - manpages
       - mdless
       - pry
+      - rubocop
     go_packages:
       - github/hub
     marks:
