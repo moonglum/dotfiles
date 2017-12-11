@@ -57,3 +57,7 @@ nnoremap <Leader>p :read !xsel -b<cr>
 
 " Copy to the pasteboard
 vnoremap <Leader>c :write !xsel -b<cr><cr>
+
+" Text Object for the last change (by @mkhl)
+xnoremap <silent> <script> <unique> <expr> ac ':<C-U>silent! normal! `[' . visualmode() . '`]<CR>'
+onoremap <silent> <script> <unique> ac :<C-U>normal vac<CR>
