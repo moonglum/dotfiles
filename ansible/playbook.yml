@@ -34,6 +34,8 @@
       - jq
       - nodejs
       - openjdk-9-jdk-headless
+      - python3
+      - python3-pip 
       - ragel
       - ruby-switch
       - ruby{{ ruby_version }}
@@ -67,6 +69,9 @@
       - mdless
       - pry
       - rubocop
+    pip_packages:
+      - awsebcli
+      - docker-compose
     go_packages:
       - github/hub
     marks:
@@ -124,13 +129,6 @@
         groups: docker
         append: yes
       become: true
-    - name: Install docker-compose
-      get_url:
-        url: https://github.com/docker/compose/releases/download/{{ compose_version }}/docker-compose-Linux-x86_64
-        dest: /usr/local/bin/docker-compose
-        mode: +x
-        checksum: "{{ compose_checksum }}"
-      become: true
 
     - name: Set the timezone
       command: timedatectl set-timezone Europe/Berlin
@@ -169,6 +167,12 @@
     - name: Install spell files for vim
       get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
       with_items: "{{ spell_files }}"
+
+    - name: Install pipsi
+      command: pip3 install pipsi --upgrade --user
+    - name: Install Python utilities
+      command: pipsi install "{{ item }}"
+      with_items: "{{ pip_packages }}"
 
     - name: Install leiningen
       get_url:
