@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "dotfiles"
 
-  config.vm.synced_folder "/Users/moonglum/.gnupg", "/home/vagrant/.gnupg", type: "rsync"
+  config.vm.synced_folder "/Users/moonglum/.gnupg", "/home/vagrant/.gnupg"
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4

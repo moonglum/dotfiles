@@ -30,6 +30,8 @@
       - docker-ce
       - elixir
       - git
+      - gnupg2
+      - gnupg-agent
       - htop
       - jq
       - nodejs

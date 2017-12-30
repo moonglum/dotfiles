@@ -13,3 +13,5 @@
   gpgsign = true
 [diff]
   compactionHeuristic = true
+[gpg]
+  program = /usr/bin/gpg2
