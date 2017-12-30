@@ -1,5 +1,8 @@
 .DS_Store
-.vagrant
-tilde/bundle/cache
-tilde/bundle/ruby
-tilde/electric_monk.toml
+/.vagrant
+/tilde/bundle/cache
+/tilde/bundle/ruby
+/tilde/electric_monk.toml
+/gnupg/private-keys-v1.d
+/gnupg/pubring.gpg
+/gnupg/trustdb.gpg

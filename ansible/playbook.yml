@@ -98,6 +98,21 @@
         state: link
       with_items: "{{ dotfiles.stdout_lines }}"
 
+    - name: Create ~/.gnupg
+      file: path=/home/vagrant/.gnupg state=directory mode=0700
+    - name: Find all gnupg files
+      shell: ls -1 /vagrant/gnupg
+      register: gnupg_files
+    - name: Link gnupg files
+      file:
+        path: /home/vagrant/.gnupg/{{ item }}
+        src: /vagrant/gnupg/{{ item }}
+        owner: vagrant
+        mode: 0600
+        group: vagrant
+        state: link
+      with_items: "{{ gnupg_files.stdout_lines }}"
+
     - name: Add APT Keys
       apt_key: url="{{ item }}"
       with_items: "{{ apt_keys }}"
