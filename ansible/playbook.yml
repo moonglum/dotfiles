@@ -50,7 +50,6 @@
       - wget
       - xsel
       - xorg
-      - youtube-dl
       - zsh
     vim_packages:
       editorconfig-vim: editorconfig/editorconfig-vim
@@ -74,6 +73,7 @@
     pip_packages:
       - awsebcli
       - docker-compose
+      - youtube-dl
     go_packages:
       - github/hub
     marks:
