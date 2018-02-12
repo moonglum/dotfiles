@@ -6,23 +6,23 @@
     email: "lucas@dohmen.io"
     url: "https://lucas.dohmen.io"
 
-    go_version: go1.9.2
-    go_checksum: sha256:de874549d9a8d8d8062be05808509c09a88a248e77ec14eb77453530829ac02b
+    go_version: 1.9
     nodejs_version: 8.x
     ruby_version: 2.4
     compose_version: 1.17.0-rc1
     compose_checksum: sha1:27f3648e33ee5c8f68c1d05c9e51a5b6669f94bd
 
     apt_keys:
-      - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
-      - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
-      - 'https://download.docker.com/linux/ubuntu/gpg'
+      A14F4FCA: 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+      68576280: 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+      0EBFCD88: 'https://download.docker.com/linux/ubuntu/gpg'
     apt_repositories:
       - 'deb http://packages.erlang-solutions.com/ubuntu xenial contrib'
       - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
       - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
       - 'ppa:brightbox/ruby-ng'
       - 'ppa:jonathonf/vim'
+      - 'ppa:gophers/archive'
     apt_packages:
       - asciinema
       - build-essential
@@ -32,6 +32,7 @@
       - git
       - gnupg2
       - gnupg-agent
+      - golang-{{ go_version }}
       - htop
       - jq
       - nodejs
@@ -105,9 +106,6 @@
 
     - name: Create ~/.gnupg
       file: path=/home/vagrant/.gnupg state=directory mode=0700
-    - name: Find all gnupg files
-      shell: ls -1 /vagrant/gnupg
-      register: gnupg_files
     - name: Link gnupg files
       file:
         path: /home/vagrant/.gnupg/{{ item }}
@@ -122,8 +120,8 @@
         - trustdb.gpg
 
     - name: Add APT Keys
-      apt_key: url="{{ item }}"
-      with_items: "{{ apt_keys }}"
+      apt_key: url="{{ item.value }}" id="{{ item.key }}"
+      with_dict: "{{ apt_keys }}"
       become: true
     - name: Add APT Repositories
       apt_repository: repo="{{ item }}" state=present
@@ -133,30 +131,30 @@
       apt: name=aptitude
       become: true
     - name: Update cache and upgrade
-      apt: update_cache=yes upgrade=safe
+      apt: update_cache=yes upgrade=safe cache_valid_time=86400
       become: true
     - name: Install missing packages
       apt: name={{ item }}
       with_items: "{{ apt_packages }}"
       become: true
 
-    - name: Set default shell for Vagrant user
-      user: name=vagrant shell=/bin/zsh
+    - name: Set defaults for Vagrant user
+      user:
+        name: vagrant
+        shell: /bin/zsh
+        groups: docker
+        append: yes
       become: true
+
     - name: Install ZSH Syntax Highlighting
       git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting
         dest: /home/vagrant/.zsh/plugins/zsh-syntax-highlighting
 
-    - name: Add the vagrant user to the docker group
-      user:
-        name: vagrant
-        groups: docker
-        append: yes
-      become: true
-
     - name: Set the timezone
-      command: timedatectl set-timezone Europe/Berlin
+      copy:
+        dest: /etc/timezone
+        content: "Europe/Berlin"
       become: true
 
     - name: Create the Code directory
@@ -172,13 +170,25 @@
       with_items: "{{ ruby_gems }}"
 
     - name: Set NPM author name
-      command: npm set init-author-name "{{ full_name }}"
+      lineinfile:
+        path: /home/vagrant/.npmrc
+        regexp: '^init-author-name'
+        line: 'init-author-name={{ full_name }}'
     - name: Set NPM author email
-      command: npm set init-author-email "{{ email }}"
+      lineinfile:
+        path: /home/vagrant/.npmrc
+        regexp: '^init-author-email'
+        line: 'init-author-email={{ email }}'
     - name: Set NPM author url
-      command: npm set init-author-url "{{ url }}"
+      lineinfile:
+        path: /home/vagrant/.npmrc
+        regexp: '^init-author-url'
+        line: 'init-author-url={{ url }}'
     - name: Set NPM prefix
-      command: npm set prefix ~/.npm
+      lineinfile:
+        path: /home/vagrant/.npmrc
+        regexp: '^prefix'
+        line: 'prefix=/home/vagrant/.npm'
 
     - name: Install default NPM packages
       npm: name={{ item }} global=yes
@@ -193,11 +203,13 @@
       get_url: url=http://ftp.vim.org/pub/vim/runtime/spell/{{ item }} dest=/home/vagrant/.vim/spell/{{ item }}
       with_items: "{{ spell_files }}"
 
-    - name: Install pipsi
-      command: pip3 install pipsi --upgrade --user
-    - name: Install Python utilities
-      command: pipsi install "{{ item }}"
+    - name: Install pips
+      pip:
+        name: "{{ item }}"
+        state: present
+        executable: pip3
       with_items: "{{ pip_packages }}"
+      become: true
 
     - name: Install leiningen
       get_url:
@@ -206,30 +218,8 @@
         mode: +x
       become: true
 
-    - name: Register the current Go version (if any)
-      shell: /usr/local/go/bin/go version | awk '{print $3}'
-      ignore_errors: yes
-      register: current_go_version
-      changed_when: false
-    - name: Download go
-      get_url:
-        url: https://storage.googleapis.com/golang/{{ go_version }}.linux-amd64.tar.gz
-        dest: /tmp/{{ go_version }}.linux-amd64.tar.gz
-        checksum: "{{ go_checksum }}"
-      when: current_go_version|failed or current_go_version.stdout != go_version
-    - name: Remove old installation of Go
-      file:
-        path: /usr/local/go
-        state: absent
-      become: true
-      when: current_go_version|failed or current_go_version.stdout != go_version
-    - name: Uncompress go archive
-      unarchive:
-        src: /tmp/{{ go_version }}.linux-amd64.tar.gz
-        dest: /usr/local
-        copy: no
-      become: true
-      when: current_go_version|failed or current_go_version.stdout != go_version
     - name: Install go packages
-      command: /usr/local/go/bin/go get github.com/{{ item }}
+      command: /usr/lib/go-{{ go_version }}/bin/go get github.com/{{ item }}
+      args:
+        creates: /home/vagrant/go/bin/{{ item }}
       with_items: "{{ go_packages }}"

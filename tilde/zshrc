@@ -109,7 +109,7 @@ compdef _s s
 PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 
 # Go
-PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:/usr/lib/go-1.9/bin/go
 PATH=$PATH:$HOME/go/bin
 
 # Node
