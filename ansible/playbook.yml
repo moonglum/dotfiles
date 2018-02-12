@@ -98,6 +98,11 @@
         state: link
       with_items: "{{ dotfiles.stdout_lines }}"
 
+    - name: Fix up SSH for proper Socket Forwarding
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        line: 'StreamLocalBindUnlink yes'
+
     - name: Create ~/.gnupg
       file: path=/home/vagrant/.gnupg state=directory mode=0700
     - name: Find all gnupg files
@@ -111,7 +116,10 @@
         mode: 0600
         group: vagrant
         state: link
-      with_items: "{{ gnupg_files.stdout_lines }}"
+      with_items:
+        - gpg.conf
+        - pubring.gpg
+        - trustdb.gpg
 
     - name: Add APT Keys
       apt_key: url="{{ item }}"
