@@ -72,6 +72,7 @@
       - pry
       - rubocop
     pip_packages:
+      - awscli
       - awsebcli
       - docker-compose
       - youtube-dl
