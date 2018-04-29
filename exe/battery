@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if acpi | grep -q Discharging ; then
+  echo "🔋 $(acpi | grep -o -e "[[:digit:]]\+%")"
+else
+  echo "🔌 $(acpi | grep -o -e "[[:digit:]]\+%")"
+fi
