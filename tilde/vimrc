@@ -12,23 +12,10 @@ set hlsearch                " Highlight Search Results
 set laststatus=2            " Always show status line
 set ttimeout
 set ttimeoutlen=100
+highlight clear SignColumn  " Fix the weird gray color of the gutter
 
-" Fuzzy finder without plugins
-set path+=**
-set wildmenu
-
-" === Solarized Dark ===
-" Currently using the dark version
-set background=dark
-colorscheme solarized
-
-" Fix the weird gray color of the gutter
-highlight clear SignColumn
-
-" === Neomake ===
-" Run on reading and writing buffers
-autocmd! BufWritePost * Neomake
-autocmd! BufReadPost * Neomake
+" === fzf ===
+set rtp+=~/.fzf
 
 " === Fixes ===
 " Do not apply JSX to all JavaScript files
@@ -37,27 +24,32 @@ let g:jsx_ext_required = 1
 " === netrw ===
 let g:netrw_banner=0    " disable banner
 
-" The cats are back in town
-let g:neomake_error_sign = { 'text': '🙀', 'texthl': 'SignColumn' }
-let g:neomake_warning_sign = { 'text': '😿', 'texthl': 'SignColumn' }
-let g:neomake_info_sign = { 'text': '😼', 'texthl': 'SignColumn' }
-let g:neomake_message_sign = { 'text': '🐱', 'texthl': 'SignColumn' }
+" === ale ===
+" the cats are back in town
+let g:ale_sign_column_always = 1
+let g:ale_sign_error="🙀"
+let g:ale_sign_warning="😿"
+let g:ale_sign_info="😼"
+let g:ale_sign_style_error="🙀"
+let g:ale_sign_style_warning="😿"
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
 
-" Use the eslint version installed for that project
-let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
-let g:neomake_javascript_flow_exe = $PWD .'/node_modules/.bin/flow'
+" fix problems when saving
+let g:ale_fix_on_save=1
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\}
 
 " === Mappings ===
-
 " Clear the search buffer when hitting return
 nnoremap <CR> :nohlsearch<cr>
 
-" Paste from the pasteboard
-nnoremap <Leader>p :read !xsel -b<cr>
+" Fuzzy Finder with Ctrl+P
+nnoremap <C-p> :<C-u>FZF<cr>
 
-" Copy to the pasteboard
-vnoremap <Leader>c :write !xsel -b<cr><cr>
+" Go to definition
+nnoremap <Leader>d :ALEGoToDefinition<cr>
 
-" Text Object for the last change (by @mkhl)
-xnoremap <silent> <script> <unique> <expr> ac ':<C-U>silent! normal! `[' . visualmode() . '`]<CR>'
-onoremap <silent> <script> <unique> ac :<C-U>normal vac<CR>
+" Find references
+nnoremap <Leader>r :ALEFindReferences<cr>

@@ -6,63 +6,52 @@
     email: "lucas@dohmen.io"
     url: "https://lucas.dohmen.io"
 
-    go_version: 1.9
-    nodejs_version: 8.x
-    ruby_version: 2.4
-    compose_version: 1.17.0-rc1
-    compose_checksum: sha1:27f3648e33ee5c8f68c1d05c9e51a5b6669f94bd
+    nodejs_version: 11.x
+    ruby_version: 2.6
 
     apt_keys:
       A14F4FCA: 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       68576280: 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
       0EBFCD88: 'https://download.docker.com/linux/ubuntu/gpg'
     apt_repositories:
-      - 'deb https://packages.erlang-solutions.com/ubuntu xenial contrib'
-      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
-      - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
+      - 'deb https://packages.erlang-solutions.com/ubuntu bionic contrib'
+      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} bionic main'
+      - 'deb https://download.docker.com/linux/ubuntu bionic stable'
       - 'ppa:brightbox/ruby-ng'
-      - 'ppa:jonathonf/vim'
-      - 'ppa:gophers/archive'
     apt_packages:
+      - acpi
       - asciinema
       - build-essential
       - curl
       - docker-ce
       - elixir
-      - git
+      - fish
+      - git-lfs
       - gnupg2
       - gnupg-agent
-      - golang-{{ go_version }}
-      - htop
       - jq
+      - manpages-dev
       - nodejs
-      - openjdk-9-jdk-headless
-      - python3
+      - openjdk-11-jdk-headless
       - python3-pip 
       - ragel
-      - ruby-switch
       - ruby{{ ruby_version }}
       - ruby{{ ruby_version }}-dev
+      - shellcheck
       - silversearcher-ag
       - tig
-      - tmux
       - tree
-      - vim
-      - wget
-      - xsel
-      - xorg
-      - zsh
+      - weechat
     vim_packages:
+      ale: w0rp/ale
       editorconfig-vim: editorconfig/editorconfig-vim
-      neomake: benekastah/neomake
-      vim-colors-solarized: altercation/vim-colors-solarized
       vim-commentary: tpope/vim-commentary
       vim-polyglot: sheerun/vim-polyglot
       vim-surround: tpope/vim-surround
       vim-repeat: tpope/vim-repeat
     npm_packages:
       - alex
-      - heroku-cli
+      - heroku
     ruby_gems:
       - awesome_print
       - bundler
@@ -71,21 +60,20 @@
       - mdless
       - pry
       - rubocop
+      - solargraph
     pip_packages:
-      - awscli
-      - awsebcli
       - docker-compose
+      - proselint
       - youtube-dl
-    go_packages:
-      - github/hub
-    marks:
-      c: /home/vagrant/Code
-      d: /vagrant
     spell_files:
       - en.utf-8.spl
       - en.utf-8.sug
       - de.utf-8.spl
       - de.utf-8.sug
+    known_hosts:
+      github.com: "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+      gitlab.innoq.com: "gitlab.innoq.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzpRLLhwWThw/pb8auHF0Z8zyKLbNV7hF7SYV2pJypDtzzdC+qyG8dDycdloH9jWod3bubbCwWqosr4VYiLqVTAa1ctUxPe5UggX2auJ0yKi9YfqBGBAX8hUYWnMZWabctjmVuX7ezY7MN2C1OxOdUGikSwoli2AReM6Q+bG/1xpzCr7fWrB1K721lvtqDxxxOrEesgbz1iNm2IszNaJZsaSzgtoOmzD9dgigDCPiAi/kSYoAZzT0IB87NsNyla13xcJNUq9PICeH7q/vnKM9c0abynEeox6MoYPdXcdCfMq4N5omVTxeb/yXJ/xSnfah9/OOOajtF46siXa5w8vd1Q=="
+      gitlab.com: "gitlab.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsj2bNKTBSpIYDEGk9KxsGh3mySTRgMtXL583qmBpzeQ+jqCMRgBqB98u3z++J1sKlXHWfM9dyhSevkMwSbhoR8XIq/U0tCNyokEi/ueaBMCvbcTHhO7FcwzY92WK4Yt0aGROY5qX2UKSeOvuP4D6TPqKF1onrSzH9bx9XUf2lEdWT/ia1NEKjunUqu1xOB/StKDHMoX4/OKyIzuS0q/T1zOATthvasJFoPrAjkohTyaDUz2LN5JoH839hViyEG82yB+MjcFV5MU3N1l1QL3cVUCh93xSaua1N85qivl+siMkPGbO5xR/En4iEY6K2XPASUEMaieWVNTRCtJ4S8H+9"
 
   tasks:
     - name: Find all Dotfiles
@@ -100,10 +88,28 @@
         state: link
       with_items: "{{ dotfiles.stdout_lines }}"
 
+    - name: Find all executable scripts
+      shell: ls -1 /vagrant/exe
+      register: executables
+    - name: Link Executables
+      file:
+        path: /usr/local/bin/{{ item }}
+        src: /vagrant/exe/{{ item }}
+        state: link
+      with_items: "{{ executables.stdout_lines }}"
+      become: true
+
+    - name: Add Known Hosts
+      known_hosts:
+        name: "{{ item.key }}"
+        key: "{{ item.value }}"
+      with_dict: "{{ known_hosts }}"
+
     - name: Fix up SSH for proper Socket Forwarding
       lineinfile:
         path: /etc/ssh/sshd_config
         line: 'StreamLocalBindUnlink yes'
+      become: true
 
     - name: Create ~/.gnupg
       file: path=/home/vagrant/.gnupg state=directory mode=0700
@@ -128,48 +134,38 @@
       apt_repository: repo="{{ item }}" state=present
       with_items: "{{ apt_repositories }}"
       become: true
-    - name: Install aptitude
-      apt: name=aptitude
-      become: true
-    - name: Update cache and upgrade
-      apt: update_cache=yes upgrade=safe cache_valid_time=86400
+    - name: Update cache
+      apt: update_cache=yes cache_valid_time=86400
       become: true
     - name: Install missing packages
-      apt: name={{ item }}
-      with_items: "{{ apt_packages }}"
+      apt: name={{ apt_packages }}
       become: true
 
     - name: Set defaults for Vagrant user
       user:
         name: vagrant
-        shell: /bin/zsh
+        shell: /usr/bin/fish
         groups: docker
         append: yes
       become: true
 
-    - name: Install ZSH Syntax Highlighting
-      git:
-        repo: https://github.com/zsh-users/zsh-syntax-highlighting
-        dest: /home/vagrant/.zsh/plugins/zsh-syntax-highlighting
-
     - name: Set the timezone
-      copy:
-        dest: /etc/timezone
-        content: "Europe/Berlin"
+      file:
+        path: /etc/localtime
+        src: /usr/share/zoneinfo/Europe/Berlin
       become: true
 
     - name: Create the Code directory
       file: path=/home/vagrant/Code state=directory
-    - name: Create the marks directory
-      file: path=/home/vagrant/.marks state=directory
-    - name: Configure the marks
-      file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }} force=yes
-      with_dict: "{{ marks }}"
 
     - name: Install default Ruby gems
       gem: name={{ item }}
       with_items: "{{ ruby_gems }}"
 
+    - name: NPM Config
+      file:
+        path: /home/vagrant/.npmrc
+        state: touch
     - name: Set NPM author name
       lineinfile:
         path: /home/vagrant/.npmrc
@@ -206,11 +202,9 @@
 
     - name: Install pips
       pip:
-        name: "{{ item }}"
+        name: "{{ pip_packages }}"
         state: present
         executable: pip3
-      with_items: "{{ pip_packages }}"
-      become: true
 
     - name: Install leiningen
       get_url:
@@ -219,8 +213,15 @@
         mode: +x
       become: true
 
-    - name: Install go packages
-      command: /usr/lib/go-{{ go_version }}/bin/go get github.com/{{ item }}
-      args:
-        creates: /home/vagrant/go/bin/{{ item }}
-      with_items: "{{ go_packages }}"
+    - name: Install gotop
+      unarchive:
+        src: https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
+        dest: /usr/local/bin
+        remote_src: yes
+        mode: +x
+      become: true
+
+    - name: Download fzf
+      git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
+    - name: Install fzf
+      command: '/home/vagrant/.fzf/install --no-update-rc'

@@ -28,5 +28,8 @@ indent_size = 4
 [*.elm]
 indent_size = 4
 
+[*.yml]
+indent_style = tab
+
 [Makefile]
 indent_style = tab
