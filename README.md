@@ -29,6 +29,7 @@ I'm doing all my programming (currently that's Ruby and JavaScript most of the t
 * **Peace in the office** via [`editorconfig/editorconfig-vim`](https://github.com/editorconfig/editorconfig-vim)
 * On-the-fly **linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
 * Automatically add ends etc. via [`tpope/vim-endwise`](https://github.com/tpope/vim-endwise)
+* Show a git diff in the gutter with [`airblade/vim-gitgutter`](https://github.com/airblade/vim-gitgutter)
 
 ## Other commandline tools
 
