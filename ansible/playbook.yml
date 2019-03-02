@@ -46,6 +46,7 @@
       ale: w0rp/ale
       editorconfig-vim: editorconfig/editorconfig-vim
       vim-commentary: tpope/vim-commentary
+      vim-monochrome: fxn/vim-monochrome
       vim-polyglot: sheerun/vim-polyglot
       vim-surround: tpope/vim-surround
       vim-repeat: tpope/vim-repeat

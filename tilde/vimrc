@@ -14,6 +14,9 @@ set ttimeout
 set ttimeoutlen=100
 highlight clear SignColumn  " Fix the weird gray color of the gutter
 
+" === colorscheme ===
+colorscheme monochrome
+
 " === fzf ===
 set rtp+=~/.fzf
 

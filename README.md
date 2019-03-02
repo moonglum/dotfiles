@@ -2,7 +2,7 @@
 
 This is the VM that I work in. It contains my configurations of vim, tmux, fish and more. On my Mac, there are no developer tools installed except Vagrant, VirtualBox, Terminal.app, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox, provisioned by Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
 
-I'm using [Solarized](http://ethanschoonover.com/solarized) as my color scheme. It's just beautiful. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire looks like:
+I'm using a [Nord](https://arcticicestudio.github.io/nord/) inspired color scheme and a [monochrome](https://github.com/fxn/vim-monochrome) vim. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire looks like:
 
 ![Screenshot](http://images.dohmen.io/dotfiles.png)
 
