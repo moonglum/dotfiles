@@ -56,3 +56,7 @@ nnoremap <Leader>d :ALEGoToDefinition<cr>
 
 " Find references
 nnoremap <Leader>r :ALEFindReferences<cr>
+
+" Run Tests
+nnoremap <Leader>t :TestFile<cr>
+nnoremap <Leader>T :TestSuite<cr>

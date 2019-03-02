@@ -30,6 +30,7 @@ I'm doing all my programming (currently that's Ruby and JavaScript most of the t
 * On-the-fly **linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
 * Automatically add ends etc. via [`tpope/vim-endwise`](https://github.com/tpope/vim-endwise)
 * Show a git diff in the gutter with [`airblade/vim-gitgutter`](https://github.com/airblade/vim-gitgutter)
+* Run tests from vim with [`janko/vim-test`](https://github.com/janko/vim-test)
 
 ## Other commandline tools
 

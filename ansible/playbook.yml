@@ -52,6 +52,7 @@
       vim-polyglot: sheerun/vim-polyglot
       vim-surround: tpope/vim-surround
       vim-repeat: tpope/vim-repeat
+      vim-test: janko/vim-test
     npm_packages:
       - alex
       - heroku
