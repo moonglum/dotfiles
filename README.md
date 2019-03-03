@@ -4,7 +4,7 @@ This is the VM that I work in. It contains my configurations of vim, tmux, fish 
 
 I'm using a [Nord](https://arcticicestudio.github.io/nord/) inspired color scheme and a [monochrome](https://github.com/fxn/vim-monochrome) vim. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire looks like:
 
-![Screenshot](http://images.dohmen.io/dotfiles.png)
+![Screenshot](dotfiles.png)
 
 ## fish
 
