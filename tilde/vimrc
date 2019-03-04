@@ -38,6 +38,9 @@ let g:ale_sign_style_warning="😿"
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
+" do not highlight errors, just show the cats
+let g:ale_set_highlights = 0
+
 " fix problems when saving
 let g:ale_fix_on_save=1
 let g:ale_fixers = {
