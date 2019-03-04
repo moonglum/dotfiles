@@ -47,7 +47,6 @@
       editorconfig-vim: editorconfig/editorconfig-vim
       endwise: tpope/vim-endwise
       vim-commentary: tpope/vim-commentary
-      vim-gitgutter: airblade/vim-gitgutter
       vim-monochrome: fxn/vim-monochrome
       vim-polyglot: sheerun/vim-polyglot
       vim-surround: tpope/vim-surround
