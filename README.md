@@ -1,14 +1,14 @@
 # dotfiles
 
-This is the VM that I work in. It contains my configurations of vim, tmux, fish and more. On my Mac, there are no developer tools installed except Vagrant, VirtualBox, Terminal.app, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox, provisioned by Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
+This is the VM that I work in. It contains my configurations of vim, tmux, fish and more. On my Mac, there are no developer tools installed except Vagrant, VirtualBox, Terminal.app, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox with Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
 
-I'm using a [Nord](https://arcticicestudio.github.io/nord/) inspired color scheme and a [monochrome](https://github.com/fxn/vim-monochrome) vim. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire looks like:
+I'm using a [Nord](https://arcticicestudio.github.io/nord/) inspired color scheme and a [monochrome](https://github.com/fxn/vim-monochrome) vim. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire thing looks like:
 
 ![Screenshot](dotfiles.png)
 
 ## fish
 
-I'm using [fish](http://fishshell.com) as my shell. I noticed that it does a lot of things I needed to configure in ZSH by default. The only thing I configured is that I use [fzf](https://github.com/junegunn/fzf), because I really missed `Ctrl+r` for reverse searching and I like the incremental search.
+I'm using [fish](http://fishshell.com) as my shell. I noticed that it does a lot of things I needed to configure in ZSH by default and switched to it. The only thing I configured is that I use [fzf](https://github.com/junegunn/fzf), because I really missed `Ctrl+r` for reverse searching and I like the incremental search.
 
 The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that is green when the last status exit was 0, and red otherwise. In the right prompt, I display the pwd and the current git status.
 
@@ -16,11 +16,11 @@ With `j` I can jump to my Code projects. To start or continue working on a proje
 
 ## tmux
 
-Use tmux, it rocks! I configured it with some more Vim-like bindings and a nice status bar with time and battery charge.
+Use tmux, it rocks! I configured it with some more Vim-like bindings and a nice status bar with the current time and battery charge (via `acpi`).
 
 ## Vim
 
-I'm doing all my programming (currently that's Ruby and JavaScript most of the time) and most of my writing (in Latex and Markdown) in vim. I use the following plugins:
+I'm doing all my programming and most of my writing in vim. I use the following plugins:
 
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
@@ -28,7 +28,8 @@ I'm doing all my programming (currently that's Ruby and JavaScript most of the t
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
 * **Peace in the office** via [`editorconfig/editorconfig-vim`](https://github.com/editorconfig/editorconfig-vim)
 * On-the-fly **linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
-* Run tests from vim with [`janko/vim-test`](https://github.com/janko/vim-test)
+* **Run tests** from vim with [`janko/vim-test`](https://github.com/janko/vim-test)
+* Fuzzy **file finder** with [`junegunn/fzf`](https://github.com/junegunn/fzf)
 
 ## Other commandline tools
 
