@@ -28,7 +28,6 @@ I'm doing all my programming (currently that's Ruby and JavaScript most of the t
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
 * **Peace in the office** via [`editorconfig/editorconfig-vim`](https://github.com/editorconfig/editorconfig-vim)
 * On-the-fly **linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
-* Automatically add ends etc. via [`tpope/vim-endwise`](https://github.com/tpope/vim-endwise)
 * Run tests from vim with [`janko/vim-test`](https://github.com/janko/vim-test)
 
 ## Other commandline tools
