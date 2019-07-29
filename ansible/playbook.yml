@@ -48,9 +48,9 @@
       vim-commentary: tpope/vim-commentary
       vim-monochrome: fxn/vim-monochrome
       vim-polyglot: sheerun/vim-polyglot
-      vim-surround: tpope/vim-surround
       vim-repeat: tpope/vim-repeat
-      vim-test: janko/vim-test
+      vim-sensible: tpope/vim-sensible
+      vim-surround: tpope/vim-surround
     npm_packages:
       - alex
       - heroku

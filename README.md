@@ -22,13 +22,13 @@ Use tmux, it rocks! I configured it with some more Vim-like bindings and a nice 
 
 I'm doing all my programming and most of my writing in vim. I use the following plugins:
 
+* A few **nice defaults** via [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible)
 * Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
 * Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
 * **Quoting/Parenthesizing** made simple via [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
 * **Peace in the office** via [`editorconfig/editorconfig-vim`](https://github.com/editorconfig/editorconfig-vim)
 * On-the-fly **linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
-* **Run tests** from vim with [`janko/vim-test`](https://github.com/janko/vim-test)
 * Fuzzy **file finder** with [`junegunn/fzf`](https://github.com/junegunn/fzf)
 
 ## Other commandline tools
