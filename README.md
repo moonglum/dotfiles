@@ -63,6 +63,37 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 * My terminal emulator of choice is Terminal.app
 * I use US-Extended as my keyboard layout. The German keyboard layout doesn't work for me.
 
+## Making GPG available in the box
+
+*Thanks for @bascht for helping me setting this up.*
+
+On my Mac, I have [GPGTools](https://gpgtools.org) installed to write and
+receive GPG encryped emails. The GPG agent on my Mac is configured to create
+an extra GPG socket.
+
+```
+# ~/.gnupg/gpg-agent.conf
+default-cache-ttl 300
+max-cache-ttl 999999
+enable-ssh-support
+extra-socket /Users/moonglum/.gnupg/S.gpg-agent.extra
+```
+
+SSH is then configured to forward that extra socket to the virtual machine:
+
+```
+# ~/.ssh/config
+Host 127.0.0.1
+  RemoteForward /var/run/user/1000/gnupg/S.gpg-agent /Users/moonglum/.gnupg/S.gpg-agent.extra
+  ExitOnForwardFailure yes
+```
+
+In addition to that, the host and machine share the pubring.gpg and trustdb.gpg. They are both in the
+folder of this repo (but gitignored), and then linked to the according locations.
+
+Does the trustdb make sense? The pubring is important so that we have the public keys in both places.
+Do I need that pretty empty gpg.conf? There is probably a default keyserver.
+
 ## Thanks
 
 * To Drew Neil for [his book(s) about Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition)
