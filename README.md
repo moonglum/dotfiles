@@ -1,8 +1,8 @@
 # dotfiles
 
-This is the VM that I work in. It contains my configurations of vim, tmux, fish and more. On my Mac, there are no developer tools installed except Vagrant, VirtualBox, Terminal.app, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox with Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean.
+This is the VM that I work in. It contains my configurations of vim, tmux, fish and more. On my Mac, there are no developer tools installed except Vagrant, VirtualBox, iTerm2, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox with Ansible. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box. From time to time I run a `vagrant destroy` to keep everything clean. I use US-Extended as my keyboard layout (The German keyboard layout doesn't work for me).
 
-I'm using a [Nord](https://arcticicestudio.github.io/nord/) inspired color scheme and a [monochrome](https://github.com/fxn/vim-monochrome) vim. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire thing looks like:
+I'm using [Solarized Light](https://ethanschoonover.com/solarized) as my color scheme. My font of choice is [Input](http://input.fontbureau.com) in 11px. I then work in full screen mode. This is how the entire thing looks like:
 
 ![Screenshot](dotfiles.png)
 
@@ -10,9 +10,12 @@ I'm using a [Nord](https://arcticicestudio.github.io/nord/) inspired color schem
 
 I'm using [fish](http://fishshell.com) as my shell. I noticed that it does a lot of things I needed to configure in ZSH by default and switched to it. The only thing I configured is that I use [fzf](https://github.com/junegunn/fzf), because I really missed `Ctrl+r` for reverse searching and I like the incremental search.
 
-The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that is green when the last status exit was 0, and red otherwise. In the right prompt, I display the pwd and the current git status.
+The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that is green when the last status exit was 0, and red otherwise. In the right prompt, I display the pwd and the current git status. I have a few functions:
 
-With `j` I can jump to my Code projects. To start or continue working on a project, I use my tiny `s` function which starts (or attaches to) a tmux session for a project with the correct start directory.
+* With `j` I can jump to my Code projects
+* To start or continue working on a project, I use my tiny `s` function which starts (or attaches to) a tmux session for a project with the correct start directory.
+* `mcd` creates a directory and then `cd`s into it
+* `l` is just `ls -al`
 
 ## tmux
 
@@ -58,18 +61,11 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 * I used Haskell and Prolog quite a lot back in University
 * I'm also playing around with Idris, Clojure, Elixir, Rust, Go, and Elm
 
-## Miscellaneous
-
-* My terminal emulator of choice is Terminal.app
-* I use US-Extended as my keyboard layout. The German keyboard layout doesn't work for me.
-
 ## Making GPG available in the box
 
 *Thanks for @bascht for helping me setting this up.*
 
-On my Mac, I have [GPGTools](https://gpgtools.org) installed to write and
-receive GPG encryped emails. The GPG agent on my Mac is configured to create
-an extra GPG socket.
+On my Mac, I have [GPGTools](https://gpgtools.org) installed to write and receive GPG encryped emails. The GPG agent on my Mac is configured to create an extra GPG socket.
 
 ```
 # ~/.gnupg/gpg-agent.conf
@@ -88,11 +84,7 @@ Host 127.0.0.1
   ExitOnForwardFailure yes
 ```
 
-In addition to that, the host and machine share the pubring.gpg and trustdb.gpg. They are both in the
-folder of this repo (but gitignored), and then linked to the according locations.
-
-Does the trustdb make sense? The pubring is important so that we have the public keys in both places.
-Do I need that pretty empty gpg.conf? There is probably a default keyserver.
+In addition to that, the host and machine share the pubring.gpg and trustdb.gpg. They are both in the folder of this repo (but gitignored), and then linked to the according locations.
 
 ## Thanks
 

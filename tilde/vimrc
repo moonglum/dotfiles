@@ -5,7 +5,7 @@ set spell spelllang=en_us   " Activate spell checking and set American as defaul
 set nojoinspaces            " Insert only one space when joining lines
 
 " === colorscheme ===
-colorscheme monochrome
+colorscheme solarized8 " solarized light
 
 " === fzf ===
 set rtp+=~/.fzf
