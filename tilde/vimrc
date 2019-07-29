@@ -1,17 +1,13 @@
 " === General Setup ===
-set nowrap                  " Deactivate Wrapping
-set noswapfile              " I don't like Swapfiles
-set spell spelllang=en_us   " Activate spell checking and set American as default
-set nojoinspaces            " Insert only one space when joining lines
-
-" === colorscheme ===
+set noswapfile         " I don't like Swapfiles
+set spell              " Activate spell checking
 colorscheme solarized8 " solarized light
 
 " === fzf ===
 set rtp+=~/.fzf
 
 " === netrw ===
-let g:netrw_banner=0    " disable banner
+let g:netrw_banner=0   " disable banner
 
 " === ale ===
 " the cats are back in town
@@ -21,6 +17,8 @@ let g:ale_sign_warning="😿"
 let g:ale_sign_info="😼"
 let g:ale_sign_style_error="🙀"
 let g:ale_sign_style_warning="😿"
+
+" clear background colors for the gutter
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
@@ -34,8 +32,5 @@ let g:ale_fixers = {
 \}
 
 " === Mappings ===
-" Clear the search buffer when hitting return
-nnoremap <CR> :nohlsearch<cr>
-
 " Fuzzy Finder with Ctrl+P
 nnoremap <C-p> :<C-u>FZF<cr>

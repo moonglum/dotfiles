@@ -52,7 +52,6 @@
       vim-solarized8: lifepillar/vim-solarized8
       vim-surround: tpope/vim-surround
     npm_packages:
-      - alex
       - heroku
     ruby_gems:
       - awesome_print

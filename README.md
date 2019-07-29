@@ -42,7 +42,6 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data.
 * [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree.
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
-* [`alex`](http://alexjs.com) to catch insensitive, inconsiderate writing.
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB
 * [`mdless`](http://brettterpstra.com/projects/mdless) is a less for Markdown files
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
@@ -51,7 +50,7 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 * [`shellcheck`](https://www.shellcheck.net) to get feedback about shell scripts
 * [`asciinema`](https://asciinema.org) to record terminal things
 * [`weechat`](http://weechat.org) to chat from the command line
-* [`alex`](https://alexjs.com) and [`proselint`](http://proselint.com) to get feedback on writing
+* [`proselint`](http://proselint.com) to get feedback on writing
 * The heroku CLI to interact with heroku
 * [`electric_monk`](https://github.com/moonglum/electric_monk) to check if I have unpushed changes anywhere
 
