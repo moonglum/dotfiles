@@ -38,10 +38,11 @@
       - ruby{{ ruby_version }}
       - ruby{{ ruby_version }}-dev
       - shellcheck
-      - silversearcher-ag
       - tig
       - tree
-      - weechat
+    debs:
+      - https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
+      - https://github.com/sharkdp/fd/releases/download/v7.3.0/fd_7.3.0_amd64.deb
     vim_packages:
       ale: w0rp/ale
       editorconfig-vim: editorconfig/editorconfig-vim
@@ -214,12 +215,10 @@
         mode: +x
       become: true
 
-    - name: Install gotop
-      unarchive:
-        src: https://github.com/cjbassi/gotop/releases/download/3.0.0/gotop_3.0.0_linux_amd64.tgz
-        dest: /usr/local/bin
-        remote_src: yes
-        mode: +x
+    - name: Install debs
+      apt:
+        deb: "{{ item }}"
+      with_items: "{{ debs }}"
       become: true
 
     - name: Download fzf
