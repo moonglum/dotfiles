@@ -8,13 +8,10 @@ set -x EDITOR 'vim'
 set -x FZF_DEFAULT_COMMAND 'git ls-files'
 
 # Ruby
-set -x PATH $PATH $HOME/.gem/ruby/2.6.0/bin
+set -x PATH $HOME/.gem/ruby/2.6.0/bin $PATH
 
 # Node
-set -x PATH $PATH $HOME/.npm/bin
+set -x PATH $HOME/.npm/bin $PATH
 
 # Python
-set -x PATH $PATH $HOME/.local/bin
-
-# Customer Stuff
-set -x CC_HOME /home/vagrant/Code
+set -x PATH $HOME/.local/bin $PATH
