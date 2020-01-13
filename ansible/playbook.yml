@@ -31,6 +31,7 @@
       - gnupg-agent
       - jq
       - manpages-dev
+      - libsqlite3-dev
       - nodejs
       - openjdk-11-jdk-headless
       - python3-pip 
@@ -38,6 +39,7 @@
       - ruby{{ ruby_version }}
       - ruby{{ ruby_version }}-dev
       - shellcheck
+      - sqlite3
       - tig
       - tree
     debs:
@@ -54,6 +56,7 @@
       vim-surround: tpope/vim-surround
     npm_packages:
       - heroku
+      - yarn
     ruby_gems:
       - awesome_print
       - bundler
@@ -61,6 +64,7 @@
       - manpages
       - mdless
       - pry
+      - rails
       - rubocop
       - solargraph
     pip_packages:
