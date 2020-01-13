@@ -28,7 +28,9 @@ let g:ale_set_highlights = 0
 " fix problems when saving
 let g:ale_fix_on_save=1
 let g:ale_fixers = {
+\   'css': ['prettier'],
 \   'javascript': ['prettier'],
+\   'scss': ['prettier'],
 \}
 
 " === Mappings ===
