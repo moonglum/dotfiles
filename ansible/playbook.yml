@@ -27,6 +27,7 @@
       - git-lfs
       - gnupg2
       - gnupg-agent
+      - i3
       - jq
       - manpages-dev
       - libsqlite3-dev
