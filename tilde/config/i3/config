@@ -21,6 +21,9 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Lock the screen
+bindsym $mod+Control+q exec i3lock
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
