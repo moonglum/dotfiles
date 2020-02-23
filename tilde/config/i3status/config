@@ -1,0 +1,44 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+general {
+  colors = true
+  interval = 5
+}
+
+order += "wireless _first_"
+order += "battery all"
+order += "cpu_usage"
+order += "memory"
+order += "load"
+order += "tztime local"
+
+wireless _first_ {
+  format_up = "📡 %essid %quality at %bitrate"
+  format_down = "📡 down"
+}
+
+battery all {
+  format = "%status %percentage"
+  status_full = "🔌"
+  status_chr = "🔌"
+  status_bat = "🔋"
+}
+
+cpu_usage {
+  format = "%usage"
+}
+
+memory {
+  format = "%used / %total"
+  threshold_degraded = "1G"
+  format_degraded = "MEMORY < %available"
+}
+
+load {
+  format = "%1min %5min %15min"
+}
+
+tztime local {
+  format = "%H:%M"
+}
