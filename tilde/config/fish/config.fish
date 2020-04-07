@@ -15,3 +15,6 @@ set -x PATH $HOME/.npm/bin $PATH
 
 # Python
 set -x PATH $HOME/.local/bin $PATH
+
+# direnv
+direnv hook fish | source

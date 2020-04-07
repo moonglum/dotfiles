@@ -23,6 +23,7 @@
       - asciinema
       - build-essential
       - curl
+      - direnv
       - docker-ce
       - elixir
       - fish

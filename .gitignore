@@ -7,4 +7,5 @@
 /gnupg/pubring.gpg
 /gnupg/trustdb.gpg
 /tilde/config/configstore
+/tilde/config/direnv
 /tilde/config/fish/fishd.*
