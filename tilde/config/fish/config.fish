@@ -16,5 +16,9 @@ set -x PATH $HOME/.npm/bin $PATH
 # Python
 set -x PATH $HOME/.local/bin $PATH
 
+# Deno
+set -x DENO_INSTALL $HOME/.deno
+set -x PATH $DENO_INSTALL/bin $PATH
+
 # direnv
 direnv hook fish | source
