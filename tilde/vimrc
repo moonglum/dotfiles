@@ -15,11 +15,11 @@ let g:netrw_banner=0
 " === ale ===
 " highlight linter output with cats, but without a red gutter
 let g:ale_sign_column_always = 1
-let g:ale_sign_error="🙀"
-let g:ale_sign_warning="😿"
-let g:ale_sign_info="😼"
-let g:ale_sign_style_error="🙀"
-let g:ale_sign_style_warning="😿"
+let g:ale_sign_error="😺"
+let g:ale_sign_warning="😺"
+let g:ale_sign_info="😺"
+let g:ale_sign_style_error="😺"
+let g:ale_sign_style_warning="😺"
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
