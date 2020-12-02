@@ -6,8 +6,8 @@
   prune-all = !git remote | xargs -n 1 git remote prune
 [push]
   default = simple
-[commit]
-  gpgsign = true
+# [commit]
+  # gpgsign = true
 [diff]
   compactionHeuristic = true
   noprefix = true

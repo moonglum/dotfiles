@@ -8,7 +8,7 @@ set -x EDITOR 'vim'
 set -x FZF_DEFAULT_COMMAND 'git ls-files'
 
 # Ruby
-set -x PATH $HOME/.gem/ruby/2.6.0/bin $PATH
+set -x PATH $HOME/.gem/ruby/2.5.0/bin $PATH
 
 # Node
 set -x PATH $HOME/.npm/bin $PATH

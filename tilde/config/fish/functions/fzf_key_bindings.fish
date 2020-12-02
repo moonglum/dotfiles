@@ -1,1 +1,1 @@
-/home/vagrant/.fzf/shell/key-bindings.fish
+/home/moonglum/.fzf/shell/key-bindings.fish
