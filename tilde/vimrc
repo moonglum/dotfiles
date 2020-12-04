@@ -2,15 +2,11 @@
 set noswapfile         " I don't like Swapfiles
 set spell              " Activate spell checking
 colorscheme solarized8 " solarized light
+let g:netrw_banner=0   " disable netrw banner
 
 " === fzf ===
 " Fuzzy Finder with Ctrl+P
-set rtp+=~/.fzf
 nnoremap <C-p> :<C-u>FZF<cr>
-
-" === netrw ===
-" disable netrw banner, I know those options
-let g:netrw_banner=0
 
 " === ale ===
 " highlight linter output with cats, but without a red gutter
@@ -31,4 +27,5 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'scss': ['prettier'],
+\   'haskell': ['hlint'],
 \}

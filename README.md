@@ -38,26 +38,25 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 
 * [`git`](https://www.git-scm.com) is the only version control system I use. It has an amazing companion: [`tig`](http://jonas.nitro.dk/tig)
 * [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for grep that is so fast, that I can't really believe it
-* [`fd`](https://github.com/sharkdp/fd) is a replacement for find that is easier to use for me
-* [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data
+* [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data, but I mostly use it for pretty printing
 * [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
-* [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB with `awesome_print`
+* [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB with `amazing_print`
 * [`mdless`](http://brettterpstra.com/projects/mdless) is a less for Markdown files
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
 * [`youtube-dl`](https://rg3.github.io/youtube-dl) allows me to download videos for train trips
 * [`docker`](https://www.docker.com) and `docker-compose` because I really wish it would do what I want
 * [`shellcheck`](https://www.shellcheck.net) to get feedback about shell scripts
 * [`asciinema`](https://asciinema.org) to record terminal things
-* [`proselint`](http://proselint.com) to get feedback on writing
-* The heroku CLI to interact with heroku
 * [`electric_monk`](https://github.com/moonglum/electric_monk) to check if I have unpushed changes anywhere
+* [`direnv`](https://direnv.net) to load and unload environment variables depending on the current directory
 
 ## Languages I work or play with
 
-* Ruby and JavaScript (Daily)
-* I used Haskell and Prolog quite a lot back in University
-* I'm also playing around with Idris, Clojure, Elixir, Rust, Go, and Elm
+The programming languages I use regularly are installed via `asdf` so I can switch versions and always be on the most recent release.
+
+* I write Ruby and JavaScript (Node, Browser or Deno) almost daily
+* I used Haskell quite a lot back in University and I'm playing around with it again
 
 ## Making GPG available in the box
 

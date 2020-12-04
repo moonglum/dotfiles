@@ -6,72 +6,52 @@
     email: "lucas@dohmen.io"
     url: "https://lucas.dohmen.io"
 
-    nodejs_version: 13.x
-    ruby_version: 2.6
-
-    apt_keys:
-      A14F4FCA: 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
-      68576280: 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
-      0EBFCD88: 'https://download.docker.com/linux/ubuntu/gpg'
-    apt_repositories:
-      - 'deb https://packages.erlang-solutions.com/ubuntu bionic contrib'
-      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} bionic main'
-      - 'deb https://download.docker.com/linux/ubuntu bionic stable'
-      - 'ppa:brightbox/ruby-ng'
     apt_packages:
       - acpi
       - asciinema
+      - brotli
       - build-essential
-      - curl
       - direnv
-      - docker-ce
-      - elixir
+      - docker-compose
+      - docker.io
+      - ffmpeg
       - fish
+      - fzf
       - git-lfs
-      - gnupg2
       - gnupg-agent
+      - gnupg2
+      - haskell-platform
+      - hlint
       - jq
-      - manpages-dev
+      - libheif-dev
+      - libpq-dev
       - libsqlite3-dev
-      - nodejs
-      - openjdk-11-jdk-headless
+      - libvips-dev
+      - manpages-dev
       - python3-pip 
       - ragel
-      - ruby{{ ruby_version }}
-      - ruby{{ ruby_version }}-dev
+      - ripgrep
       - shellcheck
-      - sqlite3
       - tig
       - tree
-    debs:
-      - https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
-      - https://github.com/sharkdp/fd/releases/download/v7.3.0/fd_7.3.0_amd64.deb
+      - unzip
+      - woff2
     vim_packages:
       ale: w0rp/ale
       editorconfig-vim: editorconfig/editorconfig-vim
+      fzf: junegunn/fzf
       vim-commentary: tpope/vim-commentary
       vim-polyglot: sheerun/vim-polyglot
       vim-repeat: tpope/vim-repeat
       vim-sensible: tpope/vim-sensible
       vim-solarized8: lifepillar/vim-solarized8
       vim-surround: tpope/vim-surround
-    npm_packages:
-      - heroku
-      - yarn
-    ruby_gems:
-      - awesome_print
-      - bundler
-      - electric_monk
-      - manpages
-      - mdless
-      - pry
-      - rails
-      - rubocop
-      - solargraph
     pip_packages:
-      - docker-compose
-      - proselint
       - youtube-dl
+    asdf_plugins:
+      - deno
+      - nodejs
+      - ruby
     spell_files:
       - en.utf-8.spl
       - en.utf-8.sug
@@ -79,7 +59,7 @@
       - de.utf-8.sug
     known_hosts:
       github.com: "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
-      gitlab.innoq.com: "gitlab.innoq.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzpRLLhwWThw/pb8auHF0Z8zyKLbNV7hF7SYV2pJypDtzzdC+qyG8dDycdloH9jWod3bubbCwWqosr4VYiLqVTAa1ctUxPe5UggX2auJ0yKi9YfqBGBAX8hUYWnMZWabctjmVuX7ezY7MN2C1OxOdUGikSwoli2AReM6Q+bG/1xpzCr7fWrB1K721lvtqDxxxOrEesgbz1iNm2IszNaJZsaSzgtoOmzD9dgigDCPiAi/kSYoAZzT0IB87NsNyla13xcJNUq9PICeH7q/vnKM9c0abynEeox6MoYPdXcdCfMq4N5omVTxeb/yXJ/xSnfah9/OOOajtF46siXa5w8vd1Q=="
+      gitlab.innoq.com: "gitlab.innoq.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOBWfyb1ui8/B+GF7gKSYp4ruAYSqmRH+IyCIGtTGtaHFtFQVrVIHy4ZG0X7n6LSHZiMlhEGFCsqweHclA7K6BprZPj+E3dVT3U6TmnAw3LpMFz8qD59HJTlxsMoCZ5G5aVyD/lQMMgdoysqR9RVeky7rdiouo1fX5pRhVkScMfpJsoCxRLfchXoB3d551oKWagLzjDKBIFLCv/16GwGOuU5ueXzZG+/SMOBc5w7EQw/IqNYowBOJ0g7sGECK140OUL78HbGRThUHjAIh3MLTOoeZwQdNw2tPPl/p6id2WzYdNTiLBFZ1XH5t7iVnkFvHW1KOsNuY/XUSUuXHKCAhd"
       gitlab.com: "gitlab.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsj2bNKTBSpIYDEGk9KxsGh3mySTRgMtXL583qmBpzeQ+jqCMRgBqB98u3z++J1sKlXHWfM9dyhSevkMwSbhoR8XIq/U0tCNyokEi/ueaBMCvbcTHhO7FcwzY92WK4Yt0aGROY5qX2UKSeOvuP4D6TPqKF1onrSzH9bx9XUf2lEdWT/ia1NEKjunUqu1xOB/StKDHMoX4/OKyIzuS0q/T1zOATthvasJFoPrAjkohTyaDUz2LN5JoH839hViyEG82yB+MjcFV5MU3N1l1QL3cVUCh93xSaua1N85qivl+siMkPGbO5xR/En4iEY6K2XPASUEMaieWVNTRCtJ4S8H+9"
 
   tasks:
@@ -133,14 +113,6 @@
         - pubring.gpg
         - trustdb.gpg
 
-    - name: Add APT Keys
-      apt_key: url="{{ item.value }}" id="{{ item.key }}"
-      with_dict: "{{ apt_keys }}"
-      become: true
-    - name: Add APT Repositories
-      apt_repository: repo="{{ item }}" state=present
-      with_items: "{{ apt_repositories }}"
-      become: true
     - name: Update cache
       apt: update_cache=yes cache_valid_time=86400
       become: true
@@ -164,10 +136,6 @@
 
     - name: Create the Code directory
       file: path=/home/vagrant/Code state=directory
-
-    - name: Install default Ruby gems
-      gem: name={{ item }}
-      with_items: "{{ ruby_gems }}"
 
     - name: NPM Config
       file:
@@ -194,10 +162,6 @@
         regexp: '^prefix'
         line: 'prefix=/home/vagrant/.npm'
 
-    - name: Install default NPM packages
-      npm: name={{ item }} global=yes
-      with_items: "{{ npm_packages }}"
-
     - name: Install or update vim plugins
       git: repo=https://github.com/{{ item.value }} dest=/home/vagrant/.vim/pack/bundle/start/{{ item.key }}
       with_dict: "{{ vim_packages }}"
@@ -213,20 +177,12 @@
         state: present
         executable: pip3
 
-    - name: Install leiningen
-      get_url:
-        url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-        dest: /usr/local/bin/lein
-        mode: +x
-      become: true
-
-    - name: Install debs
-      apt:
-        deb: "{{ item }}"
-      with_items: "{{ debs }}"
-      become: true
-
-    - name: Download fzf
-      git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
-    - name: Install fzf
-      command: '/home/vagrant/.fzf/install --no-update-rc'
+    - name: Install or update asdf
+      git: repo=https://github.com/asdf-vm/asdf.git dest=/home/vagrant/.asdf version=v0.8.0
+    - name: Install asdf plugins
+      shell: /home/vagrant/.asdf/bin/asdf plugin add {{ item }} || echo "Already installed"
+      with_items: "{{ asdf_plugins }}"
+    - name: Import GPG Keys
+      shell: /home/vagrant/.asdf/plugins/nodejs/bin/import-release-team-keyring
+    - name: Install specified tools with asdf
+      shell: /home/vagrant/.asdf/bin/asdf install

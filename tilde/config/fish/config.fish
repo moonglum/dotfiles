@@ -7,18 +7,13 @@ set -x EDITOR 'vim'
 # use "git ls-files" as the file list for fzf
 set -x FZF_DEFAULT_COMMAND 'git ls-files'
 
-# Ruby
-set -x PATH $HOME/.gem/ruby/2.6.0/bin $PATH
+source ~/.asdf/asdf.fish
 
-# Node
-set -x PATH $HOME/.npm/bin $PATH
+# Ruby
+set -x PATH $HOME/.gem/ruby/2.7.0/bin $PATH
 
 # Python
 set -x PATH $HOME/.local/bin $PATH
 
-# Deno
-set -x DENO_INSTALL $HOME/.deno
-set -x PATH $DENO_INSTALL/bin $PATH
-
 # direnv
-direnv hook fish | source
+eval (direnv hook fish)
