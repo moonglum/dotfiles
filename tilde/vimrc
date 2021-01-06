@@ -21,6 +21,9 @@ highlight clear ALEWarningSign
 
 " automatic formatting on save via prettier
 let g:ale_fix_on_save=1
+" let g:ale_linters = {
+" \   'haskell': ['ghc'],
+" \}
 let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'javascript': ['prettier'],
