@@ -50,6 +50,7 @@
       - youtube-dl
     asdf_plugins:
       - deno
+      - golang
       - nodejs
       - ruby
     spell_files:

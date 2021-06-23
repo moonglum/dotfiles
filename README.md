@@ -56,6 +56,7 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 The programming languages I use regularly are installed via `asdf` so I can switch versions and always be on the most recent release.
 
 * I write Ruby and JavaScript (Node, Browser or Deno) almost daily
+* Currently working in a Go project
 * I used Haskell quite a lot back in University and I'm playing around with it again
 
 ## Making GPG available in the box
