@@ -42,7 +42,6 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 * [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB with `amazing_print`
-* [`mdless`](http://brettterpstra.com/projects/mdless) is a less for Markdown files
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
 * [`youtube-dl`](https://rg3.github.io/youtube-dl) allows me to download videos for train trips
 * [`docker`](https://www.docker.com) and `docker-compose` because I really wish it would do what I want
