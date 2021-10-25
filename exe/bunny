@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+require "bunny"
+require "ap"
+require "json"
+
+conn = Bunny.new
+conn.start
+
+exchange = ARGV[0]
+if exchange.nil?
+  puts "No exchange provided"
+  exit(1)
+end
+puts "Listening on exchange #{exchange}"
+
+channel = conn.create_channel
+fanout = channel.fanout(exchange, auto_delete: true)
+
+queue = channel.queue("").bind(fanout)
+
+queue.subscribe do |_delivery_info, _metadata, payload|
+  puts "Received message"
+  ap JSON.parse(payload)
+  puts
+end
+
+loop { sleep 5 }
