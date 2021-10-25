@@ -9,6 +9,9 @@ set -x FZF_DEFAULT_COMMAND 'git ls-files'
 
 source ~/.asdf/asdf.fish
 
+# Ruby
+set -x PATH $HOME/.gem/ruby/3.0.0/bin $PATH
+
 # Python (not installed via asdf)
 set -x PATH $HOME/.local/bin $PATH
 
