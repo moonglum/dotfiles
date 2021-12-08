@@ -10,7 +10,6 @@
   gpgsign = true
 [diff]
   compactionHeuristic = true
-  noprefix = true
 [gpg]
   program = /usr/bin/gpg2
 [filter "lfs"]
