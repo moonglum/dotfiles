@@ -20,8 +20,6 @@
       - git-lfs
       - gnupg-agent
       - gnupg2
-      - haskell-platform
-      - hlint
       - jq
       - libheif-dev
       - libpq-dev
@@ -53,6 +51,7 @@
       - golang
       - nodejs
       - ruby
+      - rust
     spell_files:
       - en.utf-8.spl
       - en.utf-8.sug

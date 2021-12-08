@@ -60,9 +60,9 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 
 The programming languages I use regularly are installed via `asdf` so I can switch versions and always be on the most recent release.
 
-* I write Ruby and JavaScript (Node, Browser or Deno) almost daily
+* I write Ruby, JavaScript/TypeScript (Node, Browser or Deno) and CSS almost daily
 * Currently working in a Go project
-* I used Haskell quite a lot back in University and I'm playing around with it again
+* Playing around with Rust, just because Go frustrates me so deeply
 
 ## Making GPG available in the box
 

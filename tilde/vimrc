@@ -19,11 +19,8 @@ let g:ale_sign_style_warning="😺"
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
-" automatic formatting on save via prettier
+" automatic formatting on save via prettier/gofmt
 let g:ale_fix_on_save=1
-" let g:ale_linters = {
-" \   'haskell': ['ghc'],
-" \}
 let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'go': ['gofmt'],
@@ -31,5 +28,5 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'scss': ['prettier'],
-\   'haskell': ['hlint'],
+\   'rust': ['rustfmt'],
 \}

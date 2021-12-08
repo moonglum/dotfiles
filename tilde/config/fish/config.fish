@@ -18,5 +18,8 @@ set -x PATH $HOME/.local/bin $PATH
 # Go
 set -x GOPRIVATE bitbucket.org/advance52
 
+# Rust
+set -x PATH $HOME/.cargo/bin $PATH
+
 # direnv
 eval (direnv hook fish)
