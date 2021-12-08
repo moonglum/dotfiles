@@ -14,12 +14,11 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 * With `j` I can jump to my Code projects
 * To start or continue working on a project, I use my tiny `s` function which starts (or attaches to) a tmux session for a project with the correct start directory.
-* `mcd` creates a directory and then `cd`s into it
 * `l` is just `ls -al`
 * `generate_cert` generates a TLS certificate
 * `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
 * `rabbit` enforces an NTP sync
-* `serve` serve the current directory via HTTP on port 3000
+* `serve` serve the current directory via HTTP
 * `gb` is a prettier `git branch`
 * `gl` is a prettier `git log`
 * `postgres` and `redis` start a temporary fresh PostgreSQL or Redis instance in a docker container
@@ -38,7 +37,7 @@ I'm doing all my programming and most of my writing in vim. I use the following 
 * **Quoting/Parenthesizing** made simple via [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
 * Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
 * **Peace in the office** via [`editorconfig/editorconfig-vim`](https://github.com/editorconfig/editorconfig-vim)
-* On-the-fly **linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
+* On-the-fly **formatting, linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
 * Fuzzy **file finder** with [`junegunn/fzf`](https://github.com/junegunn/fzf)
 
 ## Other commandline tools
