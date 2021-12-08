@@ -22,6 +22,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `serve` serve the current directory via HTTP on port 3000
 * `gb` is a prettier `git branch`
 * `gl` is a prettier `git log`
+* `postgres` and `redis` start a temporary fresh PostgreSQL or Redis instance in a docker container
 
 ## tmux
 
