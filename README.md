@@ -16,6 +16,12 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * To start or continue working on a project, I use my tiny `s` function which starts (or attaches to) a tmux session for a project with the correct start directory.
 * `mcd` creates a directory and then `cd`s into it
 * `l` is just `ls -al`
+* `generate_cert` generates a TLS certificate
+* `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
+* `rabbit` enforces an NTP sync
+* `serve` serve the current directory via HTTP on port 3000
+* `gb` is a prettier `git branch`
+* `gl` is a prettier `git log`
 
 ## tmux
 
