@@ -10,7 +10,7 @@ I'm using [Solarized Light](https://ethanschoonover.com/solarized) as my color s
 
 I'm using [fish](http://fishshell.com) as my shell. I noticed that it does a lot of things I needed to configure in ZSH by default and switched to it. The only thing I configured is that I use [fzf](https://github.com/junegunn/fzf), because I really missed `Ctrl+r` for reverse searching and I like the incremental search.
 
-The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that is green when the last status exit was 0, and red otherwise. In the right prompt, I display the pwd and the current git status. I have a few functions:
+The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that is green when the last status exit was 0, and red otherwise. In the right prompt, I display the pwd and the current git status. I have a few aliases, scripts and functions:
 
 * With `j` I can jump to my Code projects
 * To start or continue working on a project, I use my tiny `s` function which starts (or attaches to) a tmux session for a project with the correct start directory.

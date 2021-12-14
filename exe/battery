@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/env sh
 if acpi | grep -q Discharging ; then
   echo "🔋 $(acpi | grep -o -e "[[:digit:]]\+%")"
 else
