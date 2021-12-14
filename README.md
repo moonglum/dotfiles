@@ -21,6 +21,8 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `gb` is a prettier `git branch`
 * `gl` is a prettier `git log`
 * `postgres` and `redis` start a temporary fresh PostgreSQL or Redis instance in a docker container
+* `compressability` shows the size of a file, and its GZIPed and brotlied size
+* `churn` shows the frequency of change of the files in a project (Git repos only)
 
 ## tmux
 

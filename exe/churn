@@ -1,0 +1,4 @@
+#!/bin/bash
+# Churn means "frequency of change"
+# by Corey Haines
+git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n

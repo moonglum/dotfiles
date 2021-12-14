@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+let { argv } = require("process");
+let { readFile } = require("fs/promises");
+let { gzip, brotliCompress } = require("zlib");
+
+readFile(argv[1]).then((data) => {
+	console.log(`file size: ${convertBytes(data.length)}`);
+	gzip(data, (_, result) => { console.log(`gzip size: ${convertBytes(result.length)} (${percent(result.length, data.length)}%)`) });
+	brotliCompress(data, (_, result) => { console.log(`br size:   ${convertBytes(result.length)} (${percent(result.length, data.length)}%)`) });
+});
+
+// shamelessly stolen from
+// https://coderrocketfuel.com/article/how-to-convert-bytes-to-kb-mb-gb-or-tb-format-in-node-js
+function convertBytes(bytes) {
+	if (bytes === 0) {
+		return "0 Bytes"
+	}
+
+	const sizes = ["Bytes", "KB", "MB", "GB", "TB"]
+	const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)))
+
+	return `${i === 0 ? bytes : (bytes / Math.pow(1024, i)).toFixed(1)} ${sizes[i]}`;
+}
+
+function percent(part, whole) {
+	return Math.floor(100 * part / whole)
+}
