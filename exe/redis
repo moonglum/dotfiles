@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-argparse "h/help" -- $argv
+argparse "h/help" "n/name=" -- $argv
 or exit
 
 if set -q _flag_help
@@ -11,10 +11,11 @@ end
 
 # name of the docker container
 set -q _flag_name
-or set -l _flag_name postgres
+or set -l _flag_name redis
 
 echo "Connection String for Redis:"
 echo "redis://localhost:6379"
+echo
 
 docker run\
 	 --name $_flag_name\

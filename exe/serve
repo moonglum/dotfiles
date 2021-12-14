@@ -1,0 +1,26 @@
+#!/usr/bin/env fish
+argparse "h/help" "p/port=" -- $argv
+or exit
+
+if set -q _flag_help
+	echo "Serve the current directory via HTTP"
+	echo " -h/--help Show this message"
+	echo " -n/--name Set the name of the container (default: nginx)"
+	echo " -p/--port Port that should be used (default: 3000)"
+	exit
+end
+
+# name of the docker container
+set -q _flag_name
+or set -l _flag_name nginx
+
+# port to be used
+set -q _flag_port
+or set -l _flag_port 3000
+
+docker run\
+	 --name $_flag_name\
+		-v "$PWD:/usr/share/nginx/html:ro"\
+		-p "$_flag_port:80"\
+		--rm\
+		nginx

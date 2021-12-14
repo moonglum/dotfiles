@@ -5,7 +5,7 @@ or exit
 if set -q _flag_help
 	echo "Run a temporary PostgreSQL instance via Docker"
 	echo " -h/--help Show this message"
-	echo " -n/--name Set the name of the database and conntainer (default: postgres)"
+	echo " -n/--name Set the name of the database and container (default: postgres)"
 	echo " -u/--username Set the username (default: postgres)"
 	echo " -p/--password Set the password (default: mysecretpassword)"
 	exit

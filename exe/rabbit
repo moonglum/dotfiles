@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 echo 'Oh dear! Oh dear! I shall be too late! Really'
 sudo timedatectl set-ntp off
 sudo timedatectl set-ntp on
