@@ -60,7 +60,7 @@ The programming languages I use regularly are installed via `asdf` so I can swit
 
 * I write Ruby, JavaScript/TypeScript (Node, Browser or Deno) and CSS almost daily
 * Currently working in a Go project
-* Playing around with Rust, just because Go frustrates me so deeply
+* Playing around with Rust and Elixir, just because Go frustrates me so deeply
 
 ## Making GPG available in the box
 

@@ -49,6 +49,8 @@
       - youtube-dl
     asdf_plugins:
       - deno
+      - elixir
+      - erlang
       - golang
       - nodejs
       - ruby
