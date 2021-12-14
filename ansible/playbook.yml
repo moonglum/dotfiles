@@ -26,7 +26,7 @@
       - libsqlite3-dev
       - libvips-dev
       - manpages-dev
-      - python3-pip 
+      - python3-pip
       - ragel
       - ripgrep
       - shellcheck
@@ -45,6 +45,7 @@
       vim-solarized8: lifepillar/vim-solarized8
       vim-surround: tpope/vim-surround
     pip_packages:
+      - "ansible-lint[core,yamllint]"
       - youtube-dl
     asdf_plugins:
       - deno
@@ -125,7 +126,7 @@
         name: vagrant
         shell: /usr/bin/fish
         groups: docker
-        append: yes
+        append: true
       become: true
 
     - name: Set the timezone

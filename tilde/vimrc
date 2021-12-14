@@ -19,7 +19,7 @@ let g:ale_sign_style_warning="😺"
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
-" automatic formatting on save via prettier/gofmt
+" automatic formatting on save
 let g:ale_fix_on_save=1
 let g:ale_fixers = {
 \   'css': ['prettier'],
@@ -30,3 +30,24 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'rust': ['rustfmt'],
 \}
+
+" use ale as the omnifunc
+set omnifunc=ale#completion#OmniFunc
+
+" === smart tab ===
+" enter tab when at beginning of line, otherwise: run omnifunc
+" https://vim.fandom.com/wiki/Smart_mapping_for_tab_completion
+function! SmartTab()
+  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+    return "\<Tab>"
+  else
+    return "\<C-X>\<C-O>"
+endfunction
+
+" use <c-r>= in insert mode to be able to call the function without leaving insert mode
+inoremap <Tab> <c-r>=SmartTab()<Return>
+
+" === leader key binding ===
+let mapleader=","
+nnoremap <leader>r :ALERename<Return>
+nnoremap <leader>d :ALEGoToDefinition<Return>

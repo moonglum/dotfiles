@@ -26,20 +26,17 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 ## tmux
 
-Use tmux, it rocks! I configured it with some more Vim-like bindings and a nice status bar with the current time and battery charge (via `acpi`).
+Use tmux, it rocks! I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge (via `acpi`).
 
-## Vim
+## vim
 
-I'm doing all my programming and most of my writing in vim. I use the following plugins:
+I'm doing all my programming and most of my writing in vim. I run my vim pretty plain with a few exception. I'm using [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible) to set a few **nice defaults**. Additional **language support** is loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot). I haven't configured spaces, tabs and similar things---instead I use [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) to follow the convention of the projects.
 
-* A few **nice defaults** via [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible)
-* Additional **language support** loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot)
-* Minimalistic **commenting** via [`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)
-* **Quoting/Parenthesizing** made simple via [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
-* Enable **repeat** for Surround and Commentary via [`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)
-* **Peace in the office** via [`editorconfig/editorconfig-vim`](https://github.com/editorconfig/editorconfig-vim)
-* On-the-fly **formatting, linting feedback and LSP support** via [`w0rp/ale`](https://github.com/w0rp/ale)
-* Fuzzy **file finder** with [`junegunn/fzf`](https://github.com/junegunn/fzf)
+To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github.com/junegunn/fzf)) that I've bound to Ctrl+P. I use `git ls-files` as the source for its suggestions which means I can jump to any file known to git. I can't remember the last time I opened a file without it.
+
+I use Tim Pope plugins for **commenting** ([`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)) as well as **quoting/parenthesizing** ([`tpope/vim-surround`](https://github.com/tpope/vim-surround)) and make both **repeatable** ([`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)).
+
+Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, linting feedback and LSP support**. Code is formatted automatically with [prettier](https://prettier.io) or a similar tool if it is available for the programming language. I show a 😺 in lines with linting errors, with details on hovering. The linters are autodetected, and I have quite a few installed. When pressing tab (and I'm not at the beginning of a line, where I actually want to insert a tab) I run the omnifunc provided by ALE to ask the according language server for a completion.
 
 ## Other commandline tools
 
@@ -92,7 +89,7 @@ In addition to that, the host and machine share the pubring.gpg and trustdb.gpg.
 
 ## Thanks
 
-* To Drew Neil for [his book(s) about Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition)
+* To Drew Neil for [his book(s) about vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition)
 * To Brian P. Hogan for his [book about tmux](https://pragprog.com/book/bhtmux2/tmux-2)
 * To Gary Bernhardt for his [screencasts](https://www.destroyallsoftware.com/screencasts)
 * To Dirk, Bascht & Bodo for letting me steal from their dotfiles and providing feedback

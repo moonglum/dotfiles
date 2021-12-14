@@ -15,6 +15,8 @@ set -x PATH $HOME/.local/bin $PATH
 
 # Go
 set -x GOPRIVATE bitbucket.org/advance52
+set -x GOPATH $HOME/.go
+set -x PATH $HOME/.go/bin $PATH
 
 # Rust
 set -x PATH $HOME/.cargo/bin $PATH
