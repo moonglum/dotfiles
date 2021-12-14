@@ -24,3 +24,8 @@ source ~/.asdf/asdf.fish
 
 # direnv
 eval (direnv hook fish)
+
+# aliases
+alias s="start"
+alias j="jump"
+alias l="ls -al"

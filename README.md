@@ -12,8 +12,8 @@ I'm using [fish](http://fishshell.com) as my shell. I noticed that it does a lot
 
 The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that is green when the last status exit was 0, and red otherwise. In the right prompt, I display the pwd and the current git status. I have a few aliases, scripts and functions:
 
-* With `j` I can jump to my Code projects
-* To start or continue working on a project, I use my tiny `s` function which starts (or attaches to) a tmux session for a project with the correct start directory.
+* With `j` (or `jump`) I can jump to my Code projects
+* To start or continue working on a project, I use my tiny `s` (or `start`) function which starts (or attaches to) a tmux session for a project with the correct start directory.
 * `l` is just `ls -al`
 * `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
 * `rabbit` enforces an NTP sync
