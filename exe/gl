@@ -1,0 +1,16 @@
+#!/usr/bin/env fish
+# better git log view
+# inspired by destroy all software
+
+set -l HASH "%C(always,yellow)%h%C(always,reset)"
+set -l DATE "%C(always,green)%as%C(always,reset)"
+set -l AUTHOR "%C(always,bold blue)%an%C(always,reset)"
+set -l REFS "%C(always,red)%d%C(always,reset)"
+set -l SUBJECT "%s"
+
+# { as separator, because it is rare
+set -l FORMAT "$HASH{$DATE{$AUTHOR{$REFS $SUBJECT"
+
+git log --graph --pretty="tformat:$FORMAT" $argv |
+column -t -s '{' |
+less -FXRS
