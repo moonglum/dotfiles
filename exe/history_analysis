@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+require "getoptlong"
+
+history_size = 1000
+usage_threshold = 4
+command_suites = %w[git go rails asdf docker sudo cargo ./bin/rails npm mix tmux apt bundle]
+
+GetoptLong.new(
+  ["--help", "-h", GetoptLong::NO_ARGUMENT],
+  ["--number", "-n", GetoptLong::OPTIONAL_ARGUMENT],
+  ["--threshold", "-t", GetoptLong::OPTIONAL_ARGUMENT]
+).each do |opt, arg|
+  case opt
+  when "--help"
+    puts <<~HELP
+      history_analysis - analyse the fish history
+      -h, --help: Show this help message
+      -n, --number: limit for history items (default: 1000)
+      -t, --threshold: only show items with equal or more than x occurrences (default: 4)
+    HELP
+    exit
+  when "--number"
+    history_size = arg.to_i
+  when "--threshold"
+    usage_threshold = arg.to_i
+  end
+end
+
+# TODO: split out pipelines?
+
+`fish -c "history -n #{history_size}"`
+  .split("\n")
+  .map { |entry| command_suites.include?(entry.split[0]) ? "#{entry.split[0]} #{entry.split[1]}" : entry.split[0] }
+  .tally
+  .find_all { |_, times| times >= usage_threshold }
+  .sort_by { |_, times| times }
+  .reverse
+  .each { |entry| puts "#{entry[0]} #{entry[1]}" }
