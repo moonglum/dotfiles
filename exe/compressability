@@ -1,27 +1,40 @@
-#!/usr/bin/env node
-let { argv } = require("process");
-let { readFile } = require("fs/promises");
-let { gzip, brotliCompress } = require("zlib");
+#!/usr/bin/env fish
+argparse "h/help" -- $argv
+or exit
 
-readFile(argv[1]).then((data) => {
-	console.log(`file size: ${convertBytes(data.length)}`);
-	gzip(data, (_, result) => { console.log(`gzip size: ${convertBytes(result.length)} (${percent(result.length, data.length)}%)`) });
-	brotliCompress(data, (_, result) => { console.log(`br size:   ${convertBytes(result.length)} (${percent(result.length, data.length)}%)`) });
-});
+if set -q _flag_help
+	echo "Show the uncompressed and compressed size of files"
+	echo "Provide either the names of the files or provide via STDIN"
+	echo " -h/--help Show this message"
+	exit
+end
 
-// shamelessly stolen from
-// https://coderrocketfuel.com/article/how-to-convert-bytes-to-kb-mb-gb-or-tb-format-in-node-js
-function convertBytes(bytes) {
-	if (bytes === 0) {
-		return "0 Bytes"
-	}
+function human_size
+	numfmt --to=iec --suffix=B
+end
 
-	const sizes = ["Bytes", "KB", "MB", "GB", "TB"]
-	const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)))
+function show_uncompressed
+	wc -c | human_size
+end
 
-	return `${i === 0 ? bytes : (bytes / Math.pow(1024, i)).toFixed(1)} ${sizes[i]}`;
-}
+function measure_compression
+	read -lz content
+	set -l original_size (echo $content | wc -c)
+	set -l compressed_size (echo $content | $argv -c | wc -c)
+	set -l compressed_hsize (echo $compressed_size | human_size)
+	set -l compressed_percentage (math "ceil(100 * $compressed_size / $original_size)")
+	echo "$compressed_hsize ($compressed_percentage%)"
+end
 
-function percent(part, whole) {
-	return Math.floor(100 * part / whole)
-}
+if test -d $argv
+	read -lz content
+	echo "Original" (echo $content | show_uncompressed)
+	echo "GZIP" (echo $content | measure_compression gzip)
+	echo "Brotli" (echo $content | measure_compression brotli)
+else
+	for filename in $argv
+		echo "$filename" (cat $filename | show_uncompressed)
+		echo "$filename.gz" (cat $filename | measure_compression gzip)
+		echo "$filename.bz" (cat $filename | measure_compression brotli)
+	end
+end
