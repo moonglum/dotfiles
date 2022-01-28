@@ -31,3 +31,4 @@ eval (direnv hook fish)
 alias s="start"
 alias j="jump"
 alias l="ls -al"
+alias electric-monk="each-project gitkeeper"

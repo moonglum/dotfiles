@@ -24,6 +24,9 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `compressability` shows the size of a file, and its GZIPed and brotlied size
 * `churn` shows the frequency of change of the files in a project (Git repos only)
 * `history_analysis` shows the commands that you ran most in your (fish) shell
+* `each-project` calls a command for each project in `~/Code` in parallel
+* `gitkeeper` checks if there is unpushed work on a repo (plus some more options)
+* `electric-monk` runs gitkeeper for each project (replacement for an old gem of mine)
 
 ## tmux
 
@@ -52,7 +55,6 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`docker`](https://www.docker.com) and `docker-compose` because I really wish it would do what I want
 * [`shellcheck`](https://www.shellcheck.net) to get feedback about shell scripts
 * [`asciinema`](https://asciinema.org) to record terminal things
-* [`electric_monk`](https://github.com/moonglum/electric_monk) to check if I have unpushed changes anywhere
 * [`direnv`](https://direnv.net) to load and unload environment variables depending on the current directory
 
 ## Languages I work or play with

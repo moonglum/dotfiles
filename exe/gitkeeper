@@ -1,0 +1,39 @@
+#!/usr/bin/env fish
+argparse "h/help" "f/fetch" "p/prune" -- $argv
+or exit
+
+if set -q _flag_help
+	echo "Check if all work you did on a git repo has been pushed to a remote"
+	echo " -h/--help Show this message"
+	echo " -p/--prune Deletes stale references associated with each remote"
+	echo " -f/--fetch Fetch all remotes"
+	exit
+end
+
+if count $argv > /dev/null
+	cd $argv
+end
+
+git remote > /dev/null
+or exit 1 # not a git repository
+
+git remote | count > /dev/null
+or echo "No remote set" && exit 1
+
+if set -q _flag_fetch
+	git remote | xargs -n 1 git fetch > /dev/null
+	or exit 1 # fetch failed
+end
+
+if set -q _flag_prune
+	git remote | xargs -n 1 git remote prune > /dev/null
+	or exit 1 # prune failed
+end
+
+set -l dirty_files (git status --short | wc -l)
+set -l unpushed_commits (git log --oneline --branches --not --remotes | wc -l)
+
+if test \( $dirty_files -gt 0 \) -o \( $unpushed_commits -gt 0 \)
+	echo "$unpushed_commits unpushed commits and $dirty_files dirty files"
+	exit 1
+end
