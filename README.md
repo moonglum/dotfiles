@@ -23,7 +23,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `postgres` and `redis` start a temporary fresh PostgreSQL or Redis instance in a docker container
 * `compressability` shows the size of a file, and its GZIPed and brotlied size
 * `churn` shows the frequency of change of the files in a project (Git repos only)
-* `history_analysis` shows the commands that you ran most in your (fish) shell
+* `history-analysis` shows the commands that you ran most in your (fish) shell
 * `each-project` calls a command for each project in `~/Code` in parallel
 * `gitkeeper` checks if there is unpushed work on a repo (plus some more options)
 * `electric-monk` runs gitkeeper for each project (replacement for an old gem of mine)
