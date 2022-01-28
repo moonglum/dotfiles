@@ -8,3 +8,4 @@
 /tilde/config/configstore
 /tilde/config/direnv
 /tilde/config/fish/fishd.*
+/tilde/config/asciinema/
