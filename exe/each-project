@@ -6,12 +6,12 @@ require "open3"
 # then puts out the stdout and stderr for each failed command
 
 PROJECTS_DIR = File.expand_path("Code", Dir.home).freeze
-COMMAND = ARGV.join(" ").freeze
+COMMAND = ARGV.freeze
 Result = Struct.new(:success?, :error)
 
 ractors = Dir.children(PROJECTS_DIR).map do |project_name|
   ractor = Ractor.new(name: project_name) do
-    output, status = Open3.capture2e(COMMAND, chdir: receive)
+    output, status = Open3.capture2e(*COMMAND, chdir: receive)
     Ractor.yield Result.new(status.success?, output)
   rescue Errno::ENOTDIR
     Ractor.yield Result.new(false, "Not a directory")
