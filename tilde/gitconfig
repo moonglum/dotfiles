@@ -12,6 +12,8 @@
   compactionHeuristic = true
 [gpg]
   program = /usr/bin/gpg2
+[init]
+  defaultBranch = main
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
