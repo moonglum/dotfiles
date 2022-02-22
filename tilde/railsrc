@@ -6,3 +6,5 @@
 --skip-action-cable
 --skip-test
 --skip-jbuilder
+--skip-asset-pipeline
+--skip-javascript
