@@ -46,6 +46,7 @@
       vim-sensible: tpope/vim-sensible
       vim-solarized8: lifepillar/vim-solarized8
       vim-surround: tpope/vim-surround
+      vim-vroom: skalnik/vim-vroom
     pip_packages:
       - "ansible-lint[core,yamllint]"
       - youtube-dl

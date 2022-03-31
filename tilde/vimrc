@@ -49,5 +49,5 @@ inoremap <Tab> <c-r>=SmartTab()<Return>
 
 " === leader key binding ===
 let mapleader=","
-nnoremap <leader>r :ALERename<Return>
+" nnoremap <leader>r :ALERename<Return>
 nnoremap <leader>d :ALEGoToDefinition<Return>

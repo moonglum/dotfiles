@@ -5,3 +5,4 @@ manpages
 pry
 rails
 rubocop
+rspec
