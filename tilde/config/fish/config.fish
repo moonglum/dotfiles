@@ -8,7 +8,8 @@ set -x EDITOR 'vim'
 set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 
 # Ruby
-set -x PATH $HOME/.gem/ruby/3.0.0/bin $PATH
+# TODO: This doesn't make sense, this should be handled by asdf
+set -x PATH $HOME/.gem/ruby/3.1.0/bin $PATH
 
 # Python
 set -x PATH $HOME/.local/bin $PATH
