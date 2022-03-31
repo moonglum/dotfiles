@@ -11,6 +11,7 @@
       - asciinema
       - brotli
       - build-essential
+      - chromium-browser
       - containerd.io
       - direnv
       - docker-ce
