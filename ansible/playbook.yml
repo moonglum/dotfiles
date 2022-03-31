@@ -11,9 +11,10 @@
       - asciinema
       - brotli
       - build-essential
+      - containerd.io
       - direnv
-      - docker-compose
-      - docker.io
+      - docker-ce
+      - docker-ce-cli
       - fd-find
       - ffmpeg
       - fish
