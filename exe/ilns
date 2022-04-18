@@ -1,0 +1,12 @@
+#!/bin/sh
+# idempotent ln -s
+
+file_description=$(file -b "$2")
+
+if [ "$file_description" = "symbolic link to $1" ] 
+then
+	echo "Already linked"
+	exit
+fi
+
+ln -s "$1" "$2"
