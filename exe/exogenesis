@@ -1,0 +1,137 @@
+#!/bin/sh
+# provision this machine
+set -eu
+
+highlight=$(tput bold)
+reset=$(tput sgr0)
+echob() {
+	echo "${highlight}${1}${reset}"
+}
+
+echob "Install apt packages"
+
+if [ -f /etc/apt/sources.list.d/docker.list ]
+then
+	echo "Docker Repository already added"
+else
+	echo \
+		"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+		$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+fi
+
+if [ -f /etc/apt/sources.list.d/azure-cli.list ]
+then
+	echo "azure-cli Repository already added"
+else
+	echo \
+		"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/azure-cli/ \
+		$(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azure-cli.list > /dev/null
+fi
+
+sudo apt update
+
+sudo apt install\
+	acpi\
+	asciinema\
+	azure-cli\
+	brotli\
+	build-essential\
+	chromium-browser\
+	containerd.io\
+	curl\
+	direnv\
+	docker-ce-cli\
+	docker-ce\
+	docker-compose-plugin\
+	fd-find\
+	ffmpeg\
+	fish\
+	fzf\
+	git-lfs\
+	git\
+	gnupg-agent\
+	gnupg2\
+	golang\
+	htop\
+	jq\
+	kitty\
+	libheif-dev\
+	libpq-dev\
+	libsqlite3-dev\
+	libvips-dev\
+	manpages-dev\
+	neofetch\
+	pandoc\
+	python3-pip\
+	ragel\
+	ripgrep\
+	shellcheck\
+	tig\
+	tmux\
+	tree\
+	unzip\
+	woff2\
+	vim
+
+echob "Install snap packages"
+
+# sudo snap refresh
+
+sudo snap install 1password
+sudo snap install slack
+sudo snap install spotify
+sudo snap install teams
+sudo snap install thunderbird
+sudo snap install vlc
+sudo snap install zoom-client
+# chromium?
+
+echob "Install pip packages"
+
+pip3 install --user youtube-dl
+
+echob "Link dotfiles"
+
+for file in /home/moonglum/Code/dotfiles/tilde/*
+do
+	"$(dirname "$0")/ilns" "$file" "/home/moonglum/.$(basename "$file")"
+done
+
+echob "Link scripts"
+
+for file in /home/moonglum/Code/dotfiles/exe/*
+do
+	sudo "$(dirname "$0")/ilns" "$file" "/usr/local/bin/$(basename "$file")"
+done
+
+echob "Switch to Fish"
+desired_shell="/usr/bin/fish"
+if [ "$SHELL" = "$desired_shell" ]
+then
+	echo "Shell is already set correctly"
+else
+	chsh -s "$desired_shell"
+fi
+
+echob "Install or Update Vim Plugins"
+
+mkdir -p /home/moonglum/.vim/pack/bundle/start
+mkdir -p /home/moonglum/.vim/spell
+
+"$(dirname "$0")/gcp" "https://github.com/w0rp/ale" "/home/moonglum/.vim/pack/bundle/start/ale"
+"$(dirname "$0")/gcp" "https://github.com/editorconfig/editorconfig-vim" "/home/moonglum/.vim/pack/bundle/start/editorconfig-vim"
+"$(dirname "$0")/gcp" "https://github.com/junegunn/fzf" "/home/moonglum/.vim/pack/bundle/start/fzf"
+"$(dirname "$0")/gcp" "https://github.com/tpope/vim-commentary" "/home/moonglum/.vim/pack/bundle/start/vim-commentary"
+"$(dirname "$0")/gcp" "https://github.com/sheerun/vim-polyglot" "/home/moonglum/.vim/pack/bundle/start/vim-polyglot"
+"$(dirname "$0")/gcp" "https://github.com/tpope/vim-repeat" "/home/moonglum/.vim/pack/bundle/start/vim-repeat"
+"$(dirname "$0")/gcp" "https://github.com/tpope/vim-sensible" "/home/moonglum/.vim/pack/bundle/start/vim-sensible"
+"$(dirname "$0")/gcp" "https://github.com/altercation/vim-colors-solarized" "/home/moonglum/.vim/pack/bundle/start/vim-colors-solarized"
+"$(dirname "$0")/gcp" "https://github.com/tpope/vim-surround" "/home/moonglum/.vim/pack/bundle/start/vim-surround"
+"$(dirname "$0")/gcp" "https://github.com/skalnik/vim-vroom" "/home/moonglum/.vim/pack/bundle/start/vim-vroom"
+
+echob "Add to docker group"
+sudo usermod -aG docker moonglum
+newgrp docker
+
+echob "GTK Configuration"
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
