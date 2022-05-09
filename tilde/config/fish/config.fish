@@ -23,7 +23,7 @@ set -x PATH $HOME/.go/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
 
 # asdf
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
 
 # direnv
 eval (direnv hook fish)
@@ -33,3 +33,4 @@ alias s="start"
 alias j="jump"
 alias l="ls -al"
 alias electric-monk="each-project gitkeeper"
+alias gsed="git ls-files | xargs sed"
