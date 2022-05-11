@@ -126,8 +126,6 @@ fi
 echob "Install or Update Vim Plugins"
 
 mkdir -p /home/moonglum/.vim/pack/bundle/start
-mkdir -p /home/moonglum/.vim/spell
-
 "$(dirname "$0")/gcp" "https://github.com/w0rp/ale" "/home/moonglum/.vim/pack/bundle/start/ale"
 "$(dirname "$0")/gcp" "https://github.com/editorconfig/editorconfig-vim" "/home/moonglum/.vim/pack/bundle/start/editorconfig-vim"
 "$(dirname "$0")/gcp" "https://github.com/junegunn/fzf" "/home/moonglum/.vim/pack/bundle/start/fzf"
@@ -138,6 +136,12 @@ mkdir -p /home/moonglum/.vim/spell
 "$(dirname "$0")/gcp" "https://github.com/altercation/vim-colors-solarized" "/home/moonglum/.vim/pack/bundle/start/vim-colors-solarized"
 "$(dirname "$0")/gcp" "https://github.com/tpope/vim-surround" "/home/moonglum/.vim/pack/bundle/start/vim-surround"
 "$(dirname "$0")/gcp" "https://github.com/skalnik/vim-vroom" "/home/moonglum/.vim/pack/bundle/start/vim-vroom"
+
+mkdir -p /home/moonglum/.vim/spell
+"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.spl" "/home/moonglum/.vim/spell/en.utf-8.spl"
+"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.sug" "/home/moonglum/.vim/spell/en.utf-8.sug"
+"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.spl" "/home/moonglum/.vim/spell/de.utf-8.spl"
+"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.sug" "/home/moonglum/.vim/spell/de.utf-8.sug"
 
 echob "Add to docker group"
 sudo usermod -aG docker moonglum

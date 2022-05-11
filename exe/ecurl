@@ -1,0 +1,5 @@
+#!/bin/sh
+# curl with etag
+set -eu
+
+curl -s --output "$2" --etag-save "$2.etag" --etag-compare "$2.etag" "$1"
