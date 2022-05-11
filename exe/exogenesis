@@ -28,6 +28,15 @@ else
 		$(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azure-cli.list > /dev/null
 fi
 
+if [ -f /etc/apt/sources.list.d/nodesource.list ]
+then
+	echo "azure-cli Repository already added"
+else
+	echo \
+		"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x \
+		$(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/nodesource.list > /dev/null
+fi
+
 sudo apt update
 
 sudo apt install\
@@ -62,6 +71,7 @@ sudo apt install\
 	manpages-dev\
 	neofetch\
 	pandoc\
+	nodejs\
 	python3-pip\
 	ragel\
 	ripgrep\
