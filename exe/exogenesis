@@ -37,6 +37,15 @@ else
 		$(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/nodesource.list > /dev/null
 fi
 
+if [ -f /etc/apt/sources.list.d/fullstaq-ruby.list ]
+then
+	echo "fullstaq-ruby Repository already added"
+else
+	echo \
+		"deb [arch=$(dpkg --print-architecture)] https://apt.fullstaqruby.org \
+		ubuntu-$(lsb_release -rs) main" | sudo tee /etc/apt/sources.list.d/fullstaq-ruby.list > /dev/null
+fi
+
 sudo apt update
 
 sudo apt install\
@@ -55,6 +64,8 @@ sudo apt install\
 	fd-find\
 	ffmpeg\
 	fish\
+	fullstaq-ruby-common\
+	fullstaq-ruby-3.1\
 	fzf\
 	git-lfs\
 	git\
@@ -156,3 +167,7 @@ fi
 
 echob "GTK Configuration"
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+echob "Set global Ruby Version"
+rbenv global 3.1
+
