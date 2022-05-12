@@ -144,8 +144,15 @@ mkdir -p /home/moonglum/.vim/spell
 "$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.sug" "/home/moonglum/.vim/spell/de.utf-8.sug"
 
 echob "Add to docker group"
-sudo usermod -aG docker moonglum
-newgrp docker
+if groups moonglum | grep -q "docker"
+then
+	echo "Already in group docker"
+else
+	echo "Not in docker"
+	sudo usermod -aG docker moonglum
+	newgrp docker
+	echo "Added to group docker"
+fi
 
 echob "GTK Configuration"
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
