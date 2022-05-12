@@ -15,6 +15,9 @@ set -x PATH $HOME/.go/bin $PATH
 # direnv
 eval (direnv hook fish)
 
+# rbenv
+status --is-interactive; and source (rbenv init -|psub)
+
 # aliases
 alias s="start"
 alias j="jump"
