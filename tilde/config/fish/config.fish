@@ -10,13 +10,14 @@ set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 # Go
 set -x GOPRIVATE bitbucket.org/advance52
 set -x GOPATH $HOME/.go
-set -x PATH $HOME/.go/bin $PATH
+fish_add_path --path --move /home/moonglum/.go/bin
 
 # direnv
 eval (direnv hook fish)
 
 # rbenv
-status --is-interactive; and source (rbenv init -|psub)
+set -x RBENV_SHELL fish
+fish_add_path --path --move /home/moonglum/.rbenv/shims
 
 # aliases
 alias s="start"
