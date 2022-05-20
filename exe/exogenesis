@@ -179,3 +179,8 @@ do
 		gem install "$gem_name"
 	fi
 done
+
+echob "Go"
+go install golang.org/x/lint/golint@latest && echo "golint installed"
+go install golang.org/x/tools/gopls@latest && echo "gopls installed"
+go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
