@@ -167,6 +167,15 @@ fi
 echob "GTK Configuration"
 gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
-echob "Set global Ruby Version"
-rbenv global 3.1
+echob "Ruby"
+rbenv global 3.1 && echo "Ruby Version set to 3.1"
 
+for gem_name in amazing_print brakeman pry rails rubocop rspec
+do
+	if gem list --local | grep -E "^$gem_name " > null
+	then
+		echo "$gem_name already installed"
+	else
+		gem install "$gem_name"
+	fi
+done
