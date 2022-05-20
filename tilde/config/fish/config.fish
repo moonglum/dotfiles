@@ -20,6 +20,9 @@ set -x RBENV_SHELL fish
 set -x GEM_HOME /home/moonglum/.gems
 fish_add_path --path --move /home/moonglum/.rbenv/shims
 
+# Python
+fish_add_path --path --move /home/moonglum/.local/bin
+
 # aliases
 alias s="start"
 alias j="jump"
