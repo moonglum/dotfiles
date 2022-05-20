@@ -15,8 +15,9 @@ fish_add_path --path --move /home/moonglum/.go/bin
 # direnv
 eval (direnv hook fish)
 
-# rbenv
+# Ruby
 set -x RBENV_SHELL fish
+set -x GEM_HOME /home/moonglum/.gems
 fish_add_path --path --move /home/moonglum/.rbenv/shims
 
 # aliases
