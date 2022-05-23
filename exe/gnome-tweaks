@@ -1,0 +1,12 @@
+#!/bin/sh
+# tweak the Gnome UI
+set -eu
+
+echo "Set keybindings to emacs"
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+# https://askubuntu.com/questions/979732/how-can-i-hide-the-dock-in-gnome#979756
+echo "Hide Dock"
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
