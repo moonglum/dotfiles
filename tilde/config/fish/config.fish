@@ -10,18 +10,18 @@ set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 # Go
 set -x GOPRIVATE bitbucket.org/advance52
 set -x GOPATH $HOME/.go
-fish_add_path --path --move /home/moonglum/.go/bin
+fish_add_path --path --move /home/$USER/.go/bin
 
 # direnv
 eval (direnv hook fish)
 
 # Ruby
 set -x RBENV_SHELL fish
-set -x GEM_HOME /home/moonglum/.gems
-fish_add_path --path --move /home/moonglum/.rbenv/shims
+set -x GEM_HOME /home/$USER/.gems
+fish_add_path --path --move /home/$USER/.rbenv/shims
 
 # Python
-fish_add_path --path --move /home/moonglum/.local/bin
+fish_add_path --path --move /home/$USER/.local/bin
 
 # aliases
 alias s="start"
