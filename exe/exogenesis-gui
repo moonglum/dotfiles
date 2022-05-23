@@ -1,0 +1,37 @@
+#!/bin/sh
+# provision the machine (GUI part)
+set -eu
+
+highlight=$(tput bold)
+reset=$(tput sgr0)
+echob() {
+	echo "${highlight}${1}${reset}"
+}
+
+echob "Set keybindings to emacs"
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+# https://askubuntu.com/questions/979732/how-can-i-hide-the-dock-in-gnome#979756
+echob "Hide Dock"
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
+
+echob "Install apt packages"
+
+sudo apt install\
+	audacity\
+	gimp\
+	kitty\
+	mpv\
+
+echob "Install snap packages"
+
+sudo snap refresh
+
+sudo snap install 1password
+sudo snap install slack
+sudo snap install spotify
+sudo snap install teams
+sudo snap install thunderbird
+sudo snap install zoom-client
