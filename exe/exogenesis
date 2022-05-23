@@ -166,9 +166,6 @@ else
 	echo "Added to group docker"
 fi
 
-echob "GTK Configuration"
-gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
-
 echob "Ruby"
 rbenv global 3.1 && echo "Ruby Version set to 3.1"
 
