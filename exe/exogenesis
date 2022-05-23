@@ -55,7 +55,6 @@ sudo apt update
 sudo apt install\
 	acpi\
 	asciinema\
-	audacity\
 	azure-cli\
 	brotli\
 	build-essential\
@@ -72,7 +71,6 @@ sudo apt install\
 	fullstaq-ruby-common\
 	fullstaq-ruby-3.1\
 	fzf\
-	gimp\
 	git-lfs\
 	git\
 	gnupg-agent\
@@ -80,13 +78,11 @@ sudo apt install\
 	golang\
 	htop\
 	jq\
-	kitty\
 	libheif-dev\
 	libpq-dev\
 	libsqlite3-dev\
 	libvips-dev\
 	manpages-dev\
-	mpv\
 	neofetch\
 	pandoc\
 	nodejs\
@@ -100,17 +96,6 @@ sudo apt install\
 	unzip\
 	woff2\
 	vim
-
-echob "Install snap packages"
-
-# sudo snap refresh
-
-sudo snap install 1password
-sudo snap install slack
-sudo snap install spotify
-sudo snap install teams
-sudo snap install thunderbird
-sudo snap install zoom-client
 
 echob "Install pip packages"
 
