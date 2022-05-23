@@ -14,6 +14,7 @@ if [ -f /etc/apt/sources.list.d/docker.list ]
 then
 	echo "Docker Repository already added"
 else
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 	echo \
 		"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
 		$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -23,6 +24,7 @@ if [ -f /etc/apt/sources.list.d/azure-cli.list ]
 then
 	echo "azure-cli Repository already added"
 else
+	curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
 	echo \
 		"deb [arch=$(dpkg --print-architecture)] https://packages.microsoft.com/repos/azure-cli/ \
 		$(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azure-cli.list > /dev/null
@@ -32,6 +34,7 @@ if [ -f /etc/apt/sources.list.d/nodesource.list ]
 then
 	echo "nodesource Repository already added"
 else
+	curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/nodesource.gpg >/dev/null
 	echo \
 		"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x \
 		$(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/nodesource.list > /dev/null
@@ -41,6 +44,7 @@ if [ -f /etc/apt/sources.list.d/fullstaq-ruby.list ]
 then
 	echo "fullstaq-ruby Repository already added"
 else
+	curl -fsSL https://raw.githubusercontent.com/fullstaq-labs/fullstaq-ruby-server-edition/main/fullstaq-ruby.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/fullstaq.gpg > /dev/null
 	echo \
 		"deb [arch=$(dpkg --print-architecture)] https://apt.fullstaqruby.org \
 		ubuntu-$(lsb_release -rs) main" | sudo tee /etc/apt/sources.list.d/fullstaq-ruby.list > /dev/null
