@@ -54,6 +54,7 @@ sudo apt update
 
 sudo apt install\
 	acpi\
+	acpitool\
 	asciinema\
 	azure-cli\
 	brotli\
@@ -100,6 +101,7 @@ sudo apt install\
 echob "Install pip packages"
 
 pip3 install --user youtube-dl
+pip3 install --user pgcli
 
 echob "Link dotfiles"
 

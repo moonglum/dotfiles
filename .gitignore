@@ -26,3 +26,6 @@
 /tilde/config/pulse/
 /tilde/config/user-dirs.dirs
 /tilde/config/user-dirs.locale
+/tilde/config/.gsd-keyboard.settings-ported
+/tilde/config/autostart/
+/tilde/config/pgcli/
