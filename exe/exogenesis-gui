@@ -23,7 +23,7 @@ sudo apt install\
 	audacity\
 	gimp\
 	kitty\
-	mpv\
+	mpv
 
 echob "Install snap packages"
 
