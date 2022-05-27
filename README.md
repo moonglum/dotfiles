@@ -30,7 +30,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 ## tmux
 
-Use tmux, it rocks! I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge (via `acpi`).
+Use tmux, it rocks! I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
 
 ## vim
 

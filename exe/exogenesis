@@ -53,7 +53,6 @@ fi
 sudo apt update
 
 sudo apt install\
-	acpitool\
 	asciinema\
 	azure-cli\
 	brotli\

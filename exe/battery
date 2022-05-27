@@ -1,16 +1,19 @@
 #!/bin/sh
-# Show the current battery status, requires gawk
+# Show the current battery status
 
-symbol="🔌"
-
-if acpitool | grep -q 'off-line'
+# Check if there is a battery
+if test -d /sys/class/power_supply/BAT0
 then
-  symbol="🔋"
-fi
+  symbol="🔌"
 
-percentage=$(acpitool | gawk 'match($0, /Battery.+:[^0-9]+([0-9]+)/, a) { print a[1] }')
+  status=$(cat /sys/class/power_supply/BAT0/status)
 
-if test -n "$percentage"
-then
-  echo "$symbol $percentage%"
+  if test "$status" = "Discharging"
+  then
+    symbol="🔋"
+  fi
+
+  capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+
+  echo "$symbol $capacity%"
 fi
