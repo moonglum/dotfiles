@@ -23,6 +23,9 @@ fish_add_path --path --move /home/$USER/.rbenv/shims
 # Python
 fish_add_path --path --move /home/$USER/.local/bin
 
+# Rust
+fish_add_path --path --move /home/$USER/.cargo/bin
+
 # aliases
 alias s="start"
 alias j="jump"

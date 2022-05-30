@@ -2,22 +2,53 @@
   name = Lucas Dohmen
   email = lucas@dohmen.io
   signingkey = 52DA2D13
-[alias]
-  prune-all = !git remote | xargs -n 1 git remote prune
+
+[core]
+  # use delta as the pager
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
 [push]
+  # push without arguments pushes to a remote branch with the same name, but never creates it
   default = simple
+
 [commit]
+  # Sign commits with GPG
   gpgsign = true
-[diff]
-  compactionHeuristic = true
+
 [gpg]
   program = /usr/bin/gpg2
+
+[diff]
+  # highlight moved code blocks
+  colorMoved = default
+
+[merge]
+  # alternative output style for merge conflicts that works better with delta
+  conflictstyle = diff3
+
 [init]
   defaultBranch = main
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
+[delta]
+  # use n and N to move between diff sections
+  navigate = true
+  # set to true if you're in a terminal w/ a light background color
+  light = true
+  # use the usual syntax theme
+  syntax-theme = Solarized (light)
+  # links to the commit in the browser
+  hyperlinks = true
+  # show delta in side by side view
+  side-by-side = true
+
 [url "git@bitbucket.org:advance52"]
   insteadOf = https://bitbucket.org/advance52

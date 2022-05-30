@@ -89,6 +89,7 @@ sudo apt install\
 	python3-pip\
 	ragel\
 	ripgrep\
+	rust-all\
 	shellcheck\
 	tig\
 	tmux\
@@ -172,3 +173,6 @@ echob "Go"
 go install golang.org/x/lint/golint@latest && echo "golint installed"
 go install golang.org/x/tools/gopls@latest && echo "gopls installed"
 go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
+
+echob "Rust"
+cargo install git-delta
