@@ -87,6 +87,7 @@ sudo apt install\
 	pandoc\
 	nodejs\
 	python3-pip\
+	python3-gst-1.0\
 	ragel\
 	ripgrep\
 	rust-all\
@@ -100,8 +101,8 @@ sudo apt install\
 
 echob "Install pip packages"
 
-pip3 install --user youtube-dl
 pip3 install --user pgcli
+pip3 install --user yt-dlp
 
 echob "Link dotfiles"
 
