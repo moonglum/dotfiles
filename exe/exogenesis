@@ -67,8 +67,9 @@ sudo apt install\
 	fd-find\
 	ffmpeg\
 	fish\
-	fullstaq-ruby-common\
+	flatpak\
 	fullstaq-ruby-3.1\
+	fullstaq-ruby-common\
 	fzf\
 	gawk\
 	git-lfs\
@@ -98,6 +99,9 @@ sudo apt install\
 	unzip\
 	woff2\
 	vim
+
+echob "Setup flatpak"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echob "Install pip packages"
 
