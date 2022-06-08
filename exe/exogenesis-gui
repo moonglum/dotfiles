@@ -21,7 +21,6 @@ echob "Install apt packages"
 
 sudo apt install\
 	audacity\
-	gimp\
 	kitty\
 	mpv
 
@@ -32,8 +31,16 @@ sudo snap refresh
 sudo snap install 1password
 sudo snap install chromium
 sudo snap install firefox
-sudo snap install slack
 sudo snap install spotify
 sudo snap install teams
 sudo snap install thunderbird
-sudo snap install zoom-client
+
+echob "Install flatpak packages"
+
+flatpak install flathub\
+	com.github.tchx84.Flatseal\
+	com.github.maoschanz.drawing\
+	com.obsproject.Studio\
+	org.gnome.World.PikaBackup\
+	re.sonny.Tangram\
+	us.zoom.Zoom
