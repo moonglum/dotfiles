@@ -57,7 +57,6 @@ sudo apt install\
 	azure-cli\
 	brotli\
 	build-essential\
-	chromium-browser\
 	containerd.io\
 	curl\
 	direnv\
@@ -99,6 +98,10 @@ sudo apt install\
 	unzip\
 	woff2\
 	vim
+
+echob "Install snap packages"
+sudo snap install chromium
+sudo snap install firefox
 
 echob "Setup flatpak"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
