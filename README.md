@@ -107,6 +107,7 @@ Even though I enjoy to use the command line for most things, there are certain t
 * [Flatseal](https://github.com/tchx84/flatseal) for tweaking packages installed via Flatpak
 * [OBS](https://obsproject.com) as a virtual camera
 * [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups
+* [Piper](https://github.com/libratbag/piper) is a GUI for [libratbag](https://github.com/libratbag/libratbag) which I use to configure my mouse
 * [Tangram](https://github.com/sonnyp/Tangram) for different chat apps that are websites anyway (currently mostly Slack)
 * Microsoft Teams and Zoom for video calls
 
