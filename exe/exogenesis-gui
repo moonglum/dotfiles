@@ -22,7 +22,8 @@ echob "Install apt packages"
 sudo apt install\
 	audacity\
 	kitty\
-	mpv
+	mpv\
+	piper
 
 echob "Install snap packages"
 
