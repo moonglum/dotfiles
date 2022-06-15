@@ -21,6 +21,7 @@ echob "Install apt packages"
 
 sudo apt install\
 	audacity\
+	flatpak\
 	kitty\
 	mpv\
 	piper
@@ -33,6 +34,9 @@ sudo snap install 1password
 sudo snap install spotify
 sudo snap install teams
 sudo snap install thunderbird
+
+echob "Setup flatpak"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echob "Install flatpak packages"
 
