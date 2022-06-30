@@ -52,10 +52,6 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `gcp` clones a repository, or, if it already exists, pulls
 * `ilns` is an idempotent `ln -s`
 
-## tmux
-
-Use tmux, it rocks! I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
-
 ## vim
 
 I'm doing all my programming and most of my writing in vim. My vim is very close to the default configuration, but I'm using [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible) to set a few **reasonable defaults**. I haven't configured spaces, tabs and similar things---instead I use [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) to follow the convention of the projects. Additional **language support** is loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot).
@@ -71,6 +67,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 ## Other commandline tools
 
 * [`git`](https://www.git-scm.com) is the only version control system I use. It has two amazing companions: [`tig`](http://jonas.nitro.dk/tig) and [`delta`](https://github.com/dandavison/delta)
+* [`tmux`](https://github.com/tmux/tmux/wiki) is the terminal multiplexer I use. I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
 * [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for `grep` that is so fast, that I can't really believe it
 * [`fd`](https://github.com/sharkdp/fd) is the same for `find`
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data, but I mostly use it for pretty printing
