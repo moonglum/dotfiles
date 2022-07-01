@@ -8,6 +8,7 @@ or set -l _flag_levels 5
 if set -q _flag_help
 	echo "Get the outline of a markdown file"
 	echo " -h/--help Show this message"
+	echo "-l/--levels How many levels of the outline do you want to see"
   exit
 end
 
