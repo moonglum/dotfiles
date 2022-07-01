@@ -56,7 +56,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 I'm doing all my programming and most of my writing in vim. My vim is very close to the default configuration, but I'm using [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible) to set a few **reasonable defaults**. I haven't configured spaces, tabs and similar things---instead I use [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) to follow the convention of the projects. Additional **language support** is loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot).
 
-To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github.com/junegunn/fzf)) that I've bound to Ctrl+P. I use `fdfind --type file` as the source for its suggestions which pays attention to `.gitignore`. I can't remember the last time I opened a file without it.
+To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github.com/junegunn/fzf)) that I've bound to Ctrl+P. I use `fdfind -H --type file` as the source for its suggestions which pays attention to `.gitignore`. I can't remember the last time I opened a file without it.
 
 I use Tim Pope plugins for **commenting** ([`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)) as well as **quoting/parenthesizing** ([`tpope/vim-surround`](https://github.com/tpope/vim-surround)) and make both **repeatable** ([`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)).
 
