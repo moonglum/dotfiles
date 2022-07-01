@@ -1,12 +1,4 @@
-#!/usr/bin/env fish
-argparse "h/help" -- $argv
-or exit
+#!/bin/sh
+# List all projects with their full path (excludes files)
 
-if set -q _flag_help
-	echo "List all projects with their full path"
-	echo " -h/--help Show this message"
-	exit
-end
-
-# excludes files
-ls -d1F $HOME/Code/* | awk "/\/\$/"
+ls -d1F $HOME/Code/*

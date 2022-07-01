@@ -1,15 +1,20 @@
 #!/usr/bin/env ruby
-require "open3"
-# Start a ractor for each directory in Code
+# Start a ractor for each provided directory on STDIN and
 # run the provided command in that directory
 # Provides an overview which command succeeded, and which failed
 # then puts out the stdout and stderr for each failed command
+require "open3"
+require "pathname"
 
-PROJECTS_DIR = File.expand_path("Code", Dir.home).freeze
 COMMAND = ARGV.freeze
 Result = Struct.new(:success?, :error)
 
-ractors = Dir.children(PROJECTS_DIR).map do |project_name|
+ractors = []
+
+$stdin.each do |project_dir|
+  project_dir.strip!
+  project_name = Pathname.new(project_dir).basename.to_s
+
   ractor = Ractor.new(name: project_name) do
     output, status = Open3.capture2e(*COMMAND, chdir: receive)
     Ractor.yield Result.new(status.success?, output)
@@ -17,8 +22,8 @@ ractors = Dir.children(PROJECTS_DIR).map do |project_name|
     Ractor.yield Result.new(false, "Not a directory")
   end
 
-  project_dir = File.expand_path(project_name, PROJECTS_DIR)
   ractor.send(project_dir)
+  ractors << ractor
 end
 
 errors = []
