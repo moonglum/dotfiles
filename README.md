@@ -32,7 +32,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * With `j` (or `jump`) I can jump to my Code projects
 * To start or continue working on a project, I use my tiny `s` (or `start`) function which starts (or attaches to) a tmux session for a project with the correct start directory.
 * `l` is just `ls -al`
-* `gsed` is an alias to sed all files known to git
+* `git sed` is a git alias to sed all files known to git (rhymes with `git grep`)
 * `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
 * `rabbit` enforces an NTP sync
 * `serve` serve the current directory via nginx

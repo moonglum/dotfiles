@@ -32,6 +32,9 @@
 [init]
   defaultBranch = main
 
+[alias]
+  sed = !git ls-files | xargs sed
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
