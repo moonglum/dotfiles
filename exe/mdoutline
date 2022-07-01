@@ -12,4 +12,4 @@ if set -q _flag_help
   exit
 end
 
-gawk "/^#{1,$_flag_levels} /" $argv
+ruby -ne "print if \$_.start_with? /\#{1,$_flag_levels}/" $argv

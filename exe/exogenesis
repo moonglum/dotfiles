@@ -69,7 +69,6 @@ sudo apt install\
 	fullstaq-ruby-3.1\
 	fullstaq-ruby-common\
 	fzf\
-	gawk\
 	git-lfs\
 	git\
 	gnupg-agent\

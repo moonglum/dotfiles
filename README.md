@@ -80,7 +80,6 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`asciinema`](https://asciinema.org) to record terminal things
 * [`direnv`](https://direnv.net) to load and unload environment variables depending on the current directory
 * [`ffmpeg`](https://ffmpeg.org) for converting video and audio
-* [`gawk`](https://www.gnu.org/software/gawk) as a replacement for `awk` with a few nice features
 * [`htop`](https://htop.dev) as a replacement for `top` to see how my cores and RAM are doing
 * [`neofetch`](https://github.com/dylanaraps/neofetch) for those screenshots, you know
 * [`pandoc`](https://pandoc.org) to convert between Markdown and... other formats like Microsoft Word
