@@ -4,10 +4,6 @@
 /tilde/bundle/cache
 /tilde/bundle/ruby
 
-/gnupg/private-keys-v1.d
-/gnupg/pubring.gpg
-/gnupg/trustdb.gpg
-
 /tilde/config/asciinema/
 /tilde/config/configstore
 /tilde/config/dconf/
