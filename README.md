@@ -154,7 +154,7 @@ In addition to that, the host and machine share the pubring.gpg and trustdb.gpg.
 
 ## Thanks
 
-* To Drew Neil for [his book(s) about vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition)
-* To Brian P. Hogan for his [book about tmux](https://pragprog.com/book/bhtmux2/tmux-2)
+* To Drew Neil for his books about vim: [Practical Vim](https://pragprog.com/titles/dnvim2/practical-vim-second-edition) and [Modern Vim](https://pragprog.com/titles/modvim/modern-vim)
+* To Brian P. Hogan for his [book about tmux](https://pragprog.com/titles/bhtmux2/tmux-2)
 * To Gary Bernhardt for his [screencasts](https://www.destroyallsoftware.com/screencasts)
 * To [Dirk](https://github.com/code-later), [Bascht](https://github.com/bascht) & [Bodo](https://github.com/bitboxer) for letting me steal from their dotfiles and providing feedback
