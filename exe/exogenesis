@@ -80,6 +80,9 @@ sudo apt install\
 	libpq-dev\
 	libsqlite3-dev\
 	libvips-dev\
+	libssl-dev\
+	libasound2-dev\
+	libdbus-1-dev\
 	manpages-dev\
 	neofetch\
 	pandoc\
@@ -180,3 +183,4 @@ go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck instal
 
 echob "Rust"
 cargo install git-delta
+cargo install spotify_player
