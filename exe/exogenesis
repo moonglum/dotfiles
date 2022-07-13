@@ -183,4 +183,4 @@ go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck instal
 
 echob "Rust"
 cargo install git-delta
-cargo install spotify_player
+cargo install spotify_player --no-default-features --features streaming,pulseaudio-backend,media-control
