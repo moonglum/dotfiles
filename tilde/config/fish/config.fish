@@ -4,8 +4,8 @@ set -x LC_ALL "en_US.UTF-8"
 # set the default editor to vim
 set -x EDITOR 'vim'
 
-# use fdfind as the file list for fzf (include hidden files)
-set -x FZF_DEFAULT_COMMAND "fdfind -H --type file"
+# use fdfind as the file list for fzf
+set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 
 # Go
 set -x GOPRIVATE bitbucket.org/advance52
