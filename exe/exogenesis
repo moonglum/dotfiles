@@ -180,6 +180,7 @@ echob "Go"
 go install golang.org/x/lint/golint@latest && echo "golint installed"
 go install golang.org/x/tools/gopls@latest && echo "gopls installed"
 go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
+go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
 
 echob "Rust"
 cargo install git-delta
