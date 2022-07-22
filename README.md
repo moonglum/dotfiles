@@ -34,7 +34,6 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `l` is just `ls -al`
 * `git sed` is a git alias to sed all files known to git (rhymes with `git grep`)
 * `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
-* `rabbit` enforces an NTP sync
 * `serve` serve the current directory via nginx
 * `gb` is a prettier `git branch`
 * `gl` is a prettier `git log`
@@ -46,7 +45,6 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `gitkeeper` checks if there is unpushed work on a repo (plus some more options)
 * `electric-monk` runs gitkeeper for each project (replacement for an old gem of mine)
 * `battery` shows the current battery status
-* `bunny` connects to a RabbitMQ and listens on an exchange
 * `ecurl` downloads something but uses caching via ETag
 * `gcp` clones a repository, or, if it already exists, pulls
 * `ilns` is an idempotent `ln -s`
