@@ -5,7 +5,7 @@
 ![Multiplexer: tmux](https://img.shields.io/badge/multiplexer-tmux-1BB91F?style=flat-square&logo=tmux)
 ![Shell: fish](https://img.shields.io/badge/shell-fish-blue?style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAtFBMVEUAAAAkJCQPDw8mJiYgICBgYGAGBgYTExNra2t6enojIyOGhoY8PDyOjo5NTU2ZmZmioqJfX19xcXFHSEhqa2pHR0d3d3enp6dYWVk/Pz+Wl5aAgIBKT1BFRUUnKCfExMTBwcG8vLy1tbWurq6fn5+ampqRkZGKioqEhIRHrkRGlL1FpkNFnUJEhKZDkEFCe5lBhD8/bIRBdUA9W2tAYj8+UT5BQ0M/Pz88PT07Ozs4ODgwMTDrUIbEAAAAH3RSTlMABxEiN1BRbnCMk6a2vtXW5/P39/v7/P39/f7+/v7+nfELHAAABMtJREFUeNrtl9tyozoQRWM7mdwvJmAIoHBH2GCMiSQE+f//Oi0RgXJcU5PMPMzL7HIVxcPq3dW9Rclni7M/0uLsn/6Glqvzi6uL5W+tbLm6uLq+f3TTNL9cfJMF2+vb+8fUthMblN6tvmv7ZCdJnIDGCsb5l20FGoOAlnzq4tRONz++ZAvorCRJ88JY+xbCdoovF7+wTeJoVBwBbKe5Zzo+Yh1jrNvA683y57ZxFIJGHNgMb4C1LIaYVMfNNM20Keq2URQEQSgFsC1tLYCs52d4jHzHHSjwcD7Bk22gFEZJijdrH3VdxxBiyHq2lL2QD0kw1BSXt8nIhiMb2y7YIj4MPQcchHR7KYTTzFNTvLB1W8NB/TtoGAYueEJm+07x3YuXZvjmo8D5UxBK27XP319fXyU+2ne02ZYEze0rcTPL8ruPNawegyD2AQUJXLevyraqKFL8JL7OMvdh9TGD+zCIX3Rc8W1ZE0bKBil8EvfdzF2rNVxHQehIfGofeMYoaSmyWLttT3iOsJtNa7iKg8BQ/oPgO9o2dV23xLLAvW3p/3neea77aQ1Ynx6pqwr4qtxWI/uJ51KG62IV5tVTEKTv0/SIaJ0yECVNWRF2goP6tZvnd9oUEyZwEK1LKtMH20cM9li2wJ8WcPI8V2Fe3IZB5Iz2bVm2KnxjeEjDdFzJwnlu/tDWYL5L+21NO0bF9KbwcNLqvHj0vH/x8nwzTTEJggIK8GbbdOAOi0Nozj4pieI76h/2+8Mb73sjz72bxTzFjEN4aFlTKEAaovEdrUo62tOa+Mfjcb879oOZ54Ue5gRxYbZtEJLN6+GjZUVF8y08+x4Wfdz5g4MxVmFe3MNpcjjMnonuLUs/eiAOcWaQjm0j6sCs3nZvgwUFtDCHkQkEVKgrOrWvxGm1JWRbkb7n8Bu46IB5GJtzmMPQEzhCtD05up04lF27bXrY/+DvD3IGfIPxvAY7DHPGxvCQhn7i5W7Butm2on12PAh+GEyMvTnMYWj7bPzy0KZqqaJ5B9lqufDmdUkGoV6MYBBTLLQwh4kjeSGYdksoNCFOAyVgL9TTquoE33f7A7TgF0UxhzmKorVanzwB27Kq4VBWTdePPLRPKsoGENuJAsgr8HqeYhRttO1zsG7qpiVc0pIHUX//xjg77o7w8rIpCmMOcxQW2vRp3ULPIIWDI7wN7LDb7Xe7g2ikN4tiM3+Zo8hFQDOVvVqOcOZ7IcDY2/H4xmW1dVF4KszLxyiyfS18da1wjRdtDFLyxYECc5ijKHa0c99qBQSnFZAPUcjytDVcx1FsdpN6SnReL6DEmQ8F5jUksAatA218kpNS/b8g3zGNjVd4hTmHOYrwhM9SxpOt5axNQKVEgemb8hjHGTopoNtavkQxSPEb41l1sLyPYQ2n/tIWOgYU4zzP8ShgzfXDw93N5epMhTmOE4frfC9tnbXh4dx13Rz0mf1xvlqC/zTFODZ4p5x5J20BzbJswgUL6MSOuJpiHHsjyyxAizxLQZkQ8MBqtgBqUmGO45whHzrOM1soFQIae8ap7amWsIYEUHEVVbxiJbr81R3+droIj7fZjfkFW13XUCD+YDXbr+vCTVK3ML5nq2t5dTcP+be0WAnbxb8/kn9Ff/r3/z9325DkreWsewAAAABJRU5ErkJggg==)
 
-My dotfiles describe my entire computer. They contain most of the configuration of my applications (both on the command line and on the GUI), but also the setup and update process as scripts. I'm using Ubuntu as my Linux distribution of choice. As I'm mainly working in my shell, the most important configuration files are those for vim, tmux, and fish. The content of `tilde` are the invisible configuration files in `~` and the content of `exe` are scripts linked in `/usr/local/bin`. I'm using [Solarized Light](https://ethanschoonover.com/solarized) as my color scheme and [Input](http://input.fontbureau.com) as my font. This is how my work environment looks like:
+My dotfiles describe my entire computer. They contain most of the configuration of my applications (both on the command line and on the GUI), but also the setup and update process as scripts. I'm using Ubuntu as my Linux distribution of choice. The content of `tilde` are the invisible configuration files in `~` and the content of `exe` are scripts linked in `/usr/local/bin`. I'm using [Solarized Light](https://ethanschoonover.com/solarized) as my color scheme and [Input](http://input.fontbureau.com) as my font. This is how my work environment looks like:
 
 ![Screenshot](dotfiles.png)
 
@@ -37,9 +37,9 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `serve` serve the current directory via nginx
 * `gb` is a prettier `git branch`
 * `gl` is a prettier `git log`
-* `postgres` and `redis` start a temporary fresh PostgreSQL or Redis instance in a docker container
+* `postgres` and `redis` start a temporary PostgreSQL or Redis instance in a docker container
 * `compressability` shows the size of a file, and its GZIPed and brotlied size
-* `churn` shows the frequency of change of the files in a project (Git repos only)
+* `churn` shows the frequency of change of the files in git repo
 * `history-analysis` shows the commands that you ran most in your (fish) shell
 * `each-project` calls a command for each project in `~/Code` in parallel
 * `gitkeeper` checks if there is unpushed work on a repo (plus some more options)
@@ -51,7 +51,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 ## vim
 
-I'm doing all my programming and most of my writing in vim. My vim is very close to the default configuration, but I'm using [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible) to set a few **reasonable defaults**. I haven't configured spaces, tabs and similar things---instead I use [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) to follow the convention of the projects. Additional **language support** is loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot).
+I'm doing all my programming and most of my writing in vim. My vim is very close to the default configuration, but I'm using [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible) to set a few **reasonable defaults**. Instead of configuring spaces, tabs and similar things, I use [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) to follow the convention of the projects. Additional **language support** is loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot).
 
 To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github.com/junegunn/fzf)) that I've bound to Ctrl+P. I use [`fd`](https://github.com/sharkdp/fd) as the source for its suggestions which pays attention to `.gitignore`. I can't remember the last time I opened a file without it.
 
@@ -83,6 +83,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`pandoc`](https://pandoc.org) to convert between Markdown and... other formats like Microsoft Word
 * [`pgcli`](https://www.pgcli.com) to peek into PostgreSQL databases
 * [`spotify_player`](https://lib.rs/crates/spotify_player) to listen to music
+* [`pdftk`](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit) for tweaking PDF documents
 
 ## GUI
 
