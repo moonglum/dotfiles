@@ -29,6 +29,10 @@
   # alternative output style for merge conflicts that works better with delta
   conflictstyle = diff3
 
+[fetch]
+  # delete stale references associated with the remote
+  prune = true
+
 [init]
   defaultBranch = main
 
