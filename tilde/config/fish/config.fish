@@ -8,7 +8,6 @@ set -x EDITOR 'vim'
 set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 
 # Go
-set -x GOPRIVATE bitbucket.org/advance52
 set -x GOPATH $HOME/.go
 fish_add_path --path --move /home/$USER/.go/bin
 
