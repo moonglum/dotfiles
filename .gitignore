@@ -26,3 +26,5 @@
 /tilde/config/eog/
 /tilde/config/evolution/
 /tilde/config/dlv/.dbg_history
+/tilde/config/gnome-boxes
+/tilde/config/libvirt
