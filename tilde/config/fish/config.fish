@@ -1,6 +1,3 @@
-set -x LANGUAGE "en_US.UTF-8"
-set -x LC_ALL "en_US.UTF-8"
-
 # set the default editor to vim
 set -x EDITOR 'vim'
 
