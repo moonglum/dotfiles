@@ -4,6 +4,9 @@ set -x LC_ALL "en_US.UTF-8"
 # set the default editor to vim
 set -x EDITOR 'vim'
 
+# direnv
+eval (direnv hook fish)
+
 # use fdfind as the file list for fzf
 set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 
@@ -11,11 +14,7 @@ set -x FZF_DEFAULT_COMMAND "fdfind --type file"
 set -x GOPATH $HOME/.go
 fish_add_path --path --move /home/$USER/.go/bin
 
-# direnv
-eval (direnv hook fish)
-
 # Ruby
-set -x RBENV_SHELL fish
 set -x GEM_HOME /home/$USER/.gems
 fish_add_path --path --move /home/$USER/.rbenv/shims
 
