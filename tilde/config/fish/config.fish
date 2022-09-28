@@ -8,7 +8,7 @@ set -x EDITOR 'vim'
 eval (direnv hook fish)
 
 # use fdfind as the file list for fzf
-set -x FZF_DEFAULT_COMMAND "fdfind --type file"
+set -x FZF_DEFAULT_COMMAND "fdfind --type file --hidden --exclude .git"
 
 # Go
 set -x GOPATH $HOME/.go
