@@ -83,6 +83,7 @@ sudo apt install\
 	libssl-dev\
 	libasound2-dev\
 	libdbus-1-dev\
+	libvpx7\
 	manpages-dev\
 	neofetch\
 	pandoc\
