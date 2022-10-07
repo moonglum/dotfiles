@@ -45,5 +45,6 @@ flatpak install flathub\
 	com.github.maoschanz.drawing\
 	com.obsproject.Studio\
 	org.gnome.World.PikaBackup\
+	org.inkscape.Inkscape\
 	re.sonny.Tangram\
 	us.zoom.Zoom
