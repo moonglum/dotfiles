@@ -1,0 +1,17 @@
+#!/usr/bin/env fish
+argparse "h/help" -- $argv
+or exit
+
+if set -q _flag_help
+	echo "Convert a video to WebM"
+  echo "Using VP9 for Video and Opus for Audio"
+	echo " -h/--help Show this message"
+	exit
+end
+
+set -l target_name (string replace -r "[^\.]+\$" "webm" $argv)
+
+ffmpeg -i $argv\
+  -c:v libvpx-vp9\
+  -c:a libopus\
+  $target_name

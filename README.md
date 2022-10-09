@@ -48,6 +48,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `ecurl` downloads something but uses caching via ETag
 * `gcp` clones a repository, or, if it already exists, pulls
 * `ilns` is an idempotent `ln -s`
+* `webm` converts a video to [WebM](https://en.wikipedia.org/wiki/WebM) using ffmpeg
 
 ## vim
 
