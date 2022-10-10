@@ -96,6 +96,7 @@ Even though I enjoy to use the command line for most things, there are certain t
     * They are also installed in the Non-GUI box for automatic testing in headless mode
 * [Thunderbird](https://www.thunderbird.net) as my email and calendar application
 * [Kitty](https://sw.kovidgoyal.net/kitty) as my terminal emulator
+* Nextcloud Desktop to synchronize files between computers and share them with my wife
 * Playing video and audio files with [mpv](https://mpv.io), viewing PDFs with [evince](https://apps.gnome.org/en/app/org.gnome.Evince) and images with [eog](https://apps.gnome.org/en/app/org.gnome.eog)
 * Editing images with [Drawing](https://apps.gnome.org/en/app/com.github.maoschanz.drawing) and sound with [Audacity](https://www.audacityteam.org)
 * I'm using [1Password](https://1password.com) for password management on all my devices

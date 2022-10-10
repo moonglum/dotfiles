@@ -28,3 +28,5 @@
 /tilde/config/dlv/.dbg_history
 /tilde/config/gnome-boxes
 /tilde/config/libvirt
+/tilde/config/Nextcloud
+/tilde/config/QtProject.conf

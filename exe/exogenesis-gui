@@ -25,6 +25,7 @@ sudo apt install\
 	gnome-boxes\
 	kitty\
 	mpv\
+	nextcloud-desktop\
 	piper
 
 echob "Install snap packages"
