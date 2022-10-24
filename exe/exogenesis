@@ -76,6 +76,7 @@ sudo apt install\
 	golang\
 	htop\
 	jq\
+	leiningen\
 	libheif-dev\
 	libpq-dev\
 	libsqlite3-dev\
