@@ -104,7 +104,6 @@ sudo apt install\
 	vim
 
 echob "Install snap packages"
-sudo snap install fx
 sudo snap install chromium
 sudo snap install firefox
 
