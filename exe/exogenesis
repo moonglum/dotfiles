@@ -45,10 +45,8 @@ sudo apt install\
 	azure-cli\
 	brotli\
 	build-essential\
-	containerd.io\
 	curl\
 	direnv\
-	docker-ce-cli\
 	docker-ce\
 	docker-compose-plugin\
 	fd-find\
@@ -79,7 +77,6 @@ sudo apt install\
 	nodejs\
 	pdftk\
 	python3-pip\
-	python3-gst-1.0\
 	ragel\
 	ripgrep\
 	rust-all\
