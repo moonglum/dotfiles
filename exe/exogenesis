@@ -8,7 +8,7 @@ echob() {
 	echo "${highlight}${1}${reset}"
 }
 
-echob "Install apt packages"
+echob "Install apt packages and sources"
 
 "$(dirname "$0")/add-apt-source"\
 	"docker"\
@@ -92,29 +92,26 @@ sudo apt install\
 	vim
 
 echob "Install snap packages"
+
 sudo snap install chromium
 sudo snap install firefox
 
-echob "Install pip packages"
-
-pip3 install --user pgcli
-pip3 install --user yt-dlp
-
 echob "Link dotfiles"
 
-for file in /home/$USER/Code/dotfiles/tilde/*
+for file in /home/"$USER"/Code/dotfiles/tilde/*
 do
 	"$(dirname "$0")/ilns" "$file" "/home/$USER/.$(basename "$file")"
 done
 
 echob "Link scripts"
 
-for file in /home/$USER/Code/dotfiles/exe/*
+for file in /home/"$USER"/Code/dotfiles/exe/*
 do
 	sudo "$(dirname "$0")/ilns" "$file" "/usr/local/bin/$(basename "$file")"
 done
 
 echob "Switch to Fish"
+
 desired_shell="/usr/bin/fish"
 if [ "$SHELL" = "$desired_shell" ]
 then
@@ -123,7 +120,7 @@ else
 	chsh -s "$desired_shell"
 fi
 
-echob "Install or Update Vim Plugins"
+echob "Install or Update Vim Plugins and Spell Files"
 
 mkdir -p "/home/$USER/.vim/pack/bundle/start"
 "$(dirname "$0")/gcp" "https://github.com/w0rp/ale" "/home/$USER/.vim/pack/bundle/start/ale"
@@ -144,6 +141,7 @@ mkdir -p "/home/$USER/.vim/spell"
 "$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.sug" "/home/$USER/.vim/spell/de.utf-8.sug"
 
 echob "Add to docker group"
+
 if groups "$USER" | grep -q "docker"
 then
 	echo "Already in group docker"
@@ -153,7 +151,8 @@ else
 	echo "Added to group docker, will be active after logging in again"
 fi
 
-echob "Ruby"
+echob "Set Ruby version and install gems"
+
 rbenv global 3.1 && echo "Ruby Version set to 3.1"
 
 for gem_name in amazing_print brakeman pry rails rubocop rspec
@@ -166,12 +165,20 @@ do
 	fi
 done
 
-echob "Go"
+echob "Install Python packages"
+
+pip3 install --user pgcli
+pip3 install --user yt-dlp
+
+echob "Install Go packages"
+
 go install golang.org/x/lint/golint@latest && echo "golint installed"
 go install golang.org/x/tools/gopls@latest && echo "gopls installed"
 go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
 go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
 
-echob "Rust"
+echob "Install Rust packages"
+
 cargo install git-delta
 cargo install spotify_player --no-default-features --features streaming,pulseaudio-backend,media-control
+
