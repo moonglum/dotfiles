@@ -1,0 +1,30 @@
+#!/bin/sh
+# Add an APT repository and the according signing key
+# parameters:
+# a name for this repository (used for file names)
+# the URL for the GPG signing key
+# the URL of the repository
+# The distribution (will be lsb_release -cs most of the time)
+# The components (will be main most of the time)
+
+key_file_name="/etc/apt/trusted.gpg.d/$1.gpg"
+
+if [ -f "$key_file_name" ]
+then
+  echo "Signing Key '$1' already added"
+else
+  curl -fsSL "$2" | sudo gpg --dearmor -o "$key_file_name"
+  echo "Signing Key '$1' added"
+fi
+
+file_name="/etc/apt/sources.list.d/$1.list"
+
+if [ -f "$file_name" ]
+then
+	echo "Repository '$1' already added"
+else
+	echo \
+		"deb [arch=$(dpkg --print-architecture) signed-by=$key_file_name] \
+    $3 $4 $5" | sudo tee "$file_name" > /dev/null
+  echo "Repository '$1' added"
+fi
