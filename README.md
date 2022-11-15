@@ -106,7 +106,8 @@ Even though I enjoy to use the command line for most things, there are certain t
 * [Inkscape](https://inkscape.org) for creating vector graphics
 * [Piper](https://github.com/libratbag/piper) is a GUI for [libratbag](https://github.com/libratbag/libratbag) which I use to configure my mouse
 * [Tangram](https://github.com/sonnyp/Tangram) for different chat apps that are websites anyway (currently mostly Slack)
-* Microsoft Teams and Zoom for video calls
+    * Microsoft Teams in Chromium, as all other browsers are not fully supported yet
+* [Zoom](https://zoom.us) for video calls
 
 ## Programming Languages
 

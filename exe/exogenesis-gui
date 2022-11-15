@@ -33,7 +33,6 @@ echob "Install snap packages"
 sudo snap refresh
 
 sudo snap install 1password
-sudo snap install teams
 sudo snap install thunderbird
 
 echob "Setup flatpak"
