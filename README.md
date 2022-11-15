@@ -100,7 +100,6 @@ Even though I enjoy to use the command line for most things, there are certain t
 * Playing video and audio files with [mpv](https://mpv.io), viewing PDFs with [evince](https://apps.gnome.org/en/app/org.gnome.Evince) and images with [eog](https://apps.gnome.org/en/app/org.gnome.eog)
 * Editing images with [Drawing](https://apps.gnome.org/en/app/com.github.maoschanz.drawing) and sound with [Audacity](https://www.audacityteam.org)
 * I'm using [1Password](https://1password.com) for password management on all my devices
-* [Flatseal](https://github.com/tchx84/flatseal) for tweaking packages installed via Flatpak
 * [OBS](https://obsproject.com) as a virtual camera
 * [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
 * [Inkscape](https://inkscape.org) for creating vector graphics
