@@ -58,4 +58,7 @@
   side-by-side = true
 
 [url "git@bitbucket.org:advance52"]
-  insteadOf = https://bitbucket.org/advance52
+	insteadOf = https://bitbucket.org/advance52
+
+[url "git@ssh.dev.azure.com:v3/advance52"]
+	insteadOf = https://dev.azure.com/advance52
