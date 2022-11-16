@@ -96,7 +96,7 @@ Even though I enjoy to use the command line for most things, there are certain t
     * They are also installed in the Non-GUI box for automatic testing in headless mode
 * [Thunderbird](https://www.thunderbird.net) as my email and calendar application
 * [Kitty](https://sw.kovidgoyal.net/kitty) as my terminal emulator
-* Nextcloud Desktop to synchronize files between computers and share them with my wife
+* [Nextcloud](https://nextcloud.com) Desktop to synchronize files between computers and share them with my wife
 * Playing video and audio files with [mpv](https://mpv.io), viewing PDFs with [evince](https://apps.gnome.org/en/app/org.gnome.Evince) and images with [eog](https://apps.gnome.org/en/app/org.gnome.eog)
 * Editing images with [Drawing](https://apps.gnome.org/en/app/com.github.maoschanz.drawing) and sound with [Audacity](https://www.audacityteam.org)
 * I'm using [1Password](https://1password.com) for password management on all my devices
@@ -104,6 +104,7 @@ Even though I enjoy to use the command line for most things, there are certain t
 * [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
 * [Inkscape](https://inkscape.org) for creating vector graphics
 * [Piper](https://github.com/libratbag/piper) is a GUI for [libratbag](https://github.com/libratbag/libratbag) which I use to configure my mouse
+* [Gnome Boxes](https://apps.gnome.org/app/org.gnome.Boxes) for having a Windows in a Box (still experimental)
 * [Tangram](https://github.com/sonnyp/Tangram) for different chat apps that are websites anyway (currently mostly Slack)
     * Microsoft Teams in Chromium, as all other browsers are not fully supported yet
 * [Zoom](https://zoom.us) for video calls
