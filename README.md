@@ -5,7 +5,7 @@
 ![Multiplexer: tmux](https://img.shields.io/badge/multiplexer-tmux-1BB91F?style=flat-square&logo=tmux)
 ![Shell: fish](https://img.shields.io/badge/shell-fish-blue?style=flat-square&logo=data:image/png;base64,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)
 
-My dotfiles describe my entire computer. They contain most of the configuration of my applications (both on the command line and on the GUI), but also the setup and update process as scripts. I'm using Ubuntu as my Linux distribution of choice. The content of `tilde` are the invisible configuration files in `~` and the content of `exe` are scripts linked in `/usr/local/bin`. I'm using [Solarized Light](https://ethanschoonover.com/solarized) as my color scheme and [Input](http://input.fontbureau.com) as my font. This is how my work environment looks like:
+My dotfiles describe my entire computer. They contain most of the configuration of my applications (both on the command line and on the GUI), but also the setup and update process as scripts. I'm using Ubuntu as my Linux distribution of choice. The content of `tilde` is the invisible configuration files in `~` and the content of `exe` are scripts linked in `/usr/local/bin`. I'm using [Solarized Light](https://ethanschoonover.com/solarized) as my color scheme and [Input](http://input.fontbureau.com) as my font. This is how my work environment looks like:
 
 ![Screenshot](dotfiles.png)
 
@@ -31,19 +31,19 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 * With `j` (or `jump`) I can jump to my Code projects
 * To start or continue working on a project, I use my tiny `s` (or `start`) function which starts (or attaches to) a tmux session for a project with the correct start directory.
-* `l` is `exa -al`
+* `l` lists all files with details, `ll` only the visible ones
 * `tree` prints the folder structure as a tree
 * `git sed` is a git alias to sed all files known to git (rhymes with `git grep`)
-* `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
-* `serve` serve the current directory via nginx
 * `gb` is a prettier `git branch`
 * `gl` is a prettier `git log`
+* `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
+* `serve` serve the current directory via nginx
 * `postgres` and `redis` start a temporary PostgreSQL or Redis instance in a docker container
 * `compressability` shows the size of a file, and its GZIPed and brotlied size
 * `churn` shows the frequency of change of the files in git repo
 * `history-analysis` shows the commands that you ran most in your (fish) shell
 * `each-project` calls a command for each project in `~/Code` in parallel
-* `gitkeeper` checks if there is unpushed work on a repo (plus some more options)
+* `gitkeeper` fetches and then checks if there is unpushed work on a repo
 * `electric-monk` runs gitkeeper for each project (replacement for an old gem of mine)
 * `battery` shows the current battery status
 * `ecurl` downloads something but uses caching via ETag
@@ -67,7 +67,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 
 * [`git`](https://www.git-scm.com) is the only version control system I use. It has two amazing companions: [`tig`](http://jonas.nitro.dk/tig) and [`delta`](https://github.com/dandavison/delta)
 * [`tmux`](https://github.com/tmux/tmux/wiki) is the terminal multiplexer I use. I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
-* [`exa`](l://the.exa.website) is a replacement for `ls`
+* [`exa`](https://the.exa.website) is a replacement for `ls`
 * [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for `grep` that is so fast, that I can't really believe it
 * [`fd`](https://github.com/sharkdp/fd) is the same for `find`
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data, but I mostly use it for pretty printing
@@ -99,14 +99,13 @@ Even though I enjoy to use the command line for most things, there are certain t
 * [Kitty](https://sw.kovidgoyal.net/kitty) as my terminal emulator
 * [Nextcloud](https://nextcloud.com) Desktop to synchronize files between computers and share them with my wife
 * Playing video and audio files with [mpv](https://mpv.io), viewing PDFs with [evince](https://apps.gnome.org/en/app/org.gnome.Evince) and images with [eog](https://apps.gnome.org/en/app/org.gnome.eog)
-* Editing images with [Drawing](https://apps.gnome.org/en/app/com.github.maoschanz.drawing) and sound with [Audacity](https://www.audacityteam.org)
+* Editing and creating bitmap images with [Drawing](https://apps.gnome.org/en/app/com.github.maoschanz.drawing), vector images with [Inkscape](https://inkscape.org) and sound with [Audacity](https://www.audacityteam.org)
 * I'm using [1Password](https://1password.com) for password management on all my devices
 * [OBS](https://obsproject.com) as a virtual camera
 * [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
-* [Inkscape](https://inkscape.org) for creating vector graphics
 * [Piper](https://github.com/libratbag/piper) is a GUI for [libratbag](https://github.com/libratbag/libratbag) which I use to configure my mouse
 * [Gnome Boxes](https://apps.gnome.org/app/org.gnome.Boxes) for having a Windows in a Box (still experimental)
-* [Tangram](https://github.com/sonnyp/Tangram) for different chat apps that are websites anyway (currently mostly Slack)
+* [Tangram](https://github.com/sonnyp/Tangram) for different chat apps that are websites anyway (Slack)
     * Microsoft Teams in Chromium, as all other browsers are not fully supported yet
 * [Zoom](https://zoom.us) for video calls
 

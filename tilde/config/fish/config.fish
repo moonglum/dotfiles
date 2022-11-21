@@ -25,5 +25,6 @@ fish_add_path --path --move /home/$USER/.cargo/bin
 alias s="start"
 alias j="jump"
 alias l="exa -al"
+alias ll="exa -l"
 alias tree="exa --tree"
 alias electric-monk="list-projects | each gitkeeper"
