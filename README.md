@@ -31,7 +31,8 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 * With `j` (or `jump`) I can jump to my Code projects
 * To start or continue working on a project, I use my tiny `s` (or `start`) function which starts (or attaches to) a tmux session for a project with the correct start directory.
-* `l` is just `ls -al`
+* `l` is `exa -al`
+* `tree` prints the folder structure as a tree
 * `git sed` is a git alias to sed all files known to git (rhymes with `git grep`)
 * `mdoutline` shows the outline of a Markdown document (only works correctly, if you don't use the 'underline' variant for headlines)
 * `serve` serve the current directory via nginx
@@ -66,10 +67,10 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 
 * [`git`](https://www.git-scm.com) is the only version control system I use. It has two amazing companions: [`tig`](http://jonas.nitro.dk/tig) and [`delta`](https://github.com/dandavison/delta)
 * [`tmux`](https://github.com/tmux/tmux/wiki) is the terminal multiplexer I use. I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
+* [`exa`](l://the.exa.website) is a replacement for `ls`
 * [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for `grep` that is so fast, that I can't really believe it
 * [`fd`](https://github.com/sharkdp/fd) is the same for `find`
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data, but I mostly use it for pretty printing
-* [`tree`](http://mama.indstate.edu/users/ice/tree) prints the folder structure as a tree
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB with `amazing_print`
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
