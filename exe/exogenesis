@@ -64,20 +64,20 @@ sudo apt install\
 	htop\
 	jq\
 	leiningen\
+	libasound2-dev\
+	libdbus-1-dev\
 	libheif-dev\
 	libpq-dev\
 	libsqlite3-dev\
-	libvips-dev\
 	libssl-dev\
-	libasound2-dev\
-	libdbus-1-dev\
+	libvips-dev\
 	libvpx7\
 	manpages-dev\
 	neofetch\
-	pandoc\
 	nodejs\
+	pandoc\
 	pdftk\
-	python3-pip\
+	pgcli\
 	ragel\
 	ripgrep\
 	rust-all\
@@ -85,8 +85,9 @@ sudo apt install\
 	tig\
 	tmux\
 	unzip\
+	vim\
 	woff2\
-	vim
+	yt-dlp
 
 echob "Install snap packages"
 
@@ -161,11 +162,6 @@ do
 		gem install "$gem_name"
 	fi
 done
-
-echob "Install Python packages"
-
-pip3 install --user pgcli
-pip3 install --user yt-dlp
 
 echob "Install Go packages"
 

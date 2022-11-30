@@ -16,7 +16,7 @@ My main computer is a desktop machine. For on the Go usage, see below.
 `exogenesis` is a shell script that sets up a fresh (minimal) install of Ubuntu for me. I also use it to set up the same environment inside a VM. When I run it again on an existing machine, it will add what I added since the last time I ran it and update things like packages or editor plugins. It takes care of:
 
 * Adding APT repositories
-* Installing and updating APT, Snap, pip, Gem, Go and Rust packages
+* Installing and updating APT, Snap, Gem, Go and Rust packages
 * Installing and updating Vim plugins
 * Setting the shell to Fish
 * Linking my configuration files and scripts
