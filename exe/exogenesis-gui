@@ -41,8 +41,8 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echob "Install flatpak packages"
 
 flatpak install flathub\
-	com.github.maoschanz.drawing\
 	com.obsproject.Studio\
+	org.flameshot.Flameshot\
 	org.gnome.World.PikaBackup\
 	org.inkscape.Inkscape\
 	re.sonny.Tangram\

@@ -99,7 +99,8 @@ Even though I enjoy to use the command line for most things, there are certain t
 * [Kitty](https://sw.kovidgoyal.net/kitty) as my terminal emulator
 * [Nextcloud](https://nextcloud.com) Desktop to synchronize files between computers and share them with my wife
 * Playing video and audio files with [mpv](https://mpv.io), viewing PDFs with [evince](https://apps.gnome.org/en/app/org.gnome.Evince) and images with [eog](https://apps.gnome.org/en/app/org.gnome.eog)
-* Editing and creating bitmap images with [Drawing](https://apps.gnome.org/en/app/com.github.maoschanz.drawing), vector images with [Inkscape](https://inkscape.org) and sound with [Audacity](https://www.audacityteam.org)
+* Editing and creating vector images with [Inkscape](https://inkscape.org) and sound with [Audacity](https://www.audacityteam.org)
+* Screenshots with Annotations using [Flameshot](https://flameshot.org)
 * I'm using [1Password](https://1password.com) for password management on all my devices
 * [OBS](https://obsproject.com) as a virtual camera
 * [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
