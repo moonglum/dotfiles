@@ -45,5 +45,4 @@ flatpak install flathub\
 	org.flameshot.Flameshot\
 	org.gnome.World.PikaBackup\
 	org.inkscape.Inkscape\
-	re.sonny.Tangram\
 	us.zoom.Zoom

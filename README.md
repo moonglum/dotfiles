@@ -106,9 +106,9 @@ Even though I enjoy to use the command line for most things, there are certain t
 * [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
 * [Piper](https://github.com/libratbag/piper) is a GUI for [libratbag](https://github.com/libratbag/libratbag) which I use to configure my mouse
 * [Gnome Boxes](https://apps.gnome.org/app/org.gnome.Boxes) for having a Windows in a Box (still experimental)
-* [Tangram](https://github.com/sonnyp/Tangram) for different chat apps that are websites anyway (Slack)
-    * Microsoft Teams in Chromium, as all other browsers are not fully supported yet
 * [Zoom](https://zoom.us) for video calls
+
+Both Slack and Microsoft Teams are not installed as Desktop applications, I just run them in Chromium.
 
 ## Programming Languages
 
