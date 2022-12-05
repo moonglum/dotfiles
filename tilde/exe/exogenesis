@@ -101,13 +101,6 @@ do
 	"$(dirname "$0")/ilns" "$file" "/home/$USER/.$(basename "$file")"
 done
 
-echob "Link scripts"
-
-for file in /home/"$USER"/Code/dotfiles/exe/*
-do
-	sudo "$(dirname "$0")/ilns" "$file" "/usr/local/bin/$(basename "$file")"
-done
-
 echob "Switch to Fish"
 
 desired_shell="/usr/bin/fish"

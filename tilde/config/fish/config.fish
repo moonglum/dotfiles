@@ -7,6 +7,9 @@ eval (direnv hook fish)
 # use fdfind as the file list for fzf
 set -x FZF_DEFAULT_COMMAND "fdfind --type file --hidden --exclude .git"
 
+# Scripts
+fish_add_path --path --move /home/$USER/.exe
+
 # Go
 set -x GOPATH $HOME/.go
 fish_add_path --path --move /home/$USER/.go/bin
