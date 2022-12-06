@@ -111,26 +111,6 @@ else
 	chsh -s "$desired_shell"
 fi
 
-echob "Install or Update Vim Plugins and Spell Files"
-
-mkdir -p "/home/$USER/.vim/pack/bundle/start"
-"$(dirname "$0")/gcp" "https://github.com/w0rp/ale" "/home/$USER/.vim/pack/bundle/start/ale"
-"$(dirname "$0")/gcp" "https://github.com/editorconfig/editorconfig-vim" "/home/$USER/.vim/pack/bundle/start/editorconfig-vim"
-"$(dirname "$0")/gcp" "https://github.com/junegunn/fzf" "/home/$USER/.vim/pack/bundle/start/fzf"
-"$(dirname "$0")/gcp" "https://github.com/tpope/vim-commentary" "/home/$USER/.vim/pack/bundle/start/vim-commentary"
-"$(dirname "$0")/gcp" "https://github.com/sheerun/vim-polyglot" "/home/$USER/.vim/pack/bundle/start/vim-polyglot"
-"$(dirname "$0")/gcp" "https://github.com/tpope/vim-repeat" "/home/$USER/.vim/pack/bundle/start/vim-repeat"
-"$(dirname "$0")/gcp" "https://github.com/tpope/vim-sensible" "/home/$USER/.vim/pack/bundle/start/vim-sensible"
-"$(dirname "$0")/gcp" "https://github.com/altercation/vim-colors-solarized" "/home/$USER/.vim/pack/bundle/start/vim-colors-solarized"
-"$(dirname "$0")/gcp" "https://github.com/tpope/vim-surround" "/home/$USER/.vim/pack/bundle/start/vim-surround"
-"$(dirname "$0")/gcp" "https://github.com/skalnik/vim-vroom" "/home/$USER/.vim/pack/bundle/start/vim-vroom"
-
-mkdir -p "/home/$USER/.vim/spell"
-"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.spl" "/home/$USER/.vim/spell/en.utf-8.spl"
-"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/en.utf-8.sug" "/home/$USER/.vim/spell/en.utf-8.sug"
-"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.spl" "/home/$USER/.vim/spell/de.utf-8.spl"
-"$(dirname "$0")/ecurl" "http://ftp.vim.org/pub/vim/runtime/spell/de.utf-8.sug" "/home/$USER/.vim/spell/de.utf-8.sug"
-
 echob "Add to docker group"
 
 if groups "$USER" | grep -q "docker"

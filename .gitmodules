@@ -1,0 +1,30 @@
+[submodule "tilde/vim/pack/bundle/start/ale"]
+	path = tilde/vim/pack/bundle/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "tilde/vim/pack/bundle/start/editorconfig-vim"]
+	path = tilde/vim/pack/bundle/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "tilde/vim/pack/bundle/start/fzf"]
+	path = tilde/vim/pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "tilde/vim/pack/bundle/start/vim-commentary"]
+	path = tilde/vim/pack/bundle/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "tilde/vim/pack/bundle/start/vim-polyglot"]
+	path = tilde/vim/pack/bundle/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "tilde/vim/pack/bundle/start/vim-repeat"]
+	path = tilde/vim/pack/bundle/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "tilde/vim/pack/bundle/start/vim-sensible"]
+	path = tilde/vim/pack/bundle/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "tilde/vim/pack/bundle/start/vim-colors-solarized"]
+	path = tilde/vim/pack/bundle/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "tilde/vim/pack/bundle/start/vim-surround"]
+	path = tilde/vim/pack/bundle/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "tilde/vim/pack/bundle/start/vim-vroom"]
+	path = tilde/vim/pack/bundle/start/vim-vroom
+	url = https://github.com/skalnik/vim-vroom
