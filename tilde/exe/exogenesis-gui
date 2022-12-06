@@ -2,10 +2,8 @@
 # provision the machine (GUI part)
 set -eu
 
-highlight=$(tput bold)
-reset=$(tput sgr0)
 echob() {
-	echo "${highlight}${1}${reset}"
+	echo "$(tput bold)${1}$(tput sgr0)"
 }
 
 echob "Set keybindings to emacs"

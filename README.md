@@ -46,8 +46,9 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 * `electric-monk` runs gitkeeper for each project (replacement for an old gem of mine)
 * `battery` shows the current battery status
 * `ecurl` downloads something but uses caching via ETag
-* `gcp` clones a repository, or, if it already exists, pulls
-* `ilns` is an idempotent `ln -s`
+* `link-dotfiles` links the provided paths as dotfiles in the home directory
+* `add-to-groups` adds the current user to a list of groups
+* `change-shell` changes the shell for the current user
 * `webm` converts a video to [WebM](https://en.wikipedia.org/wiki/WebM) using ffmpeg
 
 ## vim

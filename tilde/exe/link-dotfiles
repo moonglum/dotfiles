@@ -1,0 +1,20 @@
+#!/bin/sh
+# link all provided files as dotfiles in ~
+set -eu
+
+# idempotent ln -s
+ilns() {
+	file_description=$(file -b "$2")
+
+	if [ "$file_description" = "symbolic link to $1" ]
+	then
+		echo "Already linked correctly: $2"
+	else
+		ln -s "$1" "$2"
+	fi
+}
+
+for file in "$@"
+do
+	ilns "$file" "/home/$USER/.$(basename "$file")"
+done

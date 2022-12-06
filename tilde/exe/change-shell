@@ -1,0 +1,10 @@
+#!/bin/sh
+# change the shell to the provided one unless it already happened
+set -eu
+
+if [ "$SHELL" = "$1" ]
+then
+	echo "Shell is already set correctly"
+else
+	chsh -s "$1"
+fi

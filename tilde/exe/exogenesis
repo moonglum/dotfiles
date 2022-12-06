@@ -2,38 +2,36 @@
 # provision this machine
 set -eu
 
-highlight=$(tput bold)
-reset=$(tput sgr0)
 echob() {
-	echo "${highlight}${1}${reset}"
+	echo "$(tput bold)${1}$(tput sgr0)"
 }
 
 echob "Install apt packages and sources"
 
 "$(dirname "$0")/add-apt-source"\
 	"docker"\
- 	"https://download.docker.com/linux/ubuntu/gpg"\
+	"https://download.docker.com/linux/ubuntu/gpg"\
   "https://download.docker.com/linux/ubuntu"\
   "$(lsb_release -cs)"\
 	"stable"
 
 "$(dirname "$0")/add-apt-source"\
 	"azure-cli"\
- 	"https://packages.microsoft.com/keys/microsoft.asc"\
+	"https://packages.microsoft.com/keys/microsoft.asc"\
   "https://packages.microsoft.com/repos/azure-cli"\
   "$(lsb_release -cs)"\
 	"main"
 
 "$(dirname "$0")/add-apt-source"\
 	"nodesource"\
- 	"https://deb.nodesource.com/gpgkey/nodesource.gpg.key"\
+	"https://deb.nodesource.com/gpgkey/nodesource.gpg.key"\
   "https://deb.nodesource.com/node_18.x"\
   "$(lsb_release -cs)"\
 	"main"
 
 "$(dirname "$0")/add-apt-source"\
 	"fullstaq-ruby"\
- 	"https://raw.githubusercontent.com/fullstaq-labs/fullstaq-ruby-server-edition/main/fullstaq-ruby.asc"\
+	"https://raw.githubusercontent.com/fullstaq-labs/fullstaq-ruby-server-edition/main/fullstaq-ruby.asc"\
   "https://apt.fullstaqruby.org"\
   "ubuntu-$(lsb_release -rs)"\
 	"main"
@@ -96,31 +94,15 @@ sudo snap install firefox
 
 echob "Link dotfiles"
 
-for file in /home/"$USER"/Code/dotfiles/tilde/*
-do
-	"$(dirname "$0")/ilns" "$file" "/home/$USER/.$(basename "$file")"
-done
+"$(dirname "$0")/link-dotfiles" /home/"$USER"/Code/dotfiles/tilde/*
 
 echob "Switch to Fish"
 
-desired_shell="/usr/bin/fish"
-if [ "$SHELL" = "$desired_shell" ]
-then
-	echo "Shell is already set correctly"
-else
-	chsh -s "$desired_shell"
-fi
+"$(dirname "$0")/change-shell" "/usr/bin/fish"
 
 echob "Add to docker group"
 
-if groups "$USER" | grep -q "docker"
-then
-	echo "Already in group docker"
-else
-	echo "Not in docker"
-	sudo usermod -aG docker "$USER"
-	echo "Added to group docker, will be active after logging in again"
-fi
+"$(dirname "$0")/add-to-groups" docker
 
 echob "Set Ruby version and install gems"
 
@@ -130,9 +112,9 @@ for gem_name in amazing_print brakeman pry rails rubocop rspec
 do
 	if gem list --local | grep -E "^$gem_name " > /dev/null
 	then
-		echo "$gem_name already installed"
+		gem update -q "$gem_name"
 	else
-		gem install "$gem_name"
+		gem install -q "$gem_name"
 	fi
 done
 
@@ -145,6 +127,6 @@ go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
 
 echob "Install Rust packages"
 
-cargo install git-delta
+cargo install git-delta --locked
 cargo install spotify_player --no-default-features --features streaming,pulseaudio-backend,media-control
 

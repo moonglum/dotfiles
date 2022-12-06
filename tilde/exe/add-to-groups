@@ -1,0 +1,14 @@
+#!/bin/sh
+# add the current user to the provided groups
+set -eu
+
+for group in "$@"
+do
+	if groups "$USER" | grep -q "$group"
+	then
+		echo "Already in group $group"
+	else
+		sudo usermod -aG "$group" "$USER"
+		echo "Added to group $group, will be active after logging in again"
+	fi
+done
