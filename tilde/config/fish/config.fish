@@ -8,21 +8,21 @@ eval (direnv hook fish)
 set -x FZF_DEFAULT_COMMAND "fdfind --type file --hidden --exclude .git"
 
 # Scripts
-fish_add_path --path --move /home/$USER/.exe
+fish_add_path --path --move $HOME/.exe
 
 # Go
 set -x GOPATH $HOME/.go
-fish_add_path --path --move /home/$USER/.go/bin
+fish_add_path --path --move $HOME/.go/bin
 
 # Ruby
-set -x GEM_HOME /home/$USER/.gems
-fish_add_path --path --move /home/$USER/.rbenv/shims
+set -x GEM_HOME $HOME/.gems
+fish_add_path --path --move $HOME/.rbenv/shims
 
 # Python
-fish_add_path --path --move /home/$USER/.local/bin
+fish_add_path --path --move $HOME/.local/bin
 
 # Rust
-fish_add_path --path --move /home/$USER/.cargo/bin
+fish_add_path --path --move $HOME/.cargo/bin
 
 # aliases
 alias s="start"
