@@ -4,7 +4,7 @@ set -eu
 
 # idempotent ln -s
 ilns() {
-	file_description=$(file -b "$2")
+	file_description=$(file -bh "$2")
 
 	if [ "$file_description" = "symbolic link to $1" ]
 	then
@@ -16,5 +16,5 @@ ilns() {
 
 for file in "$@"
 do
-	ilns "$file" "/home/$USER/.$(basename "$file")"
+	ilns "$file" "$HOME/.$(basename "$file")"
 done
