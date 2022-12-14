@@ -9,18 +9,19 @@ My dotfiles describe my entire computer. They contain most of the configuration 
 
 ![Screenshot](dotfiles.png)
 
-My main computer is a desktop machine. For on the Go usage, see below.
+My main computer is a desktop machine. On the go, I use a MacBook Pro. It runs macOS, and I try to emulate my work setup as much as possible using Homebrew (Why macOS? Because I need PowerPoint for giving trainings). See the [GUI section](#gui) for the main differences.
 
 ## exogenesis
 
-`exogenesis` is a shell script that sets up a fresh (minimal) install of Ubuntu for me. I also use it to set up the same environment inside a VM. When I run it again on an existing machine, it will add what I added since the last time I ran it and update packages. It takes care of:
+`exogenesis` is a shell script that sets up a fresh (minimal) install of Ubuntu for me. When I run it again on an existing machine, it will add what I added since the last time I ran it and update packages. It takes care of:
 
 * Adding APT repositories
 * Installing and updating APT, Snap, Gem, Go and Rust packages
+* Linking my dotfiles
 * Setting the shell to Fish
-* Linking my configuration files
+* Adding the user to the docker group
 
-`exogenesis-gui` is a second script that adds things I only need on GUI machines (not the VM). Those are mainly GUI apps (installed via apt, snap and flatpak) and a few tweaks to Gnome.
+`exogenesis-mac` tries to replicate exogenesis on the Mac.
 
 ## fish
 
@@ -86,29 +87,33 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`pgcli`](https://www.pgcli.com) to peek into PostgreSQL databases
 * [`spotify_player`](https://lib.rs/crates/spotify_player) to listen to music
 * [`pdftk`](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit) for tweaking PDF documents
+* [`borg`](https://www.borgbackup.org) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
 
 ## GUI
 
 Even though I enjoy to use the command line for most things, there are certain things where I use a GUI :wink:
+A lot of stuff is just a web app in a trench coat nowadays. I just use those in a browser (Slack, Microsoft Teams, Miro and Notion, for example).
 
-* Firefox and Chromium
-    * Firefox is my main browser
-    * Chromium is only here for testing (and for the weird websites that only work on Chrome...)
-    * They are also installed in the Non-GUI box for automatic testing in headless mode
-* [Thunderbird](https://www.thunderbird.net) as my email and calendar application
-* [Kitty](https://sw.kovidgoyal.net/kitty) as my terminal emulator
-* [Nextcloud](https://nextcloud.com) Desktop to synchronize files between computers and share them with my wife
-* Playing video and audio files with [mpv](https://mpv.io), viewing PDFs with [evince](https://apps.gnome.org/en/app/org.gnome.Evince) and images with [eog](https://apps.gnome.org/en/app/org.gnome.eog)
-* Editing and creating vector images with [Inkscape](https://inkscape.org) and sound with [Audacity](https://www.audacityteam.org)
-* Screenshots with Annotations using [Flameshot](https://flameshot.org)
-* I'm using [1Password](https://1password.com) for password management on all my devices
-* [OBS](https://obsproject.com) as a virtual camera
-* [Pika](https://apps.gnome.org/app/org.gnome.World.PikaBackup) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
-* [Piper](https://github.com/libratbag/piper) is a GUI for [libratbag](https://github.com/libratbag/libratbag) which I use to configure my mouse
-* [Gnome Boxes](https://apps.gnome.org/app/org.gnome.Boxes) for having a Windows in a Box (still experimental)
-* [Zoom](https://zoom.us) for video calls
+|                           | Linux                                               | macOS           |
+|---------------------------|-----------------------------------------------------|-----------------|
+| Main Browser              | Firefox                                             | Firefox         |
+| Secondary Browser         | Chromium                                            | Chromium        |
+| Email & Calendar          | Thunderbird                                         | Built-in        |
+| Terminal Emulator         | [Kitty](https://sw.kovidgoyal.net/kitty)            | iTerm2          |
+| File Sync                 | [NextCloud](https://nextcloud.com)                  | -               |
+| Play videos               | [mpv](https://mpv.io)                               | Built-in        |
+| View PDFs                 | Built-in                                            | Built-in        |
+| View Images               | Built-in                                            | Built-in        |
+| Edit/Create Vector Images | [Inkscape](https://inkscape.org)                    | -               |
+| Edit/Create Sound         | [Audacity](https://www.audacityteam.org)            | -               |
+| Password Management       | [1Password](https://1password.com)                  | 1Password       |
+| Mouse Configuration       | [Piper](https://github.com/libratbag/piper)         | Built-in        |
+| Windows Emulation         | [Boxes](https://apps.gnome.org/app/org.gnome.Boxes) | -               |
+| [Zoom](https://zoom.us)   | Official Client                                     | Official Client |
+| Photo Management          | -                                                   | Built-in        |
+| Office                    | -                                                   | Microsoft       |
 
-Both Slack and Microsoft Teams are not installed as Desktop applications, I just run them in Chromium.
+Built-in means, I use whatever Gnome or macOS have pre-installed.
 
 ## Programming Languages
 
@@ -119,42 +124,12 @@ These are the programming languages I use:
     * This includes rbenv to switch between versions
 * JavaScript/TypeScript (Node, Browser or Deno)
     * Node is installed via the [NodeSource repository](https://github.com/nodesource/distributions)
+    * Deno is installed via snap
 * CSS
 * Go
     * Go is installed via the regular Ubuntu repository
 
 I like to play around with other languages like Rust and Clojure as well. I even wrote my [own little language](https://halunke.jetzt) :smile:
-
-## Usage on the Go
-
-On the go, I use a MacBook Pro. I mainly use the built-in apps with few exceptions. I also use the Mac for trainings and talks, as I need PowerPoint for that.
-
-For development, I have installed nothing but Vagrant, VirtualBox, iTerm2, and the Xcode Command Line Tools. My dotfiles contains a Vagrantfile to provision the Vagrant box running in VirtualBox with Ansible. This replicates my Desktop computer. So when I want to start developing on my machine, I do a `vagrant up && vagrant ssh` and then I work inside the Vagrant box.
-
-### Making GPG available in the box
-
-*Thanks for @bascht for helping me setting this up.*
-
-On my Mac, I have [GPGTools](https://gpgtools.org) installed to write and receive GPG encryped emails. The GPG agent on my Mac is configured to create an extra GPG socket.
-
-```
-# ~/.gnupg/gpg-agent.conf
-default-cache-ttl 300
-max-cache-ttl 999999
-enable-ssh-support
-extra-socket /Users/moonglum/.gnupg/S.gpg-agent.extra
-```
-
-SSH is then configured to forward that extra socket to the virtual machine:
-
-```
-# ~/.ssh/config
-Host 127.0.0.1
-  RemoteForward /var/run/user/1000/gnupg/S.gpg-agent /Users/moonglum/.gnupg/S.gpg-agent.extra
-  ExitOnForwardFailure yes
-```
-
-In addition to that, the host and machine share the pubring.gpg and trustdb.gpg. They are both in the folder of this repo (but gitignored), and then linked to the according locations.
 
 ## Thanks
 

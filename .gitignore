@@ -1,5 +1,4 @@
 .DS_Store
-/.vagrant
 
 /tilde/bundle/cache
 /tilde/bundle/ruby
@@ -30,3 +29,4 @@
 /tilde/config/libvirt
 /tilde/config/Nextcloud
 /tilde/config/QtProject.conf
+/tilde/config/iterm2

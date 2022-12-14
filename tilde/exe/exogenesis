@@ -39,6 +39,7 @@ echob "Install apt packages and sources"
 sudo apt update
 
 sudo apt install\
+	audacity\
 	asciinema\
 	azure-cli\
 	brotli\
@@ -56,11 +57,14 @@ sudo apt install\
 	fzf\
 	git-lfs\
 	git\
+	gnome-boxes\
 	gnupg-agent\
 	gnupg2\
 	golang\
 	htop\
+	inkscape\
 	jq\
+	kitty\
 	leiningen\
 	libasound2-dev\
 	libdbus-1-dev\
@@ -71,11 +75,14 @@ sudo apt install\
 	libvips-dev\
 	libvpx7\
 	manpages-dev\
+	mpv\
 	neofetch\
+	nextcloud-desktop\
 	nodejs\
 	pandoc\
 	pdftk\
 	pgcli\
+	piper\
 	ragel\
 	ripgrep\
 	rust-all\
@@ -91,6 +98,9 @@ echob "Install snap packages"
 
 sudo snap install chromium
 sudo snap install firefox
+sudo snap install 1password
+sudo snap install thunderbird
+sudo snap install zoom-client
 
 echob "Link dotfiles"
 
@@ -128,5 +138,5 @@ go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
 echob "Install Rust packages"
 
 cargo install git-delta --locked
-cargo install spotify_player --no-default-features --features streaming,pulseaudio-backend,media-control
+cargo install spotify_player --locked --no-default-features --features streaming,pulseaudio-backend,media-control
 

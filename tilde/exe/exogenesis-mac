@@ -1,0 +1,82 @@
+#!/bin/sh
+# provision this machine
+set -eu
+
+echob() {
+	echo "$(tput bold)${1}$(tput sgr0)"
+}
+
+echob "Install brew packages"
+
+# TODO: Switch to brew bundle?
+# https://docs.brew.sh/Manpage#bundle-subcommand
+brew install\
+	asciinema\
+	brotli\
+	curl\
+	direnv\
+	exa\
+	fish\
+	ffmpeg\
+	fzf\
+	fd\
+ 	git\
+	git-delta\
+	git-lfs\
+	go\
+	htop\
+	jq\
+	neofetch\
+	node\
+	pandoc\
+	pgcli\
+	ragel\
+	ruby\
+	ripgrep\
+	shellcheck\
+	tig\
+	tmux\
+	vim\
+	wget\
+	woff2\
+	yt-dlp
+
+# TODO:
+# docker & compose
+# gpg?
+# leiningen
+# pdftk
+# pgcli
+# rust
+# spotify_player
+# pdftk
+
+echob "Link dotfiles"
+
+"$(dirname "$0")/link-dotfiles" "$HOME"/Code/dotfiles/tilde/*
+
+echob "Switch to Fish"
+
+# TODO
+# echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+
+"$(dirname "$0")/change-shell" "/usr/local/bin/fish"
+
+echob "Install Ruby gems"
+
+for gem_name in amazing_print brakeman pry rails rubocop rspec
+do
+	if gem list --local | grep -E "^$gem_name " > /dev/null
+	then
+		gem update -q "$gem_name"
+	else
+		gem install -q "$gem_name"
+	fi
+done
+
+echob "Install Go packages"
+
+go install golang.org/x/lint/golint@latest && echo "golint installed"
+go install golang.org/x/tools/gopls@latest && echo "gopls installed"
+go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
+go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
