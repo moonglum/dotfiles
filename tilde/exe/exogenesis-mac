@@ -14,6 +14,7 @@ brew install\
 	asciinema\
 	brotli\
 	curl\
+	deno\
 	direnv\
 	exa\
 	fish\

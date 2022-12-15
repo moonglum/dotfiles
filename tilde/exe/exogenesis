@@ -96,9 +96,10 @@ sudo apt install\
 
 echob "Install snap packages"
 
-sudo snap install chromium
-sudo snap install firefox
 sudo snap install 1password
+sudo snap install chromium
+sudo snap install deno
+sudo snap install firefox
 sudo snap install thunderbird
 sudo snap install zoom-client
 
