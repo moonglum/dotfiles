@@ -1,0 +1,146 @@
+location:
+    # List of source directories to backup (required). Globs and
+    # tildes are expanded. Do not backslash spaces in path names.
+    source_directories:
+        - "/home/moonglum"
+
+    # Paths to local or remote repositories (required). Tildes are
+    # expanded. Multiple repositories are backed up to in
+    # sequence. Borg placeholders can be used. See the output of
+    # "borg help placeholders" for details. See ssh_command for
+    # SSH options like identity file or port. If systemd service
+    # is used, then add local repository paths in the systemd
+    # service file to the ReadWritePaths list.
+    repositories:
+        - "ssh://c3v0074p@c3v0074p.repo.borgbase.com/./repo"
+
+    # Stay in same file system (do not cross mount points).
+    # Defaults to false. But when a database hook is used, the
+    # setting here is ignored and one_file_system is considered
+    # true.
+    one_file_system: true
+
+    # Any paths matching these patterns are excluded from backups.
+    # Globs and tildes are expanded. (Note however that a glob
+    # pattern must either start with a glob or be an absolute
+    # path.) Do not backslash spaces in path names. See the output
+    # of "borg help patterns" for more details.
+    exclude_patterns:
+        - "~/.cache"
+        - "~/.cargo"
+        - "~/.gems"
+        - "~/.go"
+        - "~/snap"
+
+# Repository storage options. See
+# https://borgbackup.readthedocs.io/en/stable/usage/create.html and
+# https://borgbackup.readthedocs.io/en/stable/usage/general.html for
+# details.
+storage:
+    # The standard output of this command is used to unlock the
+    # encryption key. Only use on repositories that were
+    # initialized with passcommand/repokey/keyfile encryption.
+    # Note that if both encryption_passcommand and
+    # encryption_passphrase are set, then encryption_passphrase
+    # takes precedence. Defaults to not set.
+    encryption_passcommand: "zenity --password --text='Borg: Enter Backup Password'"
+
+    # Type of compression to use when creating archives. See
+    # http://borgbackup.readthedocs.io/en/stable/usage/create.html
+    # for details. Defaults to "lz4".
+    compression: auto,zstd
+
+    # Name of the archive. Borg placeholders can be used. See the
+    # output of "borg help placeholders" for details. Defaults to
+    # "{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f}". If you specify this
+    # option, you must also specify a prefix in the retention
+    # section to avoid accidental pruning of archives with a
+    # different archive name format. And you should also specify a
+    # prefix in the consistency section as well.
+    archive_name_format: "{hostname}-{now:%Y-%m-%d-%H%M%S}"
+
+# Retention policy for how many backups to keep in each category. See
+# https://borgbackup.readthedocs.io/en/stable/usage/prune.html for
+# details. At least one of the "keep" options is required for pruning
+# to work. To skip pruning entirely, run "borgmatic create" or "check"
+# without the "prune" action. See borgmatic documentation for details.
+retention:
+    # Number of daily archives to keep.
+    keep_daily: 7
+
+    # Number of weekly archives to keep.
+    keep_weekly: 4
+
+    # Number of monthly archives to keep.
+    keep_monthly: 6
+
+    # Number of yearly archives to keep.
+    keep_yearly: 1
+
+    # When pruning, only consider archive names starting with this
+    # prefix.  Borg placeholders can be used. See the output of
+    # "borg help placeholders" for details. Defaults to
+    # "{hostname}-". Use an empty value to disable the default.
+    prefix: "{hostname}-"
+
+# Consistency checks to run after backups. See
+# https://borgbackup.readthedocs.io/en/stable/usage/check.html and
+# https://borgbackup.readthedocs.io/en/stable/usage/extract.html for
+# details.
+consistency:
+    # List of one or more consistency checks to run: "repository",
+    # "archives", "data", and/or "extract". Defaults to
+    # "repository" and "archives". Set to "disabled" to disable
+    # all consistency checks. "repository" checks the consistency
+    # of the repository, "archives" checks all of the archives,
+    # "data" verifies the integrity of the data within the
+    # archives, and "extract" does an extraction dry-run of the
+    # most recent archive. Note that "data" implies "archives".
+    # checks:
+        # - repository
+        # - archives
+
+    # Restrict the number of checked archives to the last n.
+    # Applies only to the "archives" check. Defaults to checking
+    # all archives.
+    check_last: 3
+
+    # When performing the "archives" check, only consider archive
+    # names starting with this prefix. Borg placeholders can be
+    # used. See the output of "borg help placeholders" for
+    # details. Defaults to "{hostname}-". Use an empty value to
+    # disable the default.
+    prefix: "{hostname}-"
+
+# Shell commands, scripts, or integrations to execute at various
+# points during a borgmatic run. IMPORTANT: All provided commands and
+# scripts are executed with user permissions of borgmatic. Do not
+# forget to set secure permissions on this configuration file (chmod
+# 0600) as well as on any script called from a hook (chmod 0700) to
+# prevent potential shell injection or privilege escalation.
+hooks:
+    # List of one or more shell commands or scripts to execute
+    # after creating a backup, run once per configuration file.
+    after_backup:
+        - "zenity --notification --text='Borg: Backup Finished'"
+
+    # List of one or more shell commands or scripts to execute
+    # after pruning, run once per configuration file.
+    after_prune:
+        - "zenity --notification --text='Borg: Prune Finished'"
+
+    # List of one or more shell commands or scripts to execute
+    # after consistency checks, run once per configuration file.
+    after_check:
+        - "zenity --notification --text='Borg: Check Finished'"
+
+    # List of one or more shell commands or scripts to execute
+    # after extracting a backup, run once per configuration file.
+    after_extract:
+        - "zenity --notification --text='Borg: Extract Finished'"
+
+    # List of one or more shell commands or scripts to execute
+    # when an exception occurs during a "prune", "create", or
+    # "check" action or an associated before/after hook.
+    on_error:
+        - "zenity --error --text='Borg: An Error occurred'"

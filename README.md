@@ -87,7 +87,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`pgcli`](https://www.pgcli.com) to peek into PostgreSQL databases
 * [`spotify_player`](https://lib.rs/crates/spotify_player) to listen to music
 * [`pdftk`](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit) for tweaking PDF documents
-* [`borg`](https://www.borgbackup.org) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
+* [`borgmatic`](https://torsion.org/borgmatic) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
 
 ## GUI
 

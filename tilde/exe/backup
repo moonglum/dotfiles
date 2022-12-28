@@ -1,0 +1,5 @@
+#!/bin/sh
+# backup the machine
+set -eu
+
+borgmatic -c ~/.config/borgmatic/config.yml
