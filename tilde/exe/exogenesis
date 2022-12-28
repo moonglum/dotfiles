@@ -42,6 +42,7 @@ sudo apt install\
 	audacity\
 	asciinema\
 	azure-cli\
+	borgmatic\
 	brotli\
 	build-essential\
 	curl\
