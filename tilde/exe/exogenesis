@@ -92,6 +92,7 @@ sudo apt install\
 	tmux\
 	unzip\
 	vim\
+	wl-clipboard\
 	woff2\
 	yt-dlp
 

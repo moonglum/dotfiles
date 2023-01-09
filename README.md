@@ -83,6 +83,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`ffmpeg`](https://ffmpeg.org) for converting video and audio
 * [`htop`](https://htop.dev) as a replacement for `top` to see how my cores and RAM are doing
 * [`neofetch`](https://github.com/dylanaraps/neofetch) for those screenshots, you know
+* [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard) gives command line access to the clipboard
 * [`pandoc`](https://pandoc.org) to convert between Markdown and... other formats like Microsoft Word
 * [`pgcli`](https://www.pgcli.com) to peek into PostgreSQL databases
 * [`spotify_player`](https://lib.rs/crates/spotify_player) to listen to music
