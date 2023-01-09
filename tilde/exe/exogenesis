@@ -86,7 +86,6 @@ sudo apt install\
 	piper\
 	ragel\
 	ripgrep\
-	rust-all\
 	shellcheck\
 	tig\
 	tmux\
@@ -138,7 +137,14 @@ go install golang.org/x/tools/gopls@latest && echo "gopls installed"
 go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
 go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
 
-echob "Install Rust packages"
+echob "Install Rust and Rust packages"
+
+if [ "$(type rustup)" ]
+then
+	echo "rustup already installed"
+else
+	curl https://sh.rustup.rs -sSf | sh
+fi
 
 cargo install git-delta --locked
 cargo install spotify_player --locked --no-default-features --features streaming,pulseaudio-backend,media-control
