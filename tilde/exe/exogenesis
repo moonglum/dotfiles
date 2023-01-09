@@ -53,7 +53,7 @@ sudo apt install\
 	fd-find\
 	ffmpeg\
 	fish\
-	fullstaq-ruby-3.1\
+	fullstaq-ruby-3.2\
 	fullstaq-ruby-common\
 	fzf\
 	git-lfs\
@@ -119,7 +119,7 @@ echob "Add to docker group"
 
 echob "Set Ruby version and install gems"
 
-rbenv global 3.1 && echo "Ruby Version set to 3.1"
+rbenv global 3.2 && echo "Ruby Version set to 3.2"
 
 for gem_name in amazing_print brakeman pry rails rubocop rspec
 do
