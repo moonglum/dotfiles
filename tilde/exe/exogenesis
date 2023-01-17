@@ -39,8 +39,8 @@ echob "Install apt packages and sources"
 sudo apt update
 
 sudo apt install\
-	audacity\
 	asciinema\
+	audacity\
 	azure-cli\
 	borgmatic\
 	brotli\
@@ -62,6 +62,7 @@ sudo apt install\
 	gnupg-agent\
 	gnupg2\
 	golang\
+	graphviz\
 	htop\
 	inkscape\
 	jq\
@@ -84,6 +85,7 @@ sudo apt install\
 	pdftk\
 	pgcli\
 	piper\
+	plantuml\
 	ragel\
 	ripgrep\
 	shellcheck\
