@@ -77,6 +77,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`ragel`](http://www.colm.net/open-source/ragel) is a beautiful state machine compiler
 * [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) allows me to download videos for train trips
 * [`docker`](https://www.docker.com) and `docker-compose` because I really wish it would do what I want
+    * Using [`colima`](https://github.com/abiosoft/colima) as the backend on the Mac
 * [`shellcheck`](https://www.shellcheck.net) to get feedback about shell scripts
 * [`asciinema`](https://asciinema.org) to record terminal things
 * [`direnv`](https://direnv.net) to load and unload environment variables depending on the current directory

@@ -1,5 +1,5 @@
 #!/bin/sh
-# provision this machine
+# provision this Ubuntu machine
 set -eu
 
 echob() {
