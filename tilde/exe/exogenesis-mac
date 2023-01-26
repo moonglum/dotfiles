@@ -19,13 +19,6 @@ brew bundle install\
 
 echob "Switch to Fish"
 
-if grep -q fish /etc/shells; then
-	echo "fish already added as a valid shell"
-else
-	echo "Adding fish as a valid shell"
-	echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-fi
-
 "$(dirname "$0")/change-shell" "/usr/local/bin/fish"
 
 echob "Setup Docker Compose as a Docker Plugin"

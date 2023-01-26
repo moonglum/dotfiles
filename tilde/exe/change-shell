@@ -2,6 +2,14 @@
 # change the shell to the provided one unless it already happened
 set -eu
 
+if grep -q fish "$1"; then
+	echo "fish already added as a valid shell"
+else
+	echo "Adding fish as a valid shell"
+	echo "$1" | sudo tee -a /etc/shells
+fi
+
+
 if [ "$SHELL" = "$1" ]
 then
 	echo "Shell is already set correctly"
