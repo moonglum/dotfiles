@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# a tiny tig replacement, shamelessly ripped of from
+# https://github.com/wfxr/forgit/blob/master/bin/git-forgit
+
+files=$(sed -nE 's/.*-- (.*)/\1/p' <<< "$*") # extract files parameters for `git show` command
+
+extract_sha="grep -Eo '[a-f0-9]+' | head -1 | tr -d '[:space:]'"
+
+preview_context=-3
+
+preview_cmd="echo {} | $extract_sha | xargs -I% git show --color=always -U$preview_context % -- $files | cat"
+
+enter_cmd="echo {} | $extract_sha | xargs -I% ${FORGIT} diff %^! $files"
+
+opts="
+  --ansi
+  --height='80%'
+  --bind='alt-k:preview-up,alt-p:preview-up'
+  --bind='alt-j:preview-down,alt-n:preview-down'
+  --bind='ctrl-r:toggle-all'
+  --bind='ctrl-s:toggle-sort'
+  --bind='?:toggle-preview'
+  --bind='alt-w:toggle-preview-wrap'
+  --preview-window='right:60%'
+  +1
+  +s +m --tiebreak=index
+  --bind=\"enter:execute($enter_cmd)\"
+  --bind=\"ctrl-y:execute-silent(echo {} | $extract_sha | ${FORGIT_COPY_CMD:-pbcopy})\"
+  --preview=\"$preview_cmd\"
+"
+
+log_format=${FORGIT_LOG_FORMAT:-%C(auto)%h%d %s %C(black)%C(bold)%cr%Creset}
+
+eval "git log --graph --color=always --format='$log_format' $*" |
+    FZF_DEFAULT_OPTS="$opts" fzf
+
+# exit successfully on fzf exit code 130 (ctrl-c/esc)
+[[ $? == 130 ]] && exit 0
