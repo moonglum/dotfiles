@@ -60,8 +60,6 @@ To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github
 
 I use Tim Pope plugins for **commenting** ([`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)) as well as **quoting/parenthesizing** ([`tpope/vim-surround`](https://github.com/tpope/vim-surround)) and make both **repeatable** ([`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)).
 
-I run my **Ruby tests and specs** via a key binding ([`skalnik/vim-vroom`](https://github.com/skalnik/vim-vroom)).
-
 Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, linting feedback and LSP support**. Code is formatted automatically with [prettier](https://prettier.io) or a similar tool if it is available for the programming language. I show a 😺 in lines with linting errors, with details on hovering. The linters are autodetected, and I have quite a few installed. When pressing tab (and I'm not at the beginning of a line, where I actually want to insert a tab) I run the omnifunc provided by ALE to ask the according language server for a completion.
 
 ## Other commandline tools

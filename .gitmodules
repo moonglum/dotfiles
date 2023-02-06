@@ -25,6 +25,3 @@
 [submodule "tilde/vim/pack/bundle/start/vim-surround"]
 	path = tilde/vim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "tilde/vim/pack/bundle/start/vim-vroom"]
-	path = tilde/vim/pack/bundle/start/vim-vroom
-	url = https://github.com/skalnik/vim-vroom
