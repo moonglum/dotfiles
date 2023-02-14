@@ -105,6 +105,7 @@ sudo snap install deno
 sudo snap install firefox
 sudo snap install thunderbird
 sudo snap install zoom-client
+sudo snap install libreoffice
 
 echob "Link dotfiles"
 

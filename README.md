@@ -111,7 +111,7 @@ A lot of stuff is just a web app in a trench coat nowadays. I just use those in 
 | Windows Emulation         | [Boxes](https://apps.gnome.org/app/org.gnome.Boxes) | -               |
 | [Zoom](https://zoom.us)   | Official Client                                     | Official Client |
 | Photo Management          | -                                                   | Built-in        |
-| Office                    | -                                                   | Microsoft       |
+| Office                    | [LibreOffice](https://www.libreoffice.org)          | Microsoft       |
 
 Built-in means, I use whatever Gnome or macOS have pre-installed.
 
