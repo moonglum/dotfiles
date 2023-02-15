@@ -68,6 +68,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`tmux`](https://github.com/tmux/tmux/wiki) is the terminal multiplexer I use. I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
 * [`exa`](https://the.exa.website) is a replacement for `ls`
 * [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for `grep` that is so fast, that I can't really believe it
+* [`fzf`](https://github.com/junegunn/fzf) as a fuzzy selector for all kinds of things
 * [`fd`](https://github.com/sharkdp/fd) is the same for `find`
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data, but I mostly use it for pretty printing
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
