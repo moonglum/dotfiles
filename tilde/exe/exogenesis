@@ -124,15 +124,7 @@ echob "Set Ruby version and install gems"
 
 rbenv global 3.2 && echo "Ruby Version set to 3.2"
 
-for gem_name in amazing_print brakeman pry rails rubocop rspec
-do
-	if gem list --local | grep -E "^$gem_name " > /dev/null
-	then
-		gem update -q "$gem_name"
-	else
-		gem install -q "$gem_name"
-	fi
-done
+gem install amazing_print brakeman pry rails rubocop rspec
 
 echob "Install Go packages"
 
