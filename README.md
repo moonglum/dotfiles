@@ -128,7 +128,7 @@ These are the programming languages I use:
     * Deno is installed via snap
 * CSS
 * Go
-    * Go is installed via the regular Ubuntu repository
+    * Go is installed via snap
 
 I like to play around with other languages like Rust and Clojure as well. I even wrote my [own little language](https://halunke.jetzt) :smile:
 
