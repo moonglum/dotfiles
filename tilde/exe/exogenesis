@@ -8,33 +8,28 @@ echob() {
 
 echob "Install apt packages and sources"
 
+codename=$(lsb_release -cs)
+release=$(lsb_release -rs)
+
 "$(dirname "$0")/add-apt-source"\
 	"docker"\
-	"https://download.docker.com/linux/ubuntu/gpg"\
-  "https://download.docker.com/linux/ubuntu"\
-  "$(lsb_release -cs)"\
-	"stable"
+  "https://download.docker.com/linux/ubuntu $codename stable"\
+	"https://download.docker.com/linux/ubuntu/gpg"
 
 "$(dirname "$0")/add-apt-source"\
 	"azure-cli"\
-	"https://packages.microsoft.com/keys/microsoft.asc"\
-  "https://packages.microsoft.com/repos/azure-cli"\
-  "$(lsb_release -cs)"\
-	"main"
+  "https://packages.microsoft.com/repos/azure-cli $codename main"\
+	"https://packages.microsoft.com/keys/microsoft.asc"
 
 "$(dirname "$0")/add-apt-source"\
 	"nodesource"\
-	"https://deb.nodesource.com/gpgkey/nodesource.gpg.key"\
-  "https://deb.nodesource.com/node_18.x"\
-  "$(lsb_release -cs)"\
-	"main"
+  "https://deb.nodesource.com/node_18.x $codename main"\
+	"https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
 
 "$(dirname "$0")/add-apt-source"\
 	"fullstaq-ruby"\
-	"https://raw.githubusercontent.com/fullstaq-labs/fullstaq-ruby-server-edition/main/fullstaq-ruby.asc"\
-  "https://apt.fullstaqruby.org"\
-  "ubuntu-$(lsb_release -rs)"\
-	"main"
+  "https://apt.fullstaqruby.org ubuntu-$release main"\
+	"https://raw.githubusercontent.com/fullstaq-labs/fullstaq-ruby-server-edition/main/fullstaq-ruby.asc"
 
 sudo apt update
 
