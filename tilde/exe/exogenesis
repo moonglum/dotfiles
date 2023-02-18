@@ -31,6 +31,11 @@ release=$(lsb_release -rs)
   "https://apt.fullstaqruby.org ubuntu-$release main"\
 	"https://raw.githubusercontent.com/fullstaq-labs/fullstaq-ruby-server-edition/main/fullstaq-ruby.asc"
 
+"$(dirname "$0")/add-apt-source"\
+	"heroku"\
+  "https://cli-assets.heroku.com/apt ./"\
+	"https://cli-assets.heroku.com/apt/release.key"
+
 sudo apt update
 
 sudo apt install\
@@ -57,6 +62,7 @@ sudo apt install\
 	gnupg-agent\
 	gnupg2\
 	graphviz\
+	heroku\
 	htop\
 	inkscape\
 	jq\
