@@ -85,6 +85,7 @@ sudo apt install\
 	pgcli\
 	piper\
 	plantuml\
+	qalc\
 	ragel\
 	ripgrep\
 	shellcheck\
