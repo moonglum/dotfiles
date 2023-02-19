@@ -89,6 +89,7 @@ sudo apt install\
 	qalc\
 	ragel\
 	ripgrep\
+	scdaemon\
 	shellcheck\
 	tig\
 	tmux\
