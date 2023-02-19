@@ -35,3 +35,9 @@
 /tilde/config/borg
 /tilde/config/inkscape
 /tilde/config/qalculate/qalc.history
+
+# ignore vale styles that are synced
+/tilde/config/vale/styles/alex
+/tilde/config/vale/styles/proselint
+/tilde/config/vale/styles/Readability
+/tilde/config/vale/styles/write-good

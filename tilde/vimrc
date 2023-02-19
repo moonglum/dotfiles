@@ -1,6 +1,5 @@
 " === General Setup ===
 set noswapfile         " I don't like Swapfiles
-set spell              " Activate spell checking
 colorscheme solarized  " solarized light
 let g:netrw_banner=0   " disable netrw banner
 

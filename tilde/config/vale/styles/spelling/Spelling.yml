@@ -1,0 +1,6 @@
+extends: spelling
+message: "'%s' is a typo!"
+dicpath: /usr/share/hunspell
+level: error
+dictionaries:
+  - en_US
