@@ -43,7 +43,7 @@ storage:
     # Note that if both encryption_passcommand and
     # encryption_passphrase are set, then encryption_passphrase
     # takes precedence. Defaults to not set.
-    encryption_passcommand: "zenity --password --text='Borg: Enter Backup Password'"
+    encryption_passcommand: "bash -c 'gpg --decrypt ~/.borgpw.gpg 2> /dev/null'"
 
     # Type of compression to use when creating archives. See
     # http://borgbackup.readthedocs.io/en/stable/usage/create.html

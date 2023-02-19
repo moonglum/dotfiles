@@ -2,4 +2,4 @@
 # backup the machine
 set -eu
 
-borgmatic -c ~/.config/borgmatic/config.yml
+exec borgmatic -c ~/.config/borgmatic/config.yml
