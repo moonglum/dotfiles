@@ -87,6 +87,7 @@ sudo apt install\
 	piper\
 	plantuml\
 	qalc\
+	qutebrowser\
 	ragel\
 	ripgrep\
 	scdaemon\
@@ -113,6 +114,10 @@ sudo snap install libreoffice
 echob "Link dotfiles"
 
 "$(dirname "$0")/link-dotfiles" /home/"$USER"/Code/dotfiles/tilde/*
+
+echob "Enable systemd services"
+
+systemctl --user enable backup-daily.timer backup-daily.service
 
 echob "Switch to Fish"
 
