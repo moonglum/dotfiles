@@ -4,13 +4,19 @@ set -eu
 
 # idempotent ln -s
 ilns() {
-	file_description=$(file -bh "$2")
-
-	if [ "$file_description" = "symbolic link to $1" ]
+	if [ "$(readlink -f "$2")" = "$1" ]
 	then
 		echo "Already linked correctly: $2"
 	else
+		if [ -e "$2" ]
+		then
+			echo "$(tput bold)Should I move the existing file $2$(tput sgr0)? Hit return to move the file or ctrl+c to abort" && read -r _
+			echo "Moving existing file $2" >/dev/stderr
+			mv "$2" "$2-$(timestamp)"
+		fi
+
 		ln -s "$1" "$2"
+		echo "Linked: $2"
 	fi
 }
 
