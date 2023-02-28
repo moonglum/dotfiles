@@ -56,7 +56,7 @@ The prompt is a tiny arrow (or a ✦ when there are jobs in the background) that
 
 I'm doing all my programming and most of my writing in vim. My vim is very close to the default configuration, but I'm using [`tpope/vim-sensible`](https://github.com/tpope/vim-sensible) to set a few **reasonable defaults**. Instead of configuring spaces, tabs and similar things, I use [`editorconfig`](https://github.com/editorconfig/editorconfig-vim) to follow the convention of the projects. Additional **language support** is loaded on demand via [`sheerun/vim-polyglot`](https://github.com/sheerun/vim-polyglot).
 
-To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github.com/junegunn/fzf)) that I've bound to Ctrl+P. I use [`fd`](https://github.com/sharkdp/fd) as the source for its suggestions which pays attention to `.gitignore`. I can't remember the last time I opened a file without it.
+To jump to files, I use a **fuzzy file finder** ([`junegunn/fzf`](https://github.com/junegunn/fzf)) that I've bound to Ctrl+P. I use [`ripgrep`](https://github.com/BurntSushi/ripgrep) as the source for its suggestions which pays attention to `.gitignore`. I can't remember the last time I opened a file without it.
 
 I use Tim Pope plugins for **commenting** ([`tpope/vim-commentary`](https://github.com/tpope/vim-commentary)) as well as **quoting/parenthesizing** ([`tpope/vim-surround`](https://github.com/tpope/vim-surround)) and make both **repeatable** ([`tpope/vim-repeat`](https://github.com/tpope/vim-repeat)).
 
@@ -67,9 +67,8 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`git`](https://www.git-scm.com) is the only version control system I use. It has two amazing companions: [`tig`](http://jonas.nitro.dk/tig) and [`delta`](https://github.com/dandavison/delta)
 * [`tmux`](https://github.com/tmux/tmux/wiki) is the terminal multiplexer I use. I configured it with some more vim-like bindings and a nice status bar with the current time and battery charge.
 * [`exa`](https://the.exa.website) is a replacement for `ls`
-* [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for `grep` that is so fast, that I can't really believe it
+* [`ripgrep`](https://github.com/BurntSushi/ripgrep) is a replacement for `grep` and `find` that is so fast, that I can't really believe it
 * [`fzf`](https://github.com/junegunn/fzf) as a fuzzy selector for all kinds of things
-* [`fd`](https://github.com/sharkdp/fd) is the same for `find`
 * [`jq`](http://stedolan.github.io/jq) is like `sed` for JSON data, but I mostly use it for pretty printing
 * [`wget`](http://www.gnu.org/software/wget) and [`curl`](http://curl.haxx.se)
 * [`pry`](http://pryrepl.org) is a replacement for Ruby's IRB with `amazing_print`
@@ -90,6 +89,8 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`pdftk`](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit) for tweaking PDF documents
 * [`qalc`](https://github.com/Qalculate/libqalculate) as a command line calculator
 * [`borgmatic`](https://torsion.org/borgmatic) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
+* [`heroku`](https://devcenter.heroku.com/articles/heroku-cli) to manage Heroku apps
+* [`vale`](https://vale.sh) for spell and grammar checking
 
 ## GUI
 

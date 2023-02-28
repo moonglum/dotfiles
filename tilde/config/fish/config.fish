@@ -4,13 +4,8 @@ set -x EDITOR 'vim'
 # direnv
 eval (direnv hook fish)
 
-# on Ubuntu, fd is called fdfind
-if not type -q fd
-  alias fd=fdfind
-end
-
-# use fd as the file list for fzf
-set -x FZF_DEFAULT_COMMAND "fd --type file --hidden --exclude .git"
+# use ripgrep to provide the list of all files that are not git ignored to fzf
+set -x FZF_DEFAULT_COMMAND "rg --files --hidden -g '!.git'"
 
 # Scripts
 fish_add_path --path --move $HOME/.exe

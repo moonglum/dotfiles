@@ -50,7 +50,6 @@ sudo apt install\
 	docker-ce\
 	docker-compose-plugin\
 	exa\
-	fd-find\
 	ffmpeg\
 	fish\
 	fullstaq-ruby-3.2\
