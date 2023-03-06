@@ -9,8 +9,16 @@ set -l DATE "%(color:green)(%(committerdate:relative))%(color:reset)"
 set -l AUTHOR "%(color:blue)%(color:bold)<%(authorname)>%(color:reset)"
 set -l CONTENTS "%(contents:subject)"
 
-# { as separator, because it is rare
-set -l FORMAT "$PREFIX{$REF{$HASH{$DATE{$AUTHOR{$CONTENTS"
+set -l FORMAT "$PREFIX $REF $HASH $DATE $AUTHOR $CONTENTS"
+
+# set -l extract_branch "sed 's/^*//' | awk '{print \$1;}'"
+
+set -l enter_cmd "echo {} | git switch (sed 's/^*//' | awk '{print \$1;}')"
+
+set -l opts "
+  --ansi
+  --bind=\"enter:execute($enter_cmd)+accept\"
+"
 
 git branch -v --color=always --format="$FORMAT" $argv |
-column -t -s '{'
+  FZF_DEFAULT_OPTS="$opts" fzf
