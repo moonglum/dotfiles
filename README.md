@@ -104,7 +104,7 @@ A lot of stuff is just a web app in a trench coat nowadays. I just use those in 
 | Email & Calendar          | Thunderbird                                         | Built-in        |
 | Terminal Emulator         | [Kitty](https://sw.kovidgoyal.net/kitty)            | iTerm2          |
 | File Sync                 | [NextCloud](https://nextcloud.com)                  | -               |
-| Play videos               | [mpv](https://mpv.io)                               | Built-in        |
+| Play videos               | [mpv](https://mpv.io)                               | mpv             |
 | View PDFs                 | Built-in                                            | Built-in        |
 | View Images               | Built-in                                            | Built-in        |
 | Edit/Create Vector Images | [Inkscape](https://inkscape.org)                    | -               |
