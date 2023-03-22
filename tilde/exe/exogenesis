@@ -17,11 +17,6 @@ release=$(lsb_release -rs)
 	"https://download.docker.com/linux/ubuntu/gpg"
 
 "$(dirname "$0")/add-apt-source"\
-	"azure-cli"\
-  "https://packages.microsoft.com/repos/azure-cli $codename main"\
-	"https://packages.microsoft.com/keys/microsoft.asc"
-
-"$(dirname "$0")/add-apt-source"\
 	"nodesource"\
   "https://deb.nodesource.com/node_18.x $codename main"\
 	"https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
@@ -41,7 +36,6 @@ sudo apt update
 sudo apt install\
 	asciinema\
 	audacity\
-	azure-cli\
 	borgmatic\
 	brotli\
 	build-essential\

@@ -3,7 +3,6 @@ tap "homebrew/core"
 tap "heroku/brew"
 
 brew "asciinema"
-brew "azure-cli"
 brew "brotli"
 brew "colima"
 brew "curl"
