@@ -85,7 +85,7 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard) gives command line access to the clipboard
 * [`pandoc`](https://pandoc.org) to convert between Markdown and... other formats like Microsoft Word
 * [`pgcli`](https://www.pgcli.com) to peek into PostgreSQL databases
-* [`spotify_player`](https://lib.rs/crates/spotify_player) to listen to music
+* [`ncspot`](https://github.com/hrkfdn/ncspot) to listen to music
 * [`pdftk`](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit) for tweaking PDF documents
 * [`qalc`](https://github.com/Qalculate/libqalculate) as a command line calculator
 * [`borgmatic`](https://torsion.org/borgmatic) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
