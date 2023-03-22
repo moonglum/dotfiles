@@ -90,8 +90,7 @@ sudo apt install\
 	unzip\
 	vim\
 	wl-clipboard\
-	woff2\
-	yt-dlp
+	woff2
 
 echob "Install snap packages"
 
