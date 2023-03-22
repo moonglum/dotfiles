@@ -102,7 +102,7 @@ A lot of stuff is just a web app in a trench coat nowadays. I just use those in 
 | Main Browser              | Firefox                                             | Firefox         |
 | Secondary Browser         | Chromium                                            | Chromium        |
 | Email & Calendar          | Thunderbird                                         | Built-in        |
-| Terminal Emulator         | [Kitty](https://sw.kovidgoyal.net/kitty)            | iTerm2          |
+| Terminal Emulator         | [kitty](https://sw.kovidgoyal.net/kitty)            | kitty           |
 | File Sync                 | [NextCloud](https://nextcloud.com)                  | -               |
 | Play videos               | [mpv](https://mpv.io)                               | mpv             |
 | View PDFs                 | Built-in                                            | Built-in        |

@@ -38,3 +38,6 @@ brew "vim"
 brew "wget"
 brew "woff2"
 brew "yt-dlp"
+
+cask "kitty"
+cask "zoom"
