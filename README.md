@@ -116,6 +116,8 @@ A lot of stuff is just a web app in a trench coat nowadays. I just use those in 
 | Photo Management          | -                                                   | Built-in        |
 | Office                    | [LibreOffice](https://www.libreoffice.org)          | Microsoft       |
 
+Currently experimenting with [qutebrowser](https://qutebrowser.org).
+
 Built-in means, I use whatever Gnome or macOS have pre-installed.
 
 ### Games
