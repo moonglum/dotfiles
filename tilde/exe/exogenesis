@@ -43,6 +43,7 @@ sudo apt install\
 	direnv\
 	docker-ce\
 	docker-compose-plugin\
+	dotnet-sdk-7.0\
 	exa\
 	ffmpeg\
 	fish\

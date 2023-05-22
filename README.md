@@ -139,7 +139,7 @@ These are the programming languages I use:
 * Go
     * Go is installed via snap
 
-I like to play around with other languages like Rust and Clojure as well. I even wrote my [own little language](https://halunke.jetzt) :smile:
+I like to play around with other languages like Rust, C# and Clojure as well. I even wrote my [own little language](https://halunke.jetzt) :smile:
 
 ## Thanks
 
