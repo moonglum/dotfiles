@@ -106,6 +106,7 @@ sudo snap install zoom-client
 sudo snap install libreoffice
 sudo snap install --beta steam
 sudo snap install ncspot
+sudo snap install nvtop
 
 echob "Install flatpak packages"
 
