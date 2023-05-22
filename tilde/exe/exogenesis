@@ -46,12 +46,13 @@ sudo apt install\
 	exa\
 	ffmpeg\
 	fish\
+	flatpak\
 	fullstaq-ruby-3.2\
 	fullstaq-ruby-common\
 	fzf\
 	git-lfs\
 	git\
-	gnome-boxes\
+	gnome-tweaks\
 	gnupg-agent\
 	gnupg2\
 	graphviz\
@@ -104,6 +105,13 @@ sudo snap install zoom-client
 sudo snap install libreoffice
 sudo snap install --beta steam
 sudo snap install ncspot
+
+echob "Install flatpak packages"
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub org.gnome.Boxes
+flatpak install flathub org.gnome.Loupe
 
 echob "Link dotfiles"
 

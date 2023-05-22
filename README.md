@@ -106,7 +106,7 @@ A lot of stuff is just a web app in a trench coat nowadays. I just use those in 
 | File Sync                 | [NextCloud](https://nextcloud.com)                  | -               |
 | Play videos               | [mpv](https://mpv.io)                               | mpv             |
 | View PDFs                 | Built-in                                            | Built-in        |
-| View Images               | Built-in                                            | Built-in        |
+| View Images               | Loupe                                               | Built-in        |
 | Edit/Create Vector Images | [Inkscape](https://inkscape.org)                    | -               |
 | Edit/Create Sound         | [Audacity](https://www.audacityteam.org)            | -               |
 | Password Management       | [1Password](https://1password.com)                  | 1Password       |
