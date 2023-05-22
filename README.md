@@ -118,6 +118,13 @@ A lot of stuff is just a web app in a trench coat nowadays. I just use those in 
 
 Built-in means, I use whatever Gnome or macOS have pre-installed.
 
+### Games
+
+On my Linux workstation:
+
+* [Return to Monkey Island](https://returntomonkeyisland.com) (via Steam)
+* [Turing Complete](https://turingcomplete.game) (via Steam)
+
 ## Programming Languages
 
 These are the programming languages I use:
