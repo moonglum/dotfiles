@@ -157,5 +157,4 @@ else
 fi
 
 cargo install git-delta --locked
-cargo install spotify_player --locked --no-default-features --features streaming,pulseaudio-backend,media-control
 
