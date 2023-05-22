@@ -30,6 +30,10 @@ location:
         - "~/.cargo"
         - "~/.gems"
         - "~/.go"
+        - "~/.m2"
+        - "~/.rustup"
+        - "~/.var"
+        - "~/.wine"
         - "~/snap"
 
 # Repository storage options. See
