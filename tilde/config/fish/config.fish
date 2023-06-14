@@ -10,10 +10,6 @@ set -x FZF_DEFAULT_COMMAND "rg --files --hidden -g '!.git'"
 # Scripts
 fish_add_path --path --move $HOME/.exe
 
-# Go
-set -x GOPATH $HOME/.go
-fish_add_path --path --move $HOME/.go/bin
-
 # Ruby
 set -x RBENV_SHELL $SHELL
 set -x GEM_HOME $HOME/.gems

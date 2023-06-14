@@ -138,10 +138,10 @@ These are the programming languages I use:
     * Node is installed via the [NodeSource repository](https://github.com/nodesource/distributions)
     * Deno is installed via snap
 * CSS
-* Go
-    * Go is installed via snap
 
-I like to play around with other languages like Rust, C# and Clojure as well. I even wrote my [own little language](https://halunke.jetzt) :smile:
+I also have two years of professional experience with Go, but don't like it.
+I like to play around with other languages like Rust, C# and Clojure as well.
+I even wrote my [own little language](https://halunke.jetzt) :smile:
 
 ## Thanks
 

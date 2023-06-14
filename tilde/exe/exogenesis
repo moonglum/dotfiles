@@ -101,7 +101,6 @@ sudo snap install chromium
 sudo snap install deno
 sudo snap install firefox
 sudo snap install thunderbird
-sudo snap install go --classic
 sudo snap install zoom-client
 sudo snap install libreoffice
 sudo snap install --beta steam

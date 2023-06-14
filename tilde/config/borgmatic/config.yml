@@ -29,7 +29,6 @@ location:
         - "~/.cache"
         - "~/.cargo"
         - "~/.gems"
-        - "~/.go"
         - "~/.m2"
         - "~/.rustup"
         - "~/.var"
