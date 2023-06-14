@@ -15,8 +15,9 @@ set -x GOPATH $HOME/.go
 fish_add_path --path --move $HOME/.go/bin
 
 # Ruby
+set -x RBENV_SHELL $SHELL
 set -x GEM_HOME $HOME/.gems
-fish_add_path --path --move $HOME/.rbenv/shims
+fish_add_path --path --move --prepend $HOME/.rbenv/shims
 
 # Python
 fish_add_path --path --move $HOME/.local/bin
