@@ -131,19 +131,6 @@ echob "Add to docker group"
 
 "$(dirname "$0")/add-to-groups" docker
 
-echob "Install vale"
-if [ -x /usr/local/bin/vale ]
-then
-	echo "vale is already installed"
-else
-	mkdir /tmp/vale
-	wget -q "https://github.com/errata-ai/vale/releases/download/v2.23.0/vale_2.23.0_Linux_64-bit.tar.gz" -O /tmp/vale/vale.tar.gz
-	tar -xvzf /tmp/vale/vale.tar.gz -C /tmp/vale
-	sudo mv /tmp/vale/vale /usr/local/bin/vale
-	echo "installed vale"
-fi
-vale sync
-
 echob "Set Ruby version and install gems"
 
 rbenv global 3.2 && echo "Ruby Version set to 3.2"

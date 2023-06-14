@@ -91,7 +91,6 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`qalc`](https://github.com/Qalculate/libqalculate) as a command line calculator
 * [`borgmatic`](https://torsion.org/borgmatic) for backups, using [BorgBase](https://www.borgbase.com) for offsite backups
 * [`heroku`](https://devcenter.heroku.com/articles/heroku-cli) to manage Heroku apps
-* [`vale`](https://vale.sh) for spell and grammar checking
 
 ## GUI
 
