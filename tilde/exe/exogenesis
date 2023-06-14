@@ -43,7 +43,6 @@ sudo apt install\
 	direnv\
 	docker-ce\
 	docker-compose-plugin\
-	dotnet-sdk-7.0\
 	exa\
 	ffmpeg\
 	fish\
@@ -62,7 +61,6 @@ sudo apt install\
 	inkscape\
 	jq\
 	kitty\
-	leiningen\
 	libasound2-dev\
 	libdbus-1-dev\
 	libheif-dev\

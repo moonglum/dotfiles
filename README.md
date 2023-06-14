@@ -140,8 +140,8 @@ These are the programming languages I use:
 * CSS
 
 I also have two years of professional experience with Go, but don't like it.
-I like to play around with other languages like Rust, C# and Clojure as well.
-I even wrote my [own little language](https://halunke.jetzt) :smile:
+Out of frustration about Go, I started playing with Rust.
+In general, I like to play around with different languages (like Clojure or C#), I even wrote my [own little language](https://halunke.jetzt) a while ago :smile:
 
 ## Thanks
 
