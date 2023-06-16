@@ -25,10 +25,3 @@ echob "Setup Docker Compose as a Docker Plugin"
 
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
-
-echob "Install Go packages"
-
-go install golang.org/x/lint/golint@latest && echo "golint installed"
-go install golang.org/x/tools/gopls@latest && echo "gopls installed"
-go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
-go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
