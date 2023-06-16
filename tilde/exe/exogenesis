@@ -55,8 +55,10 @@ sudo apt install\
 	inkscape\
 	jq\
 	kitty\
+	libadwaita-1-dev\
 	libasound2-dev\
 	libdbus-1-dev\
+	libgtk-4-dev\
 	libheif-dev\
 	libpq-dev\
 	libsqlite3-dev\
