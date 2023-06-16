@@ -30,7 +30,6 @@ sudo apt update
 
 sudo apt install\
 	asciinema\
-	audacity\
 	borgmatic\
 	brotli\
 	build-essential\
@@ -108,6 +107,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 flatpak install flathub org.gnome.Boxes
 flatpak install flathub org.gnome.Loupe
+flatpak install flathub org.tenacityaudio.Tenacity
 
 echob "Link dotfiles"
 
