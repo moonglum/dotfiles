@@ -29,7 +29,6 @@ release=$(lsb_release -rs)
 sudo apt update
 
 sudo apt install\
-	asciinema\
 	borgmatic\
 	brotli\
 	build-essential\

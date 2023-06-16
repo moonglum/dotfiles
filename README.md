@@ -77,7 +77,6 @@ Finally, I'm using [`w0rp/ale`](https://github.com/w0rp/ale) for **formatting, l
 * [`docker`](https://www.docker.com) and `docker-compose` because I really wish it would do what I want
     * Using [`colima`](https://github.com/abiosoft/colima) as the backend on the Mac
 * [`shellcheck`](https://www.shellcheck.net) to get feedback about shell scripts
-* [`asciinema`](https://asciinema.org) to record terminal things
 * [`direnv`](https://direnv.net) to load and unload environment variables depending on the current directory
 * [`ffmpeg`](https://ffmpeg.org) for converting video and audio
 * [`htop`](https://htop.dev) as a replacement for `top` to see how my cores and RAM are doing
