@@ -18,9 +18,19 @@ fish_add_path --path --move --prepend $HOME/.rbenv/shims
 # Rust
 fish_add_path --path --move $HOME/.cargo/bin
 
+# start a tmux session in the provided project
+complete -c s -f -a '(ls -1 ~/Code)'
+function s
+  tmux new -A -s $argv[1] -c ~/Code/$argv[1]
+end
+
+# jump to the provided project
+complete -c j -f -a '(ls -1 ~/Code)'
+function j
+  cd ~/Code/$argv[1]
+end
+
 # aliases
-alias s="start"
-alias j="jump"
 alias l="exa -al"
 alias ll="exa -l"
 alias tree="exa --tree"
