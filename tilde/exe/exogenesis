@@ -46,7 +46,6 @@ sudo apt install\
 	fzf\
 	git-lfs\
 	git\
-	gnome-tweaks\
 	gnupg-agent\
 	gnupg2\
 	graphviz\
