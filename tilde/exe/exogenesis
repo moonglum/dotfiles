@@ -129,13 +129,6 @@ rbenv global 3.2 && echo "Ruby Version set to 3.2"
 
 gem install amazing_print brakeman pry rails rubocop rspec
 
-echob "Install Go packages"
-
-go install golang.org/x/lint/golint@latest && echo "golint installed"
-go install golang.org/x/tools/gopls@latest && echo "gopls installed"
-go install honnef.co/go/tools/cmd/staticcheck@latest && echo "staticcheck installed"
-go install github.com/go-delve/delve/cmd/dlv@latest && echo "delve installed"
-
 echob "Install Rust and Rust packages"
 
 if [ "$(type rustup)" ]
