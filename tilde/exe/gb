@@ -17,6 +17,7 @@ set -l enter_cmd "echo {} | git switch (sed 's/^*//' | awk '{print \$1;}')"
 
 set -l opts "
   --ansi
+  --layout=reverse
   --bind=\"enter:execute($enter_cmd)+accept\"
 "
 
